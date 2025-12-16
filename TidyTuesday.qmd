@@ -1,7 +1,14 @@
 ---
 title: "TidyTuesday"
-format: html
+format: 
+  html:
+    code-link: true
+    code-tools: true
+execute:
+  echo: false
 ---
+
+TidyTuesday 
 
 ## 2025
 
@@ -14,9 +21,6 @@ library(tidyverse)
 
 atr_event <- attribution_studies %>% 
   filter(study_focus == "Event")
-
-ggplot(atr_event, aes(x=cb_region, fill=event_type))+
-  geom_bar(stat="count")
 
 paleta <- c("#C5B0CD","#98A1BC","#A2AF9B", "#D1A980","#B9375D", "#640D5F","#9ECAD6", "#34699A", "#2A1458",
             "#273F4F", "#FE7743", "#DC3C22")

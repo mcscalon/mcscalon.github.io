@@ -5,12 +5,26 @@ project:
 website:
   title: "Marina Scalon"
   navbar:
+    background: primary
+    search: true
     left:
       - href: index.qmd
-        text: Home
+        text: " "
+        icon: house-fill
       - publications.qmd
       - R Lessons.qmd
       - TidyTuesday.qmd
+      - sidebar:aulas
+  
+  sidebar:
+    - id: aulas
+      title: "Aulas"
+      style: "docked"
+      background: light
+      collapse-level: 2
+      contents:
+          - aulas/Aula Quarto.qmd
+          - aulas/Aula -Semana 2.qmd
 
 
 format:
