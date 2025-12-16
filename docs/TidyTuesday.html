@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -116,8 +151,23 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section">2025</a>
+  <ul class="collapse">
+  <li><a href="#week-32" id="toc-week-32" class="nav-link" data-scroll-target="#week-32">Week 32</a></li>
+  <li><a href="#week-34" id="toc-week-34" class="nav-link" data-scroll-target="#week-34">Week 34</a></li>
+  <li><a href="#week-36" id="toc-week-36" class="nav-link" data-scroll-target="#week-36">Week 36</a></li>
+  <li><a href="#week-39" id="toc-week-39" class="nav-link" data-scroll-target="#week-39">Week 39</a></li>
+  <li><a href="#week-43" id="toc-week-43" class="nav-link" data-scroll-target="#week-43">Week 43</a></li>
+  <li><a href="#week-46" id="toc-week-46" class="nav-link" data-scroll-target="#week-46">Week 46</a></li>
+  <li><a href="#week-48" id="toc-week-48" class="nav-link" data-scroll-target="#week-48">Week 48</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -141,8 +191,857 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section">2025</h2>
+<section id="week-32" class="level3">
+<h3 class="anchored" data-anchor-id="week-32">Week 32</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>tuesdata <span class="ot">&lt;-</span> tidytuesdayR<span class="sc">::</span><span class="fu">tt_load</span>(<span class="st">'2025-08-12'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>---- Compiling #TidyTuesday Information for 2025-08-12 ----
+--- There are 2 files available ---
 
 
+── Downloading files ───────────────────────────────────────────────────────────
+
+  1 of 2: "attribution_studies.csv"
+  2 of 2: "attribution_studies_raw.csv"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>attribution_studies <span class="ot">&lt;-</span> tuesdata<span class="sc">$</span>attribution_studies</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.1     ✔ stringr   1.5.2
+✔ ggplot2   4.0.0     ✔ tibble    3.3.0
+✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+✔ purrr     1.1.0     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>atr_event <span class="ot">&lt;-</span> attribution_studies <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(study_focus <span class="sc">==</span> <span class="st">"Event"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(atr_event, <span class="fu">aes</span>(<span class="at">x=</span>cb_region, <span class="at">fill=</span>event_type))<span class="sc">+</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"count"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TidyTuesday_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>paleta <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#C5B0CD"</span>,<span class="st">"#98A1BC"</span>,<span class="st">"#A2AF9B"</span>, <span class="st">"#D1A980"</span>,<span class="st">"#B9375D"</span>, <span class="st">"#640D5F"</span>,<span class="st">"#9ECAD6"</span>, <span class="st">"#34699A"</span>, <span class="st">"#2A1458"</span>,</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>            <span class="st">"#273F4F"</span>, <span class="st">"#FE7743"</span>, <span class="st">"#DC3C22"</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>plot2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>((<span class="fu">filter</span>(atr_event, cb_region <span class="sc">!=</span><span class="st">"Northern hemisphere"</span>)), <span class="fu">aes</span>(<span class="at">x=</span>cb_region, <span class="at">fill=</span>event_type))<span class="sc">+</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"count"</span>, <span class="at">position=</span><span class="fu">position_dodge2</span>(<span class="at">preserve=</span><span class="st">"single"</span>), <span class="at">alpha=</span><span class="fl">0.8</span>)<span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Region"</span>, <span class="at">y =</span> <span class="st">"Number of events"</span>, <span class="at">fill =</span> <span class="st">"Event Type:"</span>,</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Number and types of extreme weather events across the World"</span>,</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Plot for TidyTuesday - DataChaos"</span>) <span class="sc">+</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>cb_region, <span class="at">scales=</span><span class="st">"free"</span>, <span class="at">strip.position=</span><span class="st">"bottom"</span>)<span class="sc">+</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>))<span class="sc">+</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values=</span>paleta)<span class="sc">+</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">label.position =</span> <span class="st">"top"</span>))<span class="sc">+</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>        <span class="co">#strip.placement = "outside",</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>        <span class="co">#legend.position = "bottom",</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">strip.background.y =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"white"</span>, <span class="at">color =</span> <span class="st">"white"</span>),</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">strip.background.x =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"white"</span>, <span class="at">color =</span> <span class="st">"black"</span>),</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">strip.text.x =</span> <span class="fu">element_text</span>(<span class="at">face=</span><span class="st">"bold"</span>, <span class="at">size=</span><span class="dv">9</span>),</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>),</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.key.size =</span> <span class="fu">unit</span>(<span class="fl">0.3</span>, <span class="st">"cm"</span>),</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>, <span class="at">face=</span><span class="st">"italic"</span>),</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>plot2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TidyTuesday_files/figure-html/unnamed-chunk-1-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">filter</span>(atr_event, cb_region <span class="sc">!=</span><span class="st">"Northern hemisphere"</span>)) <span class="sc">+</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> forcats<span class="sc">::</span><span class="fu">fct_infreq</span>(cb_region), <span class="at">fill =</span> event_type), <span class="at">alpha=</span><span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">" "</span>, <span class="at">y =</span> <span class="st">"Number of events"</span>, <span class="at">fill =</span> <span class="st">"Event Type"</span>, </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Number and types of extreme weather events across the World"</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Plot for TidyTuesday - DataChaos"</span>) <span class="sc">+</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>), <span class="at">limits=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">180</span>))<span class="sc">+</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()<span class="sc">+</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values=</span>paleta)<span class="sc">+</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()<span class="sc">+</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="fu">c</span>(<span class="fl">0.8</span>,<span class="fl">0.75</span>),</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>),</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.key.size =</span> <span class="fu">unit</span>(<span class="fl">0.3</span>, <span class="st">"cm"</span>),</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">l =</span> <span class="sc">-</span><span class="dv">120</span>,<span class="at">b=</span><span class="dv">5</span>, <span class="at">unit =</span> <span class="st">"pt"</span>)),</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>, <span class="at">face=</span><span class="st">"italic"</span>,<span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">l =</span> <span class="sc">-</span><span class="dv">120</span>,<span class="at">b=</span><span class="dv">10</span>, <span class="at">unit =</span> <span class="st">"pt"</span>)))</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TidyTuesday_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="week-34" class="level3">
+<h3 class="anchored" data-anchor-id="week-34">Week 34</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>tuesdata <span class="ot">&lt;-</span> tidytuesdayR<span class="sc">::</span><span class="fu">tt_load</span>(<span class="st">'2025-08-26'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>---- Compiling #TidyTuesday Information for 2025-08-26 ----
+--- There are 2 files available ---
+
+
+── Downloading files ───────────────────────────────────────────────────────────
+
+  1 of 2: "billboard.csv"
+  2 of 2: "topics.csv"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>billboard <span class="ot">&lt;-</span> tuesdata<span class="sc">$</span>billboard</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>topics <span class="ot">&lt;-</span> tuesdata<span class="sc">$</span>topics</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(billboard)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>spc_tbl_ [1,177 × 105] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+ $ song                                        : chr [1:1177] "Poor Little Fool" "Nel Blu Dipinto Di Blu" "Little Star" "It's All in the Game" ...
+ $ artist                                      : chr [1:1177] "Ricky Nelson" "Domenico Modugno" "The Elegants" "Tommy Edwards" ...
+ $ date                                        : POSIXct[1:1177], format: "1958-08-04" "1958-08-18" ...
+ $ weeks_at_number_one                         : num [1:1177] 2 5 1 6 2 1 3 4 3 4 ...
+ $ non_consecutive                             : num [1:1177] 0 1 0 0 1 0 0 0 0 0 ...
+ $ rating_1                                    : num [1:1177] 4 7 5 3 7 5 8 1 9 6 ...
+ $ rating_2                                    : num [1:1177] 5 7 6 3 8 5 8 5 9 6 ...
+ $ rating_3                                    : num [1:1177] 3 5 6 7 9 2 8 2 8 9 ...
+ $ overall_rating                              : num [1:1177] 4 6.33 5.67 4.33 8 ...
+ $ divisiveness                                : num [1:1177] 1.333 1.333 0.667 2.667 1.333 ...
+ $ label                                       : chr [1:1177] "Imperial" "Decca" "Apt" "MGM" ...
+ $ parent_label                                : chr [1:1177] "Imperial" "Decca" "ABC" "MGM" ...
+ $ cdr_genre                                   : chr [1:1177] "Pop;Rock" "Pop" "Rock" "Pop" ...
+ $ cdr_style                                   : chr [1:1177] "Acoustic Rock" "Vocal" "Rock &amp; Roll" "Vocal" ...
+ $ discogs_genre                               : chr [1:1177] "Rock" "Pop;Folk, World, &amp; Country" "Rock" "Rock;Pop" ...
+ $ discogs_style                               : chr [1:1177] "Rock &amp; Roll" "Vocal;Canzone Napoletana;Ballad" "Rock &amp; Roll;Doo Wop" "Ballad;Doo Wop" ...
+ $ artist_structure                            : num [1:1177] 1 1 0 1 1 0 0 0 0 1 ...
+ $ featured_artists                            : chr [1:1177] NA NA NA NA ...
+ $ multiple_lead_vocalists                     : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...
+ $ group_named_after_non_lead_singer           : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...
+ $ talent_contestant                           : chr [1:1177] NA NA NA NA ...
+ $ posthumous                                  : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...
+ $ artist_place_of_origin                      : chr [1:1177] "United States" "Italy" "United States" "United States" ...
+ $ front_person_age                            : num [1:1177] 18 30 17 35 25 ...
+ $ artist_male                                 : num [1:1177] 1 1 1 1 1 1 2 1 2 1 ...
+ $ artist_white                                : num [1:1177] 1 1 1 0 1 1 1 0 0 0 ...
+ $ artist_black                                : num [1:1177] 0 0 0 1 0 0 0 0 1 1 ...
+ $ songwriters                                 : chr [1:1177] "Sharon Sheeley" "Franco Migliacci;Domenico Modugno;Mitchell Parish" "Vito Picone;Arthur Venosa" "Carl Sigman;Charles G. Dawes" ...
+ $ songwriters_w_o_interpolation_sample_credits: chr [1:1177] "Sharon Sheeley" "Franco Migliacci;Domenico Modugno;Mitchell Parish" "Vito Picone;Arthur Venosa" "Carl Sigman;Charles G. Dawes" ...
+ $ songwriter_male                             : num [1:1177] 0 1 1 1 1 1 1 1 1 1 ...
+ $ songwriter_white                            : num [1:1177] 1 1 1 1 1 1 1 0 1 0 ...
+ $ artist_is_a_songwriter                      : num [1:1177] 0 1 1 0 1 0 1 1 0 1 ...
+ $ artist_is_only_songwriter                   : num [1:1177] 0 0 1 0 0 0 1 1 0 0 ...
+ $ producers                                   : chr [1:1177] "Jimmie Haskell;Ozzie Nelson;Ricky Nelson" "Unknown" "Unknown" "Harry Myerson" ...
+ $ producer_male                               : num [1:1177] 1 NA NA 1 1 1 1 1 1 1 ...
+ $ producer_white                              : num [1:1177] 1 NA NA 1 1 1 1 0 1 1 ...
+ $ artist_is_a_producer                        : num [1:1177] 1 NA NA 0 0 0 1 1 0 0 ...
+ $ artist_is_only_producer                     : num [1:1177] 0 NA NA 0 0 0 1 1 0 0 ...
+ $ songwriter_is_a_producer                    : num [1:1177] 0 0 0 0 0 0 1 1 0 0 ...
+ $ time_signature                              : chr [1:1177] "4/4" "Free;6/8;4/4" "Free;4/4" "3/4" ...
+ $ keys                                        : chr [1:1177] "C" "Bb" "A" "Eb" ...
+ $ simplified_key                              : chr [1:1177] "C" "Bb" "A" "Eb" ...
+ $ bpm                                         : num [1:1177] 155 130 73 71 127 126 175 153 113 71 ...
+ $ energy                                      : num [1:1177] 33 6 40 15 43 14 20 37 27 62 ...
+ $ danceability                                : num [1:1177] 54 55 41 33 44 63 32 61 32 36 ...
+ $ happiness                                   : num [1:1177] 80 48 70 61 36 52 35 78 26 79 ...
+ $ loudness_d_b                                : num [1:1177] -12 -17 -13 -18 -10 -15 -16 -12 -11 -8 ...
+ $ acousticness                                : num [1:1177] 67 98 87 4 86 83 89 71 93 74 ...
+ $ vocally_based                               : num [1:1177] 0 0 1 1 1 0 1 0 1 0 ...
+ $ bass_based                                  : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...
+ $ guitar_based                                : num [1:1177] 1 0 1 0 0 1 1 1 0 1 ...
+ $ piano_keyboard_based                        : num [1:1177] 0 1 0 1 1 0 0 0 0 0 ...
+ $ orchestral_strings                          : num [1:1177] 0 1 0 1 0 0 0 0 1 0 ...
+ $ horns_winds                                 : num [1:1177] 0 0 1 0 0 0 0 1 0 1 ...
+ $ accordion                                   : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...
+ $ banjo                                       : num [1:1177] 0 0 0 0 0 1 0 0 0 0 ...
+ $ bongos                                      : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...
+ $ clarinet                                    : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...
+ $ cowbell                                     : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...
+ $ falsetto_vocal                              : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...
+ $ flute_piccolo                               : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...
+ $ handclaps_snaps                             : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...
+ $ harmonica                                   : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...
+ $ human_whistling                             : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...
+ $ kazoo                                       : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...
+ $ mandolin                                    : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...
+ $ pedal_lap_steel                             : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...
+ $ ocarina                                     : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...
+ $ saxophone                                   : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...
+ $ sitar                                       : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...
+ $ trumpet                                     : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...
+ $ ukulele                                     : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...
+ $ violin                                      : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...
+ $ sound_effects                               : chr [1:1177] NA NA NA NA ...
+ $ song_structure                              : chr [1:1177] "A2" "E1" "D3" "D1" ...
+ $ rap_verse_in_a_non_rap_song                 : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...
+ $ length_sec                                  : num [1:1177] 154 219 163 156 134 185 142 141 158 145 ...
+ $ instrumental                                : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...
+ $ instrumental_length_sec                     : num [1:1177] 12 11 0 0 0 7 8 28 16 32 ...
+ $ intro_length_sec                            : num [1:1177] 12 40 10 3 24 31 8 19 8 13 ...
+ $ vocal_introduction                          : num [1:1177] 0 1 1 0 1 1 0 0 0 1 ...
+ $ free_time_vocal_introduction                : num [1:1177] 0 1 1 0 1 0 0 0 0 1 ...
+ $ fade_out                                    : num [1:1177] 0 0 0 0 0 0 1 1 0 1 ...
+ $ live                                        : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...
+ $ cover                                       : num [1:1177] 0 0 0 0 0 1 0 0 1 1 ...
+ $ sample                                      : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...
+ $ interpolation                               : num [1:1177] 0 0 1 1 0 0 0 0 0 0 ...
+ $ inspired_by_a_different_song                : num [1:1177] 0 0 1 1 0 1 0 0 1 1 ...
+ $ lyrics                                      : chr [1:1177] "I used to play around with hearts.That hastened at my call.But when I met that little girl.I knew that I would "| __truncated__ NA "Where are you little star.Where are you.Twinkle twinkle little star.How I wonder where you are.Wish I may wish "| __truncated__ "Many a tear have to fall.But it's all in the game.All in the wonderful game.That we know as love.You have words"| __truncated__ ...
+ $ lyrical_topic                               : chr [1:1177] "Lost Love" "Flying;Dreaming" "Longing for Love" "Love" ...
+ $ lyrical_narrative                           : num [1:1177] 0 0 0 0 0 1 0 0 0 1 ...
+ $ spoken_word                                 : num [1:1177] 0 0 0 0 0 1 0 0 0 0 ...
+ $ explicit                                    : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...
+ $ foreign_language                            : num [1:1177] 0 1 0 0 0 0 0 0 0 0 ...
+ $ written_for_a_play                          : num [1:1177] 0 0 0 0 0 0 0 0 1 0 ...
+ $ featured_in_a_then_contemporary_play        : chr [1:1177] NA NA NA NA ...
+ $ written_for_a_film                          : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...
+ $ featured_in_a_then_contemporary_film        : chr [1:1177] NA NA NA NA ...
+ $ written_for_a_t_v_show                      : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...
+  [list output truncated]
+ - attr(*, "spec")=
+  .. cols(
+  ..   song = col_character(),
+  ..   artist = col_character(),
+  ..   date = col_datetime(format = ""),
+  ..   weeks_at_number_one = col_double(),
+  ..   non_consecutive = col_double(),
+  ..   rating_1 = col_double(),
+  ..   rating_2 = col_double(),
+  ..   rating_3 = col_double(),
+  ..   overall_rating = col_double(),
+  ..   divisiveness = col_double(),
+  ..   label = col_character(),
+  ..   parent_label = col_character(),
+  ..   cdr_genre = col_character(),
+  ..   cdr_style = col_character(),
+  ..   discogs_genre = col_character(),
+  ..   discogs_style = col_character(),
+  ..   artist_structure = col_double(),
+  ..   featured_artists = col_character(),
+  ..   multiple_lead_vocalists = col_double(),
+  ..   group_named_after_non_lead_singer = col_double(),
+  ..   talent_contestant = col_character(),
+  ..   posthumous = col_double(),
+  ..   artist_place_of_origin = col_character(),
+  ..   front_person_age = col_double(),
+  ..   artist_male = col_double(),
+  ..   artist_white = col_double(),
+  ..   artist_black = col_double(),
+  ..   songwriters = col_character(),
+  ..   songwriters_w_o_interpolation_sample_credits = col_character(),
+  ..   songwriter_male = col_double(),
+  ..   songwriter_white = col_double(),
+  ..   artist_is_a_songwriter = col_double(),
+  ..   artist_is_only_songwriter = col_double(),
+  ..   producers = col_character(),
+  ..   producer_male = col_double(),
+  ..   producer_white = col_double(),
+  ..   artist_is_a_producer = col_double(),
+  ..   artist_is_only_producer = col_double(),
+  ..   songwriter_is_a_producer = col_double(),
+  ..   time_signature = col_character(),
+  ..   keys = col_character(),
+  ..   simplified_key = col_character(),
+  ..   bpm = col_double(),
+  ..   energy = col_double(),
+  ..   danceability = col_double(),
+  ..   happiness = col_double(),
+  ..   loudness_d_b = col_double(),
+  ..   acousticness = col_double(),
+  ..   vocally_based = col_double(),
+  ..   bass_based = col_double(),
+  ..   guitar_based = col_double(),
+  ..   piano_keyboard_based = col_double(),
+  ..   orchestral_strings = col_double(),
+  ..   horns_winds = col_double(),
+  ..   accordion = col_double(),
+  ..   banjo = col_double(),
+  ..   bongos = col_double(),
+  ..   clarinet = col_double(),
+  ..   cowbell = col_double(),
+  ..   falsetto_vocal = col_double(),
+  ..   flute_piccolo = col_double(),
+  ..   handclaps_snaps = col_double(),
+  ..   harmonica = col_double(),
+  ..   human_whistling = col_double(),
+  ..   kazoo = col_double(),
+  ..   mandolin = col_double(),
+  ..   pedal_lap_steel = col_double(),
+  ..   ocarina = col_double(),
+  ..   saxophone = col_double(),
+  ..   sitar = col_double(),
+  ..   trumpet = col_double(),
+  ..   ukulele = col_double(),
+  ..   violin = col_double(),
+  ..   sound_effects = col_character(),
+  ..   song_structure = col_character(),
+  ..   rap_verse_in_a_non_rap_song = col_double(),
+  ..   length_sec = col_double(),
+  ..   instrumental = col_double(),
+  ..   instrumental_length_sec = col_double(),
+  ..   intro_length_sec = col_double(),
+  ..   vocal_introduction = col_double(),
+  ..   free_time_vocal_introduction = col_double(),
+  ..   fade_out = col_double(),
+  ..   live = col_double(),
+  ..   cover = col_double(),
+  ..   sample = col_double(),
+  ..   interpolation = col_double(),
+  ..   inspired_by_a_different_song = col_double(),
+  ..   lyrics = col_character(),
+  ..   lyrical_topic = col_character(),
+  ..   lyrical_narrative = col_double(),
+  ..   spoken_word = col_double(),
+  ..   explicit = col_double(),
+  ..   foreign_language = col_double(),
+  ..   written_for_a_play = col_double(),
+  ..   featured_in_a_then_contemporary_play = col_character(),
+  ..   written_for_a_film = col_double(),
+  ..   featured_in_a_then_contemporary_film = col_character(),
+  ..   written_for_a_t_v_show = col_double(),
+  ..   featured_in_a_then_contemporary_t_v_show = col_character(),
+  ..   associated_with_dance = col_double(),
+  ..   topped_the_charts_by_multiple_artist = col_double(),
+  ..   double_a_side = col_character(),
+  ..   eurovision_entry = col_double(),
+  ..   u_s_artwork = col_character()
+  .. )
+ - attr(*, "problems")=&lt;externalptr&gt; </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>billboard <span class="ot">&lt;-</span> billboard <span class="sc">%&gt;%</span> </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">year</span>(date)) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">decade =</span> <span class="fu">factor</span>(year <span class="sc">%/%</span> <span class="dv">10</span> <span class="sc">*</span> <span class="dv">10</span>))</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">filter</span>(billboard, year <span class="sc">!=</span> <span class="st">"2025"</span>), <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(year), <span class="at">fill =</span> <span class="fu">factor</span>(artist_male))) <span class="sc">+</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>, <span class="at">alpha=</span><span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Ano"</span>, <span class="at">y =</span> <span class="st">"Proporção de artistas"</span>, <span class="at">fill =</span> <span class="st">"Gênero"</span>,</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Proporção de artistas no ranking musical por gênero"</span>,</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="fu">str_wrap</span>(<span class="st">"Distribuição percentual de artistas masculinos, </span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="st">                           femininos e não-binários no top das paradas musicais de 1958-2024"</span>, <span class="dv">140</span>),</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Fonte: Billboard Hot 100 Number Ones Database"</span>) <span class="sc">+</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values=</span> <span class="fu">c</span>(<span class="st">"#FF9F00"</span>,<span class="st">"#03A6A1"</span>,<span class="st">"#F4631E"</span>, <span class="st">"#CB0404"</span>), </span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>                    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Mulheres"</span>, <span class="st">"Homens"</span>, <span class="st">"Mix"</span>, <span class="st">"Não-binários"</span>)) <span class="sc">+</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>)<span class="sc">+</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle=</span><span class="dv">45</span>, <span class="at">vjust=</span><span class="dv">1</span>, <span class="at">size=</span><span class="dv">8</span>),</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"grey99"</span>, <span class="at">color =</span> <span class="cn">NA</span>),</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">16</span>),</span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">lineheight =</span> <span class="dv">1</span>),</span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">margin =</span> <span class="fu">margin</span>(<span class="dv">10</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), <span class="at">hjust =</span> <span class="dv">0</span>),</span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="dv">10</span>, <span class="dv">40</span>, <span class="dv">10</span>, <span class="dv">20</span>))<span class="sc">+</span></span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"label"</span>, <span class="at">x=</span><span class="st">"1995"</span>, <span class="at">y =</span> <span class="fl">0.9</span>, <span class="at">label =</span> <span class="st">"Mulheres"</span>, <span class="at">fill=</span> <span class="st">"white"</span>, <span class="at">color=</span><span class="st">"#FF9F00"</span>)<span class="sc">+</span></span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"label"</span>, <span class="at">x=</span><span class="st">"1980"</span>, <span class="at">y =</span> <span class="fl">0.5</span>, <span class="at">label =</span> <span class="st">"Homens"</span>, <span class="at">fill=</span> <span class="st">"white"</span>, <span class="at">color=</span><span class="st">"#03A6A1"</span>)<span class="sc">+</span></span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"label"</span>, <span class="at">x=</span><span class="st">"1975"</span>, <span class="at">y =</span> <span class="fl">0.1</span>, <span class="at">label =</span> <span class="st">"Mix"</span>, <span class="at">fill=</span> <span class="st">"white"</span>, <span class="at">color=</span><span class="st">"#F4631E"</span>)<span class="sc">+</span></span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"label"</span>, <span class="at">x=</span><span class="st">"2015"</span>, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">label =</span> <span class="st">"Não binário"</span>, <span class="at">fill=</span> <span class="st">"white"</span>, <span class="at">color=</span><span class="st">"#CB0404"</span>)</span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>p1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TidyTuesday_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>sankey.data <span class="ot">&lt;-</span> billboard <span class="sc">%&gt;%</span> </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(year,decade, cdr_genre, songwriter_male, artist_male, songwriter_white, artist_white) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">songwriter_gender =</span> <span class="fu">case_when</span>(songwriter_male <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">"Mulher"</span>,</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>                                        songwriter_male <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"Homem"</span>,</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>                                        songwriter_male <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="st">"Mix"</span>,</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>                                        songwriter_male <span class="sc">==</span> <span class="dv">3</span> <span class="sc">~</span> <span class="st">"Não-binário"</span>),</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">artist_gender =</span> <span class="fu">case_when</span>(artist_male <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">"Mulher"</span>,</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>                                 artist_male <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"Homem"</span>,</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>                                 artist_male <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="st">"Mix"</span>,</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>                                 artist_male <span class="sc">==</span> <span class="dv">3</span> <span class="sc">~</span> <span class="st">"Não-binário"</span>),</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>         <span class="at">songrwriter_race =</span> <span class="fu">case_when</span>(songwriter_white <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">"Não branco"</span>,</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>                                        songwriter_white <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"Branco"</span>,</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>                                        songwriter_white <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="st">"Mix"</span>),</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>         <span class="at">artist_race =</span> <span class="fu">case_when</span>(artist_white <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">"Não branco"</span>,</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>                                 artist_white <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"Branco"</span>,</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>                                 artist_white <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="st">"Mix"</span>))</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggsankey)</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>sankey.data.flow <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(sankey.data) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">cdr_genre =</span> <span class="fu">str_remove</span>(cdr_genre, <span class="st">";.*"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(decade) <span class="sc">%&gt;%</span></span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">decade_n =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(decade, cdr_genre) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">n</span>(), decade_n, <span class="at">prop =</span> n <span class="sc">/</span> decade_n) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Returning more (or less) than 1 row per `summarise()` group was deprecated in
+dplyr 1.1.0.
+ℹ Please use `reframe()` instead.
+ℹ When switching from `summarise()` to `reframe()`, remember that `reframe()`
+  always returns an ungrouped data frame and adjust accordingly.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'decade', 'cdr_genre'. You can override
+using the `.groups` argument.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>pal <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#264653"</span>,<span class="st">"#287271"</span>, <span class="st">"#2a9d8f"</span>, <span class="st">"#8ab17d"</span>, <span class="st">"#e9c46a"</span>, <span class="st">"#efb366"</span>,<span class="st">"#f4a261"</span>,<span class="st">"#ee8959"</span>,<span class="st">"#e76f51"</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(sankey.data.flow, <span class="fu">aes</span>(<span class="at">x =</span> decade, <span class="at">node =</span> cdr_genre, <span class="at">fill =</span> cdr_genre, <span class="at">value =</span> prop, <span class="at">label =</span> cdr_genre)) <span class="sc">+</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sankey_bump</span>() <span class="sc">+</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values=</span>pal)<span class="sc">+</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="at">title =</span> <span class="st">"Proporção de representatividade de gêneros musicais no ranking"</span>,</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">subtitle =</span> <span class="fu">str_wrap</span>(<span class="st">"Distribuição percentual dos gêneros musicais no top das paradas musicais por década"</span>, <span class="dv">140</span>),</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">caption =</span> <span class="st">"Fonte: Billboard Hot 100 Number Ones Database"</span>) <span class="sc">+</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="sc">-</span><span class="fl">0.8</span>,<span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">nrow =</span> <span class="dv">3</span>))<span class="sc">+</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.title =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.75</span>,<span class="fl">0.9</span>),</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"transparent"</span>, <span class="at">color =</span> <span class="cn">NA</span>),</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"transparent"</span>, <span class="at">color =</span> <span class="cn">NA</span>),</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">16</span>),</span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">lineheight =</span> <span class="dv">1</span>),</span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">margin =</span> <span class="fu">margin</span>(<span class="dv">10</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), <span class="at">hjust =</span> <span class="dv">0</span>),</span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="dv">10</span>, <span class="dv">40</span>, <span class="dv">10</span>, <span class="dv">20</span>),</span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.key.size =</span> <span class="fu">unit</span>(<span class="fl">0.3</span>, <span class="st">"cm"</span>))</span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>p2  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: The following aesthetics were dropped during statistical transformation: nodes,
+bbb, next_x, xmax, xmin_end, flow_freq_end, flow_start_ymax, flow_start_ymin,
+flow_end_ymax, and flow_end_ymin.
+ℹ This can happen when ggplot fails to infer the correct grouping structure in
+  the data.
+ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+  variable into a factor?</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TidyTuesday_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="week-36" class="level3">
+<h3 class="anchored" data-anchor-id="week-36">Week 36</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>tuesdata <span class="ot">&lt;-</span> tidytuesdayR<span class="sc">::</span><span class="fu">tt_load</span>(<span class="st">'2025-09-09'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>---- Compiling #TidyTuesday Information for 2025-09-09 ----
+--- There are 2 files available ---
+
+
+── Downloading files ───────────────────────────────────────────────────────────
+
+  1 of 2: "country_lists.csv"
+  2 of 2: "rank_by_year.csv"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>rank_by_year <span class="ot">&lt;-</span> tuesdata<span class="sc">$</span>rank_by_year</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>lowest.rank <span class="ot">&lt;-</span> rank_by_year <span class="sc">%&gt;%</span> </span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">%&gt;%</span> </span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise_if</span>(is.numeric, mean) <span class="sc">%&gt;%</span> </span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(<span class="at">order_by =</span> rank, <span class="at">n =</span> <span class="dv">5</span>)</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>lowest <span class="ot">&lt;-</span> rank_by_year <span class="sc">%&gt;%</span> </span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">%in%</span> lowest.rank<span class="sc">$</span>country)</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>highest.rank <span class="ot">&lt;-</span> rank_by_year <span class="sc">%&gt;%</span> </span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">%&gt;%</span> </span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise_if</span>(is.numeric, mean) <span class="sc">%&gt;%</span> </span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_min</span>(<span class="at">order_by =</span> rank, <span class="at">n =</span> <span class="dv">5</span>)</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>highest <span class="ot">&lt;-</span> rank_by_year <span class="sc">%&gt;%</span> </span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">%in%</span> highest.rank<span class="sc">$</span>country)</span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>toplow <span class="ot">&lt;-</span> lowest <span class="sc">%&gt;%</span> <span class="fu">full_join</span>(highest)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Joining with `by = join_by(code, country, region, rank, visa_free_count, year)`</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggridges)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>toplow<span class="sc">$</span>country <span class="ot">&lt;-</span> <span class="fu">factor</span>(toplow<span class="sc">$</span>country, <span class="at">levels=</span><span class="fu">c</span>(<span class="st">"Afghanistan"</span>,</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>                                                  <span class="st">"Iraq"</span>,</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>                                                  <span class="st">"Palestinian Territory"</span>,</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>                                                  <span class="st">"Pakistan"</span>,</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>                                                  <span class="st">"Somalia"</span>,</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>                                                  <span class="st">"Sweden"</span>,</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>                                                  <span class="st">"Japan"</span>,</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>                                                  <span class="st">"Denmark"</span>,</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>                                                  <span class="st">"Finland"</span>,</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>                                                  <span class="st">"Germany"</span>))</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forcats)</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggstream)</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>toplow<span class="sc">$</span>country <span class="ot">&lt;-</span> <span class="fu">fct_rev</span>(toplow<span class="sc">$</span>country)</span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>paleta <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#124170"</span>, <span class="st">"#26667F"</span>,<span class="st">"#78B9B5"</span>, <span class="st">"#67C090"</span>, <span class="st">"#5E936C"</span>, </span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>             <span class="st">"#8A0000"</span>, <span class="st">"#C83F12"</span>,<span class="st">"#FFE100"</span>,<span class="st">"#FF9B00"</span>, <span class="st">"#EA2F14"</span>)</span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">filter</span>(toplow, year<span class="sc">&gt;=</span><span class="dv">2010</span>), <span class="fu">aes</span>(year, visa_free_count, <span class="at">fill =</span> country)) <span class="sc">+</span></span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_stream</span>(<span class="at">type =</span> <span class="st">"ridge"</span> ,<span class="at">bw=</span><span class="dv">1</span>, <span class="at">alpha=</span><span class="fl">0.7</span>)<span class="sc">+</span></span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values=</span>paleta) <span class="sc">+</span></span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks=</span><span class="fu">c</span>(<span class="dv">2010</span>,<span class="dv">2015</span>,<span class="dv">2020</span>,<span class="dv">2025</span>),<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"2010"</span>,<span class="st">"2015"</span>,<span class="st">"2020"</span>,<span class="st">"2025"</span>)) <span class="sc">+</span></span>
+<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">clip =</span> <span class="st">"off"</span>) <span class="sc">+</span></span>
+<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()<span class="sc">+</span></span>
+<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">caption =</span> <span class="st">"Figura feita usando Henley &amp; Partners Passport Index API dataset"</span>)<span class="sc">+</span></span>
+<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title =</span> <span class="fu">element_blank</span>(), </span>
+<span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.line.x=</span><span class="fu">element_line</span>(<span class="at">linewidth =</span> <span class="fl">0.75</span>),</span>
+<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.line.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb22-32"><a href="#cb22-32" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb22-33"><a href="#cb22-33" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="dv">20</span>,<span class="dv">120</span>,<span class="dv">20</span>,<span class="dv">20</span>),</span>
+<span id="cb22-34"><a href="#cb22-34" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position=</span><span class="st">"none"</span>,</span>
+<span id="cb22-35"><a href="#cb22-35" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb22-36"><a href="#cb22-36" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb22-37"><a href="#cb22-37" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>,</span>
+<span id="cb22-38"><a href="#cb22-38" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">margin =</span> <span class="fu">margin</span>(<span class="dv">5</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>)))<span class="sc">+</span></span>
+<span id="cb22-39"><a href="#cb22-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">2025</span>, <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">1200</span>, <span class="dv">1000</span>, <span class="dv">750</span>,<span class="dv">550</span>,<span class="dv">300</span>,<span class="dv">200</span>,<span class="dv">150</span>,<span class="dv">100</span>,<span class="dv">60</span>,<span class="dv">20</span>),</span>
+<span id="cb22-40"><a href="#cb22-40" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="fu">c</span>(<span class="st">"Top 1: Germany"</span>,<span class="st">"Top 2: Finland"</span>,<span class="st">"Top 3: Denmark"</span>,<span class="st">"Top 4: Japan"</span>,<span class="st">"Top 5: Sweden"</span>,</span>
+<span id="cb22-41"><a href="#cb22-41" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"Last 5: Somalia"</span>,<span class="st">"Last 4: Pakistan"</span>,<span class="st">"Last 3: Palestinian Territory"</span>,<span class="st">"Last 2: Iraq"</span>,</span>
+<span id="cb22-42"><a href="#cb22-42" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"Last 1: Afghanistan"</span>),</span>
+<span id="cb22-43"><a href="#cb22-43" aria-hidden="true" tabindex="-1"></a>           <span class="at">hjust=</span><span class="dv">0</span>,</span>
+<span id="cb22-44"><a href="#cb22-44" aria-hidden="true" tabindex="-1"></a>           <span class="at">size=</span><span class="fl">3.5</span>,</span>
+<span id="cb22-45"><a href="#cb22-45" aria-hidden="true" tabindex="-1"></a>           <span class="at">lineheight=</span>.<span class="dv">8</span>,</span>
+<span id="cb22-46"><a href="#cb22-46" aria-hidden="true" tabindex="-1"></a>           <span class="at">fontface=</span><span class="st">"bold"</span>,</span>
+<span id="cb22-47"><a href="#cb22-47" aria-hidden="true" tabindex="-1"></a>           <span class="at">color=</span>paleta)<span class="sc">+</span></span>
+<span id="cb22-48"><a href="#cb22-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">2010.5</span>, <span class="at">y =</span> <span class="dv">1300</span>,</span>
+<span id="cb22-49"><a href="#cb22-49" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"Ranking global:</span><span class="sc">\n</span><span class="st">Os 5 países com maior e menor mobilidade"</span>,</span>
+<span id="cb22-50"><a href="#cb22-50" aria-hidden="true" tabindex="-1"></a>           <span class="at">hjust=</span><span class="dv">0</span>,</span>
+<span id="cb22-51"><a href="#cb22-51" aria-hidden="true" tabindex="-1"></a>           <span class="at">size=</span><span class="dv">7</span>,</span>
+<span id="cb22-52"><a href="#cb22-52" aria-hidden="true" tabindex="-1"></a>           <span class="at">lineheight=</span>.<span class="dv">9</span>,</span>
+<span id="cb22-53"><a href="#cb22-53" aria-hidden="true" tabindex="-1"></a>           <span class="at">fontface=</span><span class="st">"bold"</span>,</span>
+<span id="cb22-54"><a href="#cb22-54" aria-hidden="true" tabindex="-1"></a>           <span class="at">color=</span><span class="st">"black"</span>)<span class="sc">+</span></span>
+<span id="cb22-55"><a href="#cb22-55" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">2010</span>, <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">1200</span>, <span class="dv">1100</span>,<span class="dv">900</span>, <span class="dv">700</span>,<span class="dv">500</span>,<span class="dv">250</span>,<span class="dv">150</span>,<span class="dv">110</span>,<span class="dv">80</span>,<span class="dv">50</span>,<span class="dv">20</span>),</span>
+<span id="cb22-56"><a href="#cb22-56" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="fu">c</span>(<span class="st">"Min-Máx"</span>,<span class="st">"161-194"</span>,<span class="st">"162-193"</span>,<span class="st">"169-192"</span>,<span class="st">"160-194"</span>,<span class="st">"163-193"</span>,</span>
+<span id="cb22-57"><a href="#cb22-57" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"28-36"</span>,<span class="st">"28-36"</span>,<span class="st">"15-40"</span>,<span class="st">"27-31"</span>,</span>
+<span id="cb22-58"><a href="#cb22-58" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"24-30"</span>),</span>
+<span id="cb22-59"><a href="#cb22-59" aria-hidden="true" tabindex="-1"></a>           <span class="at">hjust=</span><span class="dv">1</span>,</span>
+<span id="cb22-60"><a href="#cb22-60" aria-hidden="true" tabindex="-1"></a>           <span class="at">size=</span><span class="dv">3</span>,</span>
+<span id="cb22-61"><a href="#cb22-61" aria-hidden="true" tabindex="-1"></a>           <span class="at">lineheight=</span>.<span class="dv">8</span>,</span>
+<span id="cb22-62"><a href="#cb22-62" aria-hidden="true" tabindex="-1"></a>           <span class="at">fontface=</span><span class="st">"bold"</span>, </span>
+<span id="cb22-63"><a href="#cb22-63" aria-hidden="true" tabindex="-1"></a>           <span class="at">color=</span><span class="fu">c</span>(<span class="st">"black"</span>,<span class="st">"#124170"</span>, <span class="st">"#26667F"</span>,<span class="st">"#78B9B5"</span>, <span class="st">"#67C090"</span>, <span class="st">"#5E936C"</span>, </span>
+<span id="cb22-64"><a href="#cb22-64" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"#8A0000"</span>, <span class="st">"#C83F12"</span>,<span class="st">"#FFE100"</span>,<span class="st">"#FF9B00"</span>, <span class="st">"#EA2F14"</span>))</span>
+<span id="cb22-65"><a href="#cb22-65" aria-hidden="true" tabindex="-1"></a>plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TidyTuesday_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="week-39" class="level3">
+<h3 class="anchored" data-anchor-id="week-39">Week 39</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>tuesdata <span class="ot">&lt;-</span> tidytuesdayR<span class="sc">::</span><span class="fu">tt_load</span>(<span class="st">'2025-09-30'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>---- Compiling #TidyTuesday Information for 2025-09-30 ----
+--- There is 1 file available ---
+
+
+── Downloading files ───────────────────────────────────────────────────────────
+
+  1 of 1: "cranes.csv"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>cranes <span class="ot">&lt;-</span> tuesdata<span class="sc">$</span>cranes</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>cranes <span class="ot">&lt;-</span> cranes <span class="sc">%&gt;%</span> </span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">year</span>(date)) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">interval =</span> <span class="fu">factor</span>(year <span class="sc">%/%</span> <span class="dv">5</span> <span class="sc">*</span> <span class="dv">5</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">month =</span> <span class="fu">month</span>(date))</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggridges)</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>cranes_clean <span class="ot">&lt;-</span> cranes <span class="sc">%&gt;%</span></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(observations)) </span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(png)</span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(grid)</span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>crane_png <span class="ot">&lt;-</span> <span class="fu">readPNG</span>(<span class="st">"crane.png"</span>)</span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>crane_grob <span class="ot">&lt;-</span> <span class="fu">rasterGrob</span>(crane_png, <span class="at">interpolate =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a>final <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(cranes_clean, <span class="fu">aes</span>(<span class="at">x=</span>observations<span class="sc">/</span><span class="dv">1000</span>, </span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a>                         <span class="at">fill=</span><span class="fu">as.factor</span>(month), <span class="at">y=</span><span class="fu">fct_rev</span>(interval))) <span class="sc">+</span></span>
+<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_ridges2</span>(<span class="at">alpha=</span><span class="fl">0.7</span>)<span class="sc">+</span></span>
+<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Número de observações (x1000)"</span>,</span>
+<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Intervalos"</span>,</span>
+<span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Distribuição da observação de grous entre os meses entre 1990-2020"</span>,</span>
+<span id="cb25-24"><a href="#cb25-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Dados obtidos através dos contadores de grous do Lago de Hornborgasjön, Suécia"</span></span>
+<span id="cb25-25"><a href="#cb25-25" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb25-26"><a href="#cb25-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"#C1DBB3"</span>,<span class="st">"#FAEDCA"</span>, <span class="st">"#F2C078"</span>,<span class="st">"#FE5D26"</span>, <span class="st">"#075B5E"</span>),</span>
+<span id="cb25-27"><a href="#cb25-27" aria-hidden="true" tabindex="-1"></a>                    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Março"</span>, <span class="st">"Abril"</span>, <span class="st">"Agosto"</span>, <span class="st">"Setembro"</span>, <span class="st">"Outubro"</span>),</span>
+<span id="cb25-28"><a href="#cb25-28" aria-hidden="true" tabindex="-1"></a>                    <span class="at">name =</span> <span class="st">"Mês"</span>)<span class="sc">+</span></span>
+<span id="cb25-29"><a href="#cb25-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_ridges</span>()<span class="sc">+</span></span>
+<span id="cb25-30"><a href="#cb25-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill=</span><span class="fu">guide_legend</span>(<span class="at">ncol=</span><span class="dv">2</span>))<span class="sc">+</span></span>
+<span id="cb25-31"><a href="#cb25-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.65</span>,<span class="fl">0.9</span>), </span>
+<span id="cb25-32"><a href="#cb25-32" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb25-33"><a href="#cb25-33" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.y =</span> <span class="fu">element_blank</span>())<span class="sc">+</span></span>
+<span id="cb25-34"><a href="#cb25-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_custom</span>(crane_grob, <span class="at">xmin=</span><span class="dv">17</span>, <span class="at">xmax=</span><span class="dv">30</span>, <span class="at">ymin=</span><span class="st">"2010"</span>, <span class="at">ymax=</span><span class="st">"1990"</span>)</span>
+<span id="cb25-35"><a href="#cb25-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-36"><a href="#cb25-36" aria-hidden="true" tabindex="-1"></a>final</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Picking joint bandwidth of 1.41</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TidyTuesday_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="week-43" class="level3">
+<h3 class="anchored" data-anchor-id="week-43">Week 43</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>tuesdata <span class="ot">&lt;-</span> tidytuesdayR<span class="sc">::</span><span class="fu">tt_load</span>(<span class="dv">2025</span>, <span class="at">week =</span> <span class="dv">43</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>---- Compiling #TidyTuesday Information for 2025-10-28 ----
+--- There is 1 file available ---
+
+
+── Downloading files ───────────────────────────────────────────────────────────
+
+  1 of 1: "prizes.csv"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>prizes <span class="ot">&lt;-</span> tuesdata<span class="sc">$</span>prizes</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(waffle)</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>decades2 <span class="ot">&lt;-</span> prizes <span class="sc">%&gt;%</span> </span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>   <span class="fu">mutate</span>(<span class="at">race =</span> <span class="fu">case_when</span>(</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>    ethnicity_macro <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"African"</span>, <span class="st">"Asian"</span>, <span class="st">"Caribbenan"</span>, <span class="st">"Black British"</span>, <span class="st">"Non-White American"</span>) <span class="sc">~</span> <span class="st">"Non-White"</span>,</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"White"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">decade =</span> prize_year <span class="sc">-</span> (prize_year <span class="sc">%%</span> <span class="dv">10</span>)) <span class="sc">%&gt;%</span>  </span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(decade, race, gender) <span class="sc">%&gt;%</span></span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">count =</span> <span class="fu">n</span>(), <span class="at">.groups=</span><span class="st">"drop"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(decade) <span class="sc">%&gt;%</span></span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Total_Decada =</span> <span class="fu">sum</span>(count),</span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>         <span class="at">prop =</span> (count <span class="sc">/</span>Total_Decada)<span class="sc">*</span><span class="dv">100</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a>week43 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(decades2, <span class="fu">aes</span>(<span class="at">fill =</span><span class="fu">interaction</span>(race, gender))) <span class="sc">+</span></span>
+<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_waffle</span>(<span class="fu">aes</span>(<span class="at">values =</span> prop), <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">size =</span> <span class="fl">0.8</span>, <span class="at">n_rows =</span> <span class="dv">15</span>) <span class="sc">+</span></span>
+<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Representação de gênero e etnia nos prêmios literários Britânicos nas diferentes décadas"</span>,</span>
+<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Selected British Literary Prizes (1990-2022) dataset"</span>) <span class="sc">+</span></span>
+<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
+<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="sc">~</span>decade, <span class="at">switch =</span> <span class="st">"x"</span>)<span class="sc">+</span></span>
+<span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"#758A93"</span>, <span class="st">"#ECD5BC"</span>,<span class="st">"#F0E491"</span>, <span class="st">"#E9B63B"</span>, <span class="st">"#C66E52"</span>),</span>
+<span id="cb29-25"><a href="#cb29-25" aria-hidden="true" tabindex="-1"></a>                    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Non-White.man"</span> <span class="ot">=</span> <span class="st">"Homens não-brancos"</span>, </span>
+<span id="cb29-26"><a href="#cb29-26" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"White.man"</span> <span class="ot">=</span> <span class="st">"Homens brancos"</span>, </span>
+<span id="cb29-27"><a href="#cb29-27" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Non-White.non-binary"</span> <span class="ot">=</span> <span class="st">"Não-binários não-branc@s"</span>,</span>
+<span id="cb29-28"><a href="#cb29-28" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Non-White.woman"</span> <span class="ot">=</span> <span class="st">"Mulheres não-brancas"</span>,</span>
+<span id="cb29-29"><a href="#cb29-29" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"White.woman"</span> <span class="ot">=</span> <span class="st">"Mulheres brancas"</span>), <span class="at">guide=</span> <span class="fu">guide_legend</span>(<span class="at">ncol=</span><span class="dv">2</span>))<span class="sc">+</span></span>
+<span id="cb29-30"><a href="#cb29-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>,</span>
+<span id="cb29-31"><a href="#cb29-31" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.justification =</span> <span class="st">"right"</span>,</span>
+<span id="cb29-32"><a href="#cb29-32" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>),</span>
+<span id="cb29-33"><a href="#cb29-33" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.key.spacing.y =</span> <span class="fu">unit</span>(<span class="fl">0.1</span>, <span class="st">"cm"</span>),</span>
+<span id="cb29-34"><a href="#cb29-34" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.key.spacing.x =</span> <span class="fu">unit</span>(<span class="fl">0.1</span>, <span class="st">"cm"</span>),</span>
+<span id="cb29-35"><a href="#cb29-35" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">18</span>),</span>
+<span id="cb29-36"><a href="#cb29-36" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">15</span>, <span class="at">face=</span><span class="st">"italic"</span>),</span>
+<span id="cb29-37"><a href="#cb29-37" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb29-38"><a href="#cb29-38" aria-hidden="true" tabindex="-1"></a>        <span class="at">strip.placement =</span> <span class="st">"outside"</span>,</span>
+<span id="cb29-39"><a href="#cb29-39" aria-hidden="true" tabindex="-1"></a>        <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">15</span>))</span>
+<span id="cb29-40"><a href="#cb29-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-41"><a href="#cb29-41" aria-hidden="true" tabindex="-1"></a>week43</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TidyTuesday_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="week-46" class="level3">
+<h3 class="anchored" data-anchor-id="week-46">Week 46</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>tuesdata <span class="ot">&lt;-</span> tidytuesdayR<span class="sc">::</span><span class="fu">tt_load</span>(<span class="dv">2025</span>, <span class="at">week =</span> <span class="dv">46</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>---- Compiling #TidyTuesday Information for 2025-11-18 ----
+--- There is 1 file available ---
+
+
+── Downloading files ───────────────────────────────────────────────────────────
+
+  1 of 1: "holmes.csv"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>holmes <span class="ot">&lt;-</span> tuesdata<span class="sc">$</span>holmes</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidytext)</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>bing <span class="ot">&lt;-</span> <span class="fu">get_sentiments</span>(<span class="st">"bing"</span>)</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>sentiment <span class="ot">&lt;-</span> holmes <span class="sc">%&gt;%</span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">speaker =</span> <span class="fu">case_when</span>(</span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_detect</span>(text, <span class="st">"Holmes said|said Holmes|Holmes asked|asked Holmes"</span>) <span class="sc">~</span> <span class="st">"Holmes"</span>,</span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_detect</span>(text, <span class="st">"Watson said|said Watson|I said|said I|I asked|I answered"</span>) <span class="sc">~</span> <span class="st">"Watson"</span>,</span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Other"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(speaker <span class="sc">!=</span> <span class="st">"Other"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_tokens</span>(word, text) <span class="sc">%&gt;%</span></span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(bing, <span class="at">by =</span> <span class="st">"word"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(book, speaker, sentiment, <span class="at">name =</span> <span class="st">"lines"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(book, speaker) <span class="sc">%&gt;%</span></span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> lines <span class="sc">/</span> <span class="fu">sum</span>(lines)) <span class="sc">%&gt;%</span> </span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(book) <span class="sc">%&gt;%</span> </span>
+<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">n_distinct</span>(speaker) <span class="sc">==</span> <span class="dv">2</span>) </span>
+<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(sentiment, <span class="fu">aes</span>(<span class="at">x =</span> book, <span class="at">y =</span> prop, <span class="at">fill =</span> sentiment)) <span class="sc">+</span></span>
+<span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"fill"</span>, <span class="at">alpha=</span><span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb32-24"><a href="#cb32-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>( <span class="st">"#2c003a"</span>,<span class="st">"#2d5867"</span>), <span class="at">labels=</span><span class="fu">c</span>(<span class="st">"Negativo"</span>, <span class="st">"Positivo"</span>)) <span class="sc">+</span></span>
+<span id="cb32-25"><a href="#cb32-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>))<span class="sc">+</span></span>
+<span id="cb32-26"><a href="#cb32-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb32-27"><a href="#cb32-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Quem é mais mau-humorado nas histórias de Sherlock Holmes?"</span>,</span>
+<span id="cb32-28"><a href="#cb32-28" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Proporção de linhas em que o sentimento é negativo ou positivo"</span>,</span>
+<span id="cb32-29"><a href="#cb32-29" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">"Proporção de linhas"</span>, <span class="at">fill =</span> <span class="st">"Sentimento:"</span>) <span class="sc">+</span></span>
+<span id="cb32-30"><a href="#cb32-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">12</span>)<span class="sc">+</span></span>
+<span id="cb32-31"><a href="#cb32-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>speaker)<span class="sc">+</span></span>
+<span id="cb32-32"><a href="#cb32-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">strip.background =</span> <span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">"#878787"</span>, <span class="at">color=</span><span class="st">"#878787"</span>),</span>
+<span id="cb32-33"><a href="#cb32-33" aria-hidden="true" tabindex="-1"></a>        <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">14</span>, <span class="at">color=</span> <span class="st">"#1e2e4d"</span>),</span>
+<span id="cb32-34"><a href="#cb32-34" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.spacing =</span> <span class="fu">unit</span>(<span class="dv">2</span>, <span class="st">"lines"</span>),</span>
+<span id="cb32-35"><a href="#cb32-35" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title=</span> <span class="fu">element_text</span>(<span class="at">colour=</span><span class="st">"#1e2e4d"</span>, <span class="at">size=</span><span class="dv">15</span>, <span class="at">hjust=</span><span class="dv">1</span>),</span>
+<span id="cb32-36"><a href="#cb32-36" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">colour=</span><span class="st">"#1e2e4d"</span>, <span class="at">size=</span><span class="dv">14</span>, <span class="at">hjust=</span><span class="dv">1</span>), </span>
+<span id="cb32-37"><a href="#cb32-37" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"top"</span>,</span>
+<span id="cb32-38"><a href="#cb32-38" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.justification =</span> <span class="st">"left"</span>,</span>
+<span id="cb32-39"><a href="#cb32-39" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.direction =</span> <span class="st">"vertical"</span>,</span>
+<span id="cb32-40"><a href="#cb32-40" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.spacing.x =</span> <span class="fu">unit</span>(<span class="fl">0.2</span>, <span class="st">"cm"</span>),</span>
+<span id="cb32-41"><a href="#cb32-41" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>),</span>
+<span id="cb32-42"><a href="#cb32-42" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>),</span>
+<span id="cb32-43"><a href="#cb32-43" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">5</span>, <span class="at">r =</span> <span class="dv">20</span>, <span class="at">b =</span> <span class="dv">5</span>, <span class="at">l =</span> <span class="dv">5</span>))</span>
+<span id="cb32-44"><a href="#cb32-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-45"><a href="#cb32-45" aria-hidden="true" tabindex="-1"></a>p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TidyTuesday_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="week-48" class="level3">
+<h3 class="anchored" data-anchor-id="week-48">Week 48</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>tuesdata <span class="ot">&lt;-</span> tidytuesdayR<span class="sc">::</span><span class="fu">tt_load</span>(<span class="dv">2025</span>, <span class="at">week =</span> <span class="dv">48</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>---- Compiling #TidyTuesday Information for 2025-12-02 ----
+--- There is 1 file available ---
+
+
+── Downloading files ───────────────────────────────────────────────────────────
+
+  1 of 1: "sechselaeuten.csv"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>sech <span class="ot">&lt;-</span> tuesdata<span class="sc">$</span>sechselaeuten</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">lm</span>(tre200mx<span class="sc">~</span>duration, <span class="at">data=</span>sech))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = tre200mx ~ duration, data = sech)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2.9004 -1.2478 -0.1033  0.7868  4.4100 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 29.94258    0.35572  84.175   &lt;2e-16 ***
+duration     0.03815    0.01677   2.275   0.0263 *  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 1.593 on 63 degrees of freedom
+  (2 observations deleted due to missingness)
+Multiple R-squared:  0.07591,   Adjusted R-squared:  0.06124 
+F-statistic: 5.175 on 1 and 63 DF,  p-value: 0.02632</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(png)</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(grid)</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>img <span class="ot">&lt;-</span> <span class="fu">readPNG</span>(<span class="st">"boog.png"</span>)</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">rasterGrob</span>(img, <span class="at">interpolate =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(sech, <span class="fu">aes</span>(duration,tre200mx))<span class="sc">+</span></span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_custom</span>(g,    <span class="at">xmin =</span> <span class="dv">40</span>, <span class="at">xmax =</span> <span class="dv">68</span>,</span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">ymin =</span> <span class="dv">27</span>, <span class="at">ymax =</span> <span class="dv">35</span>)<span class="sc">+</span></span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">colour=</span>rre150m0, <span class="at">size=</span>sre000m0), <span class="at">alpha =</span> <span class="fl">0.9</span>)<span class="sc">+</span></span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>              <span class="at">colour =</span> <span class="st">"black"</span>,</span>
+<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a>              <span class="at">fill=</span><span class="st">"#DCA9E8"</span>,</span>
+<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a>              <span class="at">linewidth =</span> <span class="fl">0.8</span>)<span class="sc">+</span></span>
+<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span> <span class="st">"Duração até a explosão"</span>, <span class="at">y=</span><span class="st">"Temperatura máxima do verão (°C)"</span>,</span>
+<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Quanto mais tempo até a cabeça do Böög explodir, maior a temperatura do verão"</span>,</span>
+<span id="cb37-17"><a href="#cb37-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Cores = chuva | Tamanho = radiação"</span>)<span class="sc">+</span></span>
+<span id="cb37-18"><a href="#cb37-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_size_continuous</span>(<span class="at">name =</span> <span class="st">"Duração da luz solar (horas)"</span>,</span>
+<span id="cb37-19"><a href="#cb37-19" aria-hidden="true" tabindex="-1"></a>                        <span class="at">guide =</span> <span class="fu">guide_bins</span>(<span class="at">direction =</span> <span class="st">"horizontal"</span>,</span>
+<span id="cb37-20"><a href="#cb37-20" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">barheight =</span> <span class="fu">unit</span>(<span class="dv">4</span>, <span class="st">"mm"</span>),</span>
+<span id="cb37-21"><a href="#cb37-21" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">barwidth  =</span> <span class="fu">unit</span>(<span class="dv">10</span>, <span class="st">"mm"</span>),</span>
+<span id="cb37-22"><a href="#cb37-22" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">title.position =</span> <span class="st">"top"</span>))<span class="sc">+</span></span>
+<span id="cb37-23"><a href="#cb37-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_gradient2</span>(<span class="at">low =</span> <span class="st">"#CC07FA"</span>, <span class="at">high =</span> <span class="st">"#7007FA"</span>, <span class="at">mid =</span> <span class="st">"#07B9FA"</span>, <span class="at">midpoint =</span> <span class="dv">120</span>,</span>
+<span id="cb37-24"><a href="#cb37-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"Precipitação total (mm)"</span>,</span>
+<span id="cb37-25"><a href="#cb37-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">guide =</span> <span class="fu">guide_colorbar</span>(</span>
+<span id="cb37-26"><a href="#cb37-26" aria-hidden="true" tabindex="-1"></a>      <span class="at">direction =</span> <span class="st">"horizontal"</span>,</span>
+<span id="cb37-27"><a href="#cb37-27" aria-hidden="true" tabindex="-1"></a>      <span class="at">barheight =</span> <span class="fu">unit</span>(<span class="dv">4</span>, <span class="st">"mm"</span>),</span>
+<span id="cb37-28"><a href="#cb37-28" aria-hidden="true" tabindex="-1"></a>      <span class="at">barwidth  =</span> <span class="fu">unit</span>(<span class="dv">50</span>, <span class="st">"mm"</span>),</span>
+<span id="cb37-29"><a href="#cb37-29" aria-hidden="true" tabindex="-1"></a>      <span class="at">title.position =</span> <span class="st">"top"</span>)) <span class="sc">+</span></span>
+<span id="cb37-30"><a href="#cb37-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
+<span id="cb37-31"><a href="#cb37-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb37-32"><a href="#cb37-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"right"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Ignoring unknown arguments to `guide_bins()`: `barheight`, `barwidth`, and
+`title.position`.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 2 rows containing non-finite outside the scale range
+(`stat_smooth()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 2 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TidyTuesday_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
