@@ -1,5 +1,8 @@
 ---
-title: "Demosite"
+title: "Marina Scalon"
+about: 
+  template: jolla
+  image: Marina-Scalon.png
 ---
 
 This is a Quarto website.
