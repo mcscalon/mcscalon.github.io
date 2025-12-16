@@ -8,12 +8,15 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - publications.qmd
+      - R Lessons.qmd
+      - TidyTuesday.qmd
 
 
 format:
   html:
     theme:
-      - cosmo
+      - minty
       - brand
     css: styles.css
     toc: true

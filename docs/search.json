@@ -1,16 +1,65 @@
 [
   {
+    "objectID": "publications.html#section-1",
+    "href": "publications.html#section-1",
+    "title": "Publications",
+    "section": "2024",
+    "text": "2024"
+  },
+  {
+    "objectID": "publications.html#section-2",
+    "href": "publications.html#section-2",
+    "title": "Publications",
+    "section": "2023",
+    "text": "2023"
+  },
+  {
+    "objectID": "publications.html#section-3",
+    "href": "publications.html#section-3",
+    "title": "Publications",
+    "section": "2022",
+    "text": "2022"
+  },
+  {
+    "objectID": "publications.html#section-4",
+    "href": "publications.html#section-4",
+    "title": "Publications",
+    "section": "2021",
+    "text": "2021"
+  },
+  {
+    "objectID": "publications.html#section-5",
+    "href": "publications.html#section-5",
+    "title": "Publications",
+    "section": "2020",
+    "text": "2020"
+  },
+  {
+    "objectID": "publications.html#before-2019",
+    "href": "publications.html#before-2019",
+    "title": "Publications",
+    "section": "Before 2019",
+    "text": "Before 2019"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Marina Scalon",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "I study how plants adapt to environmental change from a functional and ecophysiological perspective, with a focus on Neotropical ecosystems. I also teach R and enjoy coding and working with data. Outside of science, I’m a mother of two girls, learning to see the world through their eyes every day."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Marina Scalon",
+    "section": "Education",
+    "text": "Education\nBachelor of Forest Engineer, Universidade de Brasília | 2008\nMaster of Ecology, Universidade de Brasília | 2010\nPhD in Plant Ecology, Macquarie University | 2014\nPost Doctoral Fellow at Universidade de Brasília | 2015-2016\nPost Doctoral Fellow at Universidade do Estado de Mato Grosso | 2016-2017\nPost Doctoral Fellow at University of Oxford | 2018-2019\nPost Doctoral Fellow at Universidade Federal do Paraná | 2019 - now"
+  },
+  {
+    "objectID": "R Lessons.html#section-1",
+    "href": "R Lessons.html#section-1",
+    "title": "Data Manipulation and Visualization",
+    "section": "2023",
+    "text": "2023"
   }
 ]
