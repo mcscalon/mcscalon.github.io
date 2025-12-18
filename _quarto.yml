@@ -23,10 +23,10 @@ website:
     collapse-level: 2
     contents:
       - aulas/Aula Quarto.qmd
-      - aulas/Pratica - Semana 2.qmd
-      - aulas/Pratica - Semana 3.qmd
-      - aulas/Pratica- Semana 3 - Parte2.qmd
-      - aulas/Aula_Mapa 2024.qmd
+      - aulas/Pratica_Semana2.qmd
+      - aulas/Pratica_Semana3.qmd
+      - aulas/Pratica_Semana3_Parte2.qmd
+      - aulas/Aula_Mapa.qmd
 
 format:
   html:

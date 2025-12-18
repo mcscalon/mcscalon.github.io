@@ -6,10 +6,12 @@ date: "05/25/2023"
 title-block-banner: true
 format: 
   html:
-    theme: flatly
-    code-copy: true
-    css: styles.css
+    code-link: true
+    code-tools: true
+    theme: minty
     toc: true
+execute:
+  warning: false
 ---
 
 ### O R pode ser usado para fazer mapas!
@@ -410,19 +412,20 @@ Vários dados disponíveis no site do INPE <http://www.dpi.inpe.br/Ambdata/downl
 
 > clim_brasil <- worldclim_country(country= "BR", var="bio", res=10, download=T, path= tempdir(), version = "2.1")
 
-Vamos baixar apenas a bio1 - Temperatura média pra ir mais rápido, ams se for baixar todas vai vir num arquivo .zip e será nescessário unzip na sua pasta de destino para utilizar.
+Vamos baixar apenas a bio1 - Temperatura média pra ir mais rápido, mas se for baixar todas vai vir num arquivo .zip e será nescessário unzip na sua pasta de destino para utilizar.
 
 ```{r}
-download.file("http://www.dpi.inpe.br/amb_data/Brasil/bio1_br.asc", destfile="bio1_br.asc")
+# download.file("http://www.dpi.inpe.br/amb_data/Brasil/bio1_br.asc", destfile="bio1_br.asc")
 ```
 
 
 ```{r}
+#| eval: false
 #| fig-cap: "Figura 25. Temperatura média anual para o Brasil"
 #| warning: false
 
 library(terra)
-temp <- rast('bio1_br.asc')
+temp <- rast('/bio1_br.asc')
 class(temp)
 plot(temp)
 ```
@@ -434,6 +437,7 @@ Para saber as unidades e quais são as variáveis verificar em <https://www.worl
 :::
 
 ```{r}
+#| eval: false
 #| fig-cap: "Figura 26. Temperatura média anual para o Brasil com ggmap"
 
 temp_df <- as.data.frame(temp, xy=T)
@@ -448,6 +452,7 @@ ggplot() +
 Agora se a gente quiser só para alguma localização específica,temos que editar o arquivo. Para isso temos a função *crop*
 
 ```{r}
+#| eval: false
 #| fig-cap: "Figura 27. Temperatura média anual para uma localização aleatória"
 
 ext <- c(-50,-40, -25,-20) # Para alguma localização específica
@@ -458,6 +463,7 @@ plot(temp_x)
 Para o Paraná vamos usar o shape do geobr para cortar o raster no tamanho certo
 
 ```{r}
+#| eval: false
 #| fig-cap: "Figura 28. Estado do Paraná"
 
 estado_PR <- read_state(code_state = "PR", 
@@ -470,6 +476,7 @@ ggplot() +
 ```
 
 ```{r}
+#| eval: false
 #| fig-cap: "Figura 29. Temperatura média para o Estado do Paraná"
 
 temp_pr <- crop(temp, estado_PR)
@@ -487,6 +494,7 @@ O resultado do seu mapa depende muito disso!
 :::
   
 ```{r}
+#| eval: false
 #| fig-cap: "Figura 30. Temperatura média anual para o Paraná com escala ajustada"
 
 ggplot()+
