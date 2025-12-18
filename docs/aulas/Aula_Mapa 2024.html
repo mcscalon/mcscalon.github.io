@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Marina C Scalon">
+<meta name="dcterms.date" content="2023-05-25">
+
+<title>Aula 5 - Mapas – Marina Scalon</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-6379fd53b79e56146b72c72b2848c6c8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Marina Scalon</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> <i class="bi bi-house-fill" role="img">
+</i> 
+<span class="menu-text"> </span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../publications.html"> 
+<span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../TidyTuesday.html"> 
+<span class="menu-text">TidyTuesday</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-aulas-2024-(português" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Aulas 2024 (Português)</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-aulas-2024-(português">    
+        <li>
+    <a class="dropdown-item" href="../aulas/Aula Quarto.html">
+ <span class="dropdown-text">Aula 1 - Quarto</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../aulas/Pratica - Semana 2.html">
+ <span class="dropdown-text">Aula 2 - Manipulação de Dados</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../aulas/Pratica - Semana 3.html">
+ <span class="dropdown-text">Aula 3 - Visualização de Dados</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../aulas/Pratica- Semana 3 - Parte2.html">
+ <span class="dropdown-text">Aula 4 - Customizações</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../aulas/Aula_Mapa 2024.html">
+ <span class="dropdown-text">Aula 5 - Mapas</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../aulas/Aula_Mapa 2024.html">Aula 5 - Mapas</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Aula 5 - Mapas</h1>
+            <p class="subtitle lead">Ferramentas básicas para representação espacial no R</p>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Marina C Scalon </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">May 25, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../aulas/Aula Quarto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Aula 1 - Quarto</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../aulas/Pratica - Semana 2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Aula 2 - Manipulação de Dados</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../aulas/Pratica - Semana 3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Aula 3 - Visualização de Dados</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../aulas/Pratica- Semana 3 - Parte2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Aula 4 - Customizações</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../aulas/Aula_Mapa 2024.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Aula 5 - Mapas</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#o-r-pode-ser-usado-para-fazer-mapas" id="toc-o-r-pode-ser-usado-para-fazer-mapas" class="nav-link active" data-scroll-target="#o-r-pode-ser-usado-para-fazer-mapas">O R pode ser usado para fazer mapas!</a></li>
+  <li><a href="#maps-e-ggmap" id="toc-maps-e-ggmap" class="nav-link" data-scroll-target="#maps-e-ggmap">maps e ggmap</a>
+  <ul class="collapse">
+  <li><a href="#mapa-do-mundo" id="toc-mapa-do-mundo" class="nav-link" data-scroll-target="#mapa-do-mundo">Mapa do mundo</a></li>
+  <li><a href="#região-delimitada-do-mapa-mundial" id="toc-região-delimitada-do-mapa-mundial" class="nav-link" data-scroll-target="#região-delimitada-do-mapa-mundial">Região delimitada do mapa mundial</a></li>
+  <li><a href="#região-delimitada-com-map_data-do-ggplot2" id="toc-região-delimitada-com-map_data-do-ggplot2" class="nav-link" data-scroll-target="#região-delimitada-com-map_data-do-ggplot2">Região delimitada com map_data do ggplot2</a></li>
+  <li><a href="#várias-regiões" id="toc-várias-regiões" class="nav-link" data-scroll-target="#várias-regiões">Várias regiões</a></li>
+  <li><a href="#incluir-pontos-de-um-dataset" id="toc-incluir-pontos-de-um-dataset" class="nav-link" data-scroll-target="#incluir-pontos-de-um-dataset">Incluir pontos de um dataset</a></li>
+  <li><a href="#utilizando-o-pacote-rgbif-acesso-ao-banco-de-dados-da-gbif" id="toc-utilizando-o-pacote-rgbif-acesso-ao-banco-de-dados-da-gbif" class="nav-link" data-scroll-target="#utilizando-o-pacote-rgbif-acesso-ao-banco-de-dados-da-gbif">Utilizando o pacote rgbif (acesso ao banco de dados da GBIF)</a></li>
+  </ul></li>
+  <li><a href="#pacotes-para-dados-geográficos" id="toc-pacotes-para-dados-geográficos" class="nav-link" data-scroll-target="#pacotes-para-dados-geográficos">Pacotes para dados geográficos</a>
+  <ul class="collapse">
+  <li><a href="#pacote-geobr" id="toc-pacote-geobr" class="nav-link" data-scroll-target="#pacote-geobr">Pacote geobr</a></li>
+  <li><a href="#pacote-mapview" id="toc-pacote-mapview" class="nav-link" data-scroll-target="#pacote-mapview">Pacote mapview</a></li>
+  <li><a href="#customização-de-mapas" id="toc-customização-de-mapas" class="nav-link" data-scroll-target="#customização-de-mapas">Customização de mapas</a></li>
+  <li><a href="#mapas-a-partir-de-shapefiles" id="toc-mapas-a-partir-de-shapefiles" class="nav-link" data-scroll-target="#mapas-a-partir-de-shapefiles">Mapas a partir de shapefiles</a></li>
+  <li><a href="#pacote-terra-como-subtituto-do-finado-raster" id="toc-pacote-terra-como-subtituto-do-finado-raster" class="nav-link" data-scroll-target="#pacote-terra-como-subtituto-do-finado-raster">Pacote <em>terra</em> como subtituto do finado <em>raster</em></a></li>
+  <li><a href="#alguns-siteslivros-úteis-para-aprofundar-em-r-espacial" id="toc-alguns-siteslivros-úteis-para-aprofundar-em-r-espacial" class="nav-link" data-scroll-target="#alguns-siteslivros-úteis-para-aprofundar-em-r-espacial">Alguns sites/livros úteis para aprofundar em R espacial</a></li>
+  </ul></li>
+  <li><a href="#chegaaaaaaaa-socorroooo" id="toc-chegaaaaaaaa-socorroooo" class="nav-link" data-scroll-target="#chegaaaaaaaa-socorroooo">CHEGAAAAAAAA SOCORROOOO</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="o-r-pode-ser-usado-para-fazer-mapas" class="level3">
+<h3 class="anchored" data-anchor-id="o-r-pode-ser-usado-para-fazer-mapas">O R pode ser usado para fazer mapas!</h3>
+<p>Nessa aula vamos aprender algumas ferramentas básicas de representações espaciais.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Essa não é minha área então considere apenas uma apresentação das ferramentas possíveis para serem exploradas independentemente!!</p>
+</div>
+</div>
+</section>
+<section id="maps-e-ggmap" class="level1">
+<h1>maps e ggmap</h1>
+<p>Podemos plotar mapas de maneira bem simples utilizando o pacote ggmap que segue a mesma estrutura do ggplot2, então todas as opções de customização que já aprendemos podem ser aplicadas</p>
+<p>É necessário carregar (instalar previamente, caso não tenha na biblioteca) esses pacotes:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggmap)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(maps)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="mapa-do-mundo" class="level3">
+<h3 class="anchored" data-anchor-id="mapa-do-mundo">Mapa do mundo</h3>
+<p>Para gerar um mapa do mundo é BEM simples: basta chamar os dados “world” com a função <strong>map_data</strong> do ggplot2.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mundo <span class="ot">&lt;-</span> <span class="fu">map_data</span>(<span class="st">"world"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mundo, <span class="fu">aes</span>(<span class="at">x=</span>long, <span class="at">y=</span>lat, <span class="at">group=</span>group))<span class="sc">+</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="at">fill=</span><span class="st">"lightgray"</span>, <span class="at">colour =</span> <span class="st">"black"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Aula_Mapa-2024_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Figura 1. Mapa do Mundo com ggplot2 e geom_polygon</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>()<span class="sc">+</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_map</span>(<span class="at">data=</span>mundo, <span class="at">map=</span>mundo, <span class="fu">aes</span>(<span class="at">x=</span>long, <span class="at">y=</span>lat, <span class="at">map_id=</span>region))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in geom_map(data = mundo, map = mundo, aes(x = long, y = lat, map_id =
+region)): Ignoring unknown aesthetics: x and y</code></pre>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Aula_Mapa-2024_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Figura 2. Mapa do Mundo com ggplot2 e geom_map</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Também podemos usar a camada borders do pacote ggmap.</p>
+<div class="cell" width="10" height="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>()<span class="sc">+</span> <span class="fu">borders</span>(<span class="st">"world"</span>, <span class="at">fill =</span> <span class="st">"grey70"</span>, <span class="at">colour =</span> <span class="st">"black"</span>)<span class="sc">+</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_quickmap</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: `borders()` was deprecated in ggplot2 4.0.0.
+ℹ Please use `annotation_borders()` instead.</code></pre>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Aula_Mapa-2024_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Figura 3. Mapa do Mundo simples com ggmap</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="região-delimitada-do-mapa-mundial" class="level3">
+<h3 class="anchored" data-anchor-id="região-delimitada-do-mapa-mundial">Região delimitada do mapa mundial</h3>
+<p>Para selecionar determinada região do mapa mundial, podemos usar alguns recursos:</p>
+<section id="limitar-as-dimensões-para-a-região-desejada" class="level4">
+<h4 class="anchored" data-anchor-id="limitar-as-dimensões-para-a-região-desejada">Limitar as dimensões para a região desejada</h4>
+<p>No caso, estou colocando um ponto vermelho onde fica a cidade de Curitiba e tentando limitar apenas para mostrar o Brasil</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note que com xlim e ylim como camada não fica bom.</p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>()<span class="sc">+</span> <span class="fu">borders</span>(<span class="st">"world"</span>, <span class="at">fill =</span> <span class="st">"grey70"</span>, <span class="at">colour =</span> <span class="st">"black"</span>)<span class="sc">+</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span> (<span class="sc">-</span><span class="dv">100</span>,<span class="sc">-</span><span class="dv">20</span>)<span class="sc">+</span> <span class="fu">ylim</span>(<span class="sc">-</span><span class="dv">45</span>,<span class="dv">10</span>)<span class="sc">+</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="sc">-</span><span class="fl">49.3044</span>, <span class="at">y=</span><span class="sc">-</span><span class="fl">25.4809</span>, <span class="at">colour =</span> <span class="st">"red"</span>)) <span class="sc">+</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">'none'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Aula_Mapa-2024_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Figura 4. Mapa do Brasil destacando a cidade de Curitiba com as projeções desconfiguradas</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Também continua desconfigurado com os limites inseridos na camada principal</p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>()<span class="sc">+</span> <span class="fu">borders</span>(<span class="st">"world"</span>, <span class="at">fill =</span> <span class="st">"grey70"</span>, <span class="at">colour =</span> <span class="st">"black"</span>,  <span class="at">xlim=</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">100</span>,<span class="sc">-</span><span class="dv">20</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">45</span>,<span class="dv">10</span>))<span class="sc">+</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="sc">-</span><span class="fl">49.3044</span>, <span class="at">y=</span><span class="sc">-</span><span class="fl">25.4809</span>, <span class="at">colour =</span> <span class="st">"red"</span>)) <span class="sc">+</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">'none'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Aula_Mapa-2024_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Figura 5. Mapa do Brasil destacando a cidade de Curitiba com as projeções ainda desconfiguradas</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>É necessário utilizar o xlim e ylim no parâmetro coord_fixed() para ficar certo.</p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>()<span class="sc">+</span> <span class="fu">borders</span>(<span class="st">"world"</span>, <span class="at">fill =</span> <span class="st">"grey70"</span>, <span class="at">colour =</span> <span class="st">"black"</span>)<span class="sc">+</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="sc">-</span><span class="fl">49.3044</span>, <span class="at">y=</span><span class="sc">-</span><span class="fl">25.4809</span>, <span class="at">colour =</span> <span class="st">"red"</span>)) <span class="sc">+</span> </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>(<span class="at">xlim=</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">100</span>,<span class="sc">-</span><span class="dv">20</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">45</span>,<span class="dv">10</span>))<span class="sc">+</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">'none'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Aula_Mapa-2024_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Figura 6. Mapa do Brasil destacando a cidade de Curitiba com as projeções corretas</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="região-delimitada-com-map_data-do-ggplot2" class="level3">
+<h3 class="anchored" data-anchor-id="região-delimitada-com-map_data-do-ggplot2">Região delimitada com map_data do ggplot2</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mundo, <span class="fu">aes</span>(<span class="at">x=</span>long, <span class="at">y=</span>lat, <span class="at">group=</span>group))<span class="sc">+</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="at">fill=</span><span class="st">"lightgray"</span>, <span class="at">colour =</span> <span class="st">"black"</span>)<span class="sc">+</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="sc">-</span><span class="fl">49.3044</span>, <span class="at">y=</span><span class="sc">-</span><span class="fl">25.4809</span>, <span class="at">colour =</span> <span class="st">"red"</span>)) <span class="sc">+</span> </span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>(<span class="at">xlim=</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">100</span>,<span class="sc">-</span><span class="dv">30</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">45</span>,<span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Aula_Mapa-2024_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Figura 7. Mapa do Brasil destacando a cidade de Curitiba com o ggplot2</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<section id="determinar-pelo-nome-da-região-desejada-utilizando-o-parâmetro-regions" class="level4">
+<h4 class="anchored" data-anchor-id="determinar-pelo-nome-da-região-desejada-utilizando-o-parâmetro-regions">Determinar pelo nome da região desejada, utilizando o parâmetro <strong>regions</strong></h4>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Da mesma forma, a projeção só fica boa de verdade com coord_fixed() ou coord_quickmap()</p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>()<span class="sc">+</span> <span class="fu">borders</span>(<span class="st">"world"</span>,<span class="at">regions =</span> <span class="st">"Brazil"</span>, <span class="at">fill =</span> <span class="st">"grey70"</span>, <span class="at">colour =</span> <span class="st">"black"</span>)<span class="sc">+</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="sc">-</span><span class="fl">49.3044</span>, <span class="at">y=</span><span class="sc">-</span><span class="fl">25.4809</span>, <span class="at">colour =</span> <span class="st">"red"</span>)) <span class="sc">+</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">'none'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Aula_Mapa-2024_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Figura 8. Mapa do Brasil destacando a cidade de Curitiba utilizado regions com as projeções desconfiguradas</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>()<span class="sc">+</span> <span class="fu">borders</span>(<span class="st">"world"</span>,<span class="at">regions =</span> <span class="st">"Brazil"</span>, <span class="at">fill =</span> <span class="st">"grey70"</span>, <span class="at">colour =</span> <span class="st">"black"</span>)<span class="sc">+</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="sc">-</span><span class="fl">49.3044</span>, <span class="at">y=</span><span class="sc">-</span><span class="fl">25.4809</span>, <span class="at">colour =</span> <span class="st">"red"</span>)) <span class="sc">+</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>()<span class="sc">+</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">'none'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Aula_Mapa-2024_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Figura 9. Mapa do Brasil destacando a cidade de Curitiba utilizado regions com as projeções corretas</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="várias-regiões" class="level3">
+<h3 class="anchored" data-anchor-id="várias-regiões">Várias regiões</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>sa<span class="ot">=</span><span class="fu">c</span>(<span class="st">"Brazil"</span>, <span class="st">"Argentina"</span>, <span class="st">"Chile"</span>, <span class="st">"Uruguay"</span>, <span class="st">"Paraguay"</span>, <span class="st">"Ecuador"</span>, <span class="st">"Peru"</span>, <span class="st">"Venezuela"</span>,</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Colombia"</span>, <span class="st">"Bolivia"</span>, <span class="st">"French Guiana"</span>, <span class="st">"Surinam"</span>, <span class="st">"Guyana"</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>mapa_sa<span class="ot">&lt;-</span><span class="fu">map_data</span>(<span class="st">"world"</span>, <span class="at">region=</span>sa) </span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mapa_sa, <span class="fu">aes</span>(<span class="at">x=</span>long, <span class="at">y=</span>lat, <span class="at">group=</span>group, <span class="at">fill=</span> region))<span class="sc">+</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>()<span class="sc">+</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="sc">-</span><span class="fl">49.3044</span>, <span class="at">y=</span><span class="sc">-</span><span class="fl">25.4809</span>, <span class="at">colour =</span> <span class="st">"red"</span>)) <span class="sc">+</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Aula_Mapa-2024_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Figura 10. Mapa dos países da América do Sul destacando a cidade de Curitiba utilizado regions com as projeções corretas</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="incluir-pontos-de-um-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="incluir-pontos-de-um-dataset">Incluir pontos de um dataset</h3>
+<p>No dataset deve ter especificado os valores de latitude e longitude.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>feederwatch <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-01-10/PFW_2021_public.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 100000 Columns: 22
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (8): loc_id, subnational1_code, entry_technique, sub_id, obs_id, PROJ_P...
+dbl (14): latitude, longitude, Month, Day, Year, how_many, valid, reviewed, ...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>()<span class="sc">+</span> <span class="fu">borders</span>(<span class="st">"world"</span>, <span class="at">fill =</span> <span class="st">"grey70"</span>, <span class="at">colour =</span> <span class="st">"black"</span>)<span class="sc">+</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span>feederwatch<span class="sc">$</span>longitude, <span class="at">y=</span>feederwatch<span class="sc">$</span>latitude), <span class="at">color=</span><span class="st">"red"</span>, <span class="at">alpha=</span><span class="fl">0.5</span>)<span class="sc">+</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Aula_Mapa-2024_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Figura 11. Mapa dos mundo com a localização dos pássaros observados em alimentadores</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Cortando para região</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>()<span class="sc">+</span> <span class="fu">borders</span>(<span class="st">"world"</span>, <span class="at">fill =</span> <span class="st">"grey70"</span>, <span class="at">colour =</span> <span class="st">"black"</span>)<span class="sc">+</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span>feederwatch<span class="sc">$</span>longitude, <span class="at">y=</span>feederwatch<span class="sc">$</span>latitude), <span class="at">color=</span><span class="st">"red"</span>, <span class="at">alpha=</span><span class="fl">0.5</span>)<span class="sc">+</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>(<span class="at">xlim=</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">170</span>,<span class="sc">-</span><span class="dv">50</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">75</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Aula_Mapa-2024_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Figura 12. Mapa recortado com a localização dos pássaros observados em alimentadores</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Adicionar a camada geom_map() é melhor para fazer várias camadas de gráficos, usando todos os recursos do ggplot</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>feederwatch, <span class="fu">aes</span>(<span class="at">x=</span>longitude, <span class="at">y=</span>latitude))<span class="sc">+</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_map</span>(<span class="at">data=</span>mundo, <span class="at">map=</span>mundo, <span class="fu">aes</span>(<span class="at">x=</span>long, <span class="at">y=</span>lat, <span class="at">map_id=</span>region), <span class="at">fill=</span><span class="st">"lightgray"</span>, <span class="at">color=</span><span class="st">"black"</span>)<span class="sc">+</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(longitude, <span class="at">y=</span>latitude, <span class="at">color=</span><span class="fu">as.factor</span>(Year)), <span class="at">alpha=</span><span class="fl">0.5</span>)<span class="sc">+</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>(<span class="at">xlim=</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">170</span>,<span class="sc">-</span><span class="dv">50</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">75</span>))<span class="sc">+</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Year)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in geom_map(data = mundo, map = mundo, aes(x = long, y = lat, map_id =
+region), : Ignoring unknown aesthetics: x and y</code></pre>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Aula_Mapa-2024_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Figura 13. Mapa recortado com a localização dos pássaros observados em 2020 e 2021 em alimentadores</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="utilizando-o-pacote-rgbif-acesso-ao-banco-de-dados-da-gbif" class="level2">
+<h2 class="anchored" data-anchor-id="utilizando-o-pacote-rgbif-acesso-ao-banco-de-dados-da-gbif">Utilizando o pacote rgbif (acesso ao banco de dados da GBIF)</h2>
+<p>GBIF: Global Biodiversity Information Facility</p>
+<ol type="1">
+<li>Carregar o pacote</li>
+<li>Definir a espécie que você quer dando nome científico</li>
+<li>Escolher dados apenas que possuam coordinadas (hasCoordinate=T)</li>
+<li>Pode-se limitar a região por latitude ou longitude ou nomeando o pais pela sigla internacional com 2 letras</li>
+<li>Transformar os dados importados em data frame usando a função as.data.frame()</li>
+</ol>
+<section id="ocorrência-de-puma-concolor-para-qualquer-lugar-do-mundo" class="level4">
+<h4 class="anchored" data-anchor-id="ocorrência-de-puma-concolor-para-qualquer-lugar-do-mundo">Ocorrência de <em>Puma concolor</em> para qualquer lugar do mundo</h4>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Limitei com o parâmetro <strong>limit</strong> para 500 observações senão demora muito pra carregar</p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rgbif)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>ocorrencia<span class="ot">&lt;-</span><span class="fu">occ_search</span>(<span class="at">scientificName=</span><span class="st">"Puma concolor"</span>, <span class="at">hasCoordinate=</span>T, <span class="at">limit=</span><span class="dv">500</span>)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(ocorrencia)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "meta"            "hierarchy"       "data"            "media"          
+[5] "classifications" "facets"         </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>localizacao <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(ocorrencia<span class="sc">$</span>data) <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">4</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Lat =</span> decimalLatitude, <span class="at">Long=</span>decimalLongitude)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(localizacao)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>         Lat       Long
+1 -32.860347  -61.97745
+2  26.095219  -81.45140
+3  25.982568 -100.88071
+4  51.193026 -115.19125
+5  25.982535 -100.88062
+6   8.663483  -83.25675</code></pre>
+</div>
+</div>
+</section>
+<section id="ocorrência-de-puma-concolor-para-o-brasil-apenas" class="level4">
+<h4 class="anchored" data-anchor-id="ocorrência-de-puma-concolor-para-o-brasil-apenas">Ocorrência de <em>Puma concolor</em> para o Brasil apenas</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>ocorrencia.br<span class="ot">&lt;-</span><span class="fu">occ_search</span>(<span class="at">scientificName=</span><span class="st">"Puma concolor"</span>, <span class="at">country=</span><span class="st">"BR"</span>, <span class="at">hasCoordinate=</span>T)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>localizacao.br <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(ocorrencia.br<span class="sc">$</span>data)<span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">4</span>) <span class="sc">%&gt;%</span> <span class="fu">rename</span>(<span class="at">Lat =</span> decimalLatitude, <span class="at">Long=</span>decimalLongitude)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Agora vamos inserir os pontos de ocorrência num mapa. Podemos usar o <strong>borders()</strong> como ensinado, ou google maps, ou o que preferir!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">borders</span>(<span class="st">"world"</span>, <span class="at">colour=</span><span class="st">"grey"</span>, <span class="at">fill=</span><span class="st">"lightgray"</span>) <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span>Long,<span class="at">y=</span>Lat),<span class="at">data=</span>localizacao,<span class="at">colour=</span><span class="st">"gold"</span>,<span class="at">size=</span><span class="dv">2</span>,<span class="at">alpha=</span><span class="fl">0.1</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Aula_Mapa-2024_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Figura 14. Ocorrência de Puma concolor no mundo</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">borders</span>(<span class="st">"world"</span>, <span class="at">colour=</span><span class="st">"grey"</span>, <span class="at">fill=</span><span class="st">"lightgray"</span>) <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span>Long,<span class="at">y=</span>Lat),<span class="at">data=</span>localizacao,<span class="at">colour=</span><span class="st">"gold"</span>,<span class="at">size=</span><span class="dv">2</span>,<span class="at">alpha=</span><span class="fl">0.1</span>) <span class="sc">+</span> <span class="fu">coord_fixed</span>(<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">150</span>,<span class="sc">-</span><span class="dv">20</span>)) <span class="co">#ficando na América apenas</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Aula_Mapa-2024_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Figura 15. Ocorrência de Puma concolor no Brasil</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Para ajustar exatamente as medidas do mapa com a distribuição podemos gerar um vetor para restringir as coordenadas, baseado na distribuição máxima e mínima da espécie:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>distribuicao<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fu">min</span>(localizacao<span class="sc">$</span>Long,<span class="at">na.rm=</span>T)<span class="sc">-</span><span class="dv">1</span>,</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>            <span class="fu">min</span>(localizacao<span class="sc">$</span>Lat,<span class="at">na.rm=</span>T)<span class="sc">-</span><span class="dv">1</span>,</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>            <span class="fu">max</span>(localizacao<span class="sc">$</span>Long,<span class="at">na.rm=</span>T)<span class="sc">+</span><span class="dv">1</span>,</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>            <span class="fu">max</span>(localizacao<span class="sc">$</span>Lat,<span class="at">na.rm=</span>T)<span class="sc">+</span><span class="dv">1</span>)</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">borders</span>(<span class="st">"world"</span>, <span class="at">colour=</span><span class="st">"grey"</span>, <span class="at">fill=</span><span class="st">"lightgray"</span>) <span class="sc">+</span> </span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span>Long,<span class="at">y=</span>Lat),<span class="at">data=</span>localizacao,<span class="at">colour=</span><span class="st">"black"</span>,<span class="at">size=</span><span class="dv">2</span>,<span class="at">alpha=</span><span class="fl">0.1</span>)<span class="sc">+</span></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>(<span class="at">xlim=</span>distribuicao[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)], <span class="at">ylim=</span>distribuicao[<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Aula_Mapa-2024_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Figura 16. Mapa recortado para otimizar os locais de ocorrência de onça parda</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="pacotes-para-dados-geográficos" class="level1">
+<h1>Pacotes para dados geográficos</h1>
+<p>Alguns pacotes são bem úteis para baixar dados geográficos diretamente, e vamos conhecer alguns deles que possam ter utilidade na área de ecologia</p>
+<section id="pacote-geobr" class="level2">
+<h2 class="anchored" data-anchor-id="pacote-geobr">Pacote <a href="https://cran.r-project.org/web/packages/geobr/vignettes/intro_to_geobr.html">geobr</a></h2>
+<p>Com vários dados oficiais para o Brasil!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(geobr)  </span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>datasets <span class="ot">&lt;-</span> <span class="fu">list_geobr</span>() </span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(datasets)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Vamos criar um shapefile com os municípios do estado do Paraná e plotar usando a função <em>geom_sf</em> do ggplot.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>muni_PR <span class="ot">&lt;-</span> <span class="fu">read_municipality</span>(<span class="at">code_muni =</span> <span class="st">"PR"</span>, </span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">year=</span><span class="dv">2020</span>, <span class="at">showProgress =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Using year/date 2020</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(muni_PR)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "sf"         "data.frame"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data=</span>muni_PR, <span class="at">fill=</span><span class="st">"lightgrey"</span>, <span class="at">color=</span><span class="st">"black"</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Aula_Mapa-2024_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Figura 17. Municípios do estado do Paraná, Brasil</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Também é possivel obter os limites dos biomas com geom_br</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>biomas <span class="ot">&lt;-</span> <span class="fu">read_biomes</span>(<span class="at">year=</span><span class="dv">2019</span>, <span class="at">showProgress =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Using year/date 2019</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(biomas)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Simple feature collection with 6 features and 3 fields
+Geometry type: MULTIPOLYGON
+Dimension:     XY
+Bounding box:  xmin: -73.98304 ymin: -33.75115 xmax: -28.84785 ymax: 5.269581
+Geodetic CRS:  SIRGAS 2000
+      name_biome code_biome year                           geom
+1       Amazônia          1 2019 MULTIPOLYGON (((-44.08515 -...
+2       Caatinga          2 2019 MULTIPOLYGON (((-41.7408 -2...
+3        Cerrado          3 2019 MULTIPOLYGON (((-43.39009 -...
+4 Mata Atlântica          4 2019 MULTIPOLYGON (((-48.70814 -...
+5          Pampa          5 2019 MULTIPOLYGON (((-52.82472 -...
+6       Pantanal          6 2019 MULTIPOLYGON (((-57.75946 -...</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data=</span>biomas,  <span class="at">color=</span><span class="st">"black"</span>, <span class="fu">aes</span>(<span class="at">fill=</span>name_biome)) <span class="sc">+</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Aula_Mapa-2024_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Figura 18. Biomas do Brasil</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Para tirar o sistema costeiro</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data=</span> <span class="fu">slice</span>(biomas,<span class="sc">-</span><span class="dv">7</span>),  <span class="at">color=</span><span class="st">"black"</span>, <span class="fu">aes</span>(<span class="at">fill=</span>name_biome)) <span class="sc">+</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Aula_Mapa-2024_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Figura 19. Biomas do Brasil sem o sistema costeiro</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="pacote-mapview" class="level2">
+<h2 class="anchored" data-anchor-id="pacote-mapview">Pacote <a href="https://r-spatial.github.io/mapview/">mapview</a></h2>
+<p>Muito legal para fazer mapas interativos! Não necessariamente para publicações, mas talvez apresentações e visualizações diversas.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mapview)</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="co"># mapview(biomas, zcol = "name_biome")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># mapview(muni_PR, zcol = "name_muni")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="customização-de-mapas" class="level2">
+<h2 class="anchored" data-anchor-id="customização-de-mapas">Customização de mapas</h2>
+<p>Agora vamos aprender a deixar os mapas com qualidade para publicação! Alguns requisitos são essenciais nessa etapa:</p>
+<ol type="1">
+<li>Todo mapa DEVE conter uma barra de escala!</li>
+<li>Todo mapa deve conter também a orientação (apontando para o norte)</li>
+<li>Interessante prestar bastante atenção nas cores</li>
+<li>Não representar países que não são ilhas isoladamente!!</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data=</span> <span class="fu">slice</span>(biomas,<span class="sc">-</span><span class="dv">7</span>),  <span class="fu">aes</span>(<span class="at">fill=</span>name_biome, <span class="at">alpha=</span><span class="fl">0.7</span>)) <span class="sc">+</span></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">terrain.colors</span>(<span class="dv">7</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Aula_Mapa-2024_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Figura 22. Biomas do Brasil bonito</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Agora do jeito correto, usaremos o pacote <em>ggspatial</em> para inserir o símbolo apontando para o norte e a escala ao mapa (funções <strong>annotation_north_arrow</strong> e <strong>annotation_scale</strong> respectivamente).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggspatial)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Para verificar os diferentes estilos de seta, checar os [exemplos]<a href="https://paleolimbot.github.io/ggspatial/reference/north_arrow_orienteering.html" class="uri">https://paleolimbot.github.io/ggspatial/reference/north_arrow_orienteering.html</a></p>
+</div>
+</div>
+<p>Figura final</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>()<span class="sc">+</span> <span class="fu">borders</span>(<span class="st">"world"</span>, <span class="at">fill =</span> <span class="st">"lightgray"</span>, <span class="at">colour =</span> <span class="st">"gray"</span>)<span class="sc">+</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data=</span> <span class="fu">slice</span>(biomas,<span class="sc">-</span><span class="dv">7</span>),  <span class="fu">aes</span>(<span class="at">fill=</span>name_biome, <span class="at">alpha=</span><span class="fl">0.7</span>)) <span class="sc">+</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">terrain.colors</span>(<span class="dv">7</span>))<span class="sc">+</span></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">xlim=</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">80</span>,<span class="sc">-</span><span class="dv">30</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">40</span>,<span class="dv">10</span>))<span class="sc">+</span></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.8</span>,<span class="fl">0.9</span>), <span class="at">legend.background =</span> <span class="fu">element_blank</span>(), <span class="at">legend.text=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>),</span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.key.size =</span> <span class="fu">unit</span>(<span class="fl">0.4</span>, <span class="st">"cm"</span>),</span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"darkgray"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">size =</span> <span class="fl">0.5</span>), </span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"aliceblue"</span>),</span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title =</span> <span class="fu">element_blank</span>())<span class="sc">+</span></span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">nrow =</span> <span class="dv">3</span>), <span class="at">alpha=</span> <span class="st">"none"</span>)<span class="sc">+</span></span>
+<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_north_arrow</span>(<span class="at">location=</span><span class="st">"br"</span>, <span class="at">style=</span>north_arrow_nautical, <span class="at">pad_x =</span>  <span class="fu">unit</span>(<span class="dv">2</span>, <span class="st">"cm"</span>), <span class="at">pad_y =</span> <span class="fu">unit</span>(<span class="dv">2</span>, <span class="st">"cm"</span>))<span class="sc">+</span></span>
+<span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_scale</span>(<span class="at">location =</span> <span class="st">"tl"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: The `size` argument of `element_line()` is deprecated as of ggplot2 3.4.0.
+ℹ Please use the `linewidth` argument instead.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Scale on map varies by more than 10%, scale bar may be inaccurate</code></pre>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Aula_Mapa-2024_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid figure-img" width="1920"></p>
+<figcaption>Figura 24. Mapa dos Biomas do Brasil final</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="mapas-a-partir-de-shapefiles" class="level2">
+<h2 class="anchored" data-anchor-id="mapas-a-partir-de-shapefiles">Mapas a partir de shapefiles</h2>
+<p>Shapefiles (.shp) podem ser encontrados em diversos banco de dados na internet. Alguns comumente utilizados no Brasil são o do IBGE, INPE, ANA e diversos sites do governo. Para dados internacionais, temos vários disponíveis gratuitamente</p>
+<p>&gt; confira uma tabela nesse link: <a href="https://www.oryxthejournal.org/writing-for-conservation-guide/map-with-a-message.html#tab:data-sources" class="uri">https://www.oryxthejournal.org/writing-for-conservation-guide/map-with-a-message.html#tab:data-sources</a></p>
+</section>
+<section id="pacote-terra-como-subtituto-do-finado-raster" class="level2">
+<h2 class="anchored" data-anchor-id="pacote-terra-como-subtituto-do-finado-raster">Pacote <em>terra</em> como subtituto do finado <em>raster</em></h2>
+<p>Muito conteúdo BEM completo no site deles <a href="https://rspatial.org/pkg/index.html" class="uri">https://rspatial.org/pkg/index.html</a></p>
+<p>Vários dados disponíveis no site do INPE <a href="http://www.dpi.inpe.br/Ambdata/download.php" class="uri">http://www.dpi.inpe.br/Ambdata/download.php</a></p>
+<blockquote class="blockquote">
+<p>Outra opção (que eu achei bem mais pesada) é usar o pacote <a href="https://cran.r-project.org/web/packages/geodata/geodata.pdf">geodata</a> Útil para dados globais de clima (wordclim), elevação, uso da terra, solo, ocorrência de espécies pelo gbif, limites administrativos, etc.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Opções para dados globais (função <strong>worldclim_global</strong>), por país (<strong>worldclim_country</strong>) ou para determinada latitude e longitude (<strong>worldclim_tile</strong>)</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>library(geodata)</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>clim_brasil &lt;- worldclim_country(country= “BR”, var=“bio”, res=10, download=T, path= tempdir(), version = “2.1”)</p>
+</blockquote>
+<p>Vamos baixar apenas a bio1 - Temperatura média pra ir mais rápido, ams se for baixar todas vai vir num arquivo .zip e será nescessário unzip na sua pasta de destino para utilizar.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(<span class="st">"http://www.dpi.inpe.br/amb_data/Brasil/bio1_br.asc"</span>, <span class="at">destfile=</span><span class="st">"bio1_br.asc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(terra)</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>temp <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="st">'bio1_br.asc'</span>)</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(temp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "SpatRaster"
+attr(,"package")
+[1] "terra"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(temp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Aula_Mapa-2024_files/figure-html/unnamed-chunk-30-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Figura 25. Temperatura média anual para o Brasil</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Para plotar com ggmap precisa transformar em dataframe</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Para saber as unidades e quais são as variáveis verificar em <a href="https://www.worldclim.org/" class="uri">https://www.worldclim.org/</a></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>temp_df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(temp, <span class="at">xy=</span>T)</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="at">data =</span> temp_df, </span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">fill =</span> bio1_br<span class="sc">/</span><span class="dv">10</span>))<span class="sc">+</span> <span class="co">#unidade do worldclim é oC*10</span></span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Aula_Mapa-2024_files/figure-html/unnamed-chunk-31-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Figura 26. Temperatura média anual para o Brasil com ggmap</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Agora se a gente quiser só para alguma localização específica,temos que editar o arquivo. Para isso temos a função <em>crop</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>ext <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">50</span>,<span class="sc">-</span><span class="dv">40</span>, <span class="sc">-</span><span class="dv">25</span>,<span class="sc">-</span><span class="dv">20</span>) <span class="co"># Para alguma localização específica</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>temp_x <span class="ot">&lt;-</span> <span class="fu">crop</span>(temp, ext)</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(temp_x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Aula_Mapa-2024_files/figure-html/unnamed-chunk-32-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Figura 27. Temperatura média anual para uma localização aleatória</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Para o Paraná vamos usar o shape do geobr para cortar o raster no tamanho certo</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>estado_PR <span class="ot">&lt;-</span> <span class="fu">read_state</span>(<span class="at">code_state =</span> <span class="st">"PR"</span>, </span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">year=</span><span class="dv">2020</span>, </span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">showProgress =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Using year/date 2020</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data=</span>estado_PR, <span class="at">fill=</span><span class="st">"lightgrey"</span>, <span class="at">color=</span><span class="st">"black"</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Aula_Mapa-2024_files/figure-html/unnamed-chunk-33-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Figura 28. Estado do Paraná</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>temp_pr <span class="ot">&lt;-</span> <span class="fu">crop</span>(temp, estado_PR)</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>temp_pr_df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(temp_pr, <span class="at">xy=</span>T)</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="at">data=</span>temp_pr_df, <span class="fu">aes</span>(x,y, <span class="at">fill=</span>bio1_br<span class="sc">/</span><span class="dv">10</span>))<span class="sc">+</span></span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_equal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Aula_Mapa-2024_files/figure-html/unnamed-chunk-34-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Figura 29. Temperatura média para o Estado do Paraná</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Atenção para customizações de escala!!! O resultado do seu mapa depende muito disso!</p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>()<span class="sc">+</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="at">data=</span>temp_pr_df, <span class="fu">aes</span>(x,y, <span class="at">fill=</span>bio1_br<span class="sc">/</span><span class="dv">10</span>))<span class="sc">+</span></span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient2</span>(<span class="at">na.value=</span><span class="st">"white"</span>, <span class="at">low=</span> <span class="st">"steelblue3"</span>, <span class="at">mid=</span><span class="st">"gray94"</span>, <span class="at">high=</span><span class="st">"brown3"</span>, <span class="at">limits=</span><span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">29</span>), <span class="at">midpoint =</span> <span class="dv">18</span>, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">15</span>,<span class="dv">20</span>, <span class="dv">25</span>))<span class="sc">+</span>  </span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data=</span>estado_PR, <span class="at">fill=</span><span class="cn">NA</span>, <span class="at">color=</span><span class="st">"black"</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text =</span> <span class="fu">element_blank</span>(), <span class="at">axis.ticks =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title =</span> <span class="fu">element_blank</span>(), <span class="at">panel.background =</span> <span class="fu">element_blank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Aula_Mapa-2024_files/figure-html/unnamed-chunk-35-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Figura 30. Temperatura média anual para o Paraná com escala ajustada</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="alguns-siteslivros-úteis-para-aprofundar-em-r-espacial" class="level2">
+<h2 class="anchored" data-anchor-id="alguns-siteslivros-úteis-para-aprofundar-em-r-espacial">Alguns sites/livros úteis para aprofundar em R espacial</h2>
+<p><a href="https://www.ecologi.st/spatial-r/" class="uri">https://www.ecologi.st/spatial-r/</a></p>
+<p><a href="https://tmieno2.github.io/R-as-GIS-for-Economists/" class="uri">https://tmieno2.github.io/R-as-GIS-for-Economists/</a></p>
+<p><a href="https://damariszurell.github.io/EEC-MGC/a1_SpatialData.html" class="uri">https://damariszurell.github.io/EEC-MGC/a1_SpatialData.html</a></p>
+<p><a href="https://rspatial.org/terra/spatial/Spatialdata.pdf" class="uri">https://rspatial.org/terra/spatial/Spatialdata.pdf</a></p>
+<p><a href="https://cran.r-project.org/doc/contrib/intro-spatial-rl.pdf" class="uri">https://cran.r-project.org/doc/contrib/intro-spatial-rl.pdf</a></p>
+</section>
+</section>
+<section id="chegaaaaaaaa-socorroooo" class="level1">
+<h1>CHEGAAAAAAAA SOCORROOOO</h1>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

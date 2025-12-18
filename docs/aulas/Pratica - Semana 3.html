@@ -1,0 +1,1682 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="author" content="Marina Scalon">
+<title>Aula 3 - Visualização de Dados – Marina Scalon</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-d1dcb668c252c18fe58aef64f9439a14.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script><link rel="stylesheet" href="../styles.css">
+</head>
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Marina Scalon</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+<li class="nav-item">
+    <a class="nav-link" href="../index.html"> <i class="bi bi-house-fill" role="img">
+</i> 
+<span class="menu-text"> </span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../publications.html"> 
+<span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../TidyTuesday.html"> 
+<span class="menu-text">TidyTuesday</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-aulas-2024-(português" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Aulas 2024 (Português)</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-aulas-2024-(português">
+<li>
+    <a class="dropdown-item" href="../aulas/Aula Quarto.html">
+ <span class="dropdown-text">Aula 1 - Quarto</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../aulas/Pratica - Semana 2.html">
+ <span class="dropdown-text">Aula 2 - Manipulação de Dados</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../aulas/Pratica - Semana 3.html">
+ <span class="dropdown-text">Aula 3 - Visualização de Dados</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../aulas/Pratica- Semana 3 - Parte2.html">
+ <span class="dropdown-text">Aula 4 - Customizações</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../aulas/Aula_Mapa 2024.html">
+ <span class="dropdown-text">Aula 5 - Mapas</span></a>
+  </li>  
+    </ul>
+</li>
+</ul>
+</div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../aulas/Pratica - Semana 3.html">Aula 3 - Visualização de Dados</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav></header><!-- content --><header id="title-block-header" class="quarto-title-block default page-columns page-full"><div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <div class="quarto-title-block"><div><h1 class="title">Aula 3 - Visualização de Dados</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+            <p class="subtitle lead">Aula prática</p>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Marina Scalon </p>
+            </div>
+    </div>
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../aulas/Aula Quarto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Aula 1 - Quarto</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../aulas/Pratica - Semana 2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Aula 2 - Manipulação de Dados</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../aulas/Pratica - Semana 3.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Aula 3 - Visualização de Dados</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../aulas/Pratica- Semana 3 - Parte2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Aula 4 - Customizações</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../aulas/Aula_Mapa 2024.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Aula 5 - Mapas</span></a>
+  </div>
+</li>
+    </ul>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li><a href="#instalando-os-pacotes" id="toc-instalando-os-pacotes" class="nav-link active" data-scroll-target="#instalando-os-pacotes">Instalando os pacotes</a></li>
+  <li><a href="#carregando-o-conjunto-de-dados" id="toc-carregando-o-conjunto-de-dados" class="nav-link" data-scroll-target="#carregando-o-conjunto-de-dados">Carregando o conjunto de dados</a></li>
+  <li>
+<a href="#estrutura" id="toc-estrutura" class="nav-link" data-scroll-target="#estrutura">Estrutura</a>
+  <ul class="collapse">
+<li><a href="#aesthetics---aes" id="toc-aesthetics---aes" class="nav-link" data-scroll-target="#aesthetics---aes">Aesthetics - <strong>aes()</strong></a></li>
+  </ul>
+</li>
+  <li>
+<a href="#tipos-de-gr%C3%A1ficos" id="toc-tipos-de-gráficos" class="nav-link" data-scroll-target="#tipos-de-gr%C3%A1ficos">Tipos de gráficos</a>
+  <ul class="collapse">
+<li><a href="#gr%C3%A1fico-de-pontos" id="toc-gráfico-de-pontos" class="nav-link" data-scroll-target="#gr%C3%A1fico-de-pontos">Gráfico de pontos</a></li>
+  <li><a href="#gr%C3%A1fico-de-linha" id="toc-gráfico-de-linha" class="nav-link" data-scroll-target="#gr%C3%A1fico-de-linha">Gráfico de linha</a></li>
+  <li><a href="#facetas" id="toc-facetas" class="nav-link" data-scroll-target="#facetas">Facetas</a></li>
+  <li><a href="#boxplots" id="toc-boxplots" class="nav-link" data-scroll-target="#boxplots">Boxplots</a></li>
+  <li><a href="#violinos" id="toc-violinos" class="nav-link" data-scroll-target="#violinos">Violinos</a></li>
+  <li><a href="#histogramas" id="toc-histogramas" class="nav-link" data-scroll-target="#histogramas">Histogramas</a></li>
+  <li><a href="#densidade" id="toc-densidade" class="nav-link" data-scroll-target="#densidade">Densidade</a></li>
+  <li><a href="#gr%C3%A1fico-de-barras" id="toc-gráfico-de-barras" class="nav-link" data-scroll-target="#gr%C3%A1fico-de-barras">Gráfico de barras</a></li>
+  </ul>
+</li>
+  <li><a href="#fim-da-primeira-parte" id="toc-fim-da-primeira-parte" class="nav-link" data-scroll-target="#fim-da-primeira-parte">FIM (da primeira parte)</a></li>
+  </ul></nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content"><p>Script utilizado na aula da semana 3 da disciplina Manipulação e Visualização de Dados no R para demostrar as funções básicas do pacote <code>ggplot2</code>do <code>tidyverse</code>.</p>
+<ol type="1">
+<li>Introdução básica do ggplot2</li>
+<li>Tipos de gráficos
+<ol type="a">
+<li>Pontos</li>
+<li>Linhas</li>
+<li>Boxplots</li>
+<li>Histogramas</li>
+<li>Densidade</li>
+<li>Barras</li>
+</ol>
+</li>
+</ol>
+<section id="instalando-os-pacotes" class="level2"><h2 class="anchored" data-anchor-id="instalando-os-pacotes">Instalando os pacotes</h2>
+<p>Nessa aula vamos utilizar o conjunto de dados da aula 1 e da aula 2 para demostrar as funções do ggplot2 do tidyverse. O primeiro passo então é carregar o pacote. Confiram a versão e atualizem usando a função <em>tidyverse_update()</em>!</p>
+<div class="cell">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.1     ✔ stringr   1.5.2
+✔ ggplot2   4.0.0     ✔ tibble    3.3.0
+✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+✔ purrr     1.1.0     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># tidyverse_update()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="carregando-o-conjunto-de-dados" class="level2"><h2 class="anchored" data-anchor-id="carregando-o-conjunto-de-dados">Carregando o conjunto de dados</h2>
+<p>Agora vamos determinar o diretório de trabalho e carregar os dados, conforme aprendemos na aula anterior. Vamos usar o conjunto de dados já manipulados, que fizemos na aula anterior e salvamos em.csv</p>
+<blockquote class="blockquote">
+<p>Você deve colocar o diretório de acordo com o seu caminho no computador, e de acordo com a localização dos seus dados.</p>
+</blockquote>
+<div class="cell">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># setwd("C:/Marina/Pos-doutorado/PNPD_UFPR/Vis Man Dados/2024/Semana3")</span></span>
+<span><span class="va">dados</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"Dados_english.csv"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">dados</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   129 obs. of  13 variables:
+ $ Vegetation: chr  "Forest" "Forest" "Forest" "Forest" ...
+ $ Species   : chr  "AT" "AT" "AT" "BC" ...
+ $ Phenology : chr  "Deciduous" "Deciduous" "Deciduous" "Semideciduous" ...
+ $ N         : num  2.36 2.07 2.03 1.32 1.23 ...
+ $ P         : num  0.1143 0.1143 0.1214 0.0643 0.0714 ...
+ $ Mg        : num  0.15 0.18 0.133 0.159 0.113 ...
+ $ K         : num  1.197 1.444 0.366 0.679 0.957 ...
+ $ Ca        : num  0.319 0.413 0.371 0.576 0.458 ...
+ $ Aluminium : num  122.8 251.8 206.5 96.8 103.3 ...
+ $ Leaf.Area : num  288 262 184 149 263 ...
+ $ Leaf.Mass : num  3.63 2.49 2.16 1.86 4.39 ...
+ $ SLA       : num  79.2 105.2 84.9 80.1 59.8 ...
+ $ N.P       : num  20.6 18.1 16.7 20.5 17.2 ...</code></pre>
+</div>
+</div>
+</section><section id="estrutura" class="level1"><h1>Estrutura</h1>
+<p>O ggplot2 funciona com uma estrutura de camadas. Começamos com uma camada em branco e adicionamos as camadas de acordo com o que queremos visualizar.</p>
+<div class="cell">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">dados</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Pratica---Semana-3_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="288"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="aesthetics---aes" class="level2"><h2 class="anchored" data-anchor-id="aesthetics---aes">Aesthetics - <strong>aes()</strong>
+</h2>
+<p>A estrutura do gráfico, determinada pela função <strong>aes()</strong> - aestethics - pode aparecer na primeira camada <em>ggplot</em> ou nas camadas subsequentes <em>geom_</em>.</p>
+<p>aes() descreve o mapeamento dos aspectos visuais dos gráficos</p>
+<p>Aparecendo na primeira camada <em>ggplot</em>, essa estética será usada para todas as camadas subsequentes. Especificando separadamente para cada camada <em>geom_</em>, isso não acontece!</p>
+</section></section><section id="tipos-de-gráficos" class="level1"><h1>Tipos de gráficos</h1>
+<p>Temos vários tipos de gráficos que igualmente são adicionados como camadas. Todos seguem a mesma lógica ao serem adicionados, mas o tipo de variável (fatores ou numéricas) que você quiser mostrar dependem do tipo.</p>
+<p>Uma página muito boa para verificar qual tipo de gráfico é mais apropriado para representar seus dados é a <a href="https://www.data-to-viz.com/" class="uri">https://www.data-to-viz.com/</a>. Vale a pena explorar!</p>
+<section id="gráfico-de-pontos" class="level2"><h2 class="anchored" data-anchor-id="gráfico-de-pontos">Gráfico de pontos</h2>
+<p>Para adicionar a camada e fazer um gráfico de pontos, usamos o símbolo <strong>+</strong> após a primeira camada e o comando <strong>geom_point()</strong>.</p>
+<div class="cell">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">dados</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">P</span>, y<span class="op">=</span><span class="va">N</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Pratica---Semana-3_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="288"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">dados</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">P</span>, y<span class="op">=</span><span class="va">N</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Pratica---Semana-3_files/figure-html/unnamed-chunk-4-2.png" class="img-fluid figure-img" width="288"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Podemos adicionar a camada de cores de acordo com uma variável categórica especificando <em>color</em> dentro da função <strong>aes()</strong>.</p>
+<p>Da mesma forma, podemos modificar o símbolo atribuindo uma variável categórica ao <em>shape</em>.</p>
+<p>Para modificar o tamanho dos símbolos basta alterar o atributo <em>shape</em> dentro de <strong>aes()</strong></p>
+<div class="cell">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">dados</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">P</span>, y<span class="op">=</span><span class="va">N</span>, color<span class="op">=</span> <span class="va">Phenology</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Pratica---Semana-3_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="384"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">dados</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">P</span>, y<span class="op">=</span><span class="va">N</span>, shape<span class="op">=</span> <span class="va">Vegetation</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Pratica---Semana-3_files/figure-html/unnamed-chunk-5-2.png" class="img-fluid figure-img" width="384"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">dados</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">P</span>, y<span class="op">=</span><span class="va">N</span>, color<span class="op">=</span> <span class="va">Phenology</span>, shape <span class="op">=</span> <span class="va">Vegetation</span>, size<span class="op">=</span><span class="fl">2</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Pratica---Semana-3_files/figure-html/unnamed-chunk-5-3.png" class="img-fluid figure-img" width="384"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Podemos atribuir a coloração de acordo com uma variável contínua da mesma forma, dentro da função <strong>aes()</strong>. Dessa forma, o ggplot cria um gradiente de cores baseando-se nos valores da variável</p>
+<div class="cell">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">dados</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">P</span>, y<span class="op">=</span><span class="va">N</span>, color<span class="op">=</span> <span class="va">SLA</span>, size<span class="op">=</span><span class="fl">2</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Pratica---Semana-3_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="384"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Também podemos atribuir o tamanho do símbolo de acordo com uma variável contínua da mesma forma, dentro da função <strong>aes()</strong>.</p>
+<div class="cell">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">dados</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">P</span>, y<span class="op">=</span><span class="va">N</span>, color<span class="op">=</span> <span class="va">Phenology</span>, size<span class="op">=</span><span class="va">SLA</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Pratica---Semana-3_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="384"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="gráfico-de-linha" class="level2"><h2 class="anchored" data-anchor-id="gráfico-de-linha">Gráfico de linha</h2>
+<p>As camadas <em>geom_line()</em>, <em>geom_smooth()</em> e <em>geom_abline()</em> são aquelas que vão adicionar linhas no gráfico. Elas tem diferenças básicas:</p>
+<ol type="1">
+<li><p><em>geom_line()</em> liga os pontos do seu dataset. Apenas informativa quando a variável independente é ordenada</p></li>
+<li><p><em>geom_smooth()</em> aplica o modelo <strong>loess (locally estimated scatterplot smoothing)</strong> nos dados. Basicamente um geom_line menos abrupto. Pode modificar os method de acordo com sua necessidade.</p></li>
+</ol>
+<blockquote class="blockquote">
+<p>O default do método aplicado no geom_smooth() é loess (locally estimated scatterplot smoothing)</p>
+</blockquote>
+<ol start="3" type="1">
+<li>Você pode juntar as camadas de pontos com a camada da linha adicionando a camada de <em>geom_point()</em>
+</li>
+</ol>
+<div class="cell">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">dados</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">P</span>, y<span class="op">=</span><span class="va">N</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Pratica---Semana-3_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="384"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">dados</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">P</span>, y<span class="op">=</span><span class="va">N</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using method = 'loess' and formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Pratica---Semana-3_files/figure-html/unnamed-chunk-8-2.png" class="img-fluid figure-img" width="384"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">dados</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">P</span>, y<span class="op">=</span><span class="va">N</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using method = 'loess' and formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Pratica---Semana-3_files/figure-html/unnamed-chunk-8-3.png" class="img-fluid figure-img" width="384"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>No entanto, normalmente queremos adicionar linhas de tendência, considerando algum modelo linear por exemplo. Para isso, podemos:</p>
+<ol type="1">
+<li><p>Utilizar a camada <em>geom_abline()</em>, onde os atributos da curva devem ser informados (intercept e slope). Previamente então, devemos calcular essas variáveis a serem informadas</p></li>
+<li><p>Utilizar <em>geom_smooth()</em> especificando o método de ajuste do modelo (no caso vamos usar “lm” para linear model).</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/coef.html">coef</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">N</span> <span class="op">~</span> <span class="va">P</span>, data <span class="op">=</span> <span class="va">dados</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(Intercept)           P 
+  0.3044137  17.4744215 </code></pre>
+</div>
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">dados</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">P</span>, y<span class="op">=</span><span class="va">N</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_abline</a></span><span class="op">(</span>intercept <span class="op">=</span> <span class="fl">0.3046</span>, slope <span class="op">=</span> <span class="fl">17.47</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Pratica---Semana-3_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="384"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">dados</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">P</span>, y<span class="op">=</span><span class="va">N</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Pratica---Semana-3_files/figure-html/unnamed-chunk-9-2.png" class="img-fluid figure-img" width="384"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Podemos também separar grupos nos gráficos de linhas. Perceba que, caso o atributo <em>color</em> esteja especificado no <em>aes()</em> do <strong>ggplot()</strong> isso se aplicará para todas as camadas subsequentes.</p>
+<div class="cell">
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dados</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">P</span>, y <span class="op">=</span> <span class="va">N</span>, color <span class="op">=</span> <span class="va">Phenology</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method<span class="op">=</span><span class="st">"lm"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Pratica---Semana-3_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="384"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Caso você deseje mudar APENAS a cor das curvas, ou dos pontos, o atributo <em>color</em> deve estar no aes() da camada desejada.</p>
+<div class="cell">
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dados</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">P</span>, y <span class="op">=</span> <span class="va">N</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>color <span class="op">=</span> <span class="va">Phenology</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method<span class="op">=</span><span class="st">"lm"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Pratica---Semana-3_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="384"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dados</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">P</span>, y <span class="op">=</span> <span class="va">N</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>color <span class="op">=</span> <span class="va">Phenology</span><span class="op">)</span>, method<span class="op">=</span><span class="st">"lm"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Pratica---Semana-3_files/figure-html/unnamed-chunk-11-2.png" class="img-fluid figure-img" width="384"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="facetas" class="level2"><h2 class="anchored" data-anchor-id="facetas">Facetas</h2>
+<p>Geralmente, dependendo de como queremos mostrar, a visualização fica mais limpa se os gráficos forem divididos em facetas. Para isso, adicionamos uma nova camada cahamda <em>facet_wrap()</em> que determina o fator para essa divisão.</p>
+<div class="cell">
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dados</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">P</span>, y <span class="op">=</span> <span class="va">N</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>color<span class="op">=</span><span class="va">Phenology</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method<span class="op">=</span><span class="st">"lm"</span><span class="op">)</span><span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">Vegetation</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Pratica---Semana-3_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="480"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Customizações das facetas
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Você pode customizar como você quer que elas sejam arranjadas com <strong>ncol</strong> e <strong>nrow</strong> Você também pode deixar todas na mesma escala (default) ou deixar cada uma com a escala mais apropriada Veja mais opções em <strong>help</strong></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dados</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">P</span>, y <span class="op">=</span> <span class="va">N</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>color<span class="op">=</span><span class="va">Phenology</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method<span class="op">=</span><span class="st">"lm"</span><span class="op">)</span><span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">Vegetation</span>, ncol<span class="op">=</span><span class="fl">1</span>, scales<span class="op">=</span><span class="st">"free"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Pratica---Semana-3_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="288"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>A camada <strong>facet_grid</strong> é equivalente, mas possibilita formar matrizes de gráficos quando temos 2 variáveis categóricas de interesse</p>
+<div class="cell">
+<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dados</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">P</span>, y <span class="op">=</span> <span class="va">N</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>color<span class="op">=</span><span class="va">Phenology</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method<span class="op">=</span><span class="st">"lm"</span><span class="op">)</span><span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_grid.html">facet_grid</a></span><span class="op">(</span><span class="op">~</span><span class="va">Vegetation</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Pratica---Semana-3_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="480"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dados</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">P</span>, y <span class="op">=</span> <span class="va">N</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>color<span class="op">=</span><span class="va">Phenology</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method<span class="op">=</span><span class="st">"lm"</span><span class="op">)</span><span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_grid.html">facet_grid</a></span><span class="op">(</span><span class="va">Phenology</span><span class="op">~</span><span class="va">Vegetation</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Pratica---Semana-3_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="480"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="boxplots" class="level2"><h2 class="anchored" data-anchor-id="boxplots">Boxplots</h2>
+<p>Boxplot são muito utilizados porque, além de demostrar tendência de medidas centrais (mediana, no caso) para comparação direta, permite uma visualização clara da distribuição dos dados (variabilidade), bem como outliers.</p>
+<p>Para esse tipo de gráfico, a variável independente (no eixo x) deve ser categórica/fatorial.</p>
+<div class="cell">
+<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dados</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Phenology</span>, y <span class="op">=</span> <span class="va">N</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">Vegetation</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Pratica---Semana-3_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Para o caso de cores, que será aprofundado na aula de customização, boxplots permitem mudanças na cor em torno das caixas com o atributo <em>color</em> ou no preenchimento das caixas. Nesse caso, o atributo <em>fill</em> deve ser utilizado. Veja a diferença</p>
+<div class="cell">
+<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dados</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Phenology</span>, y <span class="op">=</span> <span class="va">SLA</span>, fill <span class="op">=</span> <span class="va">Phenology</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">Vegetation</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing non-finite outside the scale range
+(`stat_boxplot()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Pratica---Semana-3_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dados</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Phenology</span>, y <span class="op">=</span> <span class="va">SLA</span>, color <span class="op">=</span> <span class="va">Phenology</span><span class="op">)</span><span class="op">)</span><span class="op">+</span>   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">Vegetation</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing non-finite outside the scale range
+(`stat_boxplot()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Pratica---Semana-3_files/figure-html/unnamed-chunk-17-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="violinos" class="level2"><h2 class="anchored" data-anchor-id="violinos">Violinos</h2>
+<p>Outra opção é utilizar o <strong>geom_violin()</strong>, que se baseia na distribuição probabilística de kernel</p>
+<div class="cell">
+<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dados</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Phenology</span>, y <span class="op">=</span> <span class="va">SLA</span>, fill <span class="op">=</span> <span class="va">Phenology</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_violin.html">geom_violin</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">Vegetation</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing non-finite outside the scale range
+(`stat_ydensity()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Pratica---Semana-3_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dados</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Phenology</span>, y <span class="op">=</span> <span class="va">SLA</span>, fill <span class="op">=</span> <span class="va">Phenology</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_violin.html">geom_violin</a></span><span class="op">(</span>trim<span class="op">=</span><span class="cn">F</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">Vegetation</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing non-finite outside the scale range
+(`stat_ydensity()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Pratica---Semana-3_files/figure-html/unnamed-chunk-18-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Para exibir seu dados - todos os pontos - pode-se adicionar mais uma camada denominada <strong>geom_jitter()</strong>. Geom_jitter exibe seus pontos afastados numa posição randômica para não se sobreporem</p>
+<div class="cell">
+<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dados</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Phenology</span>, y<span class="op">=</span><span class="va">N</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_violin.html">geom_violin</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill<span class="op">=</span><span class="va">Phenology</span><span class="op">)</span>,trim<span class="op">=</span><span class="cn">F</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_jitter.html">geom_jitter</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">Vegetation</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Pratica---Semana-3_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dados</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Phenology</span>, y<span class="op">=</span><span class="va">N</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span>width<span class="op">=</span><span class="fl">0.2</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_jitter.html">geom_jitter</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">Vegetation</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Pratica---Semana-3_files/figure-html/unnamed-chunk-19-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="histogramas" class="level2"><h2 class="anchored" data-anchor-id="histogramas">Histogramas</h2>
+<p>Mostram a frequência e dispersão/distribuição dos dados, então só requer uma variável x (numérica!). Pode ser útil para verificar normalidade dos dados, por exemplo. Ou outliers.</p>
+<div class="cell">
+<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dados</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">SLA</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">Vegetation</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value `binwidth`.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing non-finite outside the scale range
+(`stat_bin()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Pratica---Semana-3_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="480"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="densidade" class="level2"><h2 class="anchored" data-anchor-id="densidade">Densidade</h2>
+<p>Da mesma forma que o histograma, gráficos de densidade também podem mostrar a distribuição dos dados. Ao invés de simplesmente contagem de ocorrência (como no histograma), esse tipo de gráfico baseia-se na contagem por unidade, e por usar uma técnica de suavização de Kernel, são vizualmente mais elegantes.</p>
+<div class="cell">
+<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dados</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">SLA</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_density.html">geom_density</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">Vegetation</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing non-finite outside the scale range
+(`stat_density()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Pratica---Semana-3_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="480"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dados</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">SLA</span>, fill<span class="op">=</span> <span class="va">Phenology</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_density.html">geom_density</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">Vegetation</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing non-finite outside the scale range
+(`stat_density()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Pratica---Semana-3_files/figure-html/unnamed-chunk-21-2.png" class="img-fluid figure-img" width="480"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="gráfico-de-barras" class="level2"><h2 class="anchored" data-anchor-id="gráfico-de-barras">Gráfico de barras</h2>
+<p>Adicionando a camada geom_bar(), obtemos um gráfico de barras que representa contagens para dados categóricos. Portanto, gráfico de barras é útil principalmente quando a vairiável x é categórica. Perceba que nesse caso, o default da função é a contagem das ocorrências (stat = “count”)</p>
+<div class="cell">
+<div class="sourceCode" id="cb57"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dados</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">Phenology</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">Vegetation</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Pratica---Semana-3_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode" id="cb58"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dados</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Pratica---Semana-3_files/figure-html/unnamed-chunk-22-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Podemos aplicar outros tipos de métodos estatísticos na função para mostrar mais padrões:</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use a posição (position) para determinar onde suas barras estarão! O default é “stack” (uma em cima da outra)</p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb59"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dados</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y<span class="op">=</span><span class="va">N</span>, x<span class="op">=</span><span class="va">Species</span>, fill<span class="op">=</span><span class="va">Vegetation</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>stat<span class="op">=</span><span class="st">"identity"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Pratica---Semana-3_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode" id="cb60"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dados</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y<span class="op">=</span><span class="va">N</span>, x<span class="op">=</span><span class="va">Species</span>, fill<span class="op">=</span><span class="va">Vegetation</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>stat<span class="op">=</span><span class="st">"identity"</span>, position<span class="op">=</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/position_dodge.html">position_dodge</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Pratica---Semana-3_files/figure-html/unnamed-chunk-23-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Para ordenar os dados de maneira rápida de acordo com uma ordem crescente/descrescente, utilizar a função reorder diretamente no <em>aes()</em></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb61"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dados</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y<span class="op">=</span><span class="va">N</span>, x<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder</a></span><span class="op">(</span><span class="va">Species</span>, <span class="op">-</span><span class="va">N</span><span class="op">)</span>, fill<span class="op">=</span><span class="va">Vegetation</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>stat<span class="op">=</span><span class="st">"identity"</span>, position<span class="op">=</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/position_dodge.html">position_dodge</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Pratica---Semana-3_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode" id="cb62"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dados</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y<span class="op">=</span><span class="va">N</span>, x<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder</a></span><span class="op">(</span><span class="va">Species</span>, <span class="op">+</span><span class="va">N</span><span class="op">)</span>, fill<span class="op">=</span><span class="va">Vegetation</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>stat<span class="op">=</span><span class="st">"identity"</span>, position<span class="op">=</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/position_dodge.html">position_dodge</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Pratica---Semana-3_files/figure-html/unnamed-chunk-24-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode" id="cb63"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dados</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder</a></span><span class="op">(</span><span class="va">Phenology</span>, <span class="op">+</span><span class="va">N</span><span class="op">)</span>, y <span class="op">=</span> <span class="va">N</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">Vegetation</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Pratica---Semana-3_files/figure-html/unnamed-chunk-24-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Para mudar a orientação, basta designar a variável categórica como y ao invés de x (default)</p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb64"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dados</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">N</span>, y<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder</a></span><span class="op">(</span><span class="va">Species</span>, <span class="op">-</span><span class="va">N</span><span class="op">)</span>, fill<span class="op">=</span><span class="va">Vegetation</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>stat<span class="op">=</span><span class="st">"identity"</span>, position<span class="op">=</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/position_dodge.html">position_dodge</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Pratica---Semana-3_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="288"></p>
+</figure>
+</div>
+</div>
+</div>
+</section></section><section id="fim-da-primeira-parte" class="level1"><h1>FIM (da primeira parte)</h1>
+
+
+<!-- -->
+
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb65" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Aula 3 - Visualização de Dados"</span></span>
+<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Aula prática"</span></span>
+<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Marina Scalon"</span></span>
+<span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a><span class="an">title-block-banner:</span><span class="co"> true</span></span>
+<span id="cb65-6"><a href="#cb65-6" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb65-7"><a href="#cb65-7" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb65-8"><a href="#cb65-8" aria-hidden="true" tabindex="-1"></a><span class="co">    code-link: true</span></span>
+<span id="cb65-9"><a href="#cb65-9" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb65-10"><a href="#cb65-10" aria-hidden="true" tabindex="-1"></a><span class="co">    theme: minty</span></span>
+<span id="cb65-11"><a href="#cb65-11" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb65-12"><a href="#cb65-12" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb65-13"><a href="#cb65-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-14"><a href="#cb65-14" aria-hidden="true" tabindex="-1"></a>Script utilizado na aula da semana 3 da disciplina Manipulação e  Visualização de Dados no R para demostrar as funções básicas do pacote <span class="in">`ggplot2`</span>do <span class="in">`tidyverse`</span>. </span>
+<span id="cb65-15"><a href="#cb65-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-16"><a href="#cb65-16" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Introdução básica do ggplot2</span>
+<span id="cb65-17"><a href="#cb65-17" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Tipos de gráficos</span>
+<span id="cb65-18"><a href="#cb65-18" aria-hidden="true" tabindex="-1"></a>     a. Pontos</span>
+<span id="cb65-19"><a href="#cb65-19" aria-hidden="true" tabindex="-1"></a>     b. Linhas</span>
+<span id="cb65-20"><a href="#cb65-20" aria-hidden="true" tabindex="-1"></a>     c. Boxplots</span>
+<span id="cb65-21"><a href="#cb65-21" aria-hidden="true" tabindex="-1"></a>     d. Histogramas</span>
+<span id="cb65-22"><a href="#cb65-22" aria-hidden="true" tabindex="-1"></a>     e. Densidade</span>
+<span id="cb65-23"><a href="#cb65-23" aria-hidden="true" tabindex="-1"></a>     f. Barras</span>
+<span id="cb65-24"><a href="#cb65-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-25"><a href="#cb65-25" aria-hidden="true" tabindex="-1"></a><span class="fu">## Instalando os pacotes</span></span>
+<span id="cb65-26"><a href="#cb65-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-27"><a href="#cb65-27" aria-hidden="true" tabindex="-1"></a>Nessa aula vamos utilizar o conjunto de dados da aula 1 e da aula 2 para demostrar as funções do ggplot2 do tidyverse. O primeiro passo então é carregar o pacote. Confiram a versão e atualizem usando a função *tidyverse_update()*!</span>
+<span id="cb65-28"><a href="#cb65-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-31"><a href="#cb65-31" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb65-32"><a href="#cb65-32" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb65-33"><a href="#cb65-33" aria-hidden="true" tabindex="-1"></a><span class="co"># tidyverse_update()</span></span>
+<span id="cb65-34"><a href="#cb65-34" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-35"><a href="#cb65-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-36"><a href="#cb65-36" aria-hidden="true" tabindex="-1"></a><span class="fu">## Carregando o conjunto de dados</span></span>
+<span id="cb65-37"><a href="#cb65-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-38"><a href="#cb65-38" aria-hidden="true" tabindex="-1"></a>Agora vamos determinar o diretório de trabalho e carregar os dados, conforme aprendemos na aula anterior. Vamos usar o conjunto de dados já manipulados, que fizemos na aula anterior e salvamos em.csv</span>
+<span id="cb65-39"><a href="#cb65-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-40"><a href="#cb65-40" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Você deve colocar o diretório de acordo com o seu caminho no computador, e de acordo com a localização dos seus dados.</span></span>
+<span id="cb65-41"><a href="#cb65-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-44"><a href="#cb65-44" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb65-45"><a href="#cb65-45" aria-hidden="true" tabindex="-1"></a><span class="co"># setwd("C:/Marina/Pos-doutorado/PNPD_UFPR/Vis Man Dados/2024/Semana3")</span></span>
+<span id="cb65-46"><a href="#cb65-46" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"Dados_english.csv"</span>)</span>
+<span id="cb65-47"><a href="#cb65-47" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(dados)</span>
+<span id="cb65-48"><a href="#cb65-48" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-49"><a href="#cb65-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-50"><a href="#cb65-50" aria-hidden="true" tabindex="-1"></a><span class="fu"># Estrutura</span></span>
+<span id="cb65-51"><a href="#cb65-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-52"><a href="#cb65-52" aria-hidden="true" tabindex="-1"></a>O ggplot2 funciona com uma estrutura de camadas. Começamos com uma camada em branco e adicionamos as camadas de acordo com o que queremos visualizar.</span>
+<span id="cb65-53"><a href="#cb65-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-54"><a href="#cb65-54" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, fig.height=3, fig.width=3}</span></span>
+<span id="cb65-55"><a href="#cb65-55" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dados)</span>
+<span id="cb65-56"><a href="#cb65-56" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-57"><a href="#cb65-57" aria-hidden="true" tabindex="-1"></a><span class="fu">## Aesthetics - **aes()**</span></span>
+<span id="cb65-58"><a href="#cb65-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-59"><a href="#cb65-59" aria-hidden="true" tabindex="-1"></a>A estrutura do gráfico, determinada pela função **aes()** - aestethics - pode aparecer na primeira camada *ggplot* ou nas camadas subsequentes *geom_*. </span>
+<span id="cb65-60"><a href="#cb65-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-61"><a href="#cb65-61" aria-hidden="true" tabindex="-1"></a>aes() descreve o mapeamento dos aspectos visuais dos gráficos</span>
+<span id="cb65-62"><a href="#cb65-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-63"><a href="#cb65-63" aria-hidden="true" tabindex="-1"></a>Aparecendo na primeira camada *ggplot*, essa estética será usada para todas as camadas subsequentes. Especificando separadamente para cada camada *geom_*, isso não acontece!</span>
+<span id="cb65-64"><a href="#cb65-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-65"><a href="#cb65-65" aria-hidden="true" tabindex="-1"></a><span class="fu"># Tipos de gráficos</span></span>
+<span id="cb65-66"><a href="#cb65-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-67"><a href="#cb65-67" aria-hidden="true" tabindex="-1"></a>Temos vários tipos de gráficos que igualmente são adicionados como camadas. Todos seguem a mesma lógica ao serem adicionados, mas o tipo de variável (fatores ou numéricas) que você quiser mostrar dependem do tipo.</span>
+<span id="cb65-68"><a href="#cb65-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-69"><a href="#cb65-69" aria-hidden="true" tabindex="-1"></a>Uma página muito boa para verificar qual tipo de gráfico é mais apropriado para representar seus dados é a <span class="ot">&lt;https://www.data-to-viz.com/&gt;</span>. Vale a pena explorar!</span>
+<span id="cb65-70"><a href="#cb65-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-71"><a href="#cb65-71" aria-hidden="true" tabindex="-1"></a><span class="fu">## Gráfico de pontos</span></span>
+<span id="cb65-72"><a href="#cb65-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-73"><a href="#cb65-73" aria-hidden="true" tabindex="-1"></a>Para adicionar a camada e fazer um gráfico de pontos, usamos o símbolo **+** após a primeira camada e o comando **geom_point()**.</span>
+<span id="cb65-74"><a href="#cb65-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-75"><a href="#cb65-75" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, fig.height=3, fig.width=3}</span></span>
+<span id="cb65-76"><a href="#cb65-76" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dados, <span class="fu">aes</span>(<span class="at">x=</span>P, <span class="at">y=</span>N)) <span class="sc">+</span></span>
+<span id="cb65-77"><a href="#cb65-77" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb65-78"><a href="#cb65-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-79"><a href="#cb65-79" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dados) <span class="sc">+</span></span>
+<span id="cb65-80"><a href="#cb65-80" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span>P, <span class="at">y=</span>N))</span>
+<span id="cb65-81"><a href="#cb65-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-82"><a href="#cb65-82" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-83"><a href="#cb65-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-84"><a href="#cb65-84" aria-hidden="true" tabindex="-1"></a>Podemos adicionar a camada de cores de acordo com uma variável categórica especificando *color* dentro da função **aes()**. </span>
+<span id="cb65-85"><a href="#cb65-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-86"><a href="#cb65-86" aria-hidden="true" tabindex="-1"></a>Da mesma forma, podemos modificar o símbolo atribuindo uma variável categórica ao *shape*.</span>
+<span id="cb65-87"><a href="#cb65-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-88"><a href="#cb65-88" aria-hidden="true" tabindex="-1"></a>Para modificar o tamanho dos símbolos basta alterar o atributo *shape* dentro de **aes()**</span>
+<span id="cb65-89"><a href="#cb65-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-90"><a href="#cb65-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-91"><a href="#cb65-91" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, fig.height=3, fig.width=4}</span></span>
+<span id="cb65-92"><a href="#cb65-92" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dados, <span class="fu">aes</span>(<span class="at">x=</span>P, <span class="at">y=</span>N, <span class="at">color=</span> Phenology)) <span class="sc">+</span></span>
+<span id="cb65-93"><a href="#cb65-93" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb65-94"><a href="#cb65-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-95"><a href="#cb65-95" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dados, <span class="fu">aes</span>(<span class="at">x=</span>P, <span class="at">y=</span>N, <span class="at">shape=</span> Vegetation)) <span class="sc">+</span></span>
+<span id="cb65-96"><a href="#cb65-96" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb65-97"><a href="#cb65-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-98"><a href="#cb65-98" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dados, <span class="fu">aes</span>(<span class="at">x=</span>P, <span class="at">y=</span>N, <span class="at">color=</span> Phenology, <span class="at">shape =</span> Vegetation, <span class="at">size=</span><span class="dv">2</span>)) <span class="sc">+</span></span>
+<span id="cb65-99"><a href="#cb65-99" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb65-100"><a href="#cb65-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-101"><a href="#cb65-101" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-102"><a href="#cb65-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-103"><a href="#cb65-103" aria-hidden="true" tabindex="-1"></a>Podemos atribuir a coloração de acordo com uma variável contínua da mesma forma, dentro da função **aes()**. Dessa forma, o ggplot cria um gradiente de cores baseando-se nos valores da variável</span>
+<span id="cb65-104"><a href="#cb65-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-105"><a href="#cb65-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-106"><a href="#cb65-106" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, fig.height=3, fig.width=4}</span></span>
+<span id="cb65-107"><a href="#cb65-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-108"><a href="#cb65-108" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dados, <span class="fu">aes</span>(<span class="at">x=</span>P, <span class="at">y=</span>N, <span class="at">color=</span> SLA, <span class="at">size=</span><span class="dv">2</span>)) <span class="sc">+</span></span>
+<span id="cb65-109"><a href="#cb65-109" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb65-110"><a href="#cb65-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-111"><a href="#cb65-111" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-112"><a href="#cb65-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-113"><a href="#cb65-113" aria-hidden="true" tabindex="-1"></a>Também podemos atribuir o tamanho do símbolo de acordo com uma variável contínua da mesma forma, dentro da função **aes()**.</span>
+<span id="cb65-114"><a href="#cb65-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-115"><a href="#cb65-115" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, fig.height=3, fig.width=4}</span></span>
+<span id="cb65-116"><a href="#cb65-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-117"><a href="#cb65-117" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dados, <span class="fu">aes</span>(<span class="at">x=</span>P, <span class="at">y=</span>N, <span class="at">color=</span> Phenology, <span class="at">size=</span>SLA)) <span class="sc">+</span></span>
+<span id="cb65-118"><a href="#cb65-118" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb65-119"><a href="#cb65-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-120"><a href="#cb65-120" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-121"><a href="#cb65-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-122"><a href="#cb65-122" aria-hidden="true" tabindex="-1"></a><span class="fu">## Gráfico de linha</span></span>
+<span id="cb65-123"><a href="#cb65-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-124"><a href="#cb65-124" aria-hidden="true" tabindex="-1"></a>As camadas *geom_line()*, *geom_smooth()* e *geom_abline()* são aquelas que vão adicionar linhas no gráfico. Elas tem diferenças básicas:</span>
+<span id="cb65-125"><a href="#cb65-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-126"><a href="#cb65-126" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>*geom_line()* liga os pontos do seu dataset. Apenas informativa quando a variável independente é ordenada</span>
+<span id="cb65-127"><a href="#cb65-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-128"><a href="#cb65-128" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>*geom_smooth()* aplica o modelo **loess (locally estimated scatterplot smoothing)** nos dados. Basicamente um geom_line menos abrupto. Pode modificar os method de acordo com sua necessidade.</span>
+<span id="cb65-129"><a href="#cb65-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-130"><a href="#cb65-130" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; O default do método aplicado no geom_smooth() é loess (locally estimated scatterplot smoothing)</span></span>
+<span id="cb65-131"><a href="#cb65-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-132"><a href="#cb65-132" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Você pode juntar as camadas de pontos com a camada da linha adicionando a camada de *geom_point()*</span>
+<span id="cb65-133"><a href="#cb65-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-134"><a href="#cb65-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-135"><a href="#cb65-135" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, fig.height=3, fig.width=4}</span></span>
+<span id="cb65-136"><a href="#cb65-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-137"><a href="#cb65-137" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dados, <span class="fu">aes</span>(<span class="at">x=</span>P, <span class="at">y=</span>N)) <span class="sc">+</span></span>
+<span id="cb65-138"><a href="#cb65-138" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span>
+<span id="cb65-139"><a href="#cb65-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-140"><a href="#cb65-140" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dados, <span class="fu">aes</span>(<span class="at">x=</span>P, <span class="at">y=</span>N)) <span class="sc">+</span></span>
+<span id="cb65-141"><a href="#cb65-141" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>()</span>
+<span id="cb65-142"><a href="#cb65-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-143"><a href="#cb65-143" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dados, <span class="fu">aes</span>(<span class="at">x=</span>P, <span class="at">y=</span>N)) <span class="sc">+</span></span>
+<span id="cb65-144"><a href="#cb65-144" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>()<span class="sc">+</span></span>
+<span id="cb65-145"><a href="#cb65-145" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb65-146"><a href="#cb65-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-147"><a href="#cb65-147" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-148"><a href="#cb65-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-149"><a href="#cb65-149" aria-hidden="true" tabindex="-1"></a>No entanto, normalmente queremos adicionar linhas de tendência, considerando algum modelo linear por exemplo. Para isso, podemos:</span>
+<span id="cb65-150"><a href="#cb65-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-151"><a href="#cb65-151" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Utilizar a camada *geom_abline()*, onde os atributos da curva devem ser informados (intercept e slope). Previamente então, devemos calcular essas variáveis a serem informadas</span>
+<span id="cb65-152"><a href="#cb65-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-153"><a href="#cb65-153" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Utilizar *geom_smooth()* especificando o método de ajuste do modelo (no caso vamos usar "lm" para linear model). </span>
+<span id="cb65-154"><a href="#cb65-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-155"><a href="#cb65-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-156"><a href="#cb65-156" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, fig.height=3, fig.width=4}</span></span>
+<span id="cb65-157"><a href="#cb65-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-158"><a href="#cb65-158" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(<span class="fu">lm</span>(N <span class="sc">~</span> P, <span class="at">data =</span> dados))</span>
+<span id="cb65-159"><a href="#cb65-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-160"><a href="#cb65-160" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dados, <span class="fu">aes</span>(<span class="at">x=</span>P, <span class="at">y=</span>N)) <span class="sc">+</span> <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb65-161"><a href="#cb65-161" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="fl">0.3046</span>, <span class="at">slope =</span> <span class="fl">17.47</span>)</span>
+<span id="cb65-162"><a href="#cb65-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-163"><a href="#cb65-163" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dados, <span class="fu">aes</span>(<span class="at">x=</span>P, <span class="at">y=</span>N)) <span class="sc">+</span> <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb65-164"><a href="#cb65-164" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span>
+<span id="cb65-165"><a href="#cb65-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-166"><a href="#cb65-166" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-167"><a href="#cb65-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-168"><a href="#cb65-168" aria-hidden="true" tabindex="-1"></a>Podemos também separar grupos nos gráficos de linhas. Perceba que, caso o atributo *color* esteja especificado no *aes()* do **ggplot()** isso se aplicará para todas as camadas subsequentes. </span>
+<span id="cb65-169"><a href="#cb65-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-170"><a href="#cb65-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-171"><a href="#cb65-171" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, fig.height=3, fig.width=4}</span></span>
+<span id="cb65-172"><a href="#cb65-172" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x=</span>P, <span class="at">y =</span> N, <span class="at">color =</span> Phenology)) <span class="sc">+</span> </span>
+<span id="cb65-173"><a href="#cb65-173" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb65-174"><a href="#cb65-174" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">"lm"</span>)</span>
+<span id="cb65-175"><a href="#cb65-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-176"><a href="#cb65-176" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-177"><a href="#cb65-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-178"><a href="#cb65-178" aria-hidden="true" tabindex="-1"></a>Caso você deseje mudar APENAS a cor das curvas, ou dos pontos, o atributo *color* deve estar no aes() da camada desejada.</span>
+<span id="cb65-179"><a href="#cb65-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-180"><a href="#cb65-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-181"><a href="#cb65-181" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, fig.height=3, fig.width=4}</span></span>
+<span id="cb65-182"><a href="#cb65-182" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x=</span>P, <span class="at">y =</span> N)) <span class="sc">+</span> </span>
+<span id="cb65-183"><a href="#cb65-183" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> Phenology))<span class="sc">+</span></span>
+<span id="cb65-184"><a href="#cb65-184" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">"lm"</span>)</span>
+<span id="cb65-185"><a href="#cb65-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-186"><a href="#cb65-186" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x=</span>P, <span class="at">y =</span> N)) <span class="sc">+</span> </span>
+<span id="cb65-187"><a href="#cb65-187" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb65-188"><a href="#cb65-188" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(<span class="at">color =</span> Phenology), <span class="at">method=</span><span class="st">"lm"</span>)</span>
+<span id="cb65-189"><a href="#cb65-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-190"><a href="#cb65-190" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-191"><a href="#cb65-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-192"><a href="#cb65-192" aria-hidden="true" tabindex="-1"></a><span class="fu">## Facetas</span></span>
+<span id="cb65-193"><a href="#cb65-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-194"><a href="#cb65-194" aria-hidden="true" tabindex="-1"></a>Geralmente, dependendo de como queremos mostrar, a visualização fica mais limpa se os gráficos forem divididos em facetas. Para isso, adicionamos uma nova camada cahamda *facet_wrap()* que determina o fator para essa divisão.</span>
+<span id="cb65-195"><a href="#cb65-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-196"><a href="#cb65-196" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, fig.height=3, fig.width=5}</span></span>
+<span id="cb65-197"><a href="#cb65-197" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x=</span>P, <span class="at">y =</span> N)) <span class="sc">+</span> </span>
+<span id="cb65-198"><a href="#cb65-198" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color=</span>Phenology))<span class="sc">+</span></span>
+<span id="cb65-199"><a href="#cb65-199" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">"lm"</span>)<span class="sc">+</span> </span>
+<span id="cb65-200"><a href="#cb65-200" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Vegetation)</span>
+<span id="cb65-201"><a href="#cb65-201" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-202"><a href="#cb65-202" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-203"><a href="#cb65-203" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
+<span id="cb65-204"><a href="#cb65-204" aria-hidden="true" tabindex="-1"></a><span class="fu">## Customizações das facetas</span></span>
+<span id="cb65-205"><a href="#cb65-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-206"><a href="#cb65-206" aria-hidden="true" tabindex="-1"></a>Você pode customizar como você quer que elas sejam arranjadas com **ncol** e **nrow**</span>
+<span id="cb65-207"><a href="#cb65-207" aria-hidden="true" tabindex="-1"></a>Você também pode deixar todas na mesma escala (default) ou deixar cada uma com a escala mais apropriada</span>
+<span id="cb65-208"><a href="#cb65-208" aria-hidden="true" tabindex="-1"></a>Veja mais opções em **help**</span>
+<span id="cb65-209"><a href="#cb65-209" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb65-210"><a href="#cb65-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-211"><a href="#cb65-211" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, fig.height=5, fig.width=3}</span></span>
+<span id="cb65-212"><a href="#cb65-212" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x=</span>P, <span class="at">y =</span> N)) <span class="sc">+</span> </span>
+<span id="cb65-213"><a href="#cb65-213" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color=</span>Phenology))<span class="sc">+</span></span>
+<span id="cb65-214"><a href="#cb65-214" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">"lm"</span>)<span class="sc">+</span> </span>
+<span id="cb65-215"><a href="#cb65-215" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Vegetation, <span class="at">ncol=</span><span class="dv">1</span>, <span class="at">scales=</span><span class="st">"free"</span>)</span>
+<span id="cb65-216"><a href="#cb65-216" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-217"><a href="#cb65-217" aria-hidden="true" tabindex="-1"></a>A camada **facet_grid** é equivalente, mas possibilita formar matrizes de gráficos quando temos 2 variáveis categóricas de interesse</span>
+<span id="cb65-218"><a href="#cb65-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-219"><a href="#cb65-219" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, fig.height=3, fig.width=5}</span></span>
+<span id="cb65-220"><a href="#cb65-220" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x=</span>P, <span class="at">y =</span> N)) <span class="sc">+</span> </span>
+<span id="cb65-221"><a href="#cb65-221" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color=</span>Phenology))<span class="sc">+</span></span>
+<span id="cb65-222"><a href="#cb65-222" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">"lm"</span>)<span class="sc">+</span> </span>
+<span id="cb65-223"><a href="#cb65-223" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="sc">~</span>Vegetation)</span>
+<span id="cb65-224"><a href="#cb65-224" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-225"><a href="#cb65-225" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, fig.height=3, fig.width=5}</span></span>
+<span id="cb65-226"><a href="#cb65-226" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x=</span>P, <span class="at">y =</span> N)) <span class="sc">+</span> </span>
+<span id="cb65-227"><a href="#cb65-227" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color=</span>Phenology))<span class="sc">+</span></span>
+<span id="cb65-228"><a href="#cb65-228" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">"lm"</span>)<span class="sc">+</span> </span>
+<span id="cb65-229"><a href="#cb65-229" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(Phenology<span class="sc">~</span>Vegetation)</span>
+<span id="cb65-230"><a href="#cb65-230" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-231"><a href="#cb65-231" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-232"><a href="#cb65-232" aria-hidden="true" tabindex="-1"></a><span class="fu">## Boxplots</span></span>
+<span id="cb65-233"><a href="#cb65-233" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-234"><a href="#cb65-234" aria-hidden="true" tabindex="-1"></a>Boxplot são muito utilizados porque, além de demostrar tendência de medidas centrais (mediana, no caso) para comparação direta, permite uma visualização clara da distribuição dos dados (variabilidade), bem como outliers.</span>
+<span id="cb65-235"><a href="#cb65-235" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-236"><a href="#cb65-236" aria-hidden="true" tabindex="-1"></a>Para esse tipo de gráfico, a variável independente (no eixo x) deve ser categórica/fatorial.</span>
+<span id="cb65-237"><a href="#cb65-237" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-238"><a href="#cb65-238" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-239"><a href="#cb65-239" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, fig.height=3, fig.width=7}</span></span>
+<span id="cb65-240"><a href="#cb65-240" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x=</span>Phenology, <span class="at">y =</span> N)) <span class="sc">+</span> </span>
+<span id="cb65-241"><a href="#cb65-241" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()<span class="sc">+</span></span>
+<span id="cb65-242"><a href="#cb65-242" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Vegetation)</span>
+<span id="cb65-243"><a href="#cb65-243" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-244"><a href="#cb65-244" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-245"><a href="#cb65-245" aria-hidden="true" tabindex="-1"></a>Para o caso de cores, que será aprofundado na aula de customização, boxplots permitem mudanças na cor em torno das caixas com o atributo *color* ou no preenchimento das caixas. Nesse caso, o atributo *fill* deve ser utilizado. Veja a diferença</span>
+<span id="cb65-246"><a href="#cb65-246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-247"><a href="#cb65-247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-248"><a href="#cb65-248" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, fig.height=3, fig.width=7}</span></span>
+<span id="cb65-249"><a href="#cb65-249" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x=</span>Phenology, <span class="at">y =</span> SLA, <span class="at">fill =</span> Phenology)) <span class="sc">+</span>   <span class="fu">geom_boxplot</span>()<span class="sc">+</span></span>
+<span id="cb65-250"><a href="#cb65-250" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Vegetation)</span>
+<span id="cb65-251"><a href="#cb65-251" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-252"><a href="#cb65-252" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x=</span>Phenology, <span class="at">y =</span> SLA, <span class="at">color =</span> Phenology))<span class="sc">+</span>   <span class="fu">geom_boxplot</span>()<span class="sc">+</span></span>
+<span id="cb65-253"><a href="#cb65-253" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Vegetation)</span>
+<span id="cb65-254"><a href="#cb65-254" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-255"><a href="#cb65-255" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-256"><a href="#cb65-256" aria-hidden="true" tabindex="-1"></a><span class="fu">## Violinos</span></span>
+<span id="cb65-257"><a href="#cb65-257" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-258"><a href="#cb65-258" aria-hidden="true" tabindex="-1"></a>Outra opção é utilizar o **geom_violin()**, que se baseia na distribuição probabilística de kernel</span>
+<span id="cb65-259"><a href="#cb65-259" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-260"><a href="#cb65-260" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, fig.height=3, fig.width=7}</span></span>
+<span id="cb65-261"><a href="#cb65-261" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x=</span>Phenology, <span class="at">y =</span> SLA, <span class="at">fill =</span> Phenology)) <span class="sc">+</span>   <span class="fu">geom_violin</span>()<span class="sc">+</span></span>
+<span id="cb65-262"><a href="#cb65-262" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Vegetation)</span>
+<span id="cb65-263"><a href="#cb65-263" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-264"><a href="#cb65-264" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x=</span>Phenology, <span class="at">y =</span> SLA, <span class="at">fill =</span> Phenology)) <span class="sc">+</span>   <span class="fu">geom_violin</span>(<span class="at">trim=</span>F)<span class="sc">+</span></span>
+<span id="cb65-265"><a href="#cb65-265" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Vegetation)</span>
+<span id="cb65-266"><a href="#cb65-266" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-267"><a href="#cb65-267" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-268"><a href="#cb65-268" aria-hidden="true" tabindex="-1"></a>Para exibir seu dados - todos os pontos - pode-se adicionar mais uma camada denominada **geom_jitter()**. Geom_jitter exibe seus pontos afastados numa posição randômica para não se sobreporem</span>
+<span id="cb65-269"><a href="#cb65-269" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-270"><a href="#cb65-270" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, fig.height=3, fig.width=7}</span></span>
+<span id="cb65-271"><a href="#cb65-271" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x=</span>Phenology, <span class="at">y=</span>N))<span class="sc">+</span></span>
+<span id="cb65-272"><a href="#cb65-272" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="fu">aes</span>(<span class="at">fill=</span>Phenology),<span class="at">trim=</span>F)<span class="sc">+</span></span>
+<span id="cb65-273"><a href="#cb65-273" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>()<span class="sc">+</span></span>
+<span id="cb65-274"><a href="#cb65-274" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Vegetation)</span>
+<span id="cb65-275"><a href="#cb65-275" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-276"><a href="#cb65-276" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x=</span>Phenology, <span class="at">y=</span>N))<span class="sc">+</span></span>
+<span id="cb65-277"><a href="#cb65-277" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width=</span><span class="fl">0.2</span>)<span class="sc">+</span></span>
+<span id="cb65-278"><a href="#cb65-278" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>()<span class="sc">+</span></span>
+<span id="cb65-279"><a href="#cb65-279" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Vegetation)</span>
+<span id="cb65-280"><a href="#cb65-280" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-281"><a href="#cb65-281" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-282"><a href="#cb65-282" aria-hidden="true" tabindex="-1"></a><span class="fu">## Histogramas </span></span>
+<span id="cb65-283"><a href="#cb65-283" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-284"><a href="#cb65-284" aria-hidden="true" tabindex="-1"></a>Mostram a frequência e dispersão/distribuição dos dados, então só requer uma variável x (numérica!). Pode ser útil para verificar normalidade dos dados, por exemplo. Ou outliers. </span>
+<span id="cb65-285"><a href="#cb65-285" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-286"><a href="#cb65-286" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-287"><a href="#cb65-287" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, fig.height=3, fig.width=5}</span></span>
+<span id="cb65-288"><a href="#cb65-288" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x=</span>SLA)) <span class="sc">+</span> </span>
+<span id="cb65-289"><a href="#cb65-289" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()<span class="sc">+</span></span>
+<span id="cb65-290"><a href="#cb65-290" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Vegetation)</span>
+<span id="cb65-291"><a href="#cb65-291" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-292"><a href="#cb65-292" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-293"><a href="#cb65-293" aria-hidden="true" tabindex="-1"></a><span class="fu">## Densidade</span></span>
+<span id="cb65-294"><a href="#cb65-294" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-295"><a href="#cb65-295" aria-hidden="true" tabindex="-1"></a>Da mesma forma que o histograma, gráficos de densidade também podem mostrar a distribuição dos dados. Ao invés de simplesmente contagem de ocorrência (como no histograma), esse tipo de gráfico baseia-se na contagem por unidade, e por usar uma técnica de suavização de Kernel, são vizualmente mais elegantes.</span>
+<span id="cb65-296"><a href="#cb65-296" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-297"><a href="#cb65-297" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, fig.height=3, fig.width=5}</span></span>
+<span id="cb65-298"><a href="#cb65-298" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x=</span>SLA)) <span class="sc">+</span> </span>
+<span id="cb65-299"><a href="#cb65-299" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>()<span class="sc">+</span></span>
+<span id="cb65-300"><a href="#cb65-300" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Vegetation)</span>
+<span id="cb65-301"><a href="#cb65-301" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-302"><a href="#cb65-302" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x=</span>SLA, <span class="at">fill=</span> Phenology)) <span class="sc">+</span> </span>
+<span id="cb65-303"><a href="#cb65-303" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>()<span class="sc">+</span></span>
+<span id="cb65-304"><a href="#cb65-304" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Vegetation)</span>
+<span id="cb65-305"><a href="#cb65-305" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-306"><a href="#cb65-306" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-307"><a href="#cb65-307" aria-hidden="true" tabindex="-1"></a><span class="fu">## Gráfico de barras</span></span>
+<span id="cb65-308"><a href="#cb65-308" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-309"><a href="#cb65-309" aria-hidden="true" tabindex="-1"></a>Adicionando a camada geom_bar(), obtemos um gráfico de barras que representa contagens para dados categóricos. Portanto, gráfico de barras é útil principalmente quando a vairiável x é categórica. Perceba que nesse caso, o default da função é a contagem das ocorrências (stat = "count")</span>
+<span id="cb65-310"><a href="#cb65-310" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-311"><a href="#cb65-311" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-312"><a href="#cb65-312" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, fig.height=3, fig.width=7}</span></span>
+<span id="cb65-313"><a href="#cb65-313" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(Phenology)) <span class="sc">+</span> </span>
+<span id="cb65-314"><a href="#cb65-314" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()<span class="sc">+</span></span>
+<span id="cb65-315"><a href="#cb65-315" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Vegetation)</span>
+<span id="cb65-316"><a href="#cb65-316" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-317"><a href="#cb65-317" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="fu">as.factor</span>(N))) <span class="sc">+</span> </span>
+<span id="cb65-318"><a href="#cb65-318" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span>
+<span id="cb65-319"><a href="#cb65-319" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-320"><a href="#cb65-320" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-321"><a href="#cb65-321" aria-hidden="true" tabindex="-1"></a>Podemos aplicar outros tipos de métodos estatísticos na função para mostrar mais padrões:</span>
+<span id="cb65-322"><a href="#cb65-322" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-323"><a href="#cb65-323" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
+<span id="cb65-324"><a href="#cb65-324" aria-hidden="true" tabindex="-1"></a>Use a posição (position) para determinar onde suas barras estarão! O default é "stack" (uma em cima da outra)</span>
+<span id="cb65-325"><a href="#cb65-325" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb65-326"><a href="#cb65-326" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-327"><a href="#cb65-327" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, fig.height=3, fig.width=7}</span></span>
+<span id="cb65-328"><a href="#cb65-328" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">y=</span>N, <span class="at">x=</span>Species, <span class="at">fill=</span>Vegetation)) <span class="sc">+</span> </span>
+<span id="cb65-329"><a href="#cb65-329" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"identity"</span>)</span>
+<span id="cb65-330"><a href="#cb65-330" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-331"><a href="#cb65-331" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">y=</span>N, <span class="at">x=</span>Species, <span class="at">fill=</span>Vegetation)) <span class="sc">+</span> </span>
+<span id="cb65-332"><a href="#cb65-332" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"identity"</span>, <span class="at">position=</span><span class="fu">position_dodge</span>())</span>
+<span id="cb65-333"><a href="#cb65-333" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-334"><a href="#cb65-334" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-335"><a href="#cb65-335" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
+<span id="cb65-336"><a href="#cb65-336" aria-hidden="true" tabindex="-1"></a>Para ordenar os dados de maneira rápida de acordo com uma ordem crescente/descrescente, utilizar a função reorder diretamente no *aes()*</span>
+<span id="cb65-337"><a href="#cb65-337" aria-hidden="true" tabindex="-1"></a>::: </span>
+<span id="cb65-338"><a href="#cb65-338" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-339"><a href="#cb65-339" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, fig.height=3, fig.width=7}</span></span>
+<span id="cb65-340"><a href="#cb65-340" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">y=</span>N, <span class="at">x=</span><span class="fu">reorder</span>(Species, <span class="sc">-</span>N), <span class="at">fill=</span>Vegetation)) <span class="sc">+</span> </span>
+<span id="cb65-341"><a href="#cb65-341" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"identity"</span>, <span class="at">position=</span><span class="fu">position_dodge</span>())</span>
+<span id="cb65-342"><a href="#cb65-342" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-343"><a href="#cb65-343" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-344"><a href="#cb65-344" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">y=</span>N, <span class="at">x=</span><span class="fu">reorder</span>(Species, <span class="sc">+</span>N), <span class="at">fill=</span>Vegetation)) <span class="sc">+</span> </span>
+<span id="cb65-345"><a href="#cb65-345" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"identity"</span>, <span class="at">position=</span><span class="fu">position_dodge</span>())</span>
+<span id="cb65-346"><a href="#cb65-346" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-347"><a href="#cb65-347" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(Phenology, <span class="sc">+</span>N), <span class="at">y =</span> N)) <span class="sc">+</span> </span>
+<span id="cb65-348"><a href="#cb65-348" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()<span class="sc">+</span></span>
+<span id="cb65-349"><a href="#cb65-349" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Vegetation)</span>
+<span id="cb65-350"><a href="#cb65-350" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-351"><a href="#cb65-351" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-352"><a href="#cb65-352" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
+<span id="cb65-353"><a href="#cb65-353" aria-hidden="true" tabindex="-1"></a>Para mudar a orientação, basta designar a variável categórica como y ao invés de x (default)</span>
+<span id="cb65-354"><a href="#cb65-354" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb65-355"><a href="#cb65-355" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-356"><a href="#cb65-356" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, fig.height=7, fig.width=3}</span></span>
+<span id="cb65-357"><a href="#cb65-357" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x=</span>N, <span class="at">y=</span><span class="fu">reorder</span>(Species, <span class="sc">-</span>N), <span class="at">fill=</span>Vegetation)) <span class="sc">+</span> </span>
+<span id="cb65-358"><a href="#cb65-358" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"identity"</span>, <span class="at">position=</span><span class="fu">position_dodge</span>())</span>
+<span id="cb65-359"><a href="#cb65-359" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb65-360"><a href="#cb65-360" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-361"><a href="#cb65-361" aria-hidden="true" tabindex="-1"></a><span class="fu"># FIM (da primeira parte)</span></span>
+</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+</body></html>

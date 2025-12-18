@@ -1,0 +1,1882 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="author" content="Marina Scalon">
+<meta name="dcterms.date" content="2024-10-07">
+<title>Aula 2 - Manipulação de Dados – Marina Scalon</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-d1dcb668c252c18fe58aef64f9439a14.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script><link rel="stylesheet" href="../styles.css">
+</head>
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Marina Scalon</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+<li class="nav-item">
+    <a class="nav-link" href="../index.html"> <i class="bi bi-house-fill" role="img">
+</i> 
+<span class="menu-text"> </span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../publications.html"> 
+<span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../TidyTuesday.html"> 
+<span class="menu-text">TidyTuesday</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-aulas-2024-(português" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Aulas 2024 (Português)</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-aulas-2024-(português">
+<li>
+    <a class="dropdown-item" href="../aulas/Aula Quarto.html">
+ <span class="dropdown-text">Aula 1 - Quarto</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../aulas/Pratica - Semana 2.html">
+ <span class="dropdown-text">Aula 2 - Manipulação de Dados</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../aulas/Pratica - Semana 3.html">
+ <span class="dropdown-text">Aula 3 - Visualização de Dados</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../aulas/Pratica- Semana 3 - Parte2.html">
+ <span class="dropdown-text">Aula 4 - Customizações</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../aulas/Aula_Mapa 2024.html">
+ <span class="dropdown-text">Aula 5 - Mapas</span></a>
+  </li>  
+    </ul>
+</li>
+</ul>
+</div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../aulas/Pratica - Semana 2.html">Aula 2 - Manipulação de Dados</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav></header><!-- content --><header id="title-block-header" class="quarto-title-block default page-columns page-full"><div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <div class="quarto-title-block"><div><h1 class="title">Aula 2 - Manipulação de Dados</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+            <p class="subtitle lead">Aula Prática</p>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Marina Scalon </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">October 7, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../aulas/Aula Quarto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Aula 1 - Quarto</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../aulas/Pratica - Semana 2.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Aula 2 - Manipulação de Dados</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../aulas/Pratica - Semana 3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Aula 3 - Visualização de Dados</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../aulas/Pratica- Semana 3 - Parte2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Aula 4 - Customizações</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../aulas/Aula_Mapa 2024.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Aula 5 - Mapas</span></a>
+  </div>
+</li>
+    </ul>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li><a href="#instalando-os-pacotes" id="toc-instalando-os-pacotes" class="nav-link active" data-scroll-target="#instalando-os-pacotes">Instalando os pacotes</a></li>
+  <li><a href="#carregando-o-conjunto-de-dados" id="toc-carregando-o-conjunto-de-dados" class="nav-link" data-scroll-target="#carregando-o-conjunto-de-dados">Carregando o conjunto de dados</a></li>
+  <li>
+<a href="#utilizando-as-fun%C3%A7%C3%B5es-do-dplyr" id="toc-utilizando-as-funções-do-dplyr" class="nav-link" data-scroll-target="#utilizando-as-fun%C3%A7%C3%B5es-do-dplyr">Utilizando as funções do dplyr</a>
+  <ul class="collapse">
+<li><a href="#select" id="toc-select" class="nav-link" data-scroll-target="#select">Select</a></li>
+  <li><a href="#rbase" id="toc-rbase" class="nav-link" data-scroll-target="#rbase">Rbase</a></li>
+  <li><a href="#slice" id="toc-slice" class="nav-link" data-scroll-target="#slice">Slice</a></li>
+  <li><a href="#rbase-1" id="toc-rbase-1" class="nav-link" data-scroll-target="#rbase-1">Rbase</a></li>
+  <li><a href="#filter" id="toc-filter" class="nav-link" data-scroll-target="#filter">Filter</a></li>
+  <li><a href="#rename" id="toc-rename" class="nav-link" data-scroll-target="#rename">Rename</a></li>
+  <li><a href="#arrange" id="toc-arrange" class="nav-link" data-scroll-target="#arrange">Arrange</a></li>
+  <li><a href="#mutate" id="toc-mutate" class="nav-link" data-scroll-target="#mutate">Mutate</a></li>
+  <li><a href="#if_else" id="toc-if_else" class="nav-link" data-scroll-target="#if_else">If_else</a></li>
+  <li><a href="#case_when" id="toc-case_when" class="nav-link" data-scroll-target="#case_when">Case_when</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#pipe" id="toc-pipe" class="nav-link" data-scroll-target="#pipe">PIPE</a>
+  <ul class="collapse">
+<li>
+<a href="#summarise" id="toc-summarise" class="nav-link" data-scroll-target="#summarise">Summarise</a>
+  <ul class="collapse">
+<li><a href="#m%C3%BAltiplas-fun%C3%A7%C3%B5es" id="toc-múltiplas-funções" class="nav-link" data-scroll-target="#m%C3%BAltiplas-fun%C3%A7%C3%B5es">Múltiplas funções</a></li>
+  </ul>
+</li>
+  </ul>
+</li>
+  <li>
+<a href="#utilizando-as-fun%C3%A7%C3%B5es-do-tidyr" id="toc-utilizando-as-funções-do-tidyr" class="nav-link" data-scroll-target="#utilizando-as-fun%C3%A7%C3%B5es-do-tidyr">Utilizando as funções do tidyr</a>
+  <ul class="collapse">
+<li><a href="#pivot_longer-antiga-func%C3%A3o-gather" id="toc-pivot_longer-antiga-funcão-gather" class="nav-link" data-scroll-target="#pivot_longer-antiga-func%C3%A3o-gather">Pivot_longer (antiga funcão <strong>gather()</strong>)</a></li>
+  <li><a href="#pivot_wider-antiga-fun%C3%A7%C3%A3o-spread" id="toc-pivot_wider-antiga-função-spread" class="nav-link" data-scroll-target="#pivot_wider-antiga-fun%C3%A7%C3%A3o-spread">Pivot_wider (antiga função <strong>spread()</strong>)</a></li>
+  <li><a href="#unite" id="toc-unite" class="nav-link" data-scroll-target="#unite">Unite</a></li>
+  <li><a href="#separate" id="toc-separate" class="nav-link" data-scroll-target="#separate">Separate</a></li>
+  </ul>
+</li>
+  <li><a href="#leitura-complementar" id="toc-leitura-complementar" class="nav-link" data-scroll-target="#leitura-complementar">Leitura complementar</a></li>
+  <li><a href="#fim" id="toc-fim" class="nav-link" data-scroll-target="#fim">FIM</a></li>
+  </ul></nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content"><p>Script utilizado na aula 2 para demostrar as funções do pacote <code>dpyr</code> e <code>tidyr</code> do <code>tidyverse</code></p>
+<section id="instalando-os-pacotes" class="level2"><h2 class="anchored" data-anchor-id="instalando-os-pacotes">Instalando os pacotes</h2>
+<p>Nessa aula vamos utilizar o mesmo conjunto de dados da aula 1 para demostrar as funções dos pacotes tidyr e dplyr do tidyverse. O primeiro passo então é carregar o pacote. Confiram a versão e atualizem para versão 2.0.0 usando a função <em>tidyverse_update()</em>!</p>
+<div class="cell">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.1     ✔ stringr   1.5.2
+✔ ggplot2   4.0.0     ✔ tibble    3.3.0
+✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+✔ purrr     1.1.0     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># tidyverse_update()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="carregando-o-conjunto-de-dados" class="level2"><h2 class="anchored" data-anchor-id="carregando-o-conjunto-de-dados">Carregando o conjunto de dados</h2>
+<p>Agora vamos determinar o diretório de trabalho e carregar os dados, conforme aprendemos na aula anterior.</p>
+<blockquote class="blockquote">
+<p>Você deve colocar o diretório de acordo com o seu caminho no computador, e de acordo com a localização dos seus dados.</p>
+</blockquote>
+<div class="cell">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># setwd("C:/Marina/Pos-doutorado/PNPD_UFPR/Vis Man Dados/Aula 2")</span></span>
+<span><span class="co"># dados &lt;- read.csv("Dados.csv")</span></span>
+<span><span class="va">dados</span> <span class="op">&lt;-</span> <span class="fu">readr</span><span class="fu">::</span><span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">'https://raw.githubusercontent.com/scalonmc/VisMan/master/VisManDados/Aula1/dados.csv'</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 129 Columns: 13
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (3): Tratamento, especie, Grupo
+dbl (10): Amostra, individuo, N, P, Mg, K, Ca, Al_ppm, area, peso
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">dados</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>spc_tbl_ [129 × 13] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+ $ Amostra   : num [1:129] 1 2 3 4 5 6 7 8 9 10 ...
+ $ Tratamento: chr [1:129] "Floresta" "Floresta" "Floresta" "Floresta" ...
+ $ especie   : chr [1:129] "AT" "AT" "AT" "BC" ...
+ $ Grupo     : chr [1:129] "D" "D" "D" "B" ...
+ $ individuo : num [1:129] 1 2 3 1 2 3 1 2 3 1 ...
+ $ N         : num [1:129] 2.36 2.07 2.03 1.32 1.23 ...
+ $ P         : num [1:129] 0.1143 0.1143 0.1214 0.0643 0.0714 ...
+ $ Mg        : num [1:129] 0.15 0.18 0.133 0.159 0.113 ...
+ $ K         : num [1:129] 1.197 1.444 0.366 0.679 0.957 ...
+ $ Ca        : num [1:129] 0.319 0.413 0.371 0.576 0.458 ...
+ $ Al_ppm    : num [1:129] 122.8 251.8 206.5 96.8 103.3 ...
+ $ area      : num [1:129] 288 262 184 149 263 ...
+ $ peso      : num [1:129] 3.63 2.49 2.16 1.86 4.39 ...
+ - attr(*, "spec")=
+  .. cols(
+  ..   Amostra = col_double(),
+  ..   Tratamento = col_character(),
+  ..   especie = col_character(),
+  ..   Grupo = col_character(),
+  ..   individuo = col_double(),
+  ..   N = col_double(),
+  ..   P = col_double(),
+  ..   Mg = col_double(),
+  ..   K = col_double(),
+  ..   Ca = col_double(),
+  ..   Al_ppm = col_double(),
+  ..   area = col_double(),
+  ..   peso = col_double()
+  .. )
+ - attr(*, "problems")=&lt;externalptr&gt; </code></pre>
+</div>
+</div>
+</section><section id="utilizando-as-funções-do-dplyr" class="level1"><h1>Utilizando as funções do dplyr</h1>
+<section id="select" class="level2"><h2 class="anchored" data-anchor-id="select">Select</h2>
+<p>A função <strong>select()</strong> é importante para selecionar ou excluir variáveis (colunas do dataset)</p>
+<p>Abaixo, vamos fazer passo a passo:</p>
+<ol type="1">
+<li>Selecionar apenas as variáveis categóricas</li>
+<li>Excluir variávies não úteis</li>
+<li>Condicional, no caso se a variável for numérica usando <strong>is.numeric</strong>
+</li>
+<li>Selecionar variávels com alguma característica comum utilizando <strong>starts_with()</strong> ou <strong>ends_with()</strong>
+</li>
+<li>Alterar ordem para visualização dos dados</li>
+</ol>
+<div class="cell">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">categoricas</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">dados</span>, <span class="va">Tratamento</span>, <span class="va">especie</span>, <span class="va">Grupo</span><span class="op">)</span> <span class="co">#1</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">categoricas</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [129 × 3] (S3: tbl_df/tbl/data.frame)
+ $ Tratamento: chr [1:129] "Floresta" "Floresta" "Floresta" "Floresta" ...
+ $ especie   : chr [1:129] "AT" "AT" "AT" "BC" ...
+ $ Grupo     : chr [1:129] "D" "D" "D" "B" ...</code></pre>
+</div>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">clean</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">dados</span>, <span class="op">-</span><span class="va">Amostra</span>, <span class="op">-</span><span class="va">individuo</span><span class="op">)</span> <span class="co">#2</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">clean</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [129 × 11] (S3: tbl_df/tbl/data.frame)
+ $ Tratamento: chr [1:129] "Floresta" "Floresta" "Floresta" "Floresta" ...
+ $ especie   : chr [1:129] "AT" "AT" "AT" "BC" ...
+ $ Grupo     : chr [1:129] "D" "D" "D" "B" ...
+ $ N         : num [1:129] 2.36 2.07 2.03 1.32 1.23 ...
+ $ P         : num [1:129] 0.1143 0.1143 0.1214 0.0643 0.0714 ...
+ $ Mg        : num [1:129] 0.15 0.18 0.133 0.159 0.113 ...
+ $ K         : num [1:129] 1.197 1.444 0.366 0.679 0.957 ...
+ $ Ca        : num [1:129] 0.319 0.413 0.371 0.576 0.458 ...
+ $ Al_ppm    : num [1:129] 122.8 251.8 206.5 96.8 103.3 ...
+ $ area      : num [1:129] 288 262 184 149 263 ...
+ $ peso      : num [1:129] 3.63 2.49 2.16 1.86 4.39 ...</code></pre>
+</div>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">numericas</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select_all.html">select_if</a></span><span class="op">(</span><span class="va">dados</span>, <span class="va">is.numeric</span><span class="op">)</span> <span class="co">#3</span></span>
+<span></span>
+<span><span class="va">ppm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">clean</span>, <span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">ends_with</a></span><span class="op">(</span><span class="st">"ppm"</span><span class="op">)</span><span class="op">)</span> <span class="co">#4</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">ppm</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [129 × 1] (S3: tbl_df/tbl/data.frame)
+ $ Al_ppm: num [1:129] 122.8 251.8 206.5 96.8 103.3 ...</code></pre>
+</div>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ordered</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">dados</span>, <span class="va">N</span>, <span class="va">P</span>, <span class="fu"><a href="https://tidyselect.r-lib.org/reference/everything.html">everything</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">ordered</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 13
+      N      P Amostra Tratamento especie Grupo individuo    Mg     K    Ca
+  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1  2.36 0.114        1 Floresta   AT      D             1 0.150 1.20  0.319
+2  2.07 0.114        2 Floresta   AT      D             2 0.180 1.44  0.413
+3  2.03 0.121        3 Floresta   AT      D             3 0.133 0.366 0.371
+4  1.32 0.0643       4 Floresta   BC      B             1 0.159 0.679 0.576
+5  1.23 0.0714       5 Floresta   BC      B             2 0.113 0.957 0.458
+6  1.37 0.0786       6 Floresta   BC      B             3 0.116 0.75  0.347
+# ℹ 3 more variables: Al_ppm &lt;dbl&gt;, area &lt;dbl&gt;, peso &lt;dbl&gt;</code></pre>
+</div>
+</div>
+</section><section id="rbase" class="level2"><h2 class="anchored" data-anchor-id="rbase">Rbase</h2>
+<pre><code>Para fazer a mesma coisa no Rbase
+São comandos bem simples que eu acho importante demostrar
+O diferencial é precisar verificar o número correspondente da coluna do dataframe</code></pre>
+<div class="cell">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">categoricas2</span> <span class="op">&lt;-</span> <span class="va">dados</span><span class="op">[</span><span class="fl">2</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span> <span class="co">#1</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">categoricas2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [129 × 3] (S3: tbl_df/tbl/data.frame)
+ $ Tratamento: chr [1:129] "Floresta" "Floresta" "Floresta" "Floresta" ...
+ $ especie   : chr [1:129] "AT" "AT" "AT" "BC" ...
+ $ Grupo     : chr [1:129] "D" "D" "D" "B" ...</code></pre>
+</div>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">clean2</span> <span class="op">&lt;-</span> <span class="va">dados</span><span class="op">[</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">5</span><span class="op">)</span><span class="op">]</span> <span class="co">#2</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">clean</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [129 × 11] (S3: tbl_df/tbl/data.frame)
+ $ Tratamento: chr [1:129] "Floresta" "Floresta" "Floresta" "Floresta" ...
+ $ especie   : chr [1:129] "AT" "AT" "AT" "BC" ...
+ $ Grupo     : chr [1:129] "D" "D" "D" "B" ...
+ $ N         : num [1:129] 2.36 2.07 2.03 1.32 1.23 ...
+ $ P         : num [1:129] 0.1143 0.1143 0.1214 0.0643 0.0714 ...
+ $ Mg        : num [1:129] 0.15 0.18 0.133 0.159 0.113 ...
+ $ K         : num [1:129] 1.197 1.444 0.366 0.679 0.957 ...
+ $ Ca        : num [1:129] 0.319 0.413 0.371 0.576 0.458 ...
+ $ Al_ppm    : num [1:129] 122.8 251.8 206.5 96.8 103.3 ...
+ $ area      : num [1:129] 288 262 184 149 263 ...
+ $ peso      : num [1:129] 3.63 2.49 2.16 1.86 4.39 ...</code></pre>
+</div>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">nutri</span> <span class="op">&lt;-</span> <span class="va">dados</span><span class="op">[</span><span class="fl">6</span><span class="op">:</span><span class="fl">13</span><span class="op">]</span> <span class="co">#3</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">nutri</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [129 × 8] (S3: tbl_df/tbl/data.frame)
+ $ N     : num [1:129] 2.36 2.07 2.03 1.32 1.23 ...
+ $ P     : num [1:129] 0.1143 0.1143 0.1214 0.0643 0.0714 ...
+ $ Mg    : num [1:129] 0.15 0.18 0.133 0.159 0.113 ...
+ $ K     : num [1:129] 1.197 1.444 0.366 0.679 0.957 ...
+ $ Ca    : num [1:129] 0.319 0.413 0.371 0.576 0.458 ...
+ $ Al_ppm: num [1:129] 122.8 251.8 206.5 96.8 103.3 ...
+ $ area  : num [1:129] 288 262 184 149 263 ...
+ $ peso  : num [1:129] 3.63 2.49 2.16 1.86 4.39 ...</code></pre>
+</div>
+</div>
+</section><section id="slice" class="level2"><h2 class="anchored" data-anchor-id="slice">Slice</h2>
+<p>A função <strong>slice()</strong> é importante para selecionar ou excluir observações (linhas do dataset)</p>
+<p>Abaixo, vamos fazer passo a passo:</p>
+<ol type="1">
+<li>Retirar linhas correspondentes a vegetação “Savana”</li>
+<li>Selecionar apenas as linhas correspondentes a vegetação “Savana”</li>
+<li>Selecionar n linhas em que a váriavel tem valor mínimo</li>
+<li>Selecionar n linhas em que uma variável tem um valor máximo</li>
+</ol>
+<div class="cell">
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">sem.savana</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="va">clean</span>, <span class="op">-</span><span class="fl">46</span><span class="op">:</span><span class="op">-</span><span class="fl">90</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">sem.savana</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [84 × 11] (S3: tbl_df/tbl/data.frame)
+ $ Tratamento: chr [1:84] "Floresta" "Floresta" "Floresta" "Floresta" ...
+ $ especie   : chr [1:84] "AT" "AT" "AT" "BC" ...
+ $ Grupo     : chr [1:84] "D" "D" "D" "B" ...
+ $ N         : num [1:84] 2.36 2.07 2.03 1.32 1.23 ...
+ $ P         : num [1:84] 0.1143 0.1143 0.1214 0.0643 0.0714 ...
+ $ Mg        : num [1:84] 0.15 0.18 0.133 0.159 0.113 ...
+ $ K         : num [1:84] 1.197 1.444 0.366 0.679 0.957 ...
+ $ Ca        : num [1:84] 0.319 0.413 0.371 0.576 0.458 ...
+ $ Al_ppm    : num [1:84] 122.8 251.8 206.5 96.8 103.3 ...
+ $ area      : num [1:84] 288 262 184 149 263 ...
+ $ peso      : num [1:84] 3.63 2.49 2.16 1.86 4.39 ...</code></pre>
+</div>
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">so.savana</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="va">clean</span>, <span class="fl">46</span><span class="op">:</span><span class="fl">90</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">so.savana</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [45 × 11] (S3: tbl_df/tbl/data.frame)
+ $ Tratamento: chr [1:45] "Savana" "Savana" "Savana" "Savana" ...
+ $ especie   : chr [1:45] "AT" "AT" "AT" "BC" ...
+ $ Grupo     : chr [1:45] "D" "D" "D" "B" ...
+ $ N         : num [1:45] 2.07 2.36 2.4 1.41 1.55 ...
+ $ P         : num [1:45] 0.1071 0.1714 0.1071 0.0786 0.0714 ...
+ $ Mg        : num [1:45] 0.22 0.205 0.214 0.171 0.222 ...
+ $ K         : num [1:45] 1.303 1.28 1.126 0.814 0.879 ...
+ $ Ca        : num [1:45] 0.813 0.825 0.57 0.603 0.968 ...
+ $ Al_ppm    : num [1:45] 155 213 155 239 258 ...
+ $ area      : num [1:45] 352 378 375 208 574 ...
+ $ peso      : num [1:45] 3.4 3.87 5.07 2.68 6.17 ...</code></pre>
+</div>
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">menosN</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_min</a></span><span class="op">(</span><span class="va">dados</span>, <span class="va">N</span>, n <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">menosN</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 13
+  Amostra Tratamento especie Grupo individuo     N      P     Mg     K     Ca
+    &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+1     112 Savana     SP      S             1 0.612 0.0571 0.0471 0.236 0.0756
+2     113 Savana     SP      S             2 0.612 0.0571 0.0537 0.36  0.081 
+3     116 Savana     VE      S             2 0.754 0.0571 0.0347 0.326 0.196 
+4      44 Floresta   VE      S             2 0.848 0.05   0.0455 0.378 0.188 
+5     115 Savana     VE      S             1 0.848 0.05   0.0277 0.254 0.181 
+6      82 Campo      SM      S             1 0.848 0.0643 0.0722 0.385 0.172 
+# ℹ 3 more variables: Al_ppm &lt;dbl&gt;, area &lt;dbl&gt;, peso &lt;dbl&gt;</code></pre>
+</div>
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">maisAl</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_max</a></span><span class="op">(</span><span class="va">dados</span>, <span class="va">Al_ppm</span>, n <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">maisAl</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 13
+  Amostra Tratamento especie Grupo individuo     N      P     Mg     K    Ca
+    &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1     247 Savana     QP      D             2  1.40 0.0786 0.0736 0.728 0.398
+2     246 Savana     QP      D             1  1.48 0.0857 0.0812 0.632 0.236
+3     248 Savana     QP      D             3  1.06 0.0714 0.0728 0.893 0.210
+4      31 Floresta   QP      D             1  1.84 0.0714 0.0776 0.376 0.412
+5      33 Floresta   QP      D             3  1.32 0.0786 0.0844 0.405 0.515
+# ℹ 3 more variables: Al_ppm &lt;dbl&gt;, area &lt;dbl&gt;, peso &lt;dbl&gt;</code></pre>
+</div>
+</div>
+</section><section id="rbase-1" class="level2"><h2 class="anchored" data-anchor-id="rbase-1">Rbase</h2>
+<pre><code>Para fazer a mesma coisa no Rbase
+Sem usar a função **subset()** e usando a função **subset()**</code></pre>
+<div class="cell">
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">so.savana2</span> <span class="op">&lt;-</span> <span class="va">clean</span><span class="op">[</span><span class="fl">46</span><span class="op">:</span><span class="fl">90</span>,<span class="op">]</span></span>
+<span><span class="va">so.savana3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">clean</span>, <span class="va">Tratamento</span> <span class="op">==</span> <span class="st">"Savana"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">sem.savana2</span> <span class="op">&lt;-</span> <span class="va">clean</span><span class="op">[</span><span class="op">-</span><span class="op">(</span><span class="fl">46</span><span class="op">:</span><span class="fl">90</span><span class="op">)</span>,<span class="op">]</span></span>
+<span><span class="va">sem.savana3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">clean</span>, <span class="va">Tratamento</span> <span class="op">!=</span> <span class="st">"Savana"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="filter" class="level2"><h2 class="anchored" data-anchor-id="filter">Filter</h2>
+<p>A função <strong>filter()</strong> funciona para seleção condicional de variáveis</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ela é equivalente a função <strong>subset()</strong> do Rbase - caso você esteja acostumado com ela!</p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">deciduous</span> <span class="op">&lt;-</span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">clean</span>, <span class="va">Grupo</span> <span class="op">==</span> <span class="st">"D"</span><span class="op">)</span></span>
+<span><span class="va">deciduous2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">clean</span>, <span class="va">Grupo</span> <span class="op">==</span> <span class="st">"D"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<blockquote class="blockquote">
+<p>Também é possível combinar as condições de filtro!</p>
+</blockquote>
+<p>Nesse caso estamos selecionando as espécies decíduas (D) apenas de Floresta com nitrogênio foliar maior que 2%</p>
+<div class="cell">
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">deciduous.floresta.highN</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">clean</span>, <span class="va">Grupo</span> <span class="op">==</span> <span class="st">"D"</span> <span class="op">&amp;</span> </span>
+<span>                                     <span class="va">Tratamento</span> <span class="op">==</span><span class="st">"Floresta"</span> <span class="op">&amp;</span></span>
+<span>                                     <span class="va">N</span> <span class="op">&gt;=</span><span class="fl">2</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">deciduous.floresta.highN</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [6 × 11] (S3: tbl_df/tbl/data.frame)
+ $ Tratamento: chr [1:6] "Floresta" "Floresta" "Floresta" "Floresta" ...
+ $ especie   : chr [1:6] "AT" "AT" "AT" "GN" ...
+ $ Grupo     : chr [1:6] "D" "D" "D" "D" ...
+ $ N         : num [1:6] 2.36 2.07 2.03 4.62 3.77 ...
+ $ P         : num [1:6] 0.114 0.114 0.121 0.143 0.157 ...
+ $ Mg        : num [1:6] 0.15 0.18 0.133 0.247 0.176 ...
+ $ K         : num [1:6] 1.197 1.444 0.366 1.263 1.388 ...
+ $ Ca        : num [1:6] 0.319 0.413 0.371 0.645 0.266 ...
+ $ Al_ppm    : num [1:6] 123 252 206 181 148 ...
+ $ area      : num [1:6] 288 262 184 274 385 ...
+ $ peso      : num [1:6] 3.63 2.49 2.16 3.92 3.62 ...</code></pre>
+</div>
+</div>
+<p>Verificar <a href="https://d33wubrfki0l68.cloudfront.net/01f4b6d39d2be8269740a3ad7946faa79f7243cf/8369a/diagrams/transform-logical.png">operadores lógicos do R</a></p>
+<blockquote class="blockquote">
+<p>Operador %in%</p>
+</blockquote>
+<p>Para selecionar vários níveis dentro de uma variável</p>
+<div class="cell">
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">sp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">clean</span>, <span class="va">especie</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"CB"</span>, <span class="st">"KC"</span>, <span class="st">"QP"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">sp</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [27 × 11] (S3: tbl_df/tbl/data.frame)
+ $ Tratamento: chr [1:27] "Floresta" "Floresta" "Floresta" "Floresta" ...
+ $ especie   : chr [1:27] "CB" "CB" "CB" "KC" ...
+ $ Grupo     : chr [1:27] "B" "B" "B" "D" ...
+ $ N         : num [1:27] 1.18 1.27 1.55 1.23 1.41 ...
+ $ P         : num [1:27] 0.0929 0.0786 0.0714 0.0786 0.1 ...
+ $ Mg        : num [1:27] 0.088 0.0788 0.0822 0.1123 0.1307 ...
+ $ K         : num [1:27] 0.318 0.233 0.336 0.567 0.459 0.479 0.376 0.934 0.405 0.657 ...
+ $ Ca        : num [1:27] 0.315 0.12 0.112 0.311 0.336 ...
+ $ Al_ppm    : num [1:27] 45.3 51.8 38.8 155 180.8 ...
+ $ area      : num [1:27] 490 312 288 287 145 ...
+ $ peso      : num [1:27] 5.6 4.77 5.38 4.78 1.42 ...</code></pre>
+</div>
+</div>
+</section><section id="rename" class="level2"><h2 class="anchored" data-anchor-id="rename">Rename</h2>
+<p>A função <strong>rename()</strong> é importante para mudar os nomes das variáveis. O nome atual vem antes do nome original. Vamos mudar os nomes para inglês.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Dica!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Quando o nome for espaçado ou tiver caracter especial ou número, deve estar entre o símbolo `</p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/ls.html">ls</a></span><span class="op">(</span><span class="va">clean</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "Al_ppm"     "area"       "Ca"         "especie"    "Grupo"     
+ [6] "K"          "Mg"         "N"          "P"          "peso"      
+[11] "Tratamento"</code></pre>
+</div>
+<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">new</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span><span class="op">(</span><span class="va">clean</span>, Vegetation <span class="op">=</span> <span class="va">Tratamento</span>, Species <span class="op">=</span> <span class="va">especie</span>, `Phenological group` <span class="op">=</span> <span class="va">Grupo</span>,</span>
+<span>                Al <span class="op">=</span> <span class="va">Al_ppm</span>, </span>
+<span>                `leaf area` <span class="op">=</span> <span class="va">area</span>, `leaf mass` <span class="op">=</span> <span class="va">peso</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/ls.html">ls</a></span><span class="op">(</span><span class="va">new</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "Al"                 "Ca"                 "K"                 
+ [4] "leaf area"          "leaf mass"          "Mg"                
+ [7] "N"                  "P"                  "Phenological group"
+[10] "Species"            "Vegetation"        </code></pre>
+</div>
+</div>
+</section><section id="arrange" class="level2"><h2 class="anchored" data-anchor-id="arrange">Arrange</h2>
+<p>A função <strong>arrange()</strong> permite colocarmos os dados em determinada ordem. Isso é importante principalmente para verificar tendências ou <em>outliers</em> Aqui vamos colocar os dados na ordem do maior valor de Al par ao menor para verificarmos as plantas acumuladoras de alumínio. Vamos usar a função head() para olhar como os dados foram ordenados do maior valor de Al.</p>
+<div class="cell">
+<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">acumuladoras</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span> <span class="op">(</span><span class="va">new</span>, <span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">Al</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">acumuladoras</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 11
+  Vegetation Species `Phenological group`     N      P     Mg     K    Ca     Al
+  &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;                &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+1 Savana     QP      D                    1.40  0.0786 0.0736 0.728 0.398 15012.
+2 Savana     QP      D                    1.48  0.0857 0.0812 0.632 0.236 12878.
+3 Savana     QP      D                    1.06  0.0714 0.0728 0.893 0.210 12522.
+4 Floresta   QP      D                    1.84  0.0714 0.0776 0.376 0.412 12345 
+5 Floresta   QP      D                    1.32  0.0786 0.0844 0.405 0.515 11365 
+6 Savana     VE      S                    0.754 0.0571 0.0347 0.326 0.196 10975 
+# ℹ 2 more variables: `leaf area` &lt;dbl&gt;, `leaf mass` &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>Mais interessante talvez seja ver esse padrão por algum grupo. Para isso arrange() pode ser muito útil.</p>
+<div class="cell">
+<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">acumuladoras</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">new</span>, <span class="va">`Phenological group`</span>, <span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">Al</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">acumuladoras</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 11
+  Vegetation Species `Phenological group`     N      P     Mg     K    Ca    Al
+  &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;                &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1 Savana     BC      B                     1.56 0.0714 0.222  0.879 0.968  258.
+2 Savana     SA      B                     2.08 0.0714 0.0941 0.561 0.221  258.
+3 Savana     SA      B                     1.91 0.0643 0.0734 0.313 0.113  252.
+4 Savana     BC      B                     1.41 0.0786 0.171  0.814 0.603  239.
+5 Savana     SA      B                     1.99 0.0571 0.0704 0.369 0.15   239.
+6 Campo      CB      B                     1.56 0.0786 0.160  0.507 0.503  226 
+# ℹ 2 more variables: `leaf area` &lt;dbl&gt;, `leaf mass` &lt;dbl&gt;</code></pre>
+</div>
+</div>
+</section><section id="mutate" class="level2"><h2 class="anchored" data-anchor-id="mutate">Mutate</h2>
+<p>A função <strong>mutate()</strong> é muito utilizada para diversos objetivos de manipulação. Com ela, podemos:</p>
+<ol type="1">
+<li>Transformar classes de objetos</li>
+<li>Mudar os nomes de variáveis ou de fatores</li>
+<li>Criar novas variáveis</li>
+</ol>
+<div class="cell">
+<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">new</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [129 × 11] (S3: tbl_df/tbl/data.frame)
+ $ Vegetation        : chr [1:129] "Floresta" "Floresta" "Floresta" "Floresta" ...
+ $ Species           : chr [1:129] "AT" "AT" "AT" "BC" ...
+ $ Phenological group: chr [1:129] "D" "D" "D" "B" ...
+ $ N                 : num [1:129] 2.36 2.07 2.03 1.32 1.23 ...
+ $ P                 : num [1:129] 0.1143 0.1143 0.1214 0.0643 0.0714 ...
+ $ Mg                : num [1:129] 0.15 0.18 0.133 0.159 0.113 ...
+ $ K                 : num [1:129] 1.197 1.444 0.366 0.679 0.957 ...
+ $ Ca                : num [1:129] 0.319 0.413 0.371 0.576 0.458 ...
+ $ Al                : num [1:129] 122.8 251.8 206.5 96.8 103.3 ...
+ $ leaf area         : num [1:129] 288 262 184 149 263 ...
+ $ leaf mass         : num [1:129] 3.63 2.49 2.16 1.86 4.39 ...</code></pre>
+</div>
+<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">dados.factor</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate_all.html">mutate_if</a></span><span class="op">(</span><span class="va">new</span>, <span class="va">is.character</span>, <span class="va">as.factor</span><span class="op">)</span> <span class="co">#1</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">dados.factor</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [129 × 11] (S3: tbl_df/tbl/data.frame)
+ $ Vegetation        : Factor w/ 3 levels "Campo","Floresta",..: 2 2 2 2 2 2 2 2 2 2 ...
+ $ Species           : Factor w/ 15 levels "AT","BC","BS",..: 1 1 1 2 2 2 3 3 3 4 ...
+ $ Phenological group: Factor w/ 3 levels "B","D","S": 2 2 2 1 1 1 1 1 1 1 ...
+ $ N                 : num [1:129] 2.36 2.07 2.03 1.32 1.23 ...
+ $ P                 : num [1:129] 0.1143 0.1143 0.1214 0.0643 0.0714 ...
+ $ Mg                : num [1:129] 0.15 0.18 0.133 0.159 0.113 ...
+ $ K                 : num [1:129] 1.197 1.444 0.366 0.679 0.957 ...
+ $ Ca                : num [1:129] 0.319 0.413 0.371 0.576 0.458 ...
+ $ Al                : num [1:129] 122.8 251.8 206.5 96.8 103.3 ...
+ $ leaf area         : num [1:129] 288 262 184 149 263 ...
+ $ leaf mass         : num [1:129] 3.63 2.49 2.16 1.86 4.39 ...</code></pre>
+</div>
+<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">new.rename</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span><span class="va">dados.factor</span>, `Phenological group` <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/recode.html">recode</a></span><span class="op">(</span><span class="va">`Phenological group`</span>, D <span class="op">=</span> <span class="st">"Deciduous"</span>,  <span class="co">#2</span></span>
+<span>                                      B <span class="op">=</span> <span class="st">"Semideciduous"</span>, S <span class="op">=</span> <span class="st">"Evergreen"</span><span class="op">)</span>,</span>
+<span>                Vegetation <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/recode.html">recode</a></span><span class="op">(</span><span class="va">Vegetation</span>, Savana <span class="op">=</span> <span class="st">"Savanna"</span>, Floresta <span class="op">=</span> <span class="st">"Forest"</span>, Campo <span class="op">=</span> <span class="st">"Grassland"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">new.rename</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [129 × 11] (S3: tbl_df/tbl/data.frame)
+ $ Vegetation        : Factor w/ 3 levels "Grassland","Forest",..: 2 2 2 2 2 2 2 2 2 2 ...
+ $ Species           : Factor w/ 15 levels "AT","BC","BS",..: 1 1 1 2 2 2 3 3 3 4 ...
+ $ Phenological group: Factor w/ 3 levels "Semideciduous",..: 2 2 2 1 1 1 1 1 1 1 ...
+ $ N                 : num [1:129] 2.36 2.07 2.03 1.32 1.23 ...
+ $ P                 : num [1:129] 0.1143 0.1143 0.1214 0.0643 0.0714 ...
+ $ Mg                : num [1:129] 0.15 0.18 0.133 0.159 0.113 ...
+ $ K                 : num [1:129] 1.197 1.444 0.366 0.679 0.957 ...
+ $ Ca                : num [1:129] 0.319 0.413 0.371 0.576 0.458 ...
+ $ Al                : num [1:129] 122.8 251.8 206.5 96.8 103.3 ...
+ $ leaf area         : num [1:129] 288 262 184 149 263 ...
+ $ leaf mass         : num [1:129] 3.63 2.49 2.16 1.86 4.39 ...</code></pre>
+</div>
+<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">final</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span><span class="va">new.rename</span>, SLA <span class="op">=</span> <span class="op">(</span><span class="va">`leaf area`</span><span class="op">/</span><span class="va">`leaf mass`</span><span class="op">)</span>, `N:P` <span class="op">=</span> <span class="va">N</span><span class="op">/</span><span class="va">P</span><span class="op">)</span> <span class="co">#3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<blockquote class="blockquote">
+<p>A função <strong>transmute()</strong> equivale a mutate para criação de novas variáveis, porém só mantém a coluna da variável criada (não adiciona novas colunas)</p>
+</blockquote>
+<div class="cell">
+<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">final.2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/transmute.html">transmute</a></span><span class="op">(</span><span class="va">new.rename</span>, SLA <span class="op">=</span> <span class="op">(</span><span class="va">`leaf area`</span><span class="op">/</span><span class="va">`leaf mass`</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="if_else" class="level2"><h2 class="anchored" data-anchor-id="if_else">If_else</h2>
+<p>Função muito útil para transformar variáveis junto com o <em>mutate()</em> de acordo com determinada condição, seguindo a mesma lógica da função equivalente no Rbase <strong>ifelse()</strong>: <em>ifelse(condição, sim, não)</em></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>O diferencial é permitir lidar com valores faltantes!</p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">final3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span><span class="va">final</span>, classificação <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/if_else.html">if_else</a></span><span class="op">(</span><span class="va">Al</span><span class="op">&gt;</span><span class="fl">1000</span>, <span class="st">"acumuladora"</span>, <span class="st">"não-acumuladora"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://tibble.tidyverse.org/reference/view.html">view</a></span><span class="op">(</span><span class="va">final3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="case_when" class="level2"><h2 class="anchored" data-anchor-id="case_when">Case_when</h2>
+<p>Similar ao <strong>if_else()</strong>, mas permite mais condições! Perfeita para classificações ou agrupamentos de variáveis.</p>
+<div class="cell">
+<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">final4</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span><span class="va">final</span>, N_level <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span><span class="op">(</span></span>
+<span>                                  <span class="va">N</span> <span class="op">&lt;</span> <span class="fl">1</span> <span class="op">~</span> <span class="st">"very low"</span>,</span>
+<span>                                  <span class="fl">1</span> <span class="op">&lt;</span> <span class="va">N</span> <span class="op">&amp;</span> <span class="va">N</span> <span class="op">&lt;</span> <span class="fl">2</span> <span class="op">~</span> <span class="st">"low"</span>,</span>
+<span>                                  <span class="fl">2</span> <span class="op">&lt;</span> <span class="va">N</span> <span class="op">&amp;</span> <span class="va">N</span> <span class="op">&lt;</span> <span class="fl">3</span> <span class="op">~</span> <span class="st">"high"</span>,</span>
+<span>                                  <span class="va">N</span> <span class="op">&gt;</span> <span class="fl">3</span> <span class="op">~</span> <span class="st">"very high"</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section><section id="pipe" class="level1"><h1>PIPE</h1>
+<p>O símbolo <strong>%&gt;%</strong> conhecido como <em>pipe</em> é usado para unir as funções, podendo ser mentalmente substituído por “depois” (“then”).</p>
+<p>Dessa forma, não precisa se referir aos dados que estão sendo utilizados no início de cada função pois o pipe já assume que o produto de uma etapa é o impute da seguinte.</p>
+<p>Assim, organizar o seu código aplicando todos os comandos que fizemos acima, mas usando <em>pipe</em> reduz o número de linhas e deixa tudo mais limpo.</p>
+<p>Veja as etapas para chegar no dataset final:</p>
+<div class="cell">
+<div class="sourceCode" id="cb56"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">final.pipe</span> <span class="op">&lt;-</span> <span class="va">dados</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate_all.html">mutate_if</a></span><span class="op">(</span><span class="va">is.character</span>, <span class="va">as.factor</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>  <span class="co">#mudar classe dos objetos</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="op">-</span><span class="va">Amostra</span>, <span class="op">-</span><span class="va">individuo</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>  <span class="co"># eliminar colunas inuteis</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span><span class="op">(</span>Vegetation <span class="op">=</span> <span class="va">Tratamento</span>, Species <span class="op">=</span> <span class="va">especie</span>, `Phenological group` <span class="op">=</span> <span class="va">Grupo</span>,</span>
+<span>                Al <span class="op">=</span> <span class="va">Al_ppm</span>, </span>
+<span>                `leaf area` <span class="op">=</span> <span class="va">area</span>, `leaf mass` <span class="op">=</span> <span class="va">peso</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="co">#renomear variáveis</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>`Phenological group` <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/recode.html">recode</a></span><span class="op">(</span><span class="va">`Phenological group`</span>, D <span class="op">=</span> <span class="st">"Deciduous"</span>, </span>
+<span>                                      B <span class="op">=</span> <span class="st">"Semideciduous"</span>, S <span class="op">=</span> <span class="st">"Evergreen"</span><span class="op">)</span>,</span>
+<span>                Vegetation <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/recode.html">recode</a></span><span class="op">(</span><span class="va">Vegetation</span>, Savana <span class="op">=</span> <span class="st">"Savanna"</span>, </span>
+<span>                                    Floresta <span class="op">=</span> <span class="st">"Forest"</span>, Campo <span class="op">=</span> <span class="st">"Grassland"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>  <span class="co"># renomear os fatores</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>SLA<span class="op">=</span><span class="op">(</span><span class="va">`leaf area`</span><span class="op">/</span><span class="va">`leaf mass`</span><span class="op">)</span>, </span>
+<span>         `N:P` <span class="op">=</span> <span class="va">N</span><span class="op">/</span><span class="va">P</span><span class="op">)</span>  <span class="co">#criar novas variáveis </span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">final.pipe</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     Vegetation    Species       Phenological group       N        
+ Grassland:39   AT     : 9   Semideciduous:44       Min.   :0.612  
+ Forest   :45   BC     : 9   Deciduous    :45       1st Qu.:1.225  
+ Savanna  :45   CB     : 9   Evergreen    :40       Median :1.413  
+                DM     : 9                          Mean   :1.704  
+                GN     : 9                          3rd Qu.:2.026  
+                KC     : 9                          Max.   :4.994  
+                (Other):75                                         
+       P                 Mg               K                Ca        
+ Min.   :0.03570   Min.   :0.0053   Min.   :0.1910   Min.   :0.0725  
+ 1st Qu.:0.06430   1st Qu.:0.0745   1st Qu.:0.3760   1st Qu.:0.1738  
+ Median :0.07140   Median :0.1026   Median :0.5090   Median :0.2727  
+ Mean   :0.08012   Mean   :0.1124   Mean   :0.6624   Mean   :0.3319  
+ 3rd Qu.:0.08570   3rd Qu.:0.1471   3rd Qu.:0.8140   3rd Qu.:0.4584  
+ Max.   :0.22860   Max.   :0.2745   Max.   :2.4910   Max.   :0.9681  
+                                                                     
+       Al            leaf area        leaf mass           SLA        
+ Min.   :   19.3   Min.   : 34.34   Min.   :0.2584   Min.   : 31.59  
+ 1st Qu.:  116.3   1st Qu.:137.17   1st Qu.:1.8373   1st Qu.: 60.18  
+ Median :  180.8   Median :192.61   Median :2.4810   Median : 77.10  
+ Mean   : 1763.2   Mean   :204.89   Mean   :2.9656   Mean   : 78.71  
+ 3rd Qu.:  419.5   3rd Qu.:257.68   3rd Qu.:3.8455   3rd Qu.: 94.92  
+ Max.   :15012.5   Max.   :573.53   Max.   :9.4754   Max.   :150.00  
+                   NA's   :3        NA's   :3        NA's   :3       
+      N:P        
+ Min.   : 8.653  
+ 1st Qu.:16.781  
+ Median :19.780  
+ Mean   :21.896  
+ 3rd Qu.:24.412  
+ Max.   :63.537  
+                 </code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Dica!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Depois que você deixar os seus dados do jeito que você quer, salve novo arquivo de dados manipulados! Da próxima vez que você for usar conjunto da dados você já pode carregar o arquivo modificado e prontinho, sem passar pela etapa de manipulação novamente. Nunca substitua os dados originais! Use a função write.csv() e escreva sempre a extensão (.csv) no arquivo que será salvo.</p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb58"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/write.table.html">write.csv</a></span><span class="op">(</span><span class="va">final.pipe</span>, <span class="st">"Dados_manipulados.csv"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="summarise" class="level2"><h2 class="anchored" data-anchor-id="summarise">Summarise</h2>
+<p>A função <strong>summarise()</strong> (ou <strong>summarize()</strong>) cria um novo dataframe colapsando valores em um sumário. <strong>MUITO ÚTIL</strong> pra fazer tabelas de médias, desvio padrão, etc. Usualmente utilizamos a função <strong>group_by()</strong> antes para especificar os grupos. Também pode ser combinada por summarise_all para aplicar a função em todas as variáveis.</p>
+<div class="cell">
+<div class="sourceCode" id="cb59"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">medias</span><span class="op">&lt;-</span> <span class="va">final.pipe</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>N <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,</span>
+<span>                                   P <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">P</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">medias</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+      N      P
+  &lt;dbl&gt;  &lt;dbl&gt;
+1  1.70 0.0801</code></pre>
+</div>
+<div class="sourceCode" id="cb61"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Agrupando e aplicando em todas as colunas</span></span>
+<span></span>
+<span><span class="va">medias2</span> <span class="op">&lt;-</span> <span class="va">final.pipe</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">Species</span>, <span class="va">Vegetation</span>, <span class="va">`Phenological group`</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>                <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise_all.html">summarise_all</a></span><span class="op">(</span><span class="va">mean</span><span class="op">)</span> <span class="co">#médias por colunas</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">medias2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 13
+# Groups:   Species, Vegetation [6]
+  Species Vegetation `Phenological group`     N      P    Mg     K    Ca    Al
+  &lt;fct&gt;   &lt;fct&gt;      &lt;fct&gt;                &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1 AT      Grassland  Deciduous             1.79 0.102  0.165 1.72  0.623 239. 
+2 AT      Forest     Deciduous             2.15 0.117  0.154 1.00  0.368 194. 
+3 AT      Savanna    Deciduous             2.28 0.129  0.213 1.24  0.736 174. 
+4 BC      Grassland  Semideciduous         1.05 0.0476 0.108 0.656 0.404 131. 
+5 BC      Forest     Semideciduous         1.30 0.0714 0.130 0.795 0.460  86.0
+6 BC      Savanna    Semideciduous         1.41 0.0690 0.176 0.843 0.708 232. 
+# ℹ 4 more variables: `leaf area` &lt;dbl&gt;, `leaf mass` &lt;dbl&gt;, SLA &lt;dbl&gt;,
+#   `N:P` &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<section id="múltiplas-funções" class="level3"><h3 class="anchored" data-anchor-id="múltiplas-funções">Múltiplas funções</h3>
+<div class="cell">
+<div class="sourceCode" id="cb63"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">tabela_mean</span> <span class="op">&lt;-</span> <span class="va">final.pipe</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="op">-</span><span class="va">Species</span>, <span class="op">-</span><span class="va">`Phenological group`</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">Vegetation</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise_all.html">summarise_all</a></span><span class="op">(</span><span class="va">mean</span>, na.rm<span class="op">=</span><span class="cn">T</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">tabela1</span> <span class="op">&lt;-</span> <span class="va">final.pipe</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="op">-</span><span class="va">Species</span>, <span class="op">-</span><span class="va">`Phenological group`</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">Vegetation</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise_all.html">summarise_all</a></span><span class="op">(</span>.funs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="va">mean</span>, <span class="va">sd</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">tabela2</span> <span class="op">&lt;-</span> <span class="va">final.pipe</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="op">-</span><span class="va">Species</span>, <span class="op">-</span><span class="va">`Phenological group`</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">Vegetation</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise_all.html">summarise_all</a></span><span class="op">(</span>.funs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>media <span class="op">=</span> <span class="va">mean</span>, desvio <span class="op">=</span> <span class="va">sd</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">tabela3</span> <span class="op">&lt;-</span> <span class="va">final.pipe</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="op">-</span><span class="va">Species</span>, <span class="op">-</span><span class="va">`Phenological group`</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">Vegetation</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise_all.html">summarise_all</a></span><span class="op">(</span>.funs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="op">~</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">.</span>, na.rm<span class="op">=</span><span class="cn">T</span><span class="op">)</span>, <span class="op">~</span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">.</span>, na.rm<span class="op">=</span><span class="cn">T</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">tabela_all2</span> <span class="op">&lt;-</span> <span class="va">final.pipe</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">Vegetation</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/across.html">across</a></span><span class="op">(</span><span class="fu"><a href="https://tidyselect.r-lib.org/reference/where.html">where</a></span><span class="op">(</span><span class="va">is.numeric</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>media<span class="op">=</span><span class="va">mean</span>, desvio<span class="op">=</span><span class="va">sd</span><span class="op">)</span>,na.rm<span class="op">=</span><span class="cn">T</span><span class="op">)</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: There was 1 warning in `summarise()`.
+ℹ In argument: `across(where(is.numeric), list(media = mean, desvio = sd),
+  na.rm = T)`.
+ℹ In group 1: `Vegetation = Grassland`.
+Caused by warning:
+! The `...` argument of `across()` is deprecated as of dplyr 1.1.0.
+Supply arguments directly to `.fns` through an anonymous function instead.
+
+  # Previously
+  across(a:b, mean, na.rm = TRUE)
+
+  # Now
+  across(a:b, \(x) mean(x, na.rm = TRUE))</code></pre>
+</div>
+</div>
+</section></section></section><section id="utilizando-as-funções-do-tidyr" class="level1"><h1>Utilizando as funções do tidyr</h1>
+<p>O tidyr tem apenas 4 funções principais! Vamos entender elas AGORA!</p>
+<section id="pivot_longer-antiga-funcão-gather" class="level2"><h2 class="anchored" data-anchor-id="pivot_longer-antiga-funcão-gather">Pivot_longer (antiga funcão <strong>gather()</strong>)</h2>
+<p>A funçao <strong>pivot_longer()</strong> empilha os dados. Ela é útil para arranjar os dados de forma que algum conjunto de variáveis torne-se um fator. Alguns tipos de gráficos (como gráficos de barras e boxplots) utilizam essa estrutura. Também pode ser importante para fazer gráficos separados em facetas, sendo que cada faceta seria relacionada a um fator.</p>
+<blockquote class="blockquote">
+<p>Logicamente, TUDO depende da sua pergunta e do que você quer demostrar!!!</p>
+</blockquote>
+<p>Vamos usar pivot_longer() para juntar os nutrientes em uma única coluna.</p>
+<div class="cell">
+<div class="sourceCode" id="cb65"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">nutri</span> <span class="op">&lt;-</span> <span class="va">medias2</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="op">-</span><span class="va">`leaf area`</span>, <span class="op">-</span><span class="va">`leaf mass`</span>, <span class="op">-</span><span class="va">SLA</span>, <span class="op">-</span><span class="va">Al</span>, <span class="op">-</span><span class="va">`N:P`</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span><span class="fl">4</span><span class="op">:</span><span class="fl">8</span>, names_to <span class="op">=</span> <span class="st">"Nutriente"</span>, values_to <span class="op">=</span><span class="st">"media"</span><span class="op">)</span> </span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">nutri</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 5
+# Groups:   Species, Vegetation [2]
+  Species Vegetation `Phenological group` Nutriente media
+  &lt;fct&gt;   &lt;fct&gt;      &lt;fct&gt;                &lt;chr&gt;     &lt;dbl&gt;
+1 AT      Grassland  Deciduous            N         1.79 
+2 AT      Grassland  Deciduous            P         0.102
+3 AT      Grassland  Deciduous            Mg        0.165
+4 AT      Grassland  Deciduous            K         1.72 
+5 AT      Grassland  Deciduous            Ca        0.623
+6 AT      Forest     Deciduous            N         2.15 </code></pre>
+</div>
+<div class="sourceCode" id="cb67"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/boxplot.html">boxplot</a></span><span class="op">(</span><span class="va">media</span><span class="op">~</span><span class="va">Nutriente</span>, data<span class="op">=</span><span class="va">nutri</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="Pratica---Semana-2_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="pivot_wider-antiga-função-spread" class="level2"><h2 class="anchored" data-anchor-id="pivot_wider-antiga-função-spread">Pivot_wider (antiga função <strong>spread()</strong>)</h2>
+<p>A função <strong>pivot_wider</strong> faz exatamente o oposto da função <strong>pivot_longer</strong>. Ela espalha os dados, tornando fatores novas variáveis.</p>
+<p>Vamos usar o pivot_wider para criar variáveis com os diferentes grupos fenológicos</p>
+<div class="cell">
+<div class="sourceCode" id="cb68"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">grupos</span> <span class="op">&lt;-</span> <span class="va">nutri</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html">pivot_wider</a></span><span class="op">(</span>names_from<span class="op">=</span><span class="va">Vegetation</span>, values_from <span class="op">=</span> <span class="va">media</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">grupos</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 6
+# Groups:   Species [2]
+  Species `Phenological group` Nutriente Grassland Forest Savanna
+  &lt;fct&gt;   &lt;fct&gt;                &lt;chr&gt;         &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;
+1 AT      Deciduous            N             1.79   2.15    2.28 
+2 AT      Deciduous            P             0.102  0.117   0.129
+3 AT      Deciduous            Mg            0.165  0.154   0.213
+4 AT      Deciduous            K             1.72   1.00    1.24 
+5 AT      Deciduous            Ca            0.623  0.368   0.736
+6 BC      Semideciduous        N             1.05   1.30    1.41 </code></pre>
+</div>
+</div>
+</section><section id="unite" class="level2"><h2 class="anchored" data-anchor-id="unite">Unite</h2>
+<p>A função <strong>unite</strong> junta, como o próprio nome diz, duas ou mais colunas em uma só. Vamos juntar os fatores para criar uma variável de interação com grupo e tratamento, especificando um separador, no caso _ .</p>
+<div class="cell">
+<div class="sourceCode" id="cb70"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">inter</span> <span class="op">&lt;-</span> <span class="va">medias2</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/unite.html">unite</a></span><span class="op">(</span><span class="st">"Interaction"</span>, <span class="va">`Phenological group`</span>, <span class="va">Vegetation</span>, sep<span class="op">=</span> <span class="st">"_"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">inter</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 12
+# Groups:   Species [2]
+  Species Interaction               N      P    Mg     K    Ca    Al `leaf area`
+  &lt;fct&gt;   &lt;chr&gt;                 &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;       &lt;dbl&gt;
+1 AT      Deciduous_Grassland    1.79 0.102  0.165 1.72  0.623 239.         238.
+2 AT      Deciduous_Forest       2.15 0.117  0.154 1.00  0.368 194.         245.
+3 AT      Deciduous_Savanna      2.28 0.129  0.213 1.24  0.736 174.         368.
+4 BC      Semideciduous_Grassl…  1.05 0.0476 0.108 0.656 0.404 131.         244.
+5 BC      Semideciduous_Forest   1.30 0.0714 0.130 0.795 0.460  86.0        197.
+6 BC      Semideciduous_Savanna  1.41 0.0690 0.176 0.843 0.708 232.         324.
+# ℹ 3 more variables: `leaf mass` &lt;dbl&gt;, SLA &lt;dbl&gt;, `N:P` &lt;dbl&gt;</code></pre>
+</div>
+</div>
+</section><section id="separate" class="level2"><h2 class="anchored" data-anchor-id="separate">Separate</h2>
+<p>A função <strong>separate</strong> faz o oposto da função <strong>unite</strong>, separando as colunas em 1 ou mais colunas. Vamos demostrar de algumas formas:</p>
+<ol type="1">
+<li><p>Separando as variáveis que acabamos de juntar no exemplo anterior</p></li>
+<li><p>Separando as iniciais da variável espécie entre a inicial do gênero e a inicial do epípeto específico,</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode" id="cb72"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">inter</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/separate.html">separate</a></span><span class="op">(</span><span class="va">Interaction</span>, into <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Grupo"</span>, <span class="st">"Tipo"</span><span class="op">)</span>, sep <span class="op">=</span> <span class="st">"_"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 44 × 13
+# Groups:   Species [15]
+   Species Grupo         Tipo       N      P    Mg     K    Ca    Al `leaf area`
+   &lt;fct&gt;   &lt;chr&gt;         &lt;chr&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;       &lt;dbl&gt;
+ 1 AT      Deciduous     Grass…  1.79 0.102  0.165 1.72  0.623 239.        238. 
+ 2 AT      Deciduous     Forest  2.15 0.117  0.154 1.00  0.368 194.        245. 
+ 3 AT      Deciduous     Savan…  2.28 0.129  0.213 1.24  0.736 174.        368. 
+ 4 BC      Semideciduous Grass…  1.05 0.0476 0.108 0.656 0.404 131.        244. 
+ 5 BC      Semideciduous Forest  1.30 0.0714 0.130 0.795 0.460  86.0       197. 
+ 6 BC      Semideciduous Savan…  1.41 0.0690 0.176 0.843 0.708 232.        324. 
+ 7 BS      Semideciduous Grass…  1.25 0.0643 0.161 0.610 0.480 103.        125. 
+ 8 BS      Semideciduous Forest  1.30 0.0833 0.141 0.464 0.543  96.9       140. 
+ 9 BS      Semideciduous Savan…  1.28 0.0691 0.143 0.620 0.668 164.         50.1
+10 CB      Semideciduous Grass…  1.46 0.0786 0.157 0.479 0.455 187.        394. 
+# ℹ 34 more rows
+# ℹ 3 more variables: `leaf mass` &lt;dbl&gt;, SLA &lt;dbl&gt;, `N:P` &lt;dbl&gt;</code></pre>
+</div>
+<div class="sourceCode" id="cb74"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">inter</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/separate.html">separate</a></span><span class="op">(</span><span class="va">Species</span>, into <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Genero"</span>, <span class="st">"Epípeto"</span><span class="op">)</span>, sep <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 44 × 13
+   Genero Epípeto Interaction       N      P    Mg     K    Ca    Al `leaf area`
+   &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;         &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;       &lt;dbl&gt;
+ 1 A      T       Deciduous_Gr…  1.79 0.102  0.165 1.72  0.623 239.        238. 
+ 2 A      T       Deciduous_Fo…  2.15 0.117  0.154 1.00  0.368 194.        245. 
+ 3 A      T       Deciduous_Sa…  2.28 0.129  0.213 1.24  0.736 174.        368. 
+ 4 B      C       Semideciduou…  1.05 0.0476 0.108 0.656 0.404 131.        244. 
+ 5 B      C       Semideciduou…  1.30 0.0714 0.130 0.795 0.460  86.0       197. 
+ 6 B      C       Semideciduou…  1.41 0.0690 0.176 0.843 0.708 232.        324. 
+ 7 B      S       Semideciduou…  1.25 0.0643 0.161 0.610 0.480 103.        125. 
+ 8 B      S       Semideciduou…  1.30 0.0833 0.141 0.464 0.543  96.9       140. 
+ 9 B      S       Semideciduou…  1.28 0.0691 0.143 0.620 0.668 164.         50.1
+10 C      B       Semideciduou…  1.46 0.0786 0.157 0.479 0.455 187.        394. 
+# ℹ 34 more rows
+# ℹ 3 more variables: `leaf mass` &lt;dbl&gt;, SLA &lt;dbl&gt;, `N:P` &lt;dbl&gt;</code></pre>
+</div>
+</div>
+</section></section><section id="leitura-complementar" class="level1"><h1>Leitura complementar</h1>
+<ul>
+<li>Capítulos <a href="https://r4ds.had.co.nz/transform.html">Data transformatio</a> e <a href="https://r4ds.had.co.nz/tidy-data.html">Tidy Data</a> do livro <a href="https://r4ds.had.co.nz/index.html">R for Data Science</a>
+</li>
+<li><a href="https://r-unimelb.gitbook.io/rbook/into-the-tidyverse/manipulating-data-with-dplyr">Manipulating Data</a></li>
+<li>A própria documentação dos pacotes é bem completa! <a href="https://tidyr.tidyverse.org/articles/tidy-data.html">tidyr</a> ou <a href="https://dplyr.tidyverse.org/articles/dplyr.html">dplyr</a>
+</li>
+</ul></section><section id="fim" class="level1"><h1>FIM</h1>
+
+
+<!-- -->
+
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb76" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Aula 2 - Manipulação de Dados"</span></span>
+<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Aula Prática"</span></span>
+<span id="cb76-4"><a href="#cb76-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Marina Scalon"</span></span>
+<span id="cb76-5"><a href="#cb76-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "07 Oct 2024"</span></span>
+<span id="cb76-6"><a href="#cb76-6" aria-hidden="true" tabindex="-1"></a><span class="an">title-block-banner:</span><span class="co"> true</span></span>
+<span id="cb76-7"><a href="#cb76-7" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb76-8"><a href="#cb76-8" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb76-9"><a href="#cb76-9" aria-hidden="true" tabindex="-1"></a><span class="co">    code-link: true</span></span>
+<span id="cb76-10"><a href="#cb76-10" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb76-11"><a href="#cb76-11" aria-hidden="true" tabindex="-1"></a><span class="co">    theme: minty</span></span>
+<span id="cb76-12"><a href="#cb76-12" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb76-13"><a href="#cb76-13" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb76-14"><a href="#cb76-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-15"><a href="#cb76-15" aria-hidden="true" tabindex="-1"></a>Script utilizado na aula 2 para demostrar as funções do pacote <span class="in">`dpyr`</span> e <span class="in">`tidyr`</span> do <span class="in">`tidyverse`</span></span>
+<span id="cb76-16"><a href="#cb76-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-17"><a href="#cb76-17" aria-hidden="true" tabindex="-1"></a><span class="fu">## Instalando os pacotes</span></span>
+<span id="cb76-18"><a href="#cb76-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-19"><a href="#cb76-19" aria-hidden="true" tabindex="-1"></a>Nessa aula vamos utilizar o mesmo conjunto de dados da aula 1 para demostrar as funções dos pacotes tidyr e dplyr do tidyverse. O primeiro passo então é carregar o pacote. Confiram a versão e atualizem para versão 2.0.0 usando a função *tidyverse_update()*!</span>
+<span id="cb76-20"><a href="#cb76-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-23"><a href="#cb76-23" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-24"><a href="#cb76-24" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb76-25"><a href="#cb76-25" aria-hidden="true" tabindex="-1"></a><span class="co"># tidyverse_update()</span></span>
+<span id="cb76-26"><a href="#cb76-26" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-27"><a href="#cb76-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-28"><a href="#cb76-28" aria-hidden="true" tabindex="-1"></a><span class="fu">## Carregando o conjunto de dados</span></span>
+<span id="cb76-29"><a href="#cb76-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-30"><a href="#cb76-30" aria-hidden="true" tabindex="-1"></a>Agora vamos determinar o diretório de trabalho e carregar os dados, conforme aprendemos na aula anterior.</span>
+<span id="cb76-31"><a href="#cb76-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-32"><a href="#cb76-32" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Você deve colocar o diretório de acordo com o seu caminho no computador, e de acordo com a localização dos seus dados.</span></span>
+<span id="cb76-33"><a href="#cb76-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-36"><a href="#cb76-36" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-37"><a href="#cb76-37" aria-hidden="true" tabindex="-1"></a><span class="co"># setwd("C:/Marina/Pos-doutorado/PNPD_UFPR/Vis Man Dados/Aula 2")</span></span>
+<span id="cb76-38"><a href="#cb76-38" aria-hidden="true" tabindex="-1"></a><span class="co"># dados &lt;- read.csv("Dados.csv")</span></span>
+<span id="cb76-39"><a href="#cb76-39" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/scalonmc/VisMan/master/VisManDados/Aula1/dados.csv'</span>)</span>
+<span id="cb76-40"><a href="#cb76-40" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(dados)</span>
+<span id="cb76-41"><a href="#cb76-41" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-42"><a href="#cb76-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-43"><a href="#cb76-43" aria-hidden="true" tabindex="-1"></a><span class="fu"># Utilizando as funções do dplyr</span></span>
+<span id="cb76-44"><a href="#cb76-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-45"><a href="#cb76-45" aria-hidden="true" tabindex="-1"></a><span class="fu">## Select</span></span>
+<span id="cb76-46"><a href="#cb76-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-47"><a href="#cb76-47" aria-hidden="true" tabindex="-1"></a>A função **select()** é importante para selecionar ou excluir variáveis (colunas do dataset)</span>
+<span id="cb76-48"><a href="#cb76-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-49"><a href="#cb76-49" aria-hidden="true" tabindex="-1"></a>Abaixo, vamos fazer passo a passo:</span>
+<span id="cb76-50"><a href="#cb76-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-51"><a href="#cb76-51" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Selecionar apenas as variáveis categóricas</span>
+<span id="cb76-52"><a href="#cb76-52" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Excluir variávies não úteis</span>
+<span id="cb76-53"><a href="#cb76-53" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Condicional, no caso se a variável for numérica usando **is.numeric**</span>
+<span id="cb76-54"><a href="#cb76-54" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Selecionar variávels com alguma característica comum utilizando **starts_with()** ou **ends_with()**</span>
+<span id="cb76-55"><a href="#cb76-55" aria-hidden="true" tabindex="-1"></a><span class="ss">5.  </span>Alterar ordem para visualização dos dados</span>
+<span id="cb76-56"><a href="#cb76-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-59"><a href="#cb76-59" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-60"><a href="#cb76-60" aria-hidden="true" tabindex="-1"></a>categoricas <span class="ot">&lt;-</span> <span class="fu">select</span>(dados, Tratamento, especie, Grupo) <span class="co">#1</span></span>
+<span id="cb76-61"><a href="#cb76-61" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(categoricas)</span>
+<span id="cb76-62"><a href="#cb76-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-63"><a href="#cb76-63" aria-hidden="true" tabindex="-1"></a>clean <span class="ot">&lt;-</span> <span class="fu">select</span>(dados, <span class="sc">-</span>Amostra, <span class="sc">-</span>individuo) <span class="co">#2</span></span>
+<span id="cb76-64"><a href="#cb76-64" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(clean)</span>
+<span id="cb76-65"><a href="#cb76-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-66"><a href="#cb76-66" aria-hidden="true" tabindex="-1"></a>numericas <span class="ot">&lt;-</span> <span class="fu">select_if</span>(dados, is.numeric) <span class="co">#3</span></span>
+<span id="cb76-67"><a href="#cb76-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-68"><a href="#cb76-68" aria-hidden="true" tabindex="-1"></a>ppm <span class="ot">&lt;-</span> <span class="fu">select</span>(clean, <span class="fu">ends_with</span>(<span class="st">"ppm"</span>)) <span class="co">#4</span></span>
+<span id="cb76-69"><a href="#cb76-69" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(ppm)</span>
+<span id="cb76-70"><a href="#cb76-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-71"><a href="#cb76-71" aria-hidden="true" tabindex="-1"></a>ordered <span class="ot">&lt;-</span> <span class="fu">select</span>(dados, N, P, <span class="fu">everything</span>())</span>
+<span id="cb76-72"><a href="#cb76-72" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ordered)</span>
+<span id="cb76-73"><a href="#cb76-73" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-74"><a href="#cb76-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-75"><a href="#cb76-75" aria-hidden="true" tabindex="-1"></a><span class="fu">## Rbase</span></span>
+<span id="cb76-76"><a href="#cb76-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-77"><a href="#cb76-77" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-78"><a href="#cb76-78" aria-hidden="true" tabindex="-1"></a><span class="in">Para fazer a mesma coisa no Rbase</span></span>
+<span id="cb76-79"><a href="#cb76-79" aria-hidden="true" tabindex="-1"></a><span class="in">São comandos bem simples que eu acho importante demostrar</span></span>
+<span id="cb76-80"><a href="#cb76-80" aria-hidden="true" tabindex="-1"></a><span class="in">O diferencial é precisar verificar o número correspondente da coluna do dataframe</span></span>
+<span id="cb76-81"><a href="#cb76-81" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-84"><a href="#cb76-84" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-85"><a href="#cb76-85" aria-hidden="true" tabindex="-1"></a>categoricas2 <span class="ot">&lt;-</span> dados[<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>] <span class="co">#1</span></span>
+<span id="cb76-86"><a href="#cb76-86" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(categoricas2)</span>
+<span id="cb76-87"><a href="#cb76-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-88"><a href="#cb76-88" aria-hidden="true" tabindex="-1"></a>clean2 <span class="ot">&lt;-</span> dados[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">5</span>)] <span class="co">#2</span></span>
+<span id="cb76-89"><a href="#cb76-89" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(clean)</span>
+<span id="cb76-90"><a href="#cb76-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-91"><a href="#cb76-91" aria-hidden="true" tabindex="-1"></a>nutri <span class="ot">&lt;-</span> dados[<span class="dv">6</span><span class="sc">:</span><span class="dv">13</span>] <span class="co">#3</span></span>
+<span id="cb76-92"><a href="#cb76-92" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(nutri)</span>
+<span id="cb76-93"><a href="#cb76-93" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-94"><a href="#cb76-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-95"><a href="#cb76-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-96"><a href="#cb76-96" aria-hidden="true" tabindex="-1"></a><span class="fu">## Slice</span></span>
+<span id="cb76-97"><a href="#cb76-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-98"><a href="#cb76-98" aria-hidden="true" tabindex="-1"></a>A função **slice()** é importante para selecionar ou excluir observações (linhas do dataset)</span>
+<span id="cb76-99"><a href="#cb76-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-100"><a href="#cb76-100" aria-hidden="true" tabindex="-1"></a>Abaixo, vamos fazer passo a passo:</span>
+<span id="cb76-101"><a href="#cb76-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-102"><a href="#cb76-102" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Retirar linhas correspondentes a vegetação "Savana"</span>
+<span id="cb76-103"><a href="#cb76-103" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Selecionar apenas as linhas correspondentes a vegetação "Savana"</span>
+<span id="cb76-104"><a href="#cb76-104" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Selecionar n linhas em que a váriavel tem valor mínimo</span>
+<span id="cb76-105"><a href="#cb76-105" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Selecionar n linhas em que uma variável tem um valor máximo</span>
+<span id="cb76-106"><a href="#cb76-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-109"><a href="#cb76-109" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-110"><a href="#cb76-110" aria-hidden="true" tabindex="-1"></a>sem.savana <span class="ot">&lt;-</span> <span class="fu">slice</span>(clean, <span class="sc">-</span><span class="dv">46</span><span class="sc">:-</span><span class="dv">90</span>)</span>
+<span id="cb76-111"><a href="#cb76-111" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(sem.savana)</span>
+<span id="cb76-112"><a href="#cb76-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-113"><a href="#cb76-113" aria-hidden="true" tabindex="-1"></a>so.savana <span class="ot">&lt;-</span> <span class="fu">slice</span>(clean, <span class="dv">46</span><span class="sc">:</span><span class="dv">90</span>)</span>
+<span id="cb76-114"><a href="#cb76-114" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(so.savana)</span>
+<span id="cb76-115"><a href="#cb76-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-116"><a href="#cb76-116" aria-hidden="true" tabindex="-1"></a>menosN <span class="ot">&lt;-</span> <span class="fu">slice_min</span>(dados, N, <span class="at">n =</span> <span class="dv">5</span>)</span>
+<span id="cb76-117"><a href="#cb76-117" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(menosN)</span>
+<span id="cb76-118"><a href="#cb76-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-119"><a href="#cb76-119" aria-hidden="true" tabindex="-1"></a>maisAl <span class="ot">&lt;-</span> <span class="fu">slice_max</span>(dados, Al_ppm, <span class="at">n =</span> <span class="dv">5</span>)</span>
+<span id="cb76-120"><a href="#cb76-120" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(maisAl)</span>
+<span id="cb76-121"><a href="#cb76-121" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-122"><a href="#cb76-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-123"><a href="#cb76-123" aria-hidden="true" tabindex="-1"></a><span class="fu">## Rbase</span></span>
+<span id="cb76-124"><a href="#cb76-124" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-125"><a href="#cb76-125" aria-hidden="true" tabindex="-1"></a><span class="in">Para fazer a mesma coisa no Rbase</span></span>
+<span id="cb76-126"><a href="#cb76-126" aria-hidden="true" tabindex="-1"></a><span class="in">Sem usar a função **subset()** e usando a função **subset()**</span></span>
+<span id="cb76-127"><a href="#cb76-127" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-128"><a href="#cb76-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-131"><a href="#cb76-131" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-132"><a href="#cb76-132" aria-hidden="true" tabindex="-1"></a>so.savana2 <span class="ot">&lt;-</span> clean[<span class="dv">46</span><span class="sc">:</span><span class="dv">90</span>,]</span>
+<span id="cb76-133"><a href="#cb76-133" aria-hidden="true" tabindex="-1"></a>so.savana3 <span class="ot">&lt;-</span> <span class="fu">subset</span>(clean, Tratamento <span class="sc">==</span> <span class="st">"Savana"</span>)</span>
+<span id="cb76-134"><a href="#cb76-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-135"><a href="#cb76-135" aria-hidden="true" tabindex="-1"></a>sem.savana2 <span class="ot">&lt;-</span> clean[<span class="sc">-</span>(<span class="dv">46</span><span class="sc">:</span><span class="dv">90</span>),]</span>
+<span id="cb76-136"><a href="#cb76-136" aria-hidden="true" tabindex="-1"></a>sem.savana3 <span class="ot">&lt;-</span> <span class="fu">subset</span>(clean, Tratamento <span class="sc">!=</span> <span class="st">"Savana"</span>)</span>
+<span id="cb76-137"><a href="#cb76-137" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-138"><a href="#cb76-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-139"><a href="#cb76-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-140"><a href="#cb76-140" aria-hidden="true" tabindex="-1"></a><span class="fu">## Filter</span></span>
+<span id="cb76-141"><a href="#cb76-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-142"><a href="#cb76-142" aria-hidden="true" tabindex="-1"></a>A função **filter()** funciona para seleção condicional de variáveis</span>
+<span id="cb76-143"><a href="#cb76-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-144"><a href="#cb76-144" aria-hidden="true" tabindex="-1"></a>:::callout-note</span>
+<span id="cb76-145"><a href="#cb76-145" aria-hidden="true" tabindex="-1"></a><span class="fu">## Nota</span></span>
+<span id="cb76-146"><a href="#cb76-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-147"><a href="#cb76-147" aria-hidden="true" tabindex="-1"></a>Ela é equivalente a função **subset()** do Rbase - caso você esteja acostumado com ela!</span>
+<span id="cb76-148"><a href="#cb76-148" aria-hidden="true" tabindex="-1"></a>::: </span>
+<span id="cb76-149"><a href="#cb76-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-152"><a href="#cb76-152" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-153"><a href="#cb76-153" aria-hidden="true" tabindex="-1"></a>deciduous <span class="ot">&lt;-</span>  <span class="fu">filter</span>(clean, Grupo <span class="sc">==</span> <span class="st">"D"</span>)</span>
+<span id="cb76-154"><a href="#cb76-154" aria-hidden="true" tabindex="-1"></a>deciduous2 <span class="ot">&lt;-</span> <span class="fu">subset</span>(clean, Grupo <span class="sc">==</span> <span class="st">"D"</span>)</span>
+<span id="cb76-155"><a href="#cb76-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-156"><a href="#cb76-156" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-157"><a href="#cb76-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-158"><a href="#cb76-158" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Também é possível combinar as condições de filtro!</span></span>
+<span id="cb76-159"><a href="#cb76-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-160"><a href="#cb76-160" aria-hidden="true" tabindex="-1"></a>Nesse caso estamos selecionando as espécies decíduas (D) apenas de Floresta com nitrogênio foliar maior que 2%</span>
+<span id="cb76-161"><a href="#cb76-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-164"><a href="#cb76-164" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-165"><a href="#cb76-165" aria-hidden="true" tabindex="-1"></a>deciduous.floresta.highN <span class="ot">&lt;-</span> <span class="fu">filter</span>(clean, Grupo <span class="sc">==</span> <span class="st">"D"</span> <span class="sc">&amp;</span> </span>
+<span id="cb76-166"><a href="#cb76-166" aria-hidden="true" tabindex="-1"></a>                                     Tratamento <span class="sc">==</span><span class="st">"Floresta"</span> <span class="sc">&amp;</span></span>
+<span id="cb76-167"><a href="#cb76-167" aria-hidden="true" tabindex="-1"></a>                                     N <span class="sc">&gt;=</span><span class="dv">2</span>)</span>
+<span id="cb76-168"><a href="#cb76-168" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(deciduous.floresta.highN)</span>
+<span id="cb76-169"><a href="#cb76-169" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-170"><a href="#cb76-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-171"><a href="#cb76-171" aria-hidden="true" tabindex="-1"></a>Verificar <span class="co">[</span><span class="ot">operadores lógicos do R</span><span class="co">](https://d33wubrfki0l68.cloudfront.net/01f4b6d39d2be8269740a3ad7946faa79f7243cf/8369a/diagrams/transform-logical.png)</span></span>
+<span id="cb76-172"><a href="#cb76-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-173"><a href="#cb76-173" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Operador %in%</span></span>
+<span id="cb76-174"><a href="#cb76-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-175"><a href="#cb76-175" aria-hidden="true" tabindex="-1"></a>Para selecionar vários níveis dentro de uma variável</span>
+<span id="cb76-176"><a href="#cb76-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-179"><a href="#cb76-179" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-180"><a href="#cb76-180" aria-hidden="true" tabindex="-1"></a>sp <span class="ot">&lt;-</span> <span class="fu">filter</span>(clean, especie <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"CB"</span>, <span class="st">"KC"</span>, <span class="st">"QP"</span>))</span>
+<span id="cb76-181"><a href="#cb76-181" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(sp)</span>
+<span id="cb76-182"><a href="#cb76-182" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-183"><a href="#cb76-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-184"><a href="#cb76-184" aria-hidden="true" tabindex="-1"></a><span class="fu">## Rename</span></span>
+<span id="cb76-185"><a href="#cb76-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-186"><a href="#cb76-186" aria-hidden="true" tabindex="-1"></a>A função **rename()** é importante para mudar os nomes das variáveis. O nome atual vem antes do nome original.</span>
+<span id="cb76-187"><a href="#cb76-187" aria-hidden="true" tabindex="-1"></a>Vamos mudar os nomes para inglês.</span>
+<span id="cb76-188"><a href="#cb76-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-189"><a href="#cb76-189" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
+<span id="cb76-190"><a href="#cb76-190" aria-hidden="true" tabindex="-1"></a><span class="fu">## Dica!</span></span>
+<span id="cb76-191"><a href="#cb76-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-192"><a href="#cb76-192" aria-hidden="true" tabindex="-1"></a>Quando o nome for espaçado ou tiver caracter especial ou número, deve estar entre o símbolo `</span>
+<span id="cb76-193"><a href="#cb76-193" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb76-194"><a href="#cb76-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-197"><a href="#cb76-197" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-198"><a href="#cb76-198" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>(clean)</span>
+<span id="cb76-199"><a href="#cb76-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-200"><a href="#cb76-200" aria-hidden="true" tabindex="-1"></a>new <span class="ot">&lt;-</span> <span class="fu">rename</span>(clean, <span class="at">Vegetation =</span> Tratamento, <span class="at">Species =</span> especie, <span class="st">`</span><span class="at">Phenological group</span><span class="st">`</span> <span class="ot">=</span> Grupo,</span>
+<span id="cb76-201"><a href="#cb76-201" aria-hidden="true" tabindex="-1"></a>                <span class="at">Al =</span> Al_ppm, </span>
+<span id="cb76-202"><a href="#cb76-202" aria-hidden="true" tabindex="-1"></a>                <span class="st">`</span><span class="at">leaf area</span><span class="st">`</span> <span class="ot">=</span> area, <span class="st">`</span><span class="at">leaf mass</span><span class="st">`</span> <span class="ot">=</span> peso)</span>
+<span id="cb76-203"><a href="#cb76-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-204"><a href="#cb76-204" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>(new)</span>
+<span id="cb76-205"><a href="#cb76-205" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-206"><a href="#cb76-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-207"><a href="#cb76-207" aria-hidden="true" tabindex="-1"></a><span class="fu">## Arrange</span></span>
+<span id="cb76-208"><a href="#cb76-208" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-209"><a href="#cb76-209" aria-hidden="true" tabindex="-1"></a>A função **arrange()** permite colocarmos os dados em determinada ordem. Isso é importante principalmente para verificar tendências ou *outliers*</span>
+<span id="cb76-210"><a href="#cb76-210" aria-hidden="true" tabindex="-1"></a>Aqui vamos colocar os dados na ordem do maior valor de Al par ao menor para verificarmos as plantas acumuladoras de alumínio.</span>
+<span id="cb76-211"><a href="#cb76-211" aria-hidden="true" tabindex="-1"></a>Vamos usar a função head() para olhar como os dados foram ordenados do maior valor de Al.</span>
+<span id="cb76-212"><a href="#cb76-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-215"><a href="#cb76-215" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-216"><a href="#cb76-216" aria-hidden="true" tabindex="-1"></a>acumuladoras <span class="ot">&lt;-</span> <span class="fu">arrange</span> (new, <span class="fu">desc</span>(Al))</span>
+<span id="cb76-217"><a href="#cb76-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-218"><a href="#cb76-218" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(acumuladoras)</span>
+<span id="cb76-219"><a href="#cb76-219" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-220"><a href="#cb76-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-221"><a href="#cb76-221" aria-hidden="true" tabindex="-1"></a>Mais interessante talvez seja ver esse padrão por algum grupo. Para isso arrange() pode ser muito útil.</span>
+<span id="cb76-222"><a href="#cb76-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-225"><a href="#cb76-225" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-226"><a href="#cb76-226" aria-hidden="true" tabindex="-1"></a>acumuladoras <span class="ot">&lt;-</span> <span class="fu">arrange</span>(new, <span class="st">`</span><span class="at">Phenological group</span><span class="st">`</span>, <span class="fu">desc</span>(Al))</span>
+<span id="cb76-227"><a href="#cb76-227" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(acumuladoras)</span>
+<span id="cb76-228"><a href="#cb76-228" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-229"><a href="#cb76-229" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-230"><a href="#cb76-230" aria-hidden="true" tabindex="-1"></a><span class="fu">## Mutate</span></span>
+<span id="cb76-231"><a href="#cb76-231" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-232"><a href="#cb76-232" aria-hidden="true" tabindex="-1"></a>A função **mutate()** é muito utilizada para diversos objetivos de manipulação.</span>
+<span id="cb76-233"><a href="#cb76-233" aria-hidden="true" tabindex="-1"></a>Com ela, podemos:</span>
+<span id="cb76-234"><a href="#cb76-234" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-235"><a href="#cb76-235" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Transformar classes de objetos</span>
+<span id="cb76-236"><a href="#cb76-236" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Mudar os nomes de variáveis ou de fatores </span>
+<span id="cb76-237"><a href="#cb76-237" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Criar novas variáveis </span>
+<span id="cb76-238"><a href="#cb76-238" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-239"><a href="#cb76-239" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-242"><a href="#cb76-242" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-243"><a href="#cb76-243" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(new)</span>
+<span id="cb76-244"><a href="#cb76-244" aria-hidden="true" tabindex="-1"></a>dados.factor <span class="ot">&lt;-</span> <span class="fu">mutate_if</span>(new, is.character, as.factor) <span class="co">#1</span></span>
+<span id="cb76-245"><a href="#cb76-245" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(dados.factor)</span>
+<span id="cb76-246"><a href="#cb76-246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-247"><a href="#cb76-247" aria-hidden="true" tabindex="-1"></a>new.rename <span class="ot">&lt;-</span> <span class="fu">mutate</span>(dados.factor, <span class="st">`</span><span class="at">Phenological group</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">recode</span>(<span class="st">`</span><span class="at">Phenological group</span><span class="st">`</span>, <span class="at">D =</span> <span class="st">"Deciduous"</span>,  <span class="co">#2</span></span>
+<span id="cb76-248"><a href="#cb76-248" aria-hidden="true" tabindex="-1"></a>                                      <span class="at">B =</span> <span class="st">"Semideciduous"</span>, <span class="at">S =</span> <span class="st">"Evergreen"</span>),</span>
+<span id="cb76-249"><a href="#cb76-249" aria-hidden="true" tabindex="-1"></a>                <span class="at">Vegetation =</span> <span class="fu">recode</span>(Vegetation, <span class="at">Savana =</span> <span class="st">"Savanna"</span>, <span class="at">Floresta =</span> <span class="st">"Forest"</span>, <span class="at">Campo =</span> <span class="st">"Grassland"</span>))</span>
+<span id="cb76-250"><a href="#cb76-250" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(new.rename)</span>
+<span id="cb76-251"><a href="#cb76-251" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-252"><a href="#cb76-252" aria-hidden="true" tabindex="-1"></a>final <span class="ot">&lt;-</span> <span class="fu">mutate</span>(new.rename, <span class="at">SLA =</span> (<span class="st">`</span><span class="at">leaf area</span><span class="st">`</span><span class="sc">/</span><span class="st">`</span><span class="at">leaf mass</span><span class="st">`</span>), <span class="st">`</span><span class="at">N:P</span><span class="st">`</span> <span class="ot">=</span> N<span class="sc">/</span>P) <span class="co">#3</span></span>
+<span id="cb76-253"><a href="#cb76-253" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-254"><a href="#cb76-254" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-255"><a href="#cb76-255" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; A função **transmute()** equivale a mutate para criação de novas variáveis, porém só mantém a coluna da variável criada (não adiciona novas colunas)</span></span>
+<span id="cb76-256"><a href="#cb76-256" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-259"><a href="#cb76-259" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-260"><a href="#cb76-260" aria-hidden="true" tabindex="-1"></a>final<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">transmute</span>(new.rename, <span class="at">SLA =</span> (<span class="st">`</span><span class="at">leaf area</span><span class="st">`</span><span class="sc">/</span><span class="st">`</span><span class="at">leaf mass</span><span class="st">`</span>))</span>
+<span id="cb76-261"><a href="#cb76-261" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-262"><a href="#cb76-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-263"><a href="#cb76-263" aria-hidden="true" tabindex="-1"></a><span class="fu">## If_else </span></span>
+<span id="cb76-264"><a href="#cb76-264" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-265"><a href="#cb76-265" aria-hidden="true" tabindex="-1"></a>Função muito útil para transformar variáveis junto com o *mutate()* de acordo com determinada condição, seguindo a mesma lógica da função equivalente no Rbase **ifelse()**: *ifelse(condição, sim, não)*</span>
+<span id="cb76-266"><a href="#cb76-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-267"><a href="#cb76-267" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb76-268"><a href="#cb76-268" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-269"><a href="#cb76-269" aria-hidden="true" tabindex="-1"></a>O diferencial é permitir lidar com valores faltantes!</span>
+<span id="cb76-270"><a href="#cb76-270" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb76-271"><a href="#cb76-271" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-274"><a href="#cb76-274" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-275"><a href="#cb76-275" aria-hidden="true" tabindex="-1"></a>final3 <span class="ot">&lt;-</span> <span class="fu">mutate</span>(final, classificação <span class="ot">=</span> <span class="fu">if_else</span>(Al<span class="sc">&gt;</span><span class="dv">1000</span>, <span class="st">"acumuladora"</span>, <span class="st">"não-acumuladora"</span>))</span>
+<span id="cb76-276"><a href="#cb76-276" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(final3)</span>
+<span id="cb76-277"><a href="#cb76-277" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-278"><a href="#cb76-278" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-279"><a href="#cb76-279" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-280"><a href="#cb76-280" aria-hidden="true" tabindex="-1"></a><span class="fu">## Case_when</span></span>
+<span id="cb76-281"><a href="#cb76-281" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-282"><a href="#cb76-282" aria-hidden="true" tabindex="-1"></a>Similar ao **if_else()**, mas permite mais condições! Perfeita para classificações ou agrupamentos de variáveis.</span>
+<span id="cb76-283"><a href="#cb76-283" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-286"><a href="#cb76-286" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-287"><a href="#cb76-287" aria-hidden="true" tabindex="-1"></a>final4 <span class="ot">&lt;-</span> <span class="fu">mutate</span>(final, <span class="at">N_level =</span> <span class="fu">case_when</span>(</span>
+<span id="cb76-288"><a href="#cb76-288" aria-hidden="true" tabindex="-1"></a>                                  N <span class="sc">&lt;</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"very low"</span>,</span>
+<span id="cb76-289"><a href="#cb76-289" aria-hidden="true" tabindex="-1"></a>                                  <span class="dv">1</span> <span class="sc">&lt;</span> N <span class="sc">&amp;</span> N <span class="sc">&lt;</span> <span class="dv">2</span> <span class="sc">~</span> <span class="st">"low"</span>,</span>
+<span id="cb76-290"><a href="#cb76-290" aria-hidden="true" tabindex="-1"></a>                                  <span class="dv">2</span> <span class="sc">&lt;</span> N <span class="sc">&amp;</span> N <span class="sc">&lt;</span> <span class="dv">3</span> <span class="sc">~</span> <span class="st">"high"</span>,</span>
+<span id="cb76-291"><a href="#cb76-291" aria-hidden="true" tabindex="-1"></a>                                  N <span class="sc">&gt;</span> <span class="dv">3</span> <span class="sc">~</span> <span class="st">"very high"</span>))</span>
+<span id="cb76-292"><a href="#cb76-292" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-293"><a href="#cb76-293" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-294"><a href="#cb76-294" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-295"><a href="#cb76-295" aria-hidden="true" tabindex="-1"></a><span class="fu"># PIPE</span></span>
+<span id="cb76-296"><a href="#cb76-296" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-297"><a href="#cb76-297" aria-hidden="true" tabindex="-1"></a>O símbolo **%&gt;%** conhecido como *pipe* é usado para unir as funções, podendo ser mentalmente substituído por "depois" ("then"). </span>
+<span id="cb76-298"><a href="#cb76-298" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-299"><a href="#cb76-299" aria-hidden="true" tabindex="-1"></a>Dessa forma, não precisa se referir aos dados que estão sendo utilizados no início de cada função pois o pipe já assume que o produto de uma etapa é o impute da seguinte. </span>
+<span id="cb76-300"><a href="#cb76-300" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-301"><a href="#cb76-301" aria-hidden="true" tabindex="-1"></a>Assim, organizar o seu código aplicando todos os comandos que fizemos acima, mas usando *pipe* reduz o número de linhas e deixa tudo mais limpo. </span>
+<span id="cb76-302"><a href="#cb76-302" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-303"><a href="#cb76-303" aria-hidden="true" tabindex="-1"></a>Veja as etapas para chegar no dataset final:</span>
+<span id="cb76-304"><a href="#cb76-304" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-307"><a href="#cb76-307" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-308"><a href="#cb76-308" aria-hidden="true" tabindex="-1"></a>final.pipe <span class="ot">&lt;-</span> dados <span class="sc">%&gt;%</span></span>
+<span id="cb76-309"><a href="#cb76-309" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate_if</span>(is.character, as.factor) <span class="sc">%&gt;%</span>  <span class="co">#mudar classe dos objetos</span></span>
+<span id="cb76-310"><a href="#cb76-310" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>Amostra, <span class="sc">-</span>individuo) <span class="sc">%&gt;%</span>  <span class="co"># eliminar colunas inuteis</span></span>
+<span id="cb76-311"><a href="#cb76-311" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Vegetation =</span> Tratamento, <span class="at">Species =</span> especie, <span class="st">`</span><span class="at">Phenological group</span><span class="st">`</span> <span class="ot">=</span> Grupo,</span>
+<span id="cb76-312"><a href="#cb76-312" aria-hidden="true" tabindex="-1"></a>                <span class="at">Al =</span> Al_ppm, </span>
+<span id="cb76-313"><a href="#cb76-313" aria-hidden="true" tabindex="-1"></a>                <span class="st">`</span><span class="at">leaf area</span><span class="st">`</span> <span class="ot">=</span> area, <span class="st">`</span><span class="at">leaf mass</span><span class="st">`</span> <span class="ot">=</span> peso) <span class="sc">%&gt;%</span> <span class="co">#renomear variáveis</span></span>
+<span id="cb76-314"><a href="#cb76-314" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="st">`</span><span class="at">Phenological group</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">recode</span>(<span class="st">`</span><span class="at">Phenological group</span><span class="st">`</span>, <span class="at">D =</span> <span class="st">"Deciduous"</span>, </span>
+<span id="cb76-315"><a href="#cb76-315" aria-hidden="true" tabindex="-1"></a>                                      <span class="at">B =</span> <span class="st">"Semideciduous"</span>, <span class="at">S =</span> <span class="st">"Evergreen"</span>),</span>
+<span id="cb76-316"><a href="#cb76-316" aria-hidden="true" tabindex="-1"></a>                <span class="at">Vegetation =</span> <span class="fu">recode</span>(Vegetation, <span class="at">Savana =</span> <span class="st">"Savanna"</span>, </span>
+<span id="cb76-317"><a href="#cb76-317" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">Floresta =</span> <span class="st">"Forest"</span>, <span class="at">Campo =</span> <span class="st">"Grassland"</span>)) <span class="sc">%&gt;%</span>  <span class="co"># renomear os fatores</span></span>
+<span id="cb76-318"><a href="#cb76-318" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">SLA=</span>(<span class="st">`</span><span class="at">leaf area</span><span class="st">`</span><span class="sc">/</span><span class="st">`</span><span class="at">leaf mass</span><span class="st">`</span>), </span>
+<span id="cb76-319"><a href="#cb76-319" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">N:P</span><span class="st">`</span> <span class="ot">=</span> N<span class="sc">/</span>P)  <span class="co">#criar novas variáveis </span></span>
+<span id="cb76-320"><a href="#cb76-320" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(final.pipe)</span>
+<span id="cb76-321"><a href="#cb76-321" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-322"><a href="#cb76-322" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-323"><a href="#cb76-323" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
+<span id="cb76-324"><a href="#cb76-324" aria-hidden="true" tabindex="-1"></a><span class="fu">## Dica!</span></span>
+<span id="cb76-325"><a href="#cb76-325" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-326"><a href="#cb76-326" aria-hidden="true" tabindex="-1"></a>Depois que você deixar os seus dados do jeito que você quer, salve novo arquivo de dados manipulados! Da próxima vez que você for usar conjunto da dados você já pode carregar o arquivo modificado e prontinho, sem passar pela etapa de manipulação novamente. Nunca substitua os dados originais! Use a função write.csv() e escreva sempre a extensão (.csv) no arquivo que será salvo.</span>
+<span id="cb76-327"><a href="#cb76-327" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-328"><a href="#cb76-328" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb76-329"><a href="#cb76-329" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-332"><a href="#cb76-332" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-333"><a href="#cb76-333" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(final.pipe, <span class="st">"Dados_manipulados.csv"</span>)</span>
+<span id="cb76-334"><a href="#cb76-334" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-335"><a href="#cb76-335" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-336"><a href="#cb76-336" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-337"><a href="#cb76-337" aria-hidden="true" tabindex="-1"></a><span class="fu">## Summarise</span></span>
+<span id="cb76-338"><a href="#cb76-338" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-339"><a href="#cb76-339" aria-hidden="true" tabindex="-1"></a>A função **summarise()** (ou **summarize()**) cria um novo dataframe colapsando valores em um sumário. **MUITO ÚTIL** pra fazer tabelas de médias, desvio padrão, etc.</span>
+<span id="cb76-340"><a href="#cb76-340" aria-hidden="true" tabindex="-1"></a>Usualmente utilizamos a função **group_by()** antes para especificar os grupos. Também pode ser combinada por summarise_all para aplicar a função em todas as variáveis.</span>
+<span id="cb76-341"><a href="#cb76-341" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-344"><a href="#cb76-344" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-345"><a href="#cb76-345" aria-hidden="true" tabindex="-1"></a>medias<span class="ot">&lt;-</span> final.pipe <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">N =</span> <span class="fu">mean</span>(N),</span>
+<span id="cb76-346"><a href="#cb76-346" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">P =</span> <span class="fu">mean</span>(P))</span>
+<span id="cb76-347"><a href="#cb76-347" aria-hidden="true" tabindex="-1"></a>medias</span>
+<span id="cb76-348"><a href="#cb76-348" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-349"><a href="#cb76-349" aria-hidden="true" tabindex="-1"></a><span class="co"># Agrupando e aplicando em todas as colunas</span></span>
+<span id="cb76-350"><a href="#cb76-350" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-351"><a href="#cb76-351" aria-hidden="true" tabindex="-1"></a>medias2 <span class="ot">&lt;-</span> final.pipe <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Species, Vegetation, <span class="st">`</span><span class="at">Phenological group</span><span class="st">`</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb76-352"><a href="#cb76-352" aria-hidden="true" tabindex="-1"></a>                <span class="fu">summarise_all</span>(mean) <span class="co">#médias por colunas</span></span>
+<span id="cb76-353"><a href="#cb76-353" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(medias2)</span>
+<span id="cb76-354"><a href="#cb76-354" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-355"><a href="#cb76-355" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-356"><a href="#cb76-356" aria-hidden="true" tabindex="-1"></a><span class="fu">### Múltiplas funções</span></span>
+<span id="cb76-357"><a href="#cb76-357" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-360"><a href="#cb76-360" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-361"><a href="#cb76-361" aria-hidden="true" tabindex="-1"></a>tabela_mean <span class="ot">&lt;-</span> final.pipe <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>Species, <span class="sc">-</span><span class="st">`</span><span class="at">Phenological group</span><span class="st">`</span>)<span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Vegetation) <span class="sc">%&gt;%</span> </span>
+<span id="cb76-362"><a href="#cb76-362" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise_all</span>(mean, <span class="at">na.rm=</span>T)</span>
+<span id="cb76-363"><a href="#cb76-363" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-364"><a href="#cb76-364" aria-hidden="true" tabindex="-1"></a>tabela1 <span class="ot">&lt;-</span> final.pipe <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>Species, <span class="sc">-</span><span class="st">`</span><span class="at">Phenological group</span><span class="st">`</span>) <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Vegetation) <span class="sc">%&gt;%</span> <span class="fu">summarise_all</span>(<span class="at">.funs =</span> <span class="fu">list</span>(mean, sd))</span>
+<span id="cb76-365"><a href="#cb76-365" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-366"><a href="#cb76-366" aria-hidden="true" tabindex="-1"></a>tabela2 <span class="ot">&lt;-</span> final.pipe <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>Species, <span class="sc">-</span><span class="st">`</span><span class="at">Phenological group</span><span class="st">`</span>) <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Vegetation) <span class="sc">%&gt;%</span> <span class="fu">summarise_all</span>(<span class="at">.funs =</span> <span class="fu">list</span>(<span class="at">media =</span> mean, <span class="at">desvio =</span> sd))</span>
+<span id="cb76-367"><a href="#cb76-367" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-368"><a href="#cb76-368" aria-hidden="true" tabindex="-1"></a>tabela3 <span class="ot">&lt;-</span> final.pipe <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>Species, <span class="sc">-</span><span class="st">`</span><span class="at">Phenological group</span><span class="st">`</span>) <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Vegetation) <span class="sc">%&gt;%</span> <span class="fu">summarise_all</span>(<span class="at">.funs =</span> <span class="fu">list</span>(<span class="sc">~</span><span class="fu">mean</span>(., <span class="at">na.rm=</span>T), <span class="sc">~</span><span class="fu">sd</span>(., <span class="at">na.rm=</span>T)))</span>
+<span id="cb76-369"><a href="#cb76-369" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-370"><a href="#cb76-370" aria-hidden="true" tabindex="-1"></a>tabela_all2 <span class="ot">&lt;-</span> final.pipe <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Vegetation) <span class="sc">%&gt;%</span> </span>
+<span id="cb76-371"><a href="#cb76-371" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric), <span class="fu">list</span>(<span class="at">media=</span>mean, <span class="at">desvio=</span>sd),<span class="at">na.rm=</span>T)) </span>
+<span id="cb76-372"><a href="#cb76-372" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-373"><a href="#cb76-373" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-374"><a href="#cb76-374" aria-hidden="true" tabindex="-1"></a><span class="fu"># Utilizando as funções do tidyr</span></span>
+<span id="cb76-375"><a href="#cb76-375" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-376"><a href="#cb76-376" aria-hidden="true" tabindex="-1"></a>O tidyr tem apenas 4 funções principais! Vamos entender elas AGORA!</span>
+<span id="cb76-377"><a href="#cb76-377" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-378"><a href="#cb76-378" aria-hidden="true" tabindex="-1"></a><span class="fu">## Pivot_longer (antiga funcão **gather()**)</span></span>
+<span id="cb76-379"><a href="#cb76-379" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-380"><a href="#cb76-380" aria-hidden="true" tabindex="-1"></a>A funçao **pivot_longer()** empilha os dados. Ela é útil para arranjar os dados de forma que algum conjunto de variáveis torne-se um fator.</span>
+<span id="cb76-381"><a href="#cb76-381" aria-hidden="true" tabindex="-1"></a>Alguns tipos de gráficos (como gráficos de barras e boxplots) utilizam essa estrutura. Também pode ser importante para fazer gráficos separados em facetas, sendo que cada faceta seria relacionada a um fator.</span>
+<span id="cb76-382"><a href="#cb76-382" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-383"><a href="#cb76-383" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Logicamente, TUDO depende da sua pergunta e do que você quer demostrar!!!</span></span>
+<span id="cb76-384"><a href="#cb76-384" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-385"><a href="#cb76-385" aria-hidden="true" tabindex="-1"></a>Vamos usar pivot_longer() para juntar os nutrientes em uma única coluna.</span>
+<span id="cb76-386"><a href="#cb76-386" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-389"><a href="#cb76-389" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-390"><a href="#cb76-390" aria-hidden="true" tabindex="-1"></a>nutri <span class="ot">&lt;-</span> medias2 <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span><span class="st">`</span><span class="at">leaf area</span><span class="st">`</span>, <span class="sc">-</span><span class="st">`</span><span class="at">leaf mass</span><span class="st">`</span>, <span class="sc">-</span>SLA, <span class="sc">-</span>Al, <span class="sc">-</span><span class="st">`</span><span class="at">N:P</span><span class="st">`</span>) <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="dv">4</span><span class="sc">:</span><span class="dv">8</span>, <span class="at">names_to =</span> <span class="st">"Nutriente"</span>, <span class="at">values_to =</span><span class="st">"media"</span>) </span>
+<span id="cb76-391"><a href="#cb76-391" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(nutri)</span>
+<span id="cb76-392"><a href="#cb76-392" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-393"><a href="#cb76-393" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(media<span class="sc">~</span>Nutriente, <span class="at">data=</span>nutri)</span>
+<span id="cb76-394"><a href="#cb76-394" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-395"><a href="#cb76-395" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-396"><a href="#cb76-396" aria-hidden="true" tabindex="-1"></a><span class="fu">## Pivot_wider (antiga função **spread()**)</span></span>
+<span id="cb76-397"><a href="#cb76-397" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-398"><a href="#cb76-398" aria-hidden="true" tabindex="-1"></a>A função **pivot_wider** faz exatamente o oposto da função **pivot_longer**. Ela espalha os dados, tornando fatores novas variáveis.</span>
+<span id="cb76-399"><a href="#cb76-399" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-400"><a href="#cb76-400" aria-hidden="true" tabindex="-1"></a>Vamos usar o pivot_wider para criar variáveis com os diferentes grupos fenológicos</span>
+<span id="cb76-401"><a href="#cb76-401" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-404"><a href="#cb76-404" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-405"><a href="#cb76-405" aria-hidden="true" tabindex="-1"></a>grupos <span class="ot">&lt;-</span> nutri <span class="sc">%&gt;%</span> </span>
+<span id="cb76-406"><a href="#cb76-406" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from=</span>Vegetation, <span class="at">values_from =</span> media)</span>
+<span id="cb76-407"><a href="#cb76-407" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-408"><a href="#cb76-408" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(grupos)</span>
+<span id="cb76-409"><a href="#cb76-409" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-410"><a href="#cb76-410" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-411"><a href="#cb76-411" aria-hidden="true" tabindex="-1"></a><span class="fu">## Unite</span></span>
+<span id="cb76-412"><a href="#cb76-412" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-413"><a href="#cb76-413" aria-hidden="true" tabindex="-1"></a>A função **unite** junta, como o próprio nome diz, duas ou mais colunas em uma só.</span>
+<span id="cb76-414"><a href="#cb76-414" aria-hidden="true" tabindex="-1"></a>Vamos juntar os fatores para criar uma variável de interação com grupo e tratamento, especificando um separador, no caso _ .</span>
+<span id="cb76-415"><a href="#cb76-415" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-418"><a href="#cb76-418" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-419"><a href="#cb76-419" aria-hidden="true" tabindex="-1"></a>inter <span class="ot">&lt;-</span> medias2 <span class="sc">%&gt;%</span> <span class="fu">unite</span>(<span class="st">"Interaction"</span>, <span class="st">`</span><span class="at">Phenological group</span><span class="st">`</span>, Vegetation, <span class="at">sep=</span> <span class="st">"_"</span>)</span>
+<span id="cb76-420"><a href="#cb76-420" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(inter)</span>
+<span id="cb76-421"><a href="#cb76-421" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-422"><a href="#cb76-422" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-423"><a href="#cb76-423" aria-hidden="true" tabindex="-1"></a><span class="fu">## Separate</span></span>
+<span id="cb76-424"><a href="#cb76-424" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-425"><a href="#cb76-425" aria-hidden="true" tabindex="-1"></a>A função **separate** faz o oposto da função **unite**, separando as colunas em 1 ou mais colunas.</span>
+<span id="cb76-426"><a href="#cb76-426" aria-hidden="true" tabindex="-1"></a>Vamos demostrar de algumas formas:</span>
+<span id="cb76-427"><a href="#cb76-427" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-428"><a href="#cb76-428" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Separando as variáveis que acabamos de juntar no exemplo anterior</span>
+<span id="cb76-429"><a href="#cb76-429" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-430"><a href="#cb76-430" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Separando as iniciais da variável espécie entre a inicial do gênero e a inicial do epípeto específico,</span>
+<span id="cb76-431"><a href="#cb76-431" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-434"><a href="#cb76-434" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb76-435"><a href="#cb76-435" aria-hidden="true" tabindex="-1"></a>inter <span class="sc">%&gt;%</span> <span class="fu">separate</span>(Interaction, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">"Grupo"</span>, <span class="st">"Tipo"</span>), <span class="at">sep =</span> <span class="st">"_"</span>)</span>
+<span id="cb76-436"><a href="#cb76-436" aria-hidden="true" tabindex="-1"></a>inter <span class="sc">%&gt;%</span> <span class="fu">separate</span>(Species, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">"Genero"</span>, <span class="st">"Epípeto"</span>), <span class="at">sep =</span> <span class="dv">1</span>)</span>
+<span id="cb76-437"><a href="#cb76-437" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb76-438"><a href="#cb76-438" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-439"><a href="#cb76-439" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-440"><a href="#cb76-440" aria-hidden="true" tabindex="-1"></a><span class="fu"># Leitura complementar</span></span>
+<span id="cb76-441"><a href="#cb76-441" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-442"><a href="#cb76-442" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Capítulos <span class="co">[</span><span class="ot">Data transformatio</span><span class="co">](https://r4ds.had.co.nz/transform.html)</span> e <span class="co">[</span><span class="ot">Tidy Data</span><span class="co">](https://r4ds.had.co.nz/tidy-data.html)</span> do livro <span class="co">[</span><span class="ot">R for Data Science</span><span class="co">](https://r4ds.had.co.nz/index.html)</span></span>
+<span id="cb76-443"><a href="#cb76-443" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Manipulating Data</span><span class="co">](https://r-unimelb.gitbook.io/rbook/into-the-tidyverse/manipulating-data-with-dplyr)</span></span>
+<span id="cb76-444"><a href="#cb76-444" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A própria documentação dos pacotes é bem completa! <span class="co">[</span><span class="ot">tidyr</span><span class="co">](https://tidyr.tidyverse.org/articles/tidy-data.html)</span> ou <span class="co">[</span><span class="ot">dplyr</span><span class="co">](https://dplyr.tidyverse.org/articles/dplyr.html)</span></span>
+<span id="cb76-445"><a href="#cb76-445" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-446"><a href="#cb76-446" aria-hidden="true" tabindex="-1"></a><span class="fu"># FIM</span></span>
+</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+</body></html>

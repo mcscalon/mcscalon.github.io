@@ -1,0 +1,398 @@
+---
+title: "Aula 2 - Manipulação de Dados"
+subtitle: "Aula Prática"
+author: "Marina Scalon"
+date: "07 Oct 2024"
+title-block-banner: true
+format: 
+  html:
+    code-link: true
+    code-tools: true
+    theme: minty
+    toc: true
+---
+
+Script utilizado na aula 2 para demostrar as funções do pacote `dpyr` e `tidyr` do `tidyverse`
+
+## Instalando os pacotes
+
+Nessa aula vamos utilizar o mesmo conjunto de dados da aula 1 para demostrar as funções dos pacotes tidyr e dplyr do tidyverse. O primeiro passo então é carregar o pacote. Confiram a versão e atualizem para versão 2.0.0 usando a função *tidyverse_update()*!
+
+```{r}
+library(tidyverse)
+# tidyverse_update()
+```
+
+## Carregando o conjunto de dados
+
+Agora vamos determinar o diretório de trabalho e carregar os dados, conforme aprendemos na aula anterior.
+
+> Você deve colocar o diretório de acordo com o seu caminho no computador, e de acordo com a localização dos seus dados.
+
+```{r}
+# setwd("C:/Marina/Pos-doutorado/PNPD_UFPR/Vis Man Dados/Aula 2")
+# dados <- read.csv("Dados.csv")
+dados <- readr::read_csv('https://raw.githubusercontent.com/scalonmc/VisMan/master/VisManDados/Aula1/dados.csv')
+str(dados)
+```
+
+# Utilizando as funções do dplyr
+
+## Select
+
+A função **select()** é importante para selecionar ou excluir variáveis (colunas do dataset)
+
+Abaixo, vamos fazer passo a passo:
+
+1. Selecionar apenas as variáveis categóricas
+2. Excluir variávies não úteis
+3. Condicional, no caso se a variável for numérica usando **is.numeric**
+4. Selecionar variávels com alguma característica comum utilizando **starts_with()** ou **ends_with()**
+5.  Alterar ordem para visualização dos dados
+
+```{r}
+categoricas <- select(dados, Tratamento, especie, Grupo) #1
+str(categoricas)
+
+clean <- select(dados, -Amostra, -individuo) #2
+str(clean)
+
+numericas <- select_if(dados, is.numeric) #3
+
+ppm <- select(clean, ends_with("ppm")) #4
+str(ppm)
+
+ordered <- select(dados, N, P, everything())
+head(ordered)
+```
+
+## Rbase
+
+```
+Para fazer a mesma coisa no Rbase
+São comandos bem simples que eu acho importante demostrar
+O diferencial é precisar verificar o número correspondente da coluna do dataframe
+```
+```{r}
+categoricas2 <- dados[2:4] #1
+str(categoricas2)
+
+clean2 <- dados[-c(1,5)] #2
+str(clean)
+
+nutri <- dados[6:13] #3
+str(nutri)
+```
+
+
+## Slice
+
+A função **slice()** é importante para selecionar ou excluir observações (linhas do dataset)
+
+Abaixo, vamos fazer passo a passo:
+
+1. Retirar linhas correspondentes a vegetação "Savana"
+2. Selecionar apenas as linhas correspondentes a vegetação "Savana"
+3. Selecionar n linhas em que a váriavel tem valor mínimo
+4. Selecionar n linhas em que uma variável tem um valor máximo
+
+```{r}
+sem.savana <- slice(clean, -46:-90)
+str(sem.savana)
+
+so.savana <- slice(clean, 46:90)
+str(so.savana)
+
+menosN <- slice_min(dados, N, n = 5)
+head(menosN)
+
+maisAl <- slice_max(dados, Al_ppm, n = 5)
+head(maisAl)
+```
+
+## Rbase
+```
+Para fazer a mesma coisa no Rbase
+Sem usar a função **subset()** e usando a função **subset()**
+```
+
+```{r}
+so.savana2 <- clean[46:90,]
+so.savana3 <- subset(clean, Tratamento == "Savana")
+
+sem.savana2 <- clean[-(46:90),]
+sem.savana3 <- subset(clean, Tratamento != "Savana")
+```
+
+
+## Filter
+
+A função **filter()** funciona para seleção condicional de variáveis
+
+:::callout-note
+## Nota
+
+Ela é equivalente a função **subset()** do Rbase - caso você esteja acostumado com ela!
+::: 
+
+```{r}
+deciduous <-  filter(clean, Grupo == "D")
+deciduous2 <- subset(clean, Grupo == "D")
+
+```
+
+> Também é possível combinar as condições de filtro!
+
+Nesse caso estamos selecionando as espécies decíduas (D) apenas de Floresta com nitrogênio foliar maior que 2%
+
+```{r}
+deciduous.floresta.highN <- filter(clean, Grupo == "D" & 
+                                     Tratamento =="Floresta" &
+                                     N >=2)
+str(deciduous.floresta.highN)
+```
+
+Verificar [operadores lógicos do R](https://d33wubrfki0l68.cloudfront.net/01f4b6d39d2be8269740a3ad7946faa79f7243cf/8369a/diagrams/transform-logical.png)
+
+> Operador %in%
+
+Para selecionar vários níveis dentro de uma variável
+
+```{r}
+sp <- filter(clean, especie %in% c("CB", "KC", "QP"))
+str(sp)
+```
+
+## Rename
+
+A função **rename()** é importante para mudar os nomes das variáveis. O nome atual vem antes do nome original.
+Vamos mudar os nomes para inglês.
+
+::: callout-tip
+## Dica!
+
+Quando o nome for espaçado ou tiver caracter especial ou número, deve estar entre o símbolo `
+:::
+
+```{r}
+ls(clean)
+
+new <- rename(clean, Vegetation = Tratamento, Species = especie, `Phenological group` = Grupo,
+                Al = Al_ppm, 
+                `leaf area` = area, `leaf mass` = peso)
+
+ls(new)
+```
+
+## Arrange
+
+A função **arrange()** permite colocarmos os dados em determinada ordem. Isso é importante principalmente para verificar tendências ou *outliers*
+Aqui vamos colocar os dados na ordem do maior valor de Al par ao menor para verificarmos as plantas acumuladoras de alumínio.
+Vamos usar a função head() para olhar como os dados foram ordenados do maior valor de Al.
+
+```{r}
+acumuladoras <- arrange (new, desc(Al))
+
+head(acumuladoras)
+```
+
+Mais interessante talvez seja ver esse padrão por algum grupo. Para isso arrange() pode ser muito útil.
+
+```{r}
+acumuladoras <- arrange(new, `Phenological group`, desc(Al))
+head(acumuladoras)
+```
+
+## Mutate
+
+A função **mutate()** é muito utilizada para diversos objetivos de manipulação.
+Com ela, podemos:
+
+1. Transformar classes de objetos
+2. Mudar os nomes de variáveis ou de fatores 
+3. Criar novas variáveis 
+
+
+```{r}
+str(new)
+dados.factor <- mutate_if(new, is.character, as.factor) #1
+str(dados.factor)
+
+new.rename <- mutate(dados.factor, `Phenological group` = recode(`Phenological group`, D = "Deciduous",  #2
+                                      B = "Semideciduous", S = "Evergreen"),
+                Vegetation = recode(Vegetation, Savana = "Savanna", Floresta = "Forest", Campo = "Grassland"))
+str(new.rename)
+
+final <- mutate(new.rename, SLA = (`leaf area`/`leaf mass`), `N:P` = N/P) #3
+```
+
+> A função **transmute()** equivale a mutate para criação de novas variáveis, porém só mantém a coluna da variável criada (não adiciona novas colunas)
+
+```{r}
+final.2 <- transmute(new.rename, SLA = (`leaf area`/`leaf mass`))
+```
+
+## If_else 
+
+Função muito útil para transformar variáveis junto com o *mutate()* de acordo com determinada condição, seguindo a mesma lógica da função equivalente no Rbase **ifelse()**: *ifelse(condição, sim, não)*
+
+::: callout-note
+
+O diferencial é permitir lidar com valores faltantes!
+:::
+
+```{r}
+final3 <- mutate(final, classificação = if_else(Al>1000, "acumuladora", "não-acumuladora"))
+view(final3)
+```
+
+
+## Case_when
+
+Similar ao **if_else()**, mas permite mais condições! Perfeita para classificações ou agrupamentos de variáveis.
+
+```{r}
+final4 <- mutate(final, N_level = case_when(
+                                  N < 1 ~ "very low",
+                                  1 < N & N < 2 ~ "low",
+                                  2 < N & N < 3 ~ "high",
+                                  N > 3 ~ "very high"))
+```
+
+
+# PIPE
+
+O símbolo **%>%** conhecido como *pipe* é usado para unir as funções, podendo ser mentalmente substituído por "depois" ("then"). 
+
+Dessa forma, não precisa se referir aos dados que estão sendo utilizados no início de cada função pois o pipe já assume que o produto de uma etapa é o impute da seguinte. 
+
+Assim, organizar o seu código aplicando todos os comandos que fizemos acima, mas usando *pipe* reduz o número de linhas e deixa tudo mais limpo. 
+
+Veja as etapas para chegar no dataset final:
+
+```{r}
+final.pipe <- dados %>%
+  mutate_if(is.character, as.factor) %>%  #mudar classe dos objetos
+  select(-Amostra, -individuo) %>%  # eliminar colunas inuteis
+  rename(Vegetation = Tratamento, Species = especie, `Phenological group` = Grupo,
+                Al = Al_ppm, 
+                `leaf area` = area, `leaf mass` = peso) %>% #renomear variáveis
+  mutate(`Phenological group` = recode(`Phenological group`, D = "Deciduous", 
+                                      B = "Semideciduous", S = "Evergreen"),
+                Vegetation = recode(Vegetation, Savana = "Savanna", 
+                                    Floresta = "Forest", Campo = "Grassland")) %>%  # renomear os fatores
+  mutate(SLA=(`leaf area`/`leaf mass`), 
+         `N:P` = N/P)  #criar novas variáveis 
+summary(final.pipe)
+```
+
+::: callout-tip
+## Dica!
+
+Depois que você deixar os seus dados do jeito que você quer, salve novo arquivo de dados manipulados! Da próxima vez que você for usar conjunto da dados você já pode carregar o arquivo modificado e prontinho, sem passar pela etapa de manipulação novamente. Nunca substitua os dados originais! Use a função write.csv() e escreva sempre a extensão (.csv) no arquivo que será salvo.
+
+:::
+
+```{r}
+write.csv(final.pipe, "Dados_manipulados.csv")
+```
+
+
+## Summarise
+
+A função **summarise()** (ou **summarize()**) cria um novo dataframe colapsando valores em um sumário. **MUITO ÚTIL** pra fazer tabelas de médias, desvio padrão, etc.
+Usualmente utilizamos a função **group_by()** antes para especificar os grupos. Também pode ser combinada por summarise_all para aplicar a função em todas as variáveis.
+
+```{r}
+medias<- final.pipe %>% summarise(N = mean(N),
+                                   P = mean(P))
+medias
+
+# Agrupando e aplicando em todas as colunas
+
+medias2 <- final.pipe %>% group_by(Species, Vegetation, `Phenological group`) %>% 
+                summarise_all(mean) #médias por colunas
+head(medias2)
+```
+
+### Múltiplas funções
+
+```{r}
+tabela_mean <- final.pipe %>% select(-Species, -`Phenological group`)%>% group_by(Vegetation) %>% 
+  summarise_all(mean, na.rm=T)
+
+tabela1 <- final.pipe %>% select(-Species, -`Phenological group`) %>% group_by(Vegetation) %>% summarise_all(.funs = list(mean, sd))
+
+tabela2 <- final.pipe %>% select(-Species, -`Phenological group`) %>% group_by(Vegetation) %>% summarise_all(.funs = list(media = mean, desvio = sd))
+
+tabela3 <- final.pipe %>% select(-Species, -`Phenological group`) %>% group_by(Vegetation) %>% summarise_all(.funs = list(~mean(., na.rm=T), ~sd(., na.rm=T)))
+
+tabela_all2 <- final.pipe %>% group_by(Vegetation) %>% 
+  summarise(across(where(is.numeric), list(media=mean, desvio=sd),na.rm=T)) 
+```
+
+# Utilizando as funções do tidyr
+
+O tidyr tem apenas 4 funções principais! Vamos entender elas AGORA!
+
+## Pivot_longer (antiga funcão **gather()**)
+
+A funçao **pivot_longer()** empilha os dados. Ela é útil para arranjar os dados de forma que algum conjunto de variáveis torne-se um fator.
+Alguns tipos de gráficos (como gráficos de barras e boxplots) utilizam essa estrutura. Também pode ser importante para fazer gráficos separados em facetas, sendo que cada faceta seria relacionada a um fator.
+
+> Logicamente, TUDO depende da sua pergunta e do que você quer demostrar!!!
+
+Vamos usar pivot_longer() para juntar os nutrientes em uma única coluna.
+
+```{r}
+nutri <- medias2 %>% select(-`leaf area`, -`leaf mass`, -SLA, -Al, -`N:P`) %>% pivot_longer(4:8, names_to = "Nutriente", values_to ="media") 
+head(nutri)
+
+boxplot(media~Nutriente, data=nutri)
+```
+
+## Pivot_wider (antiga função **spread()**)
+
+A função **pivot_wider** faz exatamente o oposto da função **pivot_longer**. Ela espalha os dados, tornando fatores novas variáveis.
+
+Vamos usar o pivot_wider para criar variáveis com os diferentes grupos fenológicos
+
+```{r}
+grupos <- nutri %>% 
+  pivot_wider(names_from=Vegetation, values_from = media)
+
+head(grupos)
+```
+
+## Unite
+
+A função **unite** junta, como o próprio nome diz, duas ou mais colunas em uma só.
+Vamos juntar os fatores para criar uma variável de interação com grupo e tratamento, especificando um separador, no caso _ .
+
+```{r}
+inter <- medias2 %>% unite("Interaction", `Phenological group`, Vegetation, sep= "_")
+head(inter)
+```
+
+## Separate
+
+A função **separate** faz o oposto da função **unite**, separando as colunas em 1 ou mais colunas.
+Vamos demostrar de algumas formas:
+
+1. Separando as variáveis que acabamos de juntar no exemplo anterior
+
+2. Separando as iniciais da variável espécie entre a inicial do gênero e a inicial do epípeto específico,
+
+```{r}
+inter %>% separate(Interaction, into = c("Grupo", "Tipo"), sep = "_")
+inter %>% separate(Species, into = c("Genero", "Epípeto"), sep = 1)
+```
+
+
+# Leitura complementar
+
+- Capítulos [Data transformatio](https://r4ds.had.co.nz/transform.html) e [Tidy Data](https://r4ds.had.co.nz/tidy-data.html) do livro [R for Data Science](https://r4ds.had.co.nz/index.html)
+- [Manipulating Data](https://r-unimelb.gitbook.io/rbook/into-the-tidyverse/manipulating-data-with-dplyr)
+- A própria documentação dos pacotes é bem completa! [tidyr](https://tidyr.tidyverse.org/articles/tidy-data.html) ou [dplyr](https://dplyr.tidyverse.org/articles/dplyr.html)
+
+# FIM

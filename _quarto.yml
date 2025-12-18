@@ -12,20 +12,21 @@ website:
         text: " "
         icon: house-fill
       - publications.qmd
-      - R Lessons.qmd
       - TidyTuesday.qmd
       - sidebar:aulas
-  
-  sidebar:
-    - id: aulas
-      title: "Aulas"
-      style: "docked"
-      background: light
-      collapse-level: 2
-      contents:
-          - aulas/Aula Quarto.qmd
-          - aulas/Aula -Semana 2.qmd
 
+  sidebar:
+  - id: aulas
+    title: "Aulas 2024 (Português)"
+    style: "docked"
+    background: light
+    collapse-level: 2
+    contents:
+      - aulas/Aula Quarto.qmd
+      - aulas/Pratica - Semana 2.qmd
+      - aulas/Pratica - Semana 3.qmd
+      - aulas/Pratica- Semana 3 - Parte2.qmd
+      - aulas/Aula_Mapa 2024.qmd
 
 format:
   html:

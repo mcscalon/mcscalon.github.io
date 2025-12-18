@@ -4,56 +4,242 @@
     "href": "TidyTuesday.html",
     "title": "TidyTuesday",
     "section": "",
-    "text": "TidyTuesday"
+    "text": "TidyTuesday is a weekly data visualization challenge that I use as a creative and learning space. Each week, a new dataset is posted in the tidytuesday project’s github, which is organized by the Data Science Learning Community, and participants are invited to explore and visualize the data using R. For me, it’s an opportunity to experiment with new ideas, improve my coding and data-storytelling skills, and turn raw data into clear and engaging visuals.\nI also often use these datasets in my classes, giving students the chance to explore and learn from in real-world data."
   },
   {
     "objectID": "TidyTuesday.html#section",
     "href": "TidyTuesday.html#section",
     "title": "TidyTuesday",
     "section": "2025",
-    "text": "2025\nWeek 32\n\n\n---- Compiling #TidyTuesday Information for 2025-08-12 ----\n--- There are 2 files available ---\n\n\n── Downloading files ───────────────────────────────────────────────────────────\n\n  1 of 2: \"attribution_studies.csv\"\n  2 of 2: \"attribution_studies_raw.csv\"\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.1     ✔ stringr   1.5.2\n✔ ggplot2   4.0.0     ✔ tibble    3.3.0\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.1.0     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 34\n\n\n---- Compiling #TidyTuesday Information for 2025-08-26 ----\n--- There are 2 files available ---\n\n\n── Downloading files ───────────────────────────────────────────────────────────\n\n  1 of 2: \"billboard.csv\"\n  2 of 2: \"topics.csv\"\n\n\nspc_tbl_ [1,177 × 105] (S3: spec_tbl_df/tbl_df/tbl/data.frame)\n $ song                                        : chr [1:1177] \"Poor Little Fool\" \"Nel Blu Dipinto Di Blu\" \"Little Star\" \"It's All in the Game\" ...\n $ artist                                      : chr [1:1177] \"Ricky Nelson\" \"Domenico Modugno\" \"The Elegants\" \"Tommy Edwards\" ...\n $ date                                        : POSIXct[1:1177], format: \"1958-08-04\" \"1958-08-18\" ...\n $ weeks_at_number_one                         : num [1:1177] 2 5 1 6 2 1 3 4 3 4 ...\n $ non_consecutive                             : num [1:1177] 0 1 0 0 1 0 0 0 0 0 ...\n $ rating_1                                    : num [1:1177] 4 7 5 3 7 5 8 1 9 6 ...\n $ rating_2                                    : num [1:1177] 5 7 6 3 8 5 8 5 9 6 ...\n $ rating_3                                    : num [1:1177] 3 5 6 7 9 2 8 2 8 9 ...\n $ overall_rating                              : num [1:1177] 4 6.33 5.67 4.33 8 ...\n $ divisiveness                                : num [1:1177] 1.333 1.333 0.667 2.667 1.333 ...\n $ label                                       : chr [1:1177] \"Imperial\" \"Decca\" \"Apt\" \"MGM\" ...\n $ parent_label                                : chr [1:1177] \"Imperial\" \"Decca\" \"ABC\" \"MGM\" ...\n $ cdr_genre                                   : chr [1:1177] \"Pop;Rock\" \"Pop\" \"Rock\" \"Pop\" ...\n $ cdr_style                                   : chr [1:1177] \"Acoustic Rock\" \"Vocal\" \"Rock & Roll\" \"Vocal\" ...\n $ discogs_genre                               : chr [1:1177] \"Rock\" \"Pop;Folk, World, & Country\" \"Rock\" \"Rock;Pop\" ...\n $ discogs_style                               : chr [1:1177] \"Rock & Roll\" \"Vocal;Canzone Napoletana;Ballad\" \"Rock & Roll;Doo Wop\" \"Ballad;Doo Wop\" ...\n $ artist_structure                            : num [1:1177] 1 1 0 1 1 0 0 0 0 1 ...\n $ featured_artists                            : chr [1:1177] NA NA NA NA ...\n $ multiple_lead_vocalists                     : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...\n $ group_named_after_non_lead_singer           : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...\n $ talent_contestant                           : chr [1:1177] NA NA NA NA ...\n $ posthumous                                  : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...\n $ artist_place_of_origin                      : chr [1:1177] \"United States\" \"Italy\" \"United States\" \"United States\" ...\n $ front_person_age                            : num [1:1177] 18 30 17 35 25 ...\n $ artist_male                                 : num [1:1177] 1 1 1 1 1 1 2 1 2 1 ...\n $ artist_white                                : num [1:1177] 1 1 1 0 1 1 1 0 0 0 ...\n $ artist_black                                : num [1:1177] 0 0 0 1 0 0 0 0 1 1 ...\n $ songwriters                                 : chr [1:1177] \"Sharon Sheeley\" \"Franco Migliacci;Domenico Modugno;Mitchell Parish\" \"Vito Picone;Arthur Venosa\" \"Carl Sigman;Charles G. Dawes\" ...\n $ songwriters_w_o_interpolation_sample_credits: chr [1:1177] \"Sharon Sheeley\" \"Franco Migliacci;Domenico Modugno;Mitchell Parish\" \"Vito Picone;Arthur Venosa\" \"Carl Sigman;Charles G. Dawes\" ...\n $ songwriter_male                             : num [1:1177] 0 1 1 1 1 1 1 1 1 1 ...\n $ songwriter_white                            : num [1:1177] 1 1 1 1 1 1 1 0 1 0 ...\n $ artist_is_a_songwriter                      : num [1:1177] 0 1 1 0 1 0 1 1 0 1 ...\n $ artist_is_only_songwriter                   : num [1:1177] 0 0 1 0 0 0 1 1 0 0 ...\n $ producers                                   : chr [1:1177] \"Jimmie Haskell;Ozzie Nelson;Ricky Nelson\" \"Unknown\" \"Unknown\" \"Harry Myerson\" ...\n $ producer_male                               : num [1:1177] 1 NA NA 1 1 1 1 1 1 1 ...\n $ producer_white                              : num [1:1177] 1 NA NA 1 1 1 1 0 1 1 ...\n $ artist_is_a_producer                        : num [1:1177] 1 NA NA 0 0 0 1 1 0 0 ...\n $ artist_is_only_producer                     : num [1:1177] 0 NA NA 0 0 0 1 1 0 0 ...\n $ songwriter_is_a_producer                    : num [1:1177] 0 0 0 0 0 0 1 1 0 0 ...\n $ time_signature                              : chr [1:1177] \"4/4\" \"Free;6/8;4/4\" \"Free;4/4\" \"3/4\" ...\n $ keys                                        : chr [1:1177] \"C\" \"Bb\" \"A\" \"Eb\" ...\n $ simplified_key                              : chr [1:1177] \"C\" \"Bb\" \"A\" \"Eb\" ...\n $ bpm                                         : num [1:1177] 155 130 73 71 127 126 175 153 113 71 ...\n $ energy                                      : num [1:1177] 33 6 40 15 43 14 20 37 27 62 ...\n $ danceability                                : num [1:1177] 54 55 41 33 44 63 32 61 32 36 ...\n $ happiness                                   : num [1:1177] 80 48 70 61 36 52 35 78 26 79 ...\n $ loudness_d_b                                : num [1:1177] -12 -17 -13 -18 -10 -15 -16 -12 -11 -8 ...\n $ acousticness                                : num [1:1177] 67 98 87 4 86 83 89 71 93 74 ...\n $ vocally_based                               : num [1:1177] 0 0 1 1 1 0 1 0 1 0 ...\n $ bass_based                                  : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...\n $ guitar_based                                : num [1:1177] 1 0 1 0 0 1 1 1 0 1 ...\n $ piano_keyboard_based                        : num [1:1177] 0 1 0 1 1 0 0 0 0 0 ...\n $ orchestral_strings                          : num [1:1177] 0 1 0 1 0 0 0 0 1 0 ...\n $ horns_winds                                 : num [1:1177] 0 0 1 0 0 0 0 1 0 1 ...\n $ accordion                                   : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...\n $ banjo                                       : num [1:1177] 0 0 0 0 0 1 0 0 0 0 ...\n $ bongos                                      : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...\n $ clarinet                                    : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...\n $ cowbell                                     : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...\n $ falsetto_vocal                              : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...\n $ flute_piccolo                               : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...\n $ handclaps_snaps                             : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...\n $ harmonica                                   : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...\n $ human_whistling                             : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...\n $ kazoo                                       : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...\n $ mandolin                                    : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...\n $ pedal_lap_steel                             : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...\n $ ocarina                                     : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...\n $ saxophone                                   : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...\n $ sitar                                       : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...\n $ trumpet                                     : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...\n $ ukulele                                     : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...\n $ violin                                      : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...\n $ sound_effects                               : chr [1:1177] NA NA NA NA ...\n $ song_structure                              : chr [1:1177] \"A2\" \"E1\" \"D3\" \"D1\" ...\n $ rap_verse_in_a_non_rap_song                 : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...\n $ length_sec                                  : num [1:1177] 154 219 163 156 134 185 142 141 158 145 ...\n $ instrumental                                : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...\n $ instrumental_length_sec                     : num [1:1177] 12 11 0 0 0 7 8 28 16 32 ...\n $ intro_length_sec                            : num [1:1177] 12 40 10 3 24 31 8 19 8 13 ...\n $ vocal_introduction                          : num [1:1177] 0 1 1 0 1 1 0 0 0 1 ...\n $ free_time_vocal_introduction                : num [1:1177] 0 1 1 0 1 0 0 0 0 1 ...\n $ fade_out                                    : num [1:1177] 0 0 0 0 0 0 1 1 0 1 ...\n $ live                                        : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...\n $ cover                                       : num [1:1177] 0 0 0 0 0 1 0 0 1 1 ...\n $ sample                                      : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...\n $ interpolation                               : num [1:1177] 0 0 1 1 0 0 0 0 0 0 ...\n $ inspired_by_a_different_song                : num [1:1177] 0 0 1 1 0 1 0 0 1 1 ...\n $ lyrics                                      : chr [1:1177] \"I used to play around with hearts.That hastened at my call.But when I met that little girl.I knew that I would \"| __truncated__ NA \"Where are you little star.Where are you.Twinkle twinkle little star.How I wonder where you are.Wish I may wish \"| __truncated__ \"Many a tear have to fall.But it's all in the game.All in the wonderful game.That we know as love.You have words\"| __truncated__ ...\n $ lyrical_topic                               : chr [1:1177] \"Lost Love\" \"Flying;Dreaming\" \"Longing for Love\" \"Love\" ...\n $ lyrical_narrative                           : num [1:1177] 0 0 0 0 0 1 0 0 0 1 ...\n $ spoken_word                                 : num [1:1177] 0 0 0 0 0 1 0 0 0 0 ...\n $ explicit                                    : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...\n $ foreign_language                            : num [1:1177] 0 1 0 0 0 0 0 0 0 0 ...\n $ written_for_a_play                          : num [1:1177] 0 0 0 0 0 0 0 0 1 0 ...\n $ featured_in_a_then_contemporary_play        : chr [1:1177] NA NA NA NA ...\n $ written_for_a_film                          : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...\n $ featured_in_a_then_contemporary_film        : chr [1:1177] NA NA NA NA ...\n $ written_for_a_t_v_show                      : num [1:1177] 0 0 0 0 0 0 0 0 0 0 ...\n  [list output truncated]\n - attr(*, \"spec\")=\n  .. cols(\n  ..   song = col_character(),\n  ..   artist = col_character(),\n  ..   date = col_datetime(format = \"\"),\n  ..   weeks_at_number_one = col_double(),\n  ..   non_consecutive = col_double(),\n  ..   rating_1 = col_double(),\n  ..   rating_2 = col_double(),\n  ..   rating_3 = col_double(),\n  ..   overall_rating = col_double(),\n  ..   divisiveness = col_double(),\n  ..   label = col_character(),\n  ..   parent_label = col_character(),\n  ..   cdr_genre = col_character(),\n  ..   cdr_style = col_character(),\n  ..   discogs_genre = col_character(),\n  ..   discogs_style = col_character(),\n  ..   artist_structure = col_double(),\n  ..   featured_artists = col_character(),\n  ..   multiple_lead_vocalists = col_double(),\n  ..   group_named_after_non_lead_singer = col_double(),\n  ..   talent_contestant = col_character(),\n  ..   posthumous = col_double(),\n  ..   artist_place_of_origin = col_character(),\n  ..   front_person_age = col_double(),\n  ..   artist_male = col_double(),\n  ..   artist_white = col_double(),\n  ..   artist_black = col_double(),\n  ..   songwriters = col_character(),\n  ..   songwriters_w_o_interpolation_sample_credits = col_character(),\n  ..   songwriter_male = col_double(),\n  ..   songwriter_white = col_double(),\n  ..   artist_is_a_songwriter = col_double(),\n  ..   artist_is_only_songwriter = col_double(),\n  ..   producers = col_character(),\n  ..   producer_male = col_double(),\n  ..   producer_white = col_double(),\n  ..   artist_is_a_producer = col_double(),\n  ..   artist_is_only_producer = col_double(),\n  ..   songwriter_is_a_producer = col_double(),\n  ..   time_signature = col_character(),\n  ..   keys = col_character(),\n  ..   simplified_key = col_character(),\n  ..   bpm = col_double(),\n  ..   energy = col_double(),\n  ..   danceability = col_double(),\n  ..   happiness = col_double(),\n  ..   loudness_d_b = col_double(),\n  ..   acousticness = col_double(),\n  ..   vocally_based = col_double(),\n  ..   bass_based = col_double(),\n  ..   guitar_based = col_double(),\n  ..   piano_keyboard_based = col_double(),\n  ..   orchestral_strings = col_double(),\n  ..   horns_winds = col_double(),\n  ..   accordion = col_double(),\n  ..   banjo = col_double(),\n  ..   bongos = col_double(),\n  ..   clarinet = col_double(),\n  ..   cowbell = col_double(),\n  ..   falsetto_vocal = col_double(),\n  ..   flute_piccolo = col_double(),\n  ..   handclaps_snaps = col_double(),\n  ..   harmonica = col_double(),\n  ..   human_whistling = col_double(),\n  ..   kazoo = col_double(),\n  ..   mandolin = col_double(),\n  ..   pedal_lap_steel = col_double(),\n  ..   ocarina = col_double(),\n  ..   saxophone = col_double(),\n  ..   sitar = col_double(),\n  ..   trumpet = col_double(),\n  ..   ukulele = col_double(),\n  ..   violin = col_double(),\n  ..   sound_effects = col_character(),\n  ..   song_structure = col_character(),\n  ..   rap_verse_in_a_non_rap_song = col_double(),\n  ..   length_sec = col_double(),\n  ..   instrumental = col_double(),\n  ..   instrumental_length_sec = col_double(),\n  ..   intro_length_sec = col_double(),\n  ..   vocal_introduction = col_double(),\n  ..   free_time_vocal_introduction = col_double(),\n  ..   fade_out = col_double(),\n  ..   live = col_double(),\n  ..   cover = col_double(),\n  ..   sample = col_double(),\n  ..   interpolation = col_double(),\n  ..   inspired_by_a_different_song = col_double(),\n  ..   lyrics = col_character(),\n  ..   lyrical_topic = col_character(),\n  ..   lyrical_narrative = col_double(),\n  ..   spoken_word = col_double(),\n  ..   explicit = col_double(),\n  ..   foreign_language = col_double(),\n  ..   written_for_a_play = col_double(),\n  ..   featured_in_a_then_contemporary_play = col_character(),\n  ..   written_for_a_film = col_double(),\n  ..   featured_in_a_then_contemporary_film = col_character(),\n  ..   written_for_a_t_v_show = col_double(),\n  ..   featured_in_a_then_contemporary_t_v_show = col_character(),\n  ..   associated_with_dance = col_double(),\n  ..   topped_the_charts_by_multiple_artist = col_double(),\n  ..   double_a_side = col_character(),\n  ..   eurovision_entry = col_double(),\n  ..   u_s_artwork = col_character()\n  .. )\n - attr(*, \"problems\")=&lt;externalptr&gt; \n\n\n\n\n\n\n\n\n\n\nWarning: Returning more (or less) than 1 row per `summarise()` group was deprecated in\ndplyr 1.1.0.\nℹ Please use `reframe()` instead.\nℹ When switching from `summarise()` to `reframe()`, remember that `reframe()`\n  always returns an ungrouped data frame and adjust accordingly.\n\n\n`summarise()` has grouped output by 'decade', 'cdr_genre'. You can override\nusing the `.groups` argument.\n\n\nWarning: The following aesthetics were dropped during statistical transformation: nodes,\nbbb, next_x, xmax, xmin_end, flow_freq_end, flow_start_ymax, flow_start_ymin,\nflow_end_ymax, and flow_end_ymin.\nℹ This can happen when ggplot fails to infer the correct grouping structure in\n  the data.\nℹ Did you forget to specify a `group` aesthetic or to convert a numerical\n  variable into a factor?\n\n\n\n\n\n\n\n\nWeek 36\n\n\n---- Compiling #TidyTuesday Information for 2025-09-09 ----\n--- There are 2 files available ---\n\n\n── Downloading files ───────────────────────────────────────────────────────────\n\n  1 of 2: \"country_lists.csv\"\n  2 of 2: \"rank_by_year.csv\"\nJoining with `by = join_by(code, country, region, rank, visa_free_count, year)`\n\n\n\n\n\n\n\n\nWeek 39\n\n\n---- Compiling #TidyTuesday Information for 2025-09-30 ----\n--- There is 1 file available ---\n\n\n── Downloading files ───────────────────────────────────────────────────────────\n\n  1 of 1: \"cranes.csv\"\nPicking joint bandwidth of 1.41\n\n\n\n\n\n\n\n\nWeek 43\n\n\n---- Compiling #TidyTuesday Information for 2025-10-28 ----\n--- There is 1 file available ---\n\n\n── Downloading files ───────────────────────────────────────────────────────────\n\n  1 of 1: \"prizes.csv\"\n\n\n\n\n\n\n\n\nWeek 46\n\n\n---- Compiling #TidyTuesday Information for 2025-11-18 ----\n--- There is 1 file available ---\n\n\n── Downloading files ───────────────────────────────────────────────────────────\n\n  1 of 1: \"holmes.csv\"\n\n\n\n\n\n\n\n\nWeek 48\n\n\n---- Compiling #TidyTuesday Information for 2025-12-02 ----\n--- There is 1 file available ---\n\n\n── Downloading files ───────────────────────────────────────────────────────────\n\n  1 of 1: \"sechselaeuten.csv\"\n\n\n\nCall:\nlm(formula = tre200mx ~ duration, data = sech)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-2.9004 -1.2478 -0.1033  0.7868  4.4100 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 29.94258    0.35572  84.175   &lt;2e-16 ***\nduration     0.03815    0.01677   2.275   0.0263 *  \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.593 on 63 degrees of freedom\n  (2 observations deleted due to missingness)\nMultiple R-squared:  0.07591,   Adjusted R-squared:  0.06124 \nF-statistic: 5.175 on 1 and 63 DF,  p-value: 0.02632\n\n\nWarning: Ignoring unknown arguments to `guide_bins()`: `barheight`, `barwidth`, and\n`title.position`.\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: Removed 2 rows containing non-finite outside the scale range\n(`stat_smooth()`).\n\n\nWarning: Removed 2 rows containing missing values or values outside the scale range\n(`geom_point()`)."
+    "text": "2025\nWeek 32\n\nShow codetuesdata &lt;- tidytuesdayR::tt_load('2025-08-12')\nattribution_studies &lt;- tuesdata$attribution_studies\nlibrary(tidyverse)\n\natr_event &lt;- attribution_studies %&gt;% \n  filter(study_focus == \"Event\")\n\npaleta &lt;- c(\"#C5B0CD\",\"#98A1BC\",\"#A2AF9B\", \"#D1A980\",\"#B9375D\", \"#640D5F\",\"#9ECAD6\", \"#34699A\", \"#2A1458\",\n            \"#273F4F\", \"#FE7743\", \"#DC3C22\")\n\nplot2 &lt;- ggplot((filter(atr_event, cb_region !=\"Northern hemisphere\")), aes(x=cb_region, fill=event_type))+\n  geom_bar(stat=\"count\", position=position_dodge2(preserve=\"single\"), alpha=0.8)+\n  labs(x = \"Region\", y = \"Number of events\", fill = \"Event Type:\",\n       title = \"Number and types of extreme weather events across the World\",\n       subtitle = \"Plot for TidyTuesday - DataChaos\") +\n  facet_wrap(~cb_region, scales=\"free\", strip.position=\"bottom\")+\n  scale_y_continuous(expand=c(0,0))+\n  theme_bw()+\n  scale_fill_manual(values=paleta)+\n  guides(fill = guide_legend(label.position = \"top\"))+\n  theme(axis.text.x = element_blank(),\n        axis.title.x = element_blank(),\n        #strip.placement = \"outside\",\n        #legend.position = \"bottom\",\n        strip.background.y = element_rect(fill = \"white\", color = \"white\"),\n        strip.background.x = element_rect(fill = \"white\", color = \"black\"),\n        strip.text.x = element_text(face=\"bold\", size=9),\n        legend.text = element_text(size = 8),\n        legend.title = element_text(size = 10),\n        legend.key.size = unit(0.3, \"cm\"),\n        plot.subtitle = element_text(size=10, face=\"italic\"),\n        axis.ticks.x = element_blank())\n\n\n\nplot2\n\n\n\n\n\n\n\n\nShow codeplot &lt;- ggplot(filter(atr_event, cb_region !=\"Northern hemisphere\")) +\n  geom_bar(aes(x = forcats::fct_infreq(cb_region), fill = event_type), alpha=0.8) +\n  labs(x = \" \", y = \"Number of events\", fill = \"Event Type\", \n       title = \"Number and types of extreme weather events across the World\",\n       subtitle = \"Plot for TidyTuesday - DataChaos\") +\n  scale_y_continuous(expand=c(0,0), limits=c(0,180))+\n  theme_classic()+\n  scale_fill_manual(values=paleta)+\n  coord_flip()+\n  theme(legend.position=c(0.8,0.75),\n        legend.text = element_text(size = 8),\n        legend.title = element_text(size = 10),\n        legend.key.size = unit(0.3, \"cm\"),\n        plot.title = element_text(margin = margin(l = -120,b=5, unit = \"pt\")),\n        plot.subtitle = element_text(size=10, face=\"italic\",margin = margin(l = -120,b=10, unit = \"pt\")))\n\n\n\nplot\n\n\n\n\n\n\n\nWeek 34\n\nShow codetuesdata &lt;- tidytuesdayR::tt_load('2025-08-26')\n\nbillboard &lt;- tuesdata$billboard\ntopics &lt;- tuesdata$topics\n\nbillboard &lt;- billboard %&gt;% \n  mutate(year = year(date)) %&gt;% \n  mutate(decade = factor(year %/% 10 * 10))\n\np1 &lt;- ggplot(filter(billboard, year != \"2025\"), aes(x = factor(year), fill = factor(artist_male))) +\n  geom_bar(position = \"fill\", alpha=0.8) +\n  labs(x = \"Ano\", y = \"Proporção de artistas\", fill = \"Gênero\",\n       title = \"Proporção de artistas no ranking musical por gênero\",\n       subtitle = str_wrap(\"Distribuição percentual de artistas masculinos, \n                           femininos e não-binários no top das paradas musicais de 1958-2024\", 140),\n       caption = \"Fonte: Billboard Hot 100 Number Ones Database\") +\n  scale_fill_manual(values= c(\"#FF9F00\",\"#03A6A1\",\"#F4631E\", \"#CB0404\"), \n                    labels = c(\"Mulheres\", \"Homens\", \"Mix\", \"Não-binários\")) +\n  theme_minimal(base_size = 14)+\n  theme(axis.text.x = element_text(angle=45, vjust=1, size=8),\n        legend.position = \"none\",\n        plot.background = element_rect(fill = \"grey99\", color = NA),\n        axis.title = element_blank(),\n        axis.text.y = element_blank(),\n        panel.grid.major.y = element_blank(),\n        panel.grid.minor.y = element_blank(),\n        plot.title = element_text(face = \"bold\", size = 16),\n        plot.subtitle = element_text(lineheight = 1),\n        plot.caption = element_text(margin = margin(10, 0, 0, 0), hjust = 0),\n        plot.margin = margin(10, 40, 10, 20))+\n  annotate(geom = \"label\", x=\"1995\", y = 0.9, label = \"Mulheres\", fill= \"white\", color=\"#FF9F00\")+\n  annotate(geom = \"label\", x=\"1980\", y = 0.5, label = \"Homens\", fill= \"white\", color=\"#03A6A1\")+\n  annotate(geom = \"label\", x=\"1975\", y = 0.1, label = \"Mix\", fill= \"white\", color=\"#F4631E\")+\n  annotate(geom = \"label\", x=\"2015\", y = 0, label = \"Não binário\", fill= \"white\", color=\"#CB0404\")\n\n\n\np1\n\n\n\n\n\n\n\n\nShow codesankey.data &lt;- billboard %&gt;% \n  select(year,decade, cdr_genre, songwriter_male, artist_male, songwriter_white, artist_white) %&gt;% \n  mutate(songwriter_gender = case_when(songwriter_male == 0 ~ \"Mulher\",\n                                        songwriter_male == 1 ~ \"Homem\",\n                                        songwriter_male == 2 ~ \"Mix\",\n                                        songwriter_male == 3 ~ \"Não-binário\"),\n         artist_gender = case_when(artist_male == 0 ~ \"Mulher\",\n                                 artist_male == 1 ~ \"Homem\",\n                                 artist_male == 2 ~ \"Mix\",\n                                 artist_male == 3 ~ \"Não-binário\"),\n         songrwriter_race = case_when(songwriter_white == 0 ~ \"Não branco\",\n                                        songwriter_white == 1 ~ \"Branco\",\n                                        songwriter_white == 2 ~ \"Mix\"),\n         artist_race = case_when(artist_white == 0 ~ \"Não branco\",\n                                 artist_white == 1 ~ \"Branco\",\n                                 artist_white == 2 ~ \"Mix\"))\n\nlibrary(ggsankey)\n\nsankey.data.flow &lt;- na.omit(sankey.data) %&gt;% \n  mutate(cdr_genre = str_remove(cdr_genre, \";.*\")) %&gt;% \n  group_by(decade) %&gt;%\n  mutate(decade_n = n()) %&gt;%\n  ungroup() %&gt;%\n  group_by(decade, cdr_genre) %&gt;% \n  summarise(n = n(), decade_n, prop = n / decade_n) %&gt;% \n  distinct()\n\npal &lt;- c(\"#264653\",\"#287271\", \"#2a9d8f\", \"#8ab17d\", \"#e9c46a\", \"#efb366\",\"#f4a261\",\"#ee8959\",\"#e76f51\")\n\np2 &lt;- ggplot(sankey.data.flow, aes(x = decade, node = cdr_genre, fill = cdr_genre, value = prop, label = cdr_genre)) +\n  geom_sankey_bump() +\n  scale_fill_manual(values=pal)+\n  labs( title = \"Proporção de representatividade de gêneros musicais no ranking\",\n     subtitle = str_wrap(\"Distribuição percentual dos gêneros musicais no top das paradas musicais por década\", 140),\n     caption = \"Fonte: Billboard Hot 100 Number Ones Database\") +\n  theme_minimal() +\n  ylim(-0.8,1)+\n  guides(fill = guide_legend(nrow = 3))+\n  theme(legend.title = element_blank(),\n        axis.title = element_blank(),\n        axis.text.y = element_blank(),\n    legend.position = c(0.75,0.9),\n    panel.background = element_rect(fill = \"transparent\", color = NA),\n    plot.background = element_rect(fill = \"transparent\", color = NA),\n    panel.grid.major.y = element_blank(),\n    panel.grid.minor.y = element_blank(),\n    plot.title = element_text(face = \"bold\", size = 16),\n    plot.subtitle = element_text(lineheight = 1),\n    plot.caption = element_text(margin = margin(10, 0, 0, 0), hjust = 0),\n    plot.margin = margin(10, 40, 10, 20),\n    legend.key.size = unit(0.3, \"cm\"))\n\n\n\np2  \n\n\n\n\n\n\n\nWeek 36\n\nShow codetuesdata &lt;- tidytuesdayR::tt_load('2025-09-09')\nrank_by_year &lt;- tuesdata$rank_by_year\n\nlowest.rank &lt;- rank_by_year %&gt;% \n  group_by(country) %&gt;% \n  summarise_if(is.numeric, mean) %&gt;% \n  slice_max(order_by = rank, n = 5)\n\nlowest &lt;- rank_by_year %&gt;% \n  filter(country %in% lowest.rank$country)\n\nhighest.rank &lt;- rank_by_year %&gt;% \n  group_by(country) %&gt;% \n  summarise_if(is.numeric, mean) %&gt;% \n  slice_min(order_by = rank, n = 5)\n\nhighest &lt;- rank_by_year %&gt;% \n  filter(country %in% highest.rank$country)\n\ntoplow &lt;- lowest %&gt;% full_join(highest)\n\nlibrary(ggridges)\n\ntoplow$country &lt;- factor(toplow$country, levels=c(\"Afghanistan\",\n                                                  \"Iraq\",\n                                                  \"Palestinian Territory\",\n                                                  \"Pakistan\",\n                                                  \"Somalia\",\n                                                  \"Sweden\",\n                                                  \"Japan\",\n                                                  \"Denmark\",\n                                                  \"Finland\",\n                                                  \"Germany\"))\nlibrary(forcats)\nlibrary(ggstream)\n\ntoplow$country &lt;- fct_rev(toplow$country)\n\npaleta &lt;- c(\"#124170\", \"#26667F\",\"#78B9B5\", \"#67C090\", \"#5E936C\", \n             \"#8A0000\", \"#C83F12\",\"#FFE100\",\"#FF9B00\", \"#EA2F14\")\n\nplot &lt;- ggplot(filter(toplow, year&gt;=2010), aes(year, visa_free_count, fill = country)) +\n  geom_stream(type = \"ridge\" ,bw=1, alpha=0.7)+\n  scale_fill_manual(values=paleta) +\n  scale_y_continuous(expand = c(0,0)) +\n  scale_x_continuous(breaks=c(2010,2015,2020,2025),labels = c(\"2010\",\"2015\",\"2020\",\"2025\")) +\n  coord_cartesian(clip = \"off\") +\n  theme_classic()+\n  labs(caption = \"Figura feita usando Henley & Partners Passport Index API dataset\")+\n  theme(axis.title = element_blank(), \n        axis.line.x=element_line(linewidth = 0.75),\n        axis.line.y=element_blank(),\n        axis.ticks.y=element_blank(),\n        plot.margin = margin(20,120,20,20),\n        legend.position=\"none\",\n        panel.grid = element_blank(),\n        axis.text.y=element_blank(),\n        axis.text.x = element_text(size=12,\n                                   margin = margin(5,0,0,0)))+\n  annotate(\"text\", x = 2025, y = c(1200, 1000, 750,550,300,200,150,100,60,20),\n           label = c(\"Top 1: Germany\",\"Top 2: Finland\",\"Top 3: Denmark\",\"Top 4: Japan\",\"Top 5: Sweden\",\n                     \"Last 5: Somalia\",\"Last 4: Pakistan\",\"Last 3: Palestinian Territory\",\"Last 2: Iraq\",\n                     \"Last 1: Afghanistan\"),\n           hjust=0,\n           size=3.5,\n           lineheight=.8,\n           fontface=\"bold\",\n           color=paleta)+\n  annotate(\"text\", x = 2010.5, y = 1300,\n           label = \"Ranking global:\\nOs 5 países com maior e menor mobilidade\",\n           hjust=0,\n           size=7,\n           lineheight=.9,\n           fontface=\"bold\",\n           color=\"black\")+\n  annotate(\"text\", x = 2010, y = c(1200, 1100,900, 700,500,250,150,110,80,50,20),\n           label = c(\"Min-Máx\",\"161-194\",\"162-193\",\"169-192\",\"160-194\",\"163-193\",\n                     \"28-36\",\"28-36\",\"15-40\",\"27-31\",\n                     \"24-30\"),\n           hjust=1,\n           size=3,\n           lineheight=.8,\n           fontface=\"bold\", \n           color=c(\"black\",\"#124170\", \"#26667F\",\"#78B9B5\", \"#67C090\", \"#5E936C\", \n                   \"#8A0000\", \"#C83F12\",\"#FFE100\",\"#FF9B00\", \"#EA2F14\"))\n\n\n\nplot\n\n\n\n\n\n\n\nWeek 39\n\nShow codetuesdata &lt;- tidytuesdayR::tt_load('2025-09-30')\ncranes &lt;- tuesdata$cranes\n\ncranes &lt;- cranes %&gt;% \n  mutate(year = year(date)) %&gt;% \n  mutate(interval = factor(year %/% 5 * 5)) %&gt;% \n  mutate(month = month(date))\n\nlibrary(ggridges)\ncranes_clean &lt;- cranes %&gt;%\n  filter(!is.na(observations)) \n\nlibrary(png)\nlibrary(grid)\n\ncrane_png &lt;- readPNG(\"crane.png\")\ncrane_grob &lt;- rasterGrob(crane_png, interpolate = TRUE)\n\nfinal &lt;- ggplot(cranes_clean, aes(x=observations/1000, \n                         fill=as.factor(month), y=fct_rev(interval))) +\n  geom_density_ridges2(alpha=0.7)+\n  labs(x = \"Número de observações (x1000)\",\n    y = \"Intervalos\",\n    title = \"Distribuição da observação de grous entre os meses entre 1990-2020\",\n    subtitle = \"Dados obtidos através dos contadores de grous do Lago de Hornborgasjön, Suécia\"\n  ) +\n  scale_fill_manual(values=c(\"#C1DBB3\",\"#FAEDCA\", \"#F2C078\",\"#FE5D26\", \"#075B5E\"),\n                    labels = c(\"Março\", \"Abril\", \"Agosto\", \"Setembro\", \"Outubro\"),\n                    name = \"Mês\")+\n  theme_ridges()+\n  guides(fill=guide_legend(ncol=2))+\n  theme(legend.position = c(0.65,0.9), \n        legend.title = element_blank(),\n        axis.title.y = element_blank())+\n  annotation_custom(crane_grob, xmin=17, xmax=30, ymin=\"2010\", ymax=\"1990\")\n\n\n\nfinal\n\n\n\n\n\n\n\nWeek 43\n\nShow codetuesdata &lt;- tidytuesdayR::tt_load(2025, week = 43)\n\nprizes &lt;- tuesdata$prizes\n\nlibrary(tidyverse)\nlibrary(waffle)\n\ndecades2 &lt;- prizes %&gt;% \n   mutate(race = case_when(\n    ethnicity_macro %in% c(\"African\", \"Asian\", \"Caribbenan\", \"Black British\", \"Non-White American\") ~ \"Non-White\",\n    TRUE ~ \"White\")) %&gt;% \n  mutate(decade = prize_year - (prize_year %% 10)) %&gt;%  \n  group_by(decade, race, gender) %&gt;%\n  summarise(count = n(), .groups=\"drop\") %&gt;% \n  group_by(decade) %&gt;%\n  mutate(Total_Decada = sum(count),\n         prop = (count /Total_Decada)*100) %&gt;%\n  ungroup()\n\nweek43 &lt;- ggplot(decades2, aes(fill =interaction(race, gender))) +\n  geom_waffle(aes(values = prop), color = \"white\", size = 0.8, n_rows = 15) +\n  labs(title = \"Representação de gênero e etnia nos prêmios literários Britânicos nas diferentes décadas\",\n       subtitle = \"Selected British Literary Prizes (1990-2022) dataset\") +\n  theme_void() +\n  facet_grid(~decade, switch = \"x\")+\n  scale_fill_manual(values=c(\"#758A93\", \"#ECD5BC\",\"#F0E491\", \"#E9B63B\", \"#C66E52\"),\n                    labels = c(\"Non-White.man\" = \"Homens não-brancos\", \n                      \"White.man\" = \"Homens brancos\", \n                      \"Non-White.non-binary\" = \"Não-binários não-branc@s\",\n                      \"Non-White.woman\" = \"Mulheres não-brancas\",\n                      \"White.woman\" = \"Mulheres brancas\"), guide= guide_legend(ncol=2))+\n  theme(legend.position = \"top\",\n        legend.justification = \"right\",\n        legend.text = element_text(size=10),\n        legend.key.spacing.y = unit(0.1, \"cm\"),\n        legend.key.spacing.x = unit(0.1, \"cm\"),\n        plot.title = element_text(size=18),\n        plot.subtitle = element_text(size=15, face=\"italic\"),\n        legend.title = element_blank(),\n        strip.placement = \"outside\",\n        strip.text = element_text(size=15))\n\n\n\nweek43\n\n\n\n\n\n\n\nWeek 46\n\nShow codetuesdata &lt;- tidytuesdayR::tt_load(2025, week = 46)\nholmes &lt;- tuesdata$holmes\n\nlibrary(tidytext)\n\nbing &lt;- get_sentiments(\"bing\")\n\nsentiment &lt;- holmes %&gt;%\n  mutate(speaker = case_when(\n    str_detect(text, \"Holmes said|said Holmes|Holmes asked|asked Holmes\") ~ \"Holmes\",\n    str_detect(text, \"Watson said|said Watson|I said|said I|I asked|I answered\") ~ \"Watson\",\n    TRUE ~ \"Other\")) %&gt;%\n  filter(speaker != \"Other\") %&gt;% \n  unnest_tokens(word, text) %&gt;%\n  inner_join(bing, by = \"word\") %&gt;%\n  count(book, speaker, sentiment, name = \"lines\") %&gt;%\n  group_by(book, speaker) %&gt;%\n  mutate(prop = lines / sum(lines)) %&gt;% \n  ungroup() %&gt;% \n  group_by(book) %&gt;% \n  filter(n_distinct(speaker) == 2) \n\np &lt;- ggplot(sentiment, aes(x = book, y = prop, fill = sentiment)) +\n  geom_col(position = \"fill\", alpha=0.7) +\n  scale_fill_manual(values = c( \"#2c003a\",\"#2d5867\"), labels=c(\"Negativo\", \"Positivo\")) +\n  scale_y_continuous(expand=c(0,0))+\n  coord_flip() +\n  labs(title = \"Quem é mais mau-humorado nas histórias de Sherlock Holmes?\",\n       subtitle = \"Proporção de linhas em que o sentimento é negativo ou positivo\",\n       x = NULL, y = \"Proporção de linhas\", fill = \"Sentimento:\") +\n  theme_minimal(base_size = 12)+\n  facet_wrap(~speaker)+\n  theme(strip.background = element_rect(fill=\"#878787\", color=\"#878787\"),\n        strip.text = element_text(size=14, color= \"#1e2e4d\"),\n        panel.spacing = unit(2, \"lines\"),\n        plot.title= element_text(colour=\"#1e2e4d\", size=15, hjust=1),\n        plot.subtitle = element_text(colour=\"#1e2e4d\", size=14, hjust=1), \n        legend.position = \"top\",\n        legend.justification = \"left\",\n        legend.direction = \"vertical\",\n        legend.spacing.x = unit(0.2, \"cm\"),\n        legend.text = element_text(size=10),\n        legend.title = element_text(size=10),\n        plot.margin = margin(t = 5, r = 20, b = 5, l = 5))\n\n\n\np\n\n\n\n\n\n\n\nWeek 48\n\nShow codetuesdata &lt;- tidytuesdayR::tt_load(2025, week = 48)\n\nsech &lt;- tuesdata$sechselaeuten\nsummary(lm(tre200mx~duration, data=sech))\n\n\nCall:\nlm(formula = tre200mx ~ duration, data = sech)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-2.9004 -1.2478 -0.1033  0.7868  4.4100 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 29.94258    0.35572  84.175   &lt;2e-16 ***\nduration     0.03815    0.01677   2.275   0.0263 *  \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.593 on 63 degrees of freedom\n  (2 observations deleted due to missingness)\nMultiple R-squared:  0.07591,   Adjusted R-squared:  0.06124 \nF-statistic: 5.175 on 1 and 63 DF,  p-value: 0.02632\n\nShow codelibrary(png)\nlibrary(grid)\n\nimg &lt;- readPNG(\"boog.png\")\ng &lt;- rasterGrob(img, interpolate = TRUE)\n\nplot &lt;- ggplot(sech, aes(duration,tre200mx))+\n  annotation_custom(g,    xmin = 40, xmax = 68,\n    ymin = 27, ymax = 35)+\n  geom_point(aes(colour=rre150m0, size=sre000m0), alpha = 0.9)+\n  geom_smooth(method=\"lm\", se = TRUE,\n              colour = \"black\",\n              fill=\"#DCA9E8\",\n              linewidth = 0.8)+\n  labs(x= \"Duração até a explosão\", y=\"Temperatura máxima do verão (°C)\",\n       title = \"Quanto mais tempo até a cabeça do Böög explodir, maior a temperatura do verão\",\n       subtitle = \"Cores = chuva | Tamanho = radiação\")+\n  scale_size_continuous(name = \"Duração da luz solar (horas)\",\n                        guide = guide_bins(direction = \"horizontal\",\n                                           barheight = unit(4, \"mm\"),\n                                           barwidth  = unit(10, \"mm\"),\n                                           title.position = \"top\"))+\n  scale_color_gradient2(low = \"#CC07FA\", high = \"#7007FA\", mid = \"#07B9FA\", midpoint = 120,\n    name = \"Precipitação total (mm)\",\n    guide = guide_colorbar(\n      direction = \"horizontal\",\n      barheight = unit(4, \"mm\"),\n      barwidth  = unit(50, \"mm\"),\n      title.position = \"top\")) +\n  theme_classic(base_size = 14) +\n  theme(plot.title = element_text(face = \"bold\"),\n    legend.position = \"right\")\n\n\n\nplot"
   },
   {
-    "objectID": "publications.html#section-1",
-    "href": "publications.html#section-1",
-    "title": "Publications",
-    "section": "2024",
-    "text": "2024"
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Marina Scalon",
+    "section": "",
+    "text": "I study how plants adapt to environmental change from a functional and ecophysiological perspective, with a focus on Neotropical ecosystems. I also teach R and enjoy coding and working with data. Outside of science, I’m a mother of two girls, learning to see the world through their eyes every day."
   },
   {
-    "objectID": "publications.html#section-2",
-    "href": "publications.html#section-2",
-    "title": "Publications",
-    "section": "2023",
-    "text": "2023"
+    "objectID": "index.html#interests",
+    "href": "index.html#interests",
+    "title": "Marina Scalon",
+    "section": "Interests",
+    "text": "Interests"
   },
   {
-    "objectID": "publications.html#section-3",
-    "href": "publications.html#section-3",
-    "title": "Publications",
-    "section": "2022",
-    "text": "2022"
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Marina Scalon",
+    "section": "Education",
+    "text": "Education\nBachelor of Forest Engineering, Universidade de Brasília | 2008\nMaster of Ecology, Universidade de Brasília | 2010\nPhD in Plant Ecology, Macquarie University | 2014\nPost Doctoral Fellow at Universidade de Brasília | 2015-2016\nPost Doctoral Fellow at Universidade do Estado de Mato Grosso | 2016-2017\nPost Doctoral Fellow at University of Oxford | 2018-2019\nPost Doctoral Fellow at Universidade Federal do Paraná | 2019 - 2025\nResearch Associate at Universidade Federal do Paraná | 2025 - now"
   },
   {
-    "objectID": "publications.html#section-4",
-    "href": "publications.html#section-4",
-    "title": "Publications",
-    "section": "2021",
-    "text": "2021"
+    "objectID": "index.html#teaching",
+    "href": "index.html#teaching",
+    "title": "Marina Scalon",
+    "section": "Teaching",
+    "text": "Teaching"
   },
   {
-    "objectID": "publications.html#section-5",
-    "href": "publications.html#section-5",
-    "title": "Publications",
-    "section": "2020",
-    "text": "2020"
+    "objectID": "aulas/Pratica - Semana 3.html",
+    "href": "aulas/Pratica - Semana 3.html",
+    "title": "Aula 3 - Visualização de Dados",
+    "section": "",
+    "text": "Script utilizado na aula da semana 3 da disciplina Manipulação e Visualização de Dados no R para demostrar as funções básicas do pacote ggplot2do tidyverse.",
+    "crumbs": [
+      "Aula 3 - Visualização de Dados"
+    ]
   },
   {
-    "objectID": "publications.html#before-2019",
-    "href": "publications.html#before-2019",
-    "title": "Publications",
-    "section": "Before 2019",
-    "text": "Before 2019"
+    "objectID": "aulas/Pratica - Semana 3.html#instalando-os-pacotes",
+    "href": "aulas/Pratica - Semana 3.html#instalando-os-pacotes",
+    "title": "Aula 3 - Visualização de Dados",
+    "section": "Instalando os pacotes",
+    "text": "Instalando os pacotes\nNessa aula vamos utilizar o conjunto de dados da aula 1 e da aula 2 para demostrar as funções do ggplot2 do tidyverse. O primeiro passo então é carregar o pacote. Confiram a versão e atualizem usando a função tidyverse_update()!\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.1     ✔ stringr   1.5.2\n✔ ggplot2   4.0.0     ✔ tibble    3.3.0\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.1.0     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n# tidyverse_update()",
+    "crumbs": [
+      "Aula 3 - Visualização de Dados"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica - Semana 3.html#carregando-o-conjunto-de-dados",
+    "href": "aulas/Pratica - Semana 3.html#carregando-o-conjunto-de-dados",
+    "title": "Aula 3 - Visualização de Dados",
+    "section": "Carregando o conjunto de dados",
+    "text": "Carregando o conjunto de dados\nAgora vamos determinar o diretório de trabalho e carregar os dados, conforme aprendemos na aula anterior. Vamos usar o conjunto de dados já manipulados, que fizemos na aula anterior e salvamos em.csv\n\nVocê deve colocar o diretório de acordo com o seu caminho no computador, e de acordo com a localização dos seus dados.\n\n\n# setwd(\"C:/Marina/Pos-doutorado/PNPD_UFPR/Vis Man Dados/2024/Semana3\")\ndados &lt;- read.csv(\"Dados_english.csv\")\nstr(dados)\n\n'data.frame':   129 obs. of  13 variables:\n $ Vegetation: chr  \"Forest\" \"Forest\" \"Forest\" \"Forest\" ...\n $ Species   : chr  \"AT\" \"AT\" \"AT\" \"BC\" ...\n $ Phenology : chr  \"Deciduous\" \"Deciduous\" \"Deciduous\" \"Semideciduous\" ...\n $ N         : num  2.36 2.07 2.03 1.32 1.23 ...\n $ P         : num  0.1143 0.1143 0.1214 0.0643 0.0714 ...\n $ Mg        : num  0.15 0.18 0.133 0.159 0.113 ...\n $ K         : num  1.197 1.444 0.366 0.679 0.957 ...\n $ Ca        : num  0.319 0.413 0.371 0.576 0.458 ...\n $ Aluminium : num  122.8 251.8 206.5 96.8 103.3 ...\n $ Leaf.Area : num  288 262 184 149 263 ...\n $ Leaf.Mass : num  3.63 2.49 2.16 1.86 4.39 ...\n $ SLA       : num  79.2 105.2 84.9 80.1 59.8 ...\n $ N.P       : num  20.6 18.1 16.7 20.5 17.2 ...",
+    "crumbs": [
+      "Aula 3 - Visualização de Dados"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica - Semana 3.html#aesthetics---aes",
+    "href": "aulas/Pratica - Semana 3.html#aesthetics---aes",
+    "title": "Aula 3 - Visualização de Dados",
+    "section": "Aesthetics - aes()\n",
+    "text": "Aesthetics - aes()\n\nA estrutura do gráfico, determinada pela função aes() - aestethics - pode aparecer na primeira camada ggplot ou nas camadas subsequentes geom_.\naes() descreve o mapeamento dos aspectos visuais dos gráficos\nAparecendo na primeira camada ggplot, essa estética será usada para todas as camadas subsequentes. Especificando separadamente para cada camada geom_, isso não acontece!",
+    "crumbs": [
+      "Aula 3 - Visualização de Dados"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica - Semana 3.html#gráfico-de-pontos",
+    "href": "aulas/Pratica - Semana 3.html#gráfico-de-pontos",
+    "title": "Aula 3 - Visualização de Dados",
+    "section": "Gráfico de pontos",
+    "text": "Gráfico de pontos\nPara adicionar a camada e fazer um gráfico de pontos, usamos o símbolo + após a primeira camada e o comando geom_point().\n\nggplot(data = dados, aes(x=P, y=N)) +\n  geom_point()\n\n\n\n\n\n\nggplot(data = dados) +\n  geom_point(aes(x=P, y=N))\n\n\n\n\n\n\n\nPodemos adicionar a camada de cores de acordo com uma variável categórica especificando color dentro da função aes().\nDa mesma forma, podemos modificar o símbolo atribuindo uma variável categórica ao shape.\nPara modificar o tamanho dos símbolos basta alterar o atributo shape dentro de aes()\n\nggplot(data = dados, aes(x=P, y=N, color= Phenology)) +\n  geom_point()\n\n\n\n\n\n\nggplot(data = dados, aes(x=P, y=N, shape= Vegetation)) +\n  geom_point()\n\n\n\n\n\n\nggplot(data = dados, aes(x=P, y=N, color= Phenology, shape = Vegetation, size=2)) +\n  geom_point()\n\n\n\n\n\n\n\nPodemos atribuir a coloração de acordo com uma variável contínua da mesma forma, dentro da função aes(). Dessa forma, o ggplot cria um gradiente de cores baseando-se nos valores da variável\n\nggplot(data = dados, aes(x=P, y=N, color= SLA, size=2)) +\n  geom_point()\n\n\n\n\n\n\n\nTambém podemos atribuir o tamanho do símbolo de acordo com uma variável contínua da mesma forma, dentro da função aes().\n\nggplot(data = dados, aes(x=P, y=N, color= Phenology, size=SLA)) +\n  geom_point()\n\nWarning: Removed 3 rows containing missing values or values outside the scale range\n(`geom_point()`).",
+    "crumbs": [
+      "Aula 3 - Visualização de Dados"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica - Semana 3.html#gráfico-de-linha",
+    "href": "aulas/Pratica - Semana 3.html#gráfico-de-linha",
+    "title": "Aula 3 - Visualização de Dados",
+    "section": "Gráfico de linha",
+    "text": "Gráfico de linha\nAs camadas geom_line(), geom_smooth() e geom_abline() são aquelas que vão adicionar linhas no gráfico. Elas tem diferenças básicas:\n\ngeom_line() liga os pontos do seu dataset. Apenas informativa quando a variável independente é ordenada\ngeom_smooth() aplica o modelo loess (locally estimated scatterplot smoothing) nos dados. Basicamente um geom_line menos abrupto. Pode modificar os method de acordo com sua necessidade.\n\n\nO default do método aplicado no geom_smooth() é loess (locally estimated scatterplot smoothing)\n\n\nVocê pode juntar as camadas de pontos com a camada da linha adicionando a camada de geom_point()\n\n\n\nggplot(data = dados, aes(x=P, y=N)) +\n  geom_line()\n\n\n\n\n\n\nggplot(data = dados, aes(x=P, y=N)) +\n  geom_smooth()\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'\n\n\n\n\n\n\n\nggplot(data = dados, aes(x=P, y=N)) +\n  geom_smooth()+\n  geom_point()\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'\n\n\n\n\n\n\n\n\nNo entanto, normalmente queremos adicionar linhas de tendência, considerando algum modelo linear por exemplo. Para isso, podemos:\n\nUtilizar a camada geom_abline(), onde os atributos da curva devem ser informados (intercept e slope). Previamente então, devemos calcular essas variáveis a serem informadas\nUtilizar geom_smooth() especificando o método de ajuste do modelo (no caso vamos usar “lm” para linear model).\n\n\ncoef(lm(N ~ P, data = dados))\n\n(Intercept)           P \n  0.3044137  17.4744215 \n\nggplot(data = dados, aes(x=P, y=N)) + geom_point()+\n  geom_abline(intercept = 0.3046, slope = 17.47)\n\n\n\n\n\n\nggplot(data = dados, aes(x=P, y=N)) + geom_point()+\n  geom_smooth(method = \"lm\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\nPodemos também separar grupos nos gráficos de linhas. Perceba que, caso o atributo color esteja especificado no aes() do ggplot() isso se aplicará para todas as camadas subsequentes.\n\nggplot(dados, aes(x=P, y = N, color = Phenology)) + \n  geom_point()+\n  geom_smooth(method=\"lm\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\nCaso você deseje mudar APENAS a cor das curvas, ou dos pontos, o atributo color deve estar no aes() da camada desejada.\n\nggplot(dados, aes(x=P, y = N)) + \n  geom_point(aes(color = Phenology))+\n  geom_smooth(method=\"lm\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\nggplot(dados, aes(x=P, y = N)) + \n  geom_point()+\n  geom_smooth(aes(color = Phenology), method=\"lm\")\n\n`geom_smooth()` using formula = 'y ~ x'",
+    "crumbs": [
+      "Aula 3 - Visualização de Dados"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica - Semana 3.html#facetas",
+    "href": "aulas/Pratica - Semana 3.html#facetas",
+    "title": "Aula 3 - Visualização de Dados",
+    "section": "Facetas",
+    "text": "Facetas\nGeralmente, dependendo de como queremos mostrar, a visualização fica mais limpa se os gráficos forem divididos em facetas. Para isso, adicionamos uma nova camada cahamda facet_wrap() que determina o fator para essa divisão.\n\nggplot(dados, aes(x=P, y = N)) + \n  geom_point(aes(color=Phenology))+\n  geom_smooth(method=\"lm\")+ \n  facet_wrap(~Vegetation)\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCustomizações das facetas\n\n\n\nVocê pode customizar como você quer que elas sejam arranjadas com ncol e nrow Você também pode deixar todas na mesma escala (default) ou deixar cada uma com a escala mais apropriada Veja mais opções em help\n\n\n\nggplot(dados, aes(x=P, y = N)) + \n  geom_point(aes(color=Phenology))+\n  geom_smooth(method=\"lm\")+ \n  facet_wrap(~Vegetation, ncol=1, scales=\"free\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\nA camada facet_grid é equivalente, mas possibilita formar matrizes de gráficos quando temos 2 variáveis categóricas de interesse\n\nggplot(dados, aes(x=P, y = N)) + \n  geom_point(aes(color=Phenology))+\n  geom_smooth(method=\"lm\")+ \n  facet_grid(~Vegetation)\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\nggplot(dados, aes(x=P, y = N)) + \n  geom_point(aes(color=Phenology))+\n  geom_smooth(method=\"lm\")+ \n  facet_grid(Phenology~Vegetation)\n\n`geom_smooth()` using formula = 'y ~ x'",
+    "crumbs": [
+      "Aula 3 - Visualização de Dados"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica - Semana 3.html#boxplots",
+    "href": "aulas/Pratica - Semana 3.html#boxplots",
+    "title": "Aula 3 - Visualização de Dados",
+    "section": "Boxplots",
+    "text": "Boxplots\nBoxplot são muito utilizados porque, além de demostrar tendência de medidas centrais (mediana, no caso) para comparação direta, permite uma visualização clara da distribuição dos dados (variabilidade), bem como outliers.\nPara esse tipo de gráfico, a variável independente (no eixo x) deve ser categórica/fatorial.\n\nggplot(dados, aes(x=Phenology, y = N)) + \n  geom_boxplot()+\n  facet_wrap(~Vegetation)\n\n\n\n\n\n\n\nPara o caso de cores, que será aprofundado na aula de customização, boxplots permitem mudanças na cor em torno das caixas com o atributo color ou no preenchimento das caixas. Nesse caso, o atributo fill deve ser utilizado. Veja a diferença\n\nggplot(dados, aes(x=Phenology, y = SLA, fill = Phenology)) +   geom_boxplot()+\n  facet_wrap(~Vegetation)\n\nWarning: Removed 3 rows containing non-finite outside the scale range\n(`stat_boxplot()`).\n\n\n\n\n\n\n\nggplot(dados, aes(x=Phenology, y = SLA, color = Phenology))+   geom_boxplot()+\n  facet_wrap(~Vegetation)\n\nWarning: Removed 3 rows containing non-finite outside the scale range\n(`stat_boxplot()`).",
+    "crumbs": [
+      "Aula 3 - Visualização de Dados"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica - Semana 3.html#violinos",
+    "href": "aulas/Pratica - Semana 3.html#violinos",
+    "title": "Aula 3 - Visualização de Dados",
+    "section": "Violinos",
+    "text": "Violinos\nOutra opção é utilizar o geom_violin(), que se baseia na distribuição probabilística de kernel\n\nggplot(dados, aes(x=Phenology, y = SLA, fill = Phenology)) +   geom_violin()+\n  facet_wrap(~Vegetation)\n\nWarning: Removed 3 rows containing non-finite outside the scale range\n(`stat_ydensity()`).\n\n\n\n\n\n\n\nggplot(dados, aes(x=Phenology, y = SLA, fill = Phenology)) +   geom_violin(trim=F)+\n  facet_wrap(~Vegetation)\n\nWarning: Removed 3 rows containing non-finite outside the scale range\n(`stat_ydensity()`).\n\n\n\n\n\n\n\n\nPara exibir seu dados - todos os pontos - pode-se adicionar mais uma camada denominada geom_jitter(). Geom_jitter exibe seus pontos afastados numa posição randômica para não se sobreporem\n\nggplot(dados, aes(x=Phenology, y=N))+\n  geom_violin(aes(fill=Phenology),trim=F)+\n  geom_jitter()+\n  facet_wrap(~Vegetation)\n\n\n\n\n\n\nggplot(dados, aes(x=Phenology, y=N))+\n  geom_boxplot(width=0.2)+\n  geom_jitter()+\n  facet_wrap(~Vegetation)",
+    "crumbs": [
+      "Aula 3 - Visualização de Dados"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica - Semana 3.html#histogramas",
+    "href": "aulas/Pratica - Semana 3.html#histogramas",
+    "title": "Aula 3 - Visualização de Dados",
+    "section": "Histogramas",
+    "text": "Histogramas\nMostram a frequência e dispersão/distribuição dos dados, então só requer uma variável x (numérica!). Pode ser útil para verificar normalidade dos dados, por exemplo. Ou outliers.\n\nggplot(dados, aes(x=SLA)) + \n  geom_histogram()+\n  facet_wrap(~Vegetation)\n\n`stat_bin()` using `bins = 30`. Pick better value `binwidth`.\n\n\nWarning: Removed 3 rows containing non-finite outside the scale range\n(`stat_bin()`).",
+    "crumbs": [
+      "Aula 3 - Visualização de Dados"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica - Semana 3.html#densidade",
+    "href": "aulas/Pratica - Semana 3.html#densidade",
+    "title": "Aula 3 - Visualização de Dados",
+    "section": "Densidade",
+    "text": "Densidade\nDa mesma forma que o histograma, gráficos de densidade também podem mostrar a distribuição dos dados. Ao invés de simplesmente contagem de ocorrência (como no histograma), esse tipo de gráfico baseia-se na contagem por unidade, e por usar uma técnica de suavização de Kernel, são vizualmente mais elegantes.\n\nggplot(dados, aes(x=SLA)) + \n  geom_density()+\n  facet_wrap(~Vegetation)\n\nWarning: Removed 3 rows containing non-finite outside the scale range\n(`stat_density()`).\n\n\n\n\n\n\n\nggplot(dados, aes(x=SLA, fill= Phenology)) + \n  geom_density()+\n  facet_wrap(~Vegetation)\n\nWarning: Removed 3 rows containing non-finite outside the scale range\n(`stat_density()`).",
+    "crumbs": [
+      "Aula 3 - Visualização de Dados"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica - Semana 3.html#gráfico-de-barras",
+    "href": "aulas/Pratica - Semana 3.html#gráfico-de-barras",
+    "title": "Aula 3 - Visualização de Dados",
+    "section": "Gráfico de barras",
+    "text": "Gráfico de barras\nAdicionando a camada geom_bar(), obtemos um gráfico de barras que representa contagens para dados categóricos. Portanto, gráfico de barras é útil principalmente quando a vairiável x é categórica. Perceba que nesse caso, o default da função é a contagem das ocorrências (stat = “count”)\n\nggplot(dados, aes(Phenology)) + \n  geom_bar()+\n  facet_wrap(~Vegetation)\n\n\n\n\n\n\nggplot(dados, aes(as.factor(N))) + \n  geom_bar()\n\n\n\n\n\n\n\nPodemos aplicar outros tipos de métodos estatísticos na função para mostrar mais padrões:\n\n\n\n\n\n\nTip\n\n\n\nUse a posição (position) para determinar onde suas barras estarão! O default é “stack” (uma em cima da outra)\n\n\n\nggplot(dados, aes(y=N, x=Species, fill=Vegetation)) + \n  geom_bar(stat=\"identity\")\n\n\n\n\n\n\nggplot(dados, aes(y=N, x=Species, fill=Vegetation)) + \n  geom_bar(stat=\"identity\", position=position_dodge())\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nPara ordenar os dados de maneira rápida de acordo com uma ordem crescente/descrescente, utilizar a função reorder diretamente no aes()\n\n\n\nggplot(dados, aes(y=N, x=reorder(Species, -N), fill=Vegetation)) + \n  geom_bar(stat=\"identity\", position=position_dodge())\n\n\n\n\n\n\nggplot(dados, aes(y=N, x=reorder(Species, +N), fill=Vegetation)) + \n  geom_bar(stat=\"identity\", position=position_dodge())\n\n\n\n\n\n\nggplot(dados, aes(x=reorder(Phenology, +N), y = N)) + \n  geom_boxplot()+\n  facet_wrap(~Vegetation)\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nPara mudar a orientação, basta designar a variável categórica como y ao invés de x (default)\n\n\n\nggplot(dados, aes(x=N, y=reorder(Species, -N), fill=Vegetation)) + \n  geom_bar(stat=\"identity\", position=position_dodge())",
+    "crumbs": [
+      "Aula 3 - Visualização de Dados"
+    ]
+  },
+  {
+    "objectID": "aulas/Aula_Mapa 2024.html",
+    "href": "aulas/Aula_Mapa 2024.html",
+    "title": "Aula 5 - Mapas",
+    "section": "",
+    "text": "Nessa aula vamos aprender algumas ferramentas básicas de representações espaciais.\n\n\n\n\n\n\nNote\n\n\n\nEssa não é minha área então considere apenas uma apresentação das ferramentas possíveis para serem exploradas independentemente!!",
+    "crumbs": [
+      "Aula 5 - Mapas"
+    ]
+  },
+  {
+    "objectID": "aulas/Aula_Mapa 2024.html#utilizando-o-pacote-rgbif-acesso-ao-banco-de-dados-da-gbif",
+    "href": "aulas/Aula_Mapa 2024.html#utilizando-o-pacote-rgbif-acesso-ao-banco-de-dados-da-gbif",
+    "title": "Aula 5 - Mapas",
+    "section": "Utilizando o pacote rgbif (acesso ao banco de dados da GBIF)",
+    "text": "Utilizando o pacote rgbif (acesso ao banco de dados da GBIF)\nGBIF: Global Biodiversity Information Facility\n\nCarregar o pacote\nDefinir a espécie que você quer dando nome científico\nEscolher dados apenas que possuam coordinadas (hasCoordinate=T)\nPode-se limitar a região por latitude ou longitude ou nomeando o pais pela sigla internacional com 2 letras\nTransformar os dados importados em data frame usando a função as.data.frame()\n\n\nOcorrência de Puma concolor para qualquer lugar do mundo\n\n\n\n\n\n\nTip\n\n\n\nLimitei com o parâmetro limit para 500 observações senão demora muito pra carregar\n\n\n\nlibrary(rgbif)\n\nocorrencia&lt;-occ_search(scientificName=\"Puma concolor\", hasCoordinate=T, limit=500)\n\nnames(ocorrencia)\n\n[1] \"meta\"            \"hierarchy\"       \"data\"            \"media\"          \n[5] \"classifications\" \"facets\"         \n\nlocalizacao &lt;- as.data.frame(ocorrencia$data) %&gt;% select(3:4) %&gt;% \n  rename(Lat = decimalLatitude, Long=decimalLongitude)\n\nhead(localizacao)\n\n         Lat       Long\n1 -32.860347  -61.97745\n2  26.095219  -81.45140\n3  25.982568 -100.88071\n4  51.193026 -115.19125\n5  25.982535 -100.88062\n6   8.663483  -83.25675\n\n\n\n\nOcorrência de Puma concolor para o Brasil apenas\n\nocorrencia.br&lt;-occ_search(scientificName=\"Puma concolor\", country=\"BR\", hasCoordinate=T)\n\nlocalizacao.br &lt;- as.data.frame(ocorrencia.br$data)%&gt;% select(3:4) %&gt;% rename(Lat = decimalLatitude, Long=decimalLongitude)\n\nAgora vamos inserir os pontos de ocorrência num mapa. Podemos usar o borders() como ensinado, ou google maps, ou o que preferir!\n\nggplot() + borders(\"world\", colour=\"grey\", fill=\"lightgray\") + theme_bw() + geom_point(aes(x=Long,y=Lat),data=localizacao,colour=\"gold\",size=2,alpha=0.1) \n\n\n\n\nFigura 14. Ocorrência de Puma concolor no mundo\n\n\n\n\n\nggplot() + borders(\"world\", colour=\"grey\", fill=\"lightgray\") + theme_bw() + geom_point(aes(x=Long,y=Lat),data=localizacao,colour=\"gold\",size=2,alpha=0.1) + coord_fixed(xlim=c(-150,-20)) #ficando na América apenas\n\n\n\n\nFigura 15. Ocorrência de Puma concolor no Brasil\n\n\n\n\nPara ajustar exatamente as medidas do mapa com a distribuição podemos gerar um vetor para restringir as coordenadas, baseado na distribuição máxima e mínima da espécie:\n\ndistribuicao&lt;-c(min(localizacao$Long,na.rm=T)-1,\n            min(localizacao$Lat,na.rm=T)-1,\n            max(localizacao$Long,na.rm=T)+1,\n            max(localizacao$Lat,na.rm=T)+1)\n\nggplot() + borders(\"world\", colour=\"grey\", fill=\"lightgray\") + \n  theme_bw() +\n  geom_point(aes(x=Long,y=Lat),data=localizacao,colour=\"black\",size=2,alpha=0.1)+\n  coord_fixed(xlim=distribuicao[c(1,3)], ylim=distribuicao[c(2,4)])\n\n\n\n\nFigura 16. Mapa recortado para otimizar os locais de ocorrência de onça parda",
+    "crumbs": [
+      "Aula 5 - Mapas"
+    ]
+  },
+  {
+    "objectID": "aulas/Aula_Mapa 2024.html#pacote-geobr",
+    "href": "aulas/Aula_Mapa 2024.html#pacote-geobr",
+    "title": "Aula 5 - Mapas",
+    "section": "Pacote geobr",
+    "text": "Pacote geobr\nCom vários dados oficiais para o Brasil!\n\nlibrary(geobr)  \n\ndatasets &lt;- list_geobr() \nView(datasets)\n\nVamos criar um shapefile com os municípios do estado do Paraná e plotar usando a função geom_sf do ggplot.\n\nmuni_PR &lt;- read_municipality(code_muni = \"PR\", \n  year=2020, showProgress = FALSE)\n\nUsing year/date 2020\n\nclass(muni_PR)\n\n[1] \"sf\"         \"data.frame\"\n\nggplot() +\n  geom_sf(data=muni_PR, fill=\"lightgrey\", color=\"black\", show.legend = FALSE) +\n  theme_minimal()\n\n\n\n\nFigura 17. Municípios do estado do Paraná, Brasil\n\n\n\n\nTambém é possivel obter os limites dos biomas com geom_br\n\nbiomas &lt;- read_biomes(year=2019, showProgress = FALSE)\n\nUsing year/date 2019\n\nhead(biomas)\n\nSimple feature collection with 6 features and 3 fields\nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: -73.98304 ymin: -33.75115 xmax: -28.84785 ymax: 5.269581\nGeodetic CRS:  SIRGAS 2000\n      name_biome code_biome year                           geom\n1       Amazônia          1 2019 MULTIPOLYGON (((-44.08515 -...\n2       Caatinga          2 2019 MULTIPOLYGON (((-41.7408 -2...\n3        Cerrado          3 2019 MULTIPOLYGON (((-43.39009 -...\n4 Mata Atlântica          4 2019 MULTIPOLYGON (((-48.70814 -...\n5          Pampa          5 2019 MULTIPOLYGON (((-52.82472 -...\n6       Pantanal          6 2019 MULTIPOLYGON (((-57.75946 -...\n\nggplot() +\n  geom_sf(data=biomas,  color=\"black\", aes(fill=name_biome)) +\n  theme_minimal()\n\n\n\n\nFigura 18. Biomas do Brasil\n\n\n\n\nPara tirar o sistema costeiro\n\nggplot() +\n  geom_sf(data= slice(biomas,-7),  color=\"black\", aes(fill=name_biome)) +\n  theme_minimal()\n\n\n\n\nFigura 19. Biomas do Brasil sem o sistema costeiro",
+    "crumbs": [
+      "Aula 5 - Mapas"
+    ]
+  },
+  {
+    "objectID": "aulas/Aula_Mapa 2024.html#pacote-mapview",
+    "href": "aulas/Aula_Mapa 2024.html#pacote-mapview",
+    "title": "Aula 5 - Mapas",
+    "section": "Pacote mapview",
+    "text": "Pacote mapview\nMuito legal para fazer mapas interativos! Não necessariamente para publicações, mas talvez apresentações e visualizações diversas.\n\nlibrary(mapview)\n\n# mapview(biomas, zcol = \"name_biome\")\n\n\n# mapview(muni_PR, zcol = \"name_muni\")",
+    "crumbs": [
+      "Aula 5 - Mapas"
+    ]
+  },
+  {
+    "objectID": "aulas/Aula_Mapa 2024.html#customização-de-mapas",
+    "href": "aulas/Aula_Mapa 2024.html#customização-de-mapas",
+    "title": "Aula 5 - Mapas",
+    "section": "Customização de mapas",
+    "text": "Customização de mapas\nAgora vamos aprender a deixar os mapas com qualidade para publicação! Alguns requisitos são essenciais nessa etapa:\n\nTodo mapa DEVE conter uma barra de escala!\nTodo mapa deve conter também a orientação (apontando para o norte)\nInteressante prestar bastante atenção nas cores\nNão representar países que não são ilhas isoladamente!!\n\n\nggplot() +\n  geom_sf(data= slice(biomas,-7),  aes(fill=name_biome, alpha=0.7)) +\n  theme_minimal()+\n  scale_fill_manual(values = terrain.colors(7))\n\n\n\n\nFigura 22. Biomas do Brasil bonito\n\n\n\n\nAgora do jeito correto, usaremos o pacote ggspatial para inserir o símbolo apontando para o norte e a escala ao mapa (funções annotation_north_arrow e annotation_scale respectivamente).\n\nlibrary(ggspatial)\n\n\n\n\n\n\n\nTip\n\n\n\nPara verificar os diferentes estilos de seta, checar os [exemplos]https://paleolimbot.github.io/ggspatial/reference/north_arrow_orienteering.html\n\n\nFigura final\n\nggplot()+ borders(\"world\", fill = \"lightgray\", colour = \"gray\")+\n  geom_sf(data= slice(biomas,-7),  aes(fill=name_biome, alpha=0.7)) +\n  scale_fill_manual(values = terrain.colors(7))+\n  coord_sf(xlim= c(-80,-30), ylim=c(-40,10))+\n  theme(legend.position = c(0.8,0.9), legend.background = element_blank(), legend.text=element_text(size=10),\n        legend.title = element_blank(),\n        legend.key.size = unit(0.4, \"cm\"),\n        panel.grid.major = element_line(color = \"darkgray\", linetype = \"dashed\", size = 0.5), \n        panel.background = element_rect(fill = \"aliceblue\"),\n        axis.title = element_blank())+\n  guides(fill = guide_legend(nrow = 3), alpha= \"none\")+\n  annotation_north_arrow(location=\"br\", style=north_arrow_nautical, pad_x =  unit(2, \"cm\"), pad_y = unit(2, \"cm\"))+\n  annotation_scale(location = \"tl\")\n\nWarning: The `size` argument of `element_line()` is deprecated as of ggplot2 3.4.0.\nℹ Please use the `linewidth` argument instead.\n\n\nScale on map varies by more than 10%, scale bar may be inaccurate\n\n\n\n\n\nFigura 24. Mapa dos Biomas do Brasil final",
+    "crumbs": [
+      "Aula 5 - Mapas"
+    ]
+  },
+  {
+    "objectID": "aulas/Aula_Mapa 2024.html#mapas-a-partir-de-shapefiles",
+    "href": "aulas/Aula_Mapa 2024.html#mapas-a-partir-de-shapefiles",
+    "title": "Aula 5 - Mapas",
+    "section": "Mapas a partir de shapefiles",
+    "text": "Mapas a partir de shapefiles\nShapefiles (.shp) podem ser encontrados em diversos banco de dados na internet. Alguns comumente utilizados no Brasil são o do IBGE, INPE, ANA e diversos sites do governo. Para dados internacionais, temos vários disponíveis gratuitamente\n&gt; confira uma tabela nesse link: https://www.oryxthejournal.org/writing-for-conservation-guide/map-with-a-message.html#tab:data-sources",
+    "crumbs": [
+      "Aula 5 - Mapas"
+    ]
+  },
+  {
+    "objectID": "aulas/Aula_Mapa 2024.html#pacote-terra-como-subtituto-do-finado-raster",
+    "href": "aulas/Aula_Mapa 2024.html#pacote-terra-como-subtituto-do-finado-raster",
+    "title": "Aula 5 - Mapas",
+    "section": "Pacote terra como subtituto do finado raster",
+    "text": "Pacote terra como subtituto do finado raster\nMuito conteúdo BEM completo no site deles https://rspatial.org/pkg/index.html\nVários dados disponíveis no site do INPE http://www.dpi.inpe.br/Ambdata/download.php\n\nOutra opção (que eu achei bem mais pesada) é usar o pacote geodata Útil para dados globais de clima (wordclim), elevação, uso da terra, solo, ocorrência de espécies pelo gbif, limites administrativos, etc.\n\n\nOpções para dados globais (função worldclim_global), por país (worldclim_country) ou para determinada latitude e longitude (worldclim_tile)\n\n\nlibrary(geodata)\n\n\nclim_brasil &lt;- worldclim_country(country= “BR”, var=“bio”, res=10, download=T, path= tempdir(), version = “2.1”)\n\nVamos baixar apenas a bio1 - Temperatura média pra ir mais rápido, ams se for baixar todas vai vir num arquivo .zip e será nescessário unzip na sua pasta de destino para utilizar.\n\ndownload.file(\"http://www.dpi.inpe.br/amb_data/Brasil/bio1_br.asc\", destfile=\"bio1_br.asc\")\n\n\nlibrary(terra)\ntemp &lt;- rast('bio1_br.asc')\nclass(temp)\n\n[1] \"SpatRaster\"\nattr(,\"package\")\n[1] \"terra\"\n\nplot(temp)\n\n\n\n\nFigura 25. Temperatura média anual para o Brasil\n\n\n\n\nPara plotar com ggmap precisa transformar em dataframe\n\n\n\n\n\n\nTip\n\n\n\nPara saber as unidades e quais são as variáveis verificar em https://www.worldclim.org/\n\n\n\ntemp_df &lt;- as.data.frame(temp, xy=T)\n\nggplot() +\n  geom_tile(data = temp_df, \n              aes(x = x, y = y, fill = bio1_br/10))+ #unidade do worldclim é oC*10\n  theme_bw()\n\n\n\n\nFigura 26. Temperatura média anual para o Brasil com ggmap\n\n\n\n\nAgora se a gente quiser só para alguma localização específica,temos que editar o arquivo. Para isso temos a função crop\n\next &lt;- c(-50,-40, -25,-20) # Para alguma localização específica\ntemp_x &lt;- crop(temp, ext)\nplot(temp_x)\n\n\n\n\nFigura 27. Temperatura média anual para uma localização aleatória\n\n\n\n\nPara o Paraná vamos usar o shape do geobr para cortar o raster no tamanho certo\n\nestado_PR &lt;- read_state(code_state = \"PR\", \n  year=2020, \n  showProgress = FALSE)\n\nUsing year/date 2020\n\nggplot() +\n  geom_sf(data=estado_PR, fill=\"lightgrey\", color=\"black\", show.legend = FALSE) +\n  theme_minimal()\n\n\n\n\nFigura 28. Estado do Paraná\n\n\n\n\n\ntemp_pr &lt;- crop(temp, estado_PR)\ntemp_pr_df &lt;- as.data.frame(temp_pr, xy=T)\n\nggplot() +\n  geom_tile(data=temp_pr_df, aes(x,y, fill=bio1_br/10))+\n  theme_minimal()+\n  coord_equal()\n\n\n\n\nFigura 29. Temperatura média para o Estado do Paraná\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nAtenção para customizações de escala!!! O resultado do seu mapa depende muito disso!\n\n\n\nggplot()+\n  geom_tile(data=temp_pr_df, aes(x,y, fill=bio1_br/10))+\n  scale_fill_gradient2(na.value=\"white\", low= \"steelblue3\", mid=\"gray94\", high=\"brown3\", limits=c(10, 29), midpoint = 18, breaks = c(10, 15,20, 25))+  \n  geom_sf(data=estado_PR, fill=NA, color=\"black\", show.legend = FALSE) +\n  theme(axis.text = element_blank(), axis.ticks = element_blank(),\n        axis.title = element_blank(), panel.background = element_blank())\n\n\n\n\nFigura 30. Temperatura média anual para o Paraná com escala ajustada",
+    "crumbs": [
+      "Aula 5 - Mapas"
+    ]
+  },
+  {
+    "objectID": "aulas/Aula_Mapa 2024.html#alguns-siteslivros-úteis-para-aprofundar-em-r-espacial",
+    "href": "aulas/Aula_Mapa 2024.html#alguns-siteslivros-úteis-para-aprofundar-em-r-espacial",
+    "title": "Aula 5 - Mapas",
+    "section": "Alguns sites/livros úteis para aprofundar em R espacial",
+    "text": "Alguns sites/livros úteis para aprofundar em R espacial\nhttps://www.ecologi.st/spatial-r/\nhttps://tmieno2.github.io/R-as-GIS-for-Economists/\nhttps://damariszurell.github.io/EEC-MGC/a1_SpatialData.html\nhttps://rspatial.org/terra/spatial/Spatialdata.pdf\nhttps://cran.r-project.org/doc/contrib/intro-spatial-rl.pdf",
+    "crumbs": [
+      "Aula 5 - Mapas"
+    ]
   },
   {
     "objectID": "aulas/Aula Quarto.html",
@@ -146,114 +332,439 @@
     ]
   },
   {
-    "objectID": "aulas/Aula -Semana 2.html#objetivos-e-resultados",
-    "href": "aulas/Aula -Semana 2.html#objetivos-e-resultados",
-    "title": "Semana 2 - Manipulação de Dados",
-    "section": "Objetivos e Resultados",
-    "text": "Objetivos e Resultados\n\n\n\n\n\n\n\n\n\nAula\nObjetivos\nResultados\n\n\n\n\n\nTransformacão e preparação dos dados utilizando os pacotes tidyr\nTransformacão e preparação dos dados utilizando os pacotes dplyr\nExercício\nCorreção\n\n\nAprender os comandos e funções dos pacotes do tidyverse\nEntender a aplicação do operador ‘pipe’\nFixar o conteúdo através de exercícios\n\n\nDesenvolver a habilidade de deixar os dados no formato analítico\nReconhecer a importância da arrumação dos dados (data tidying)\nReconhecer e ser capaz de utilizar as ferramentas para manipulação e transformação dos dados\nAplicar as funções dos pacotes dplyr e tidyr para estruturar os dados",
-    "crumbs": [
-      "Semana 2 - Manipulação de Dados"
-    ]
-  },
-  {
-    "objectID": "aulas/Aula -Semana 2.html#hadley-wickham",
-    "href": "aulas/Aula -Semana 2.html#hadley-wickham",
-    "title": "Semana 2 - Manipulação de Dados",
-    "section": "Hadley Wickham",
-    "text": "Hadley Wickham\nhttps://hadley.nz/",
-    "crumbs": [
-      "Semana 2 - Manipulação de Dados"
-    ]
-  },
-  {
-    "objectID": "aulas/Aula -Semana 2.html#tidyverse",
-    "href": "aulas/Aula -Semana 2.html#tidyverse",
-    "title": "Semana 2 - Manipulação de Dados",
-    "section": "Tidyverse",
-    "text": "Tidyverse\n\n\nConjunto de pacotes que visam:\n\nUm PASSO de cada vez\nCada variável deve ser uma coluna, cada observação uma linha.\n\nTransparência para que qualquer pessoa que veja o script consiga entender",
-    "crumbs": [
-      "Semana 2 - Manipulação de Dados"
-    ]
-  },
-  {
-    "objectID": "aulas/Aula -Semana 2.html#tidyverse-1",
-    "href": "aulas/Aula -Semana 2.html#tidyverse-1",
-    "title": "Semana 2 - Manipulação de Dados",
-    "section": "Tidyverse",
-    "text": "Tidyverse",
-    "crumbs": [
-      "Semana 2 - Manipulação de Dados"
-    ]
-  },
-  {
-    "objectID": "aulas/Aula -Semana 2.html#dplyr",
-    "href": "aulas/Aula -Semana 2.html#dplyr",
-    "title": "Semana 2 - Manipulação de Dados",
-    "section": "Dplyr",
-    "text": "Dplyr\n\n\n\n\n\n\nfilter(): Escolher observações de acordo com seus valores\narrange(): reordenar linhas\nselect(): selecionar variável pelo nome\nslice(): seleciona por linhas\nmutate(): criar novas variáveis com as existentes modificadas\nsummarise(): colapsa muitos valores em um único sumário\ngroup_by(): agrupar de acordo com determinada característica\ncase_match(), case_when(): substiruir condicionalmente fatores\nif_else(): condicional baseada em argumento lógico\nrecode(): mudar os valores dos fatores\netc (ver aqui)",
-    "crumbs": [
-      "Semana 2 - Manipulação de Dados"
-    ]
-  },
-  {
-    "objectID": "aulas/Aula -Semana 2.html#dplyr-1",
-    "href": "aulas/Aula -Semana 2.html#dplyr-1",
-    "title": "Semana 2 - Manipulação de Dados",
-    "section": "Dplyr",
-    "text": "Dplyr\n\nDATA WRANGLING CHEATSHEET!",
-    "crumbs": [
-      "Semana 2 - Manipulação de Dados"
-    ]
-  },
-  {
-    "objectID": "aulas/Aula -Semana 2.html#tidyr",
-    "href": "aulas/Aula -Semana 2.html#tidyr",
-    "title": "Semana 2 - Manipulação de Dados",
-    "section": "Tidyr",
-    "text": "Tidyr\n\n\n\n\nExiste um jeito certo de estruturar dados, mas nem sempre é simples! \n\n\n\npivot_longer(): empilha/ combina variáveis em uma coluna (estreita sua planilha)\npivot_wider(): ao contrário, espalha as variáveis em colunas (expande sua planilha)\nunite(): junta duas colunas usando um separador\nseparate(): transforma uma coluna em várias usando um separador\nMAS tudo mudou! Pra melhor! Referências aqui",
-    "crumbs": [
-      "Semana 2 - Manipulação de Dados"
-    ]
-  },
-  {
-    "objectID": "aulas/Aula -Semana 2.html#pipe",
-    "href": "aulas/Aula -Semana 2.html#pipe",
-    "title": "Semana 2 - Manipulação de Dados",
-    "section": "Pipe %>%",
-    "text": "Pipe %&gt;%\n\nRapidez ao escrever e facilidade de ler\nAtalho (CRTL + SHIFT + m)\nUsa o produto da operação anterior e usa como o impute da próxima operação\nSubstituir mentalmente por “depois” para entender",
-    "crumbs": [
-      "Semana 2 - Manipulação de Dados"
-    ]
-  },
-  {
-    "objectID": "aulas/Aula -Semana 2.html#bora-pro-r",
-    "href": "aulas/Aula -Semana 2.html#bora-pro-r",
-    "title": "Semana 2 - Manipulação de Dados",
-    "section": "BORA PRO R!",
-    "text": "BORA PRO R!",
-    "crumbs": [
-      "Semana 2 - Manipulação de Dados"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Marina Scalon",
+    "objectID": "aulas/Pratica - Semana 2.html",
+    "href": "aulas/Pratica - Semana 2.html",
+    "title": "Aula 2 - Manipulação de Dados",
     "section": "",
-    "text": "I study how plants adapt to environmental change from a functional and ecophysiological perspective, with a focus on Neotropical ecosystems. I also teach R and enjoy coding and working with data. Outside of science, I’m a mother of two girls, learning to see the world through their eyes every day."
+    "text": "Script utilizado na aula 2 para demostrar as funções do pacote dpyr e tidyr do tidyverse",
+    "crumbs": [
+      "Aula 2 - Manipulação de Dados"
+    ]
   },
   {
-    "objectID": "index.html#education",
-    "href": "index.html#education",
-    "title": "Marina Scalon",
-    "section": "Education",
-    "text": "Education\nBachelor of Forest Engineering, Universidade de Brasília | 2008\nMaster of Ecology, Universidade de Brasília | 2010\nPhD in Plant Ecology, Macquarie University | 2014\nPost Doctoral Fellow at Universidade de Brasília | 2015-2016\nPost Doctoral Fellow at Universidade do Estado de Mato Grosso | 2016-2017\nPost Doctoral Fellow at University of Oxford | 2018-2019\nPost Doctoral Fellow at Universidade Federal do Paraná | 2019 - now"
+    "objectID": "aulas/Pratica - Semana 2.html#instalando-os-pacotes",
+    "href": "aulas/Pratica - Semana 2.html#instalando-os-pacotes",
+    "title": "Aula 2 - Manipulação de Dados",
+    "section": "Instalando os pacotes",
+    "text": "Instalando os pacotes\nNessa aula vamos utilizar o mesmo conjunto de dados da aula 1 para demostrar as funções dos pacotes tidyr e dplyr do tidyverse. O primeiro passo então é carregar o pacote. Confiram a versão e atualizem para versão 2.0.0 usando a função tidyverse_update()!\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.1     ✔ stringr   1.5.2\n✔ ggplot2   4.0.0     ✔ tibble    3.3.0\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.1.0     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n# tidyverse_update()",
+    "crumbs": [
+      "Aula 2 - Manipulação de Dados"
+    ]
   },
   {
-    "objectID": "R Lessons.html#section-1",
-    "href": "R Lessons.html#section-1",
-    "title": "Data Manipulation and Visualization",
+    "objectID": "aulas/Pratica - Semana 2.html#carregando-o-conjunto-de-dados",
+    "href": "aulas/Pratica - Semana 2.html#carregando-o-conjunto-de-dados",
+    "title": "Aula 2 - Manipulação de Dados",
+    "section": "Carregando o conjunto de dados",
+    "text": "Carregando o conjunto de dados\nAgora vamos determinar o diretório de trabalho e carregar os dados, conforme aprendemos na aula anterior.\n\nVocê deve colocar o diretório de acordo com o seu caminho no computador, e de acordo com a localização dos seus dados.\n\n\n# setwd(\"C:/Marina/Pos-doutorado/PNPD_UFPR/Vis Man Dados/Aula 2\")\n# dados &lt;- read.csv(\"Dados.csv\")\ndados &lt;- readr::read_csv('https://raw.githubusercontent.com/scalonmc/VisMan/master/VisManDados/Aula1/dados.csv')\n\nRows: 129 Columns: 13\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr  (3): Tratamento, especie, Grupo\ndbl (10): Amostra, individuo, N, P, Mg, K, Ca, Al_ppm, area, peso\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\nstr(dados)\n\nspc_tbl_ [129 × 13] (S3: spec_tbl_df/tbl_df/tbl/data.frame)\n $ Amostra   : num [1:129] 1 2 3 4 5 6 7 8 9 10 ...\n $ Tratamento: chr [1:129] \"Floresta\" \"Floresta\" \"Floresta\" \"Floresta\" ...\n $ especie   : chr [1:129] \"AT\" \"AT\" \"AT\" \"BC\" ...\n $ Grupo     : chr [1:129] \"D\" \"D\" \"D\" \"B\" ...\n $ individuo : num [1:129] 1 2 3 1 2 3 1 2 3 1 ...\n $ N         : num [1:129] 2.36 2.07 2.03 1.32 1.23 ...\n $ P         : num [1:129] 0.1143 0.1143 0.1214 0.0643 0.0714 ...\n $ Mg        : num [1:129] 0.15 0.18 0.133 0.159 0.113 ...\n $ K         : num [1:129] 1.197 1.444 0.366 0.679 0.957 ...\n $ Ca        : num [1:129] 0.319 0.413 0.371 0.576 0.458 ...\n $ Al_ppm    : num [1:129] 122.8 251.8 206.5 96.8 103.3 ...\n $ area      : num [1:129] 288 262 184 149 263 ...\n $ peso      : num [1:129] 3.63 2.49 2.16 1.86 4.39 ...\n - attr(*, \"spec\")=\n  .. cols(\n  ..   Amostra = col_double(),\n  ..   Tratamento = col_character(),\n  ..   especie = col_character(),\n  ..   Grupo = col_character(),\n  ..   individuo = col_double(),\n  ..   N = col_double(),\n  ..   P = col_double(),\n  ..   Mg = col_double(),\n  ..   K = col_double(),\n  ..   Ca = col_double(),\n  ..   Al_ppm = col_double(),\n  ..   area = col_double(),\n  ..   peso = col_double()\n  .. )\n - attr(*, \"problems\")=&lt;externalptr&gt;",
+    "crumbs": [
+      "Aula 2 - Manipulação de Dados"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica - Semana 2.html#select",
+    "href": "aulas/Pratica - Semana 2.html#select",
+    "title": "Aula 2 - Manipulação de Dados",
+    "section": "Select",
+    "text": "Select\nA função select() é importante para selecionar ou excluir variáveis (colunas do dataset)\nAbaixo, vamos fazer passo a passo:\n\nSelecionar apenas as variáveis categóricas\nExcluir variávies não úteis\nCondicional, no caso se a variável for numérica usando is.numeric\n\nSelecionar variávels com alguma característica comum utilizando starts_with() ou ends_with()\n\nAlterar ordem para visualização dos dados\n\n\ncategoricas &lt;- select(dados, Tratamento, especie, Grupo) #1\nstr(categoricas)\n\ntibble [129 × 3] (S3: tbl_df/tbl/data.frame)\n $ Tratamento: chr [1:129] \"Floresta\" \"Floresta\" \"Floresta\" \"Floresta\" ...\n $ especie   : chr [1:129] \"AT\" \"AT\" \"AT\" \"BC\" ...\n $ Grupo     : chr [1:129] \"D\" \"D\" \"D\" \"B\" ...\n\nclean &lt;- select(dados, -Amostra, -individuo) #2\nstr(clean)\n\ntibble [129 × 11] (S3: tbl_df/tbl/data.frame)\n $ Tratamento: chr [1:129] \"Floresta\" \"Floresta\" \"Floresta\" \"Floresta\" ...\n $ especie   : chr [1:129] \"AT\" \"AT\" \"AT\" \"BC\" ...\n $ Grupo     : chr [1:129] \"D\" \"D\" \"D\" \"B\" ...\n $ N         : num [1:129] 2.36 2.07 2.03 1.32 1.23 ...\n $ P         : num [1:129] 0.1143 0.1143 0.1214 0.0643 0.0714 ...\n $ Mg        : num [1:129] 0.15 0.18 0.133 0.159 0.113 ...\n $ K         : num [1:129] 1.197 1.444 0.366 0.679 0.957 ...\n $ Ca        : num [1:129] 0.319 0.413 0.371 0.576 0.458 ...\n $ Al_ppm    : num [1:129] 122.8 251.8 206.5 96.8 103.3 ...\n $ area      : num [1:129] 288 262 184 149 263 ...\n $ peso      : num [1:129] 3.63 2.49 2.16 1.86 4.39 ...\n\nnumericas &lt;- select_if(dados, is.numeric) #3\n\nppm &lt;- select(clean, ends_with(\"ppm\")) #4\nstr(ppm)\n\ntibble [129 × 1] (S3: tbl_df/tbl/data.frame)\n $ Al_ppm: num [1:129] 122.8 251.8 206.5 96.8 103.3 ...\n\nordered &lt;- select(dados, N, P, everything())\nhead(ordered)\n\n# A tibble: 6 × 13\n      N      P Amostra Tratamento especie Grupo individuo    Mg     K    Ca\n  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1  2.36 0.114        1 Floresta   AT      D             1 0.150 1.20  0.319\n2  2.07 0.114        2 Floresta   AT      D             2 0.180 1.44  0.413\n3  2.03 0.121        3 Floresta   AT      D             3 0.133 0.366 0.371\n4  1.32 0.0643       4 Floresta   BC      B             1 0.159 0.679 0.576\n5  1.23 0.0714       5 Floresta   BC      B             2 0.113 0.957 0.458\n6  1.37 0.0786       6 Floresta   BC      B             3 0.116 0.75  0.347\n# ℹ 3 more variables: Al_ppm &lt;dbl&gt;, area &lt;dbl&gt;, peso &lt;dbl&gt;",
+    "crumbs": [
+      "Aula 2 - Manipulação de Dados"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica - Semana 2.html#rbase",
+    "href": "aulas/Pratica - Semana 2.html#rbase",
+    "title": "Aula 2 - Manipulação de Dados",
+    "section": "Rbase",
+    "text": "Rbase\nPara fazer a mesma coisa no Rbase\nSão comandos bem simples que eu acho importante demostrar\nO diferencial é precisar verificar o número correspondente da coluna do dataframe\n\ncategoricas2 &lt;- dados[2:4] #1\nstr(categoricas2)\n\ntibble [129 × 3] (S3: tbl_df/tbl/data.frame)\n $ Tratamento: chr [1:129] \"Floresta\" \"Floresta\" \"Floresta\" \"Floresta\" ...\n $ especie   : chr [1:129] \"AT\" \"AT\" \"AT\" \"BC\" ...\n $ Grupo     : chr [1:129] \"D\" \"D\" \"D\" \"B\" ...\n\nclean2 &lt;- dados[-c(1,5)] #2\nstr(clean)\n\ntibble [129 × 11] (S3: tbl_df/tbl/data.frame)\n $ Tratamento: chr [1:129] \"Floresta\" \"Floresta\" \"Floresta\" \"Floresta\" ...\n $ especie   : chr [1:129] \"AT\" \"AT\" \"AT\" \"BC\" ...\n $ Grupo     : chr [1:129] \"D\" \"D\" \"D\" \"B\" ...\n $ N         : num [1:129] 2.36 2.07 2.03 1.32 1.23 ...\n $ P         : num [1:129] 0.1143 0.1143 0.1214 0.0643 0.0714 ...\n $ Mg        : num [1:129] 0.15 0.18 0.133 0.159 0.113 ...\n $ K         : num [1:129] 1.197 1.444 0.366 0.679 0.957 ...\n $ Ca        : num [1:129] 0.319 0.413 0.371 0.576 0.458 ...\n $ Al_ppm    : num [1:129] 122.8 251.8 206.5 96.8 103.3 ...\n $ area      : num [1:129] 288 262 184 149 263 ...\n $ peso      : num [1:129] 3.63 2.49 2.16 1.86 4.39 ...\n\nnutri &lt;- dados[6:13] #3\nstr(nutri)\n\ntibble [129 × 8] (S3: tbl_df/tbl/data.frame)\n $ N     : num [1:129] 2.36 2.07 2.03 1.32 1.23 ...\n $ P     : num [1:129] 0.1143 0.1143 0.1214 0.0643 0.0714 ...\n $ Mg    : num [1:129] 0.15 0.18 0.133 0.159 0.113 ...\n $ K     : num [1:129] 1.197 1.444 0.366 0.679 0.957 ...\n $ Ca    : num [1:129] 0.319 0.413 0.371 0.576 0.458 ...\n $ Al_ppm: num [1:129] 122.8 251.8 206.5 96.8 103.3 ...\n $ area  : num [1:129] 288 262 184 149 263 ...\n $ peso  : num [1:129] 3.63 2.49 2.16 1.86 4.39 ...",
+    "crumbs": [
+      "Aula 2 - Manipulação de Dados"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica - Semana 2.html#slice",
+    "href": "aulas/Pratica - Semana 2.html#slice",
+    "title": "Aula 2 - Manipulação de Dados",
+    "section": "Slice",
+    "text": "Slice\nA função slice() é importante para selecionar ou excluir observações (linhas do dataset)\nAbaixo, vamos fazer passo a passo:\n\nRetirar linhas correspondentes a vegetação “Savana”\nSelecionar apenas as linhas correspondentes a vegetação “Savana”\nSelecionar n linhas em que a váriavel tem valor mínimo\nSelecionar n linhas em que uma variável tem um valor máximo\n\n\nsem.savana &lt;- slice(clean, -46:-90)\nstr(sem.savana)\n\ntibble [84 × 11] (S3: tbl_df/tbl/data.frame)\n $ Tratamento: chr [1:84] \"Floresta\" \"Floresta\" \"Floresta\" \"Floresta\" ...\n $ especie   : chr [1:84] \"AT\" \"AT\" \"AT\" \"BC\" ...\n $ Grupo     : chr [1:84] \"D\" \"D\" \"D\" \"B\" ...\n $ N         : num [1:84] 2.36 2.07 2.03 1.32 1.23 ...\n $ P         : num [1:84] 0.1143 0.1143 0.1214 0.0643 0.0714 ...\n $ Mg        : num [1:84] 0.15 0.18 0.133 0.159 0.113 ...\n $ K         : num [1:84] 1.197 1.444 0.366 0.679 0.957 ...\n $ Ca        : num [1:84] 0.319 0.413 0.371 0.576 0.458 ...\n $ Al_ppm    : num [1:84] 122.8 251.8 206.5 96.8 103.3 ...\n $ area      : num [1:84] 288 262 184 149 263 ...\n $ peso      : num [1:84] 3.63 2.49 2.16 1.86 4.39 ...\n\nso.savana &lt;- slice(clean, 46:90)\nstr(so.savana)\n\ntibble [45 × 11] (S3: tbl_df/tbl/data.frame)\n $ Tratamento: chr [1:45] \"Savana\" \"Savana\" \"Savana\" \"Savana\" ...\n $ especie   : chr [1:45] \"AT\" \"AT\" \"AT\" \"BC\" ...\n $ Grupo     : chr [1:45] \"D\" \"D\" \"D\" \"B\" ...\n $ N         : num [1:45] 2.07 2.36 2.4 1.41 1.55 ...\n $ P         : num [1:45] 0.1071 0.1714 0.1071 0.0786 0.0714 ...\n $ Mg        : num [1:45] 0.22 0.205 0.214 0.171 0.222 ...\n $ K         : num [1:45] 1.303 1.28 1.126 0.814 0.879 ...\n $ Ca        : num [1:45] 0.813 0.825 0.57 0.603 0.968 ...\n $ Al_ppm    : num [1:45] 155 213 155 239 258 ...\n $ area      : num [1:45] 352 378 375 208 574 ...\n $ peso      : num [1:45] 3.4 3.87 5.07 2.68 6.17 ...\n\nmenosN &lt;- slice_min(dados, N, n = 5)\nhead(menosN)\n\n# A tibble: 6 × 13\n  Amostra Tratamento especie Grupo individuo     N      P     Mg     K     Ca\n    &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;\n1     112 Savana     SP      S             1 0.612 0.0571 0.0471 0.236 0.0756\n2     113 Savana     SP      S             2 0.612 0.0571 0.0537 0.36  0.081 \n3     116 Savana     VE      S             2 0.754 0.0571 0.0347 0.326 0.196 \n4      44 Floresta   VE      S             2 0.848 0.05   0.0455 0.378 0.188 \n5     115 Savana     VE      S             1 0.848 0.05   0.0277 0.254 0.181 \n6      82 Campo      SM      S             1 0.848 0.0643 0.0722 0.385 0.172 \n# ℹ 3 more variables: Al_ppm &lt;dbl&gt;, area &lt;dbl&gt;, peso &lt;dbl&gt;\n\nmaisAl &lt;- slice_max(dados, Al_ppm, n = 5)\nhead(maisAl)\n\n# A tibble: 5 × 13\n  Amostra Tratamento especie Grupo individuo     N      P     Mg     K    Ca\n    &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1     247 Savana     QP      D             2  1.40 0.0786 0.0736 0.728 0.398\n2     246 Savana     QP      D             1  1.48 0.0857 0.0812 0.632 0.236\n3     248 Savana     QP      D             3  1.06 0.0714 0.0728 0.893 0.210\n4      31 Floresta   QP      D             1  1.84 0.0714 0.0776 0.376 0.412\n5      33 Floresta   QP      D             3  1.32 0.0786 0.0844 0.405 0.515\n# ℹ 3 more variables: Al_ppm &lt;dbl&gt;, area &lt;dbl&gt;, peso &lt;dbl&gt;",
+    "crumbs": [
+      "Aula 2 - Manipulação de Dados"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica - Semana 2.html#rbase-1",
+    "href": "aulas/Pratica - Semana 2.html#rbase-1",
+    "title": "Aula 2 - Manipulação de Dados",
+    "section": "Rbase",
+    "text": "Rbase\nPara fazer a mesma coisa no Rbase\nSem usar a função **subset()** e usando a função **subset()**\n\nso.savana2 &lt;- clean[46:90,]\nso.savana3 &lt;- subset(clean, Tratamento == \"Savana\")\n\nsem.savana2 &lt;- clean[-(46:90),]\nsem.savana3 &lt;- subset(clean, Tratamento != \"Savana\")",
+    "crumbs": [
+      "Aula 2 - Manipulação de Dados"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica - Semana 2.html#filter",
+    "href": "aulas/Pratica - Semana 2.html#filter",
+    "title": "Aula 2 - Manipulação de Dados",
+    "section": "Filter",
+    "text": "Filter\nA função filter() funciona para seleção condicional de variáveis\n\n\n\n\n\n\nNota\n\n\n\nEla é equivalente a função subset() do Rbase - caso você esteja acostumado com ela!\n\n\n\ndeciduous &lt;-  filter(clean, Grupo == \"D\")\ndeciduous2 &lt;- subset(clean, Grupo == \"D\")\n\n\nTambém é possível combinar as condições de filtro!\n\nNesse caso estamos selecionando as espécies decíduas (D) apenas de Floresta com nitrogênio foliar maior que 2%\n\ndeciduous.floresta.highN &lt;- filter(clean, Grupo == \"D\" & \n                                     Tratamento ==\"Floresta\" &\n                                     N &gt;=2)\nstr(deciduous.floresta.highN)\n\ntibble [6 × 11] (S3: tbl_df/tbl/data.frame)\n $ Tratamento: chr [1:6] \"Floresta\" \"Floresta\" \"Floresta\" \"Floresta\" ...\n $ especie   : chr [1:6] \"AT\" \"AT\" \"AT\" \"GN\" ...\n $ Grupo     : chr [1:6] \"D\" \"D\" \"D\" \"D\" ...\n $ N         : num [1:6] 2.36 2.07 2.03 4.62 3.77 ...\n $ P         : num [1:6] 0.114 0.114 0.121 0.143 0.157 ...\n $ Mg        : num [1:6] 0.15 0.18 0.133 0.247 0.176 ...\n $ K         : num [1:6] 1.197 1.444 0.366 1.263 1.388 ...\n $ Ca        : num [1:6] 0.319 0.413 0.371 0.645 0.266 ...\n $ Al_ppm    : num [1:6] 123 252 206 181 148 ...\n $ area      : num [1:6] 288 262 184 274 385 ...\n $ peso      : num [1:6] 3.63 2.49 2.16 3.92 3.62 ...\n\n\nVerificar operadores lógicos do R\n\nOperador %in%\n\nPara selecionar vários níveis dentro de uma variável\n\nsp &lt;- filter(clean, especie %in% c(\"CB\", \"KC\", \"QP\"))\nstr(sp)\n\ntibble [27 × 11] (S3: tbl_df/tbl/data.frame)\n $ Tratamento: chr [1:27] \"Floresta\" \"Floresta\" \"Floresta\" \"Floresta\" ...\n $ especie   : chr [1:27] \"CB\" \"CB\" \"CB\" \"KC\" ...\n $ Grupo     : chr [1:27] \"B\" \"B\" \"B\" \"D\" ...\n $ N         : num [1:27] 1.18 1.27 1.55 1.23 1.41 ...\n $ P         : num [1:27] 0.0929 0.0786 0.0714 0.0786 0.1 ...\n $ Mg        : num [1:27] 0.088 0.0788 0.0822 0.1123 0.1307 ...\n $ K         : num [1:27] 0.318 0.233 0.336 0.567 0.459 0.479 0.376 0.934 0.405 0.657 ...\n $ Ca        : num [1:27] 0.315 0.12 0.112 0.311 0.336 ...\n $ Al_ppm    : num [1:27] 45.3 51.8 38.8 155 180.8 ...\n $ area      : num [1:27] 490 312 288 287 145 ...\n $ peso      : num [1:27] 5.6 4.77 5.38 4.78 1.42 ...",
+    "crumbs": [
+      "Aula 2 - Manipulação de Dados"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica - Semana 2.html#rename",
+    "href": "aulas/Pratica - Semana 2.html#rename",
+    "title": "Aula 2 - Manipulação de Dados",
+    "section": "Rename",
+    "text": "Rename\nA função rename() é importante para mudar os nomes das variáveis. O nome atual vem antes do nome original. Vamos mudar os nomes para inglês.\n\n\n\n\n\n\nDica!\n\n\n\nQuando o nome for espaçado ou tiver caracter especial ou número, deve estar entre o símbolo `\n\n\n\nls(clean)\n\n [1] \"Al_ppm\"     \"area\"       \"Ca\"         \"especie\"    \"Grupo\"     \n [6] \"K\"          \"Mg\"         \"N\"          \"P\"          \"peso\"      \n[11] \"Tratamento\"\n\nnew &lt;- rename(clean, Vegetation = Tratamento, Species = especie, `Phenological group` = Grupo,\n                Al = Al_ppm, \n                `leaf area` = area, `leaf mass` = peso)\n\nls(new)\n\n [1] \"Al\"                 \"Ca\"                 \"K\"                 \n [4] \"leaf area\"          \"leaf mass\"          \"Mg\"                \n [7] \"N\"                  \"P\"                  \"Phenological group\"\n[10] \"Species\"            \"Vegetation\"",
+    "crumbs": [
+      "Aula 2 - Manipulação de Dados"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica - Semana 2.html#arrange",
+    "href": "aulas/Pratica - Semana 2.html#arrange",
+    "title": "Aula 2 - Manipulação de Dados",
+    "section": "Arrange",
+    "text": "Arrange\nA função arrange() permite colocarmos os dados em determinada ordem. Isso é importante principalmente para verificar tendências ou outliers Aqui vamos colocar os dados na ordem do maior valor de Al par ao menor para verificarmos as plantas acumuladoras de alumínio. Vamos usar a função head() para olhar como os dados foram ordenados do maior valor de Al.\n\nacumuladoras &lt;- arrange (new, desc(Al))\n\nhead(acumuladoras)\n\n# A tibble: 6 × 11\n  Vegetation Species `Phenological group`     N      P     Mg     K    Ca     Al\n  &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;                &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;\n1 Savana     QP      D                    1.40  0.0786 0.0736 0.728 0.398 15012.\n2 Savana     QP      D                    1.48  0.0857 0.0812 0.632 0.236 12878.\n3 Savana     QP      D                    1.06  0.0714 0.0728 0.893 0.210 12522.\n4 Floresta   QP      D                    1.84  0.0714 0.0776 0.376 0.412 12345 \n5 Floresta   QP      D                    1.32  0.0786 0.0844 0.405 0.515 11365 \n6 Savana     VE      S                    0.754 0.0571 0.0347 0.326 0.196 10975 \n# ℹ 2 more variables: `leaf area` &lt;dbl&gt;, `leaf mass` &lt;dbl&gt;\n\n\nMais interessante talvez seja ver esse padrão por algum grupo. Para isso arrange() pode ser muito útil.\n\nacumuladoras &lt;- arrange(new, `Phenological group`, desc(Al))\nhead(acumuladoras)\n\n# A tibble: 6 × 11\n  Vegetation Species `Phenological group`     N      P     Mg     K    Ca    Al\n  &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;                &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 Savana     BC      B                     1.56 0.0714 0.222  0.879 0.968  258.\n2 Savana     SA      B                     2.08 0.0714 0.0941 0.561 0.221  258.\n3 Savana     SA      B                     1.91 0.0643 0.0734 0.313 0.113  252.\n4 Savana     BC      B                     1.41 0.0786 0.171  0.814 0.603  239.\n5 Savana     SA      B                     1.99 0.0571 0.0704 0.369 0.15   239.\n6 Campo      CB      B                     1.56 0.0786 0.160  0.507 0.503  226 \n# ℹ 2 more variables: `leaf area` &lt;dbl&gt;, `leaf mass` &lt;dbl&gt;",
+    "crumbs": [
+      "Aula 2 - Manipulação de Dados"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica - Semana 2.html#mutate",
+    "href": "aulas/Pratica - Semana 2.html#mutate",
+    "title": "Aula 2 - Manipulação de Dados",
+    "section": "Mutate",
+    "text": "Mutate\nA função mutate() é muito utilizada para diversos objetivos de manipulação. Com ela, podemos:\n\nTransformar classes de objetos\nMudar os nomes de variáveis ou de fatores\nCriar novas variáveis\n\n\nstr(new)\n\ntibble [129 × 11] (S3: tbl_df/tbl/data.frame)\n $ Vegetation        : chr [1:129] \"Floresta\" \"Floresta\" \"Floresta\" \"Floresta\" ...\n $ Species           : chr [1:129] \"AT\" \"AT\" \"AT\" \"BC\" ...\n $ Phenological group: chr [1:129] \"D\" \"D\" \"D\" \"B\" ...\n $ N                 : num [1:129] 2.36 2.07 2.03 1.32 1.23 ...\n $ P                 : num [1:129] 0.1143 0.1143 0.1214 0.0643 0.0714 ...\n $ Mg                : num [1:129] 0.15 0.18 0.133 0.159 0.113 ...\n $ K                 : num [1:129] 1.197 1.444 0.366 0.679 0.957 ...\n $ Ca                : num [1:129] 0.319 0.413 0.371 0.576 0.458 ...\n $ Al                : num [1:129] 122.8 251.8 206.5 96.8 103.3 ...\n $ leaf area         : num [1:129] 288 262 184 149 263 ...\n $ leaf mass         : num [1:129] 3.63 2.49 2.16 1.86 4.39 ...\n\ndados.factor &lt;- mutate_if(new, is.character, as.factor) #1\nstr(dados.factor)\n\ntibble [129 × 11] (S3: tbl_df/tbl/data.frame)\n $ Vegetation        : Factor w/ 3 levels \"Campo\",\"Floresta\",..: 2 2 2 2 2 2 2 2 2 2 ...\n $ Species           : Factor w/ 15 levels \"AT\",\"BC\",\"BS\",..: 1 1 1 2 2 2 3 3 3 4 ...\n $ Phenological group: Factor w/ 3 levels \"B\",\"D\",\"S\": 2 2 2 1 1 1 1 1 1 1 ...\n $ N                 : num [1:129] 2.36 2.07 2.03 1.32 1.23 ...\n $ P                 : num [1:129] 0.1143 0.1143 0.1214 0.0643 0.0714 ...\n $ Mg                : num [1:129] 0.15 0.18 0.133 0.159 0.113 ...\n $ K                 : num [1:129] 1.197 1.444 0.366 0.679 0.957 ...\n $ Ca                : num [1:129] 0.319 0.413 0.371 0.576 0.458 ...\n $ Al                : num [1:129] 122.8 251.8 206.5 96.8 103.3 ...\n $ leaf area         : num [1:129] 288 262 184 149 263 ...\n $ leaf mass         : num [1:129] 3.63 2.49 2.16 1.86 4.39 ...\n\nnew.rename &lt;- mutate(dados.factor, `Phenological group` = recode(`Phenological group`, D = \"Deciduous\",  #2\n                                      B = \"Semideciduous\", S = \"Evergreen\"),\n                Vegetation = recode(Vegetation, Savana = \"Savanna\", Floresta = \"Forest\", Campo = \"Grassland\"))\nstr(new.rename)\n\ntibble [129 × 11] (S3: tbl_df/tbl/data.frame)\n $ Vegetation        : Factor w/ 3 levels \"Grassland\",\"Forest\",..: 2 2 2 2 2 2 2 2 2 2 ...\n $ Species           : Factor w/ 15 levels \"AT\",\"BC\",\"BS\",..: 1 1 1 2 2 2 3 3 3 4 ...\n $ Phenological group: Factor w/ 3 levels \"Semideciduous\",..: 2 2 2 1 1 1 1 1 1 1 ...\n $ N                 : num [1:129] 2.36 2.07 2.03 1.32 1.23 ...\n $ P                 : num [1:129] 0.1143 0.1143 0.1214 0.0643 0.0714 ...\n $ Mg                : num [1:129] 0.15 0.18 0.133 0.159 0.113 ...\n $ K                 : num [1:129] 1.197 1.444 0.366 0.679 0.957 ...\n $ Ca                : num [1:129] 0.319 0.413 0.371 0.576 0.458 ...\n $ Al                : num [1:129] 122.8 251.8 206.5 96.8 103.3 ...\n $ leaf area         : num [1:129] 288 262 184 149 263 ...\n $ leaf mass         : num [1:129] 3.63 2.49 2.16 1.86 4.39 ...\n\nfinal &lt;- mutate(new.rename, SLA = (`leaf area`/`leaf mass`), `N:P` = N/P) #3\n\n\nA função transmute() equivale a mutate para criação de novas variáveis, porém só mantém a coluna da variável criada (não adiciona novas colunas)\n\n\nfinal.2 &lt;- transmute(new.rename, SLA = (`leaf area`/`leaf mass`))",
+    "crumbs": [
+      "Aula 2 - Manipulação de Dados"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica - Semana 2.html#if_else",
+    "href": "aulas/Pratica - Semana 2.html#if_else",
+    "title": "Aula 2 - Manipulação de Dados",
+    "section": "If_else",
+    "text": "If_else\nFunção muito útil para transformar variáveis junto com o mutate() de acordo com determinada condição, seguindo a mesma lógica da função equivalente no Rbase ifelse(): ifelse(condição, sim, não)\n\n\n\n\n\n\nNote\n\n\n\nO diferencial é permitir lidar com valores faltantes!\n\n\n\nfinal3 &lt;- mutate(final, classificação = if_else(Al&gt;1000, \"acumuladora\", \"não-acumuladora\"))\nview(final3)",
+    "crumbs": [
+      "Aula 2 - Manipulação de Dados"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica - Semana 2.html#case_when",
+    "href": "aulas/Pratica - Semana 2.html#case_when",
+    "title": "Aula 2 - Manipulação de Dados",
+    "section": "Case_when",
+    "text": "Case_when\nSimilar ao if_else(), mas permite mais condições! Perfeita para classificações ou agrupamentos de variáveis.\n\nfinal4 &lt;- mutate(final, N_level = case_when(\n                                  N &lt; 1 ~ \"very low\",\n                                  1 &lt; N & N &lt; 2 ~ \"low\",\n                                  2 &lt; N & N &lt; 3 ~ \"high\",\n                                  N &gt; 3 ~ \"very high\"))",
+    "crumbs": [
+      "Aula 2 - Manipulação de Dados"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica - Semana 2.html#summarise",
+    "href": "aulas/Pratica - Semana 2.html#summarise",
+    "title": "Aula 2 - Manipulação de Dados",
+    "section": "Summarise",
+    "text": "Summarise\nA função summarise() (ou summarize()) cria um novo dataframe colapsando valores em um sumário. MUITO ÚTIL pra fazer tabelas de médias, desvio padrão, etc. Usualmente utilizamos a função group_by() antes para especificar os grupos. Também pode ser combinada por summarise_all para aplicar a função em todas as variáveis.\n\nmedias&lt;- final.pipe %&gt;% summarise(N = mean(N),\n                                   P = mean(P))\nmedias\n\n# A tibble: 1 × 2\n      N      P\n  &lt;dbl&gt;  &lt;dbl&gt;\n1  1.70 0.0801\n\n# Agrupando e aplicando em todas as colunas\n\nmedias2 &lt;- final.pipe %&gt;% group_by(Species, Vegetation, `Phenological group`) %&gt;% \n                summarise_all(mean) #médias por colunas\nhead(medias2)\n\n# A tibble: 6 × 13\n# Groups:   Species, Vegetation [6]\n  Species Vegetation `Phenological group`     N      P    Mg     K    Ca    Al\n  &lt;fct&gt;   &lt;fct&gt;      &lt;fct&gt;                &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 AT      Grassland  Deciduous             1.79 0.102  0.165 1.72  0.623 239. \n2 AT      Forest     Deciduous             2.15 0.117  0.154 1.00  0.368 194. \n3 AT      Savanna    Deciduous             2.28 0.129  0.213 1.24  0.736 174. \n4 BC      Grassland  Semideciduous         1.05 0.0476 0.108 0.656 0.404 131. \n5 BC      Forest     Semideciduous         1.30 0.0714 0.130 0.795 0.460  86.0\n6 BC      Savanna    Semideciduous         1.41 0.0690 0.176 0.843 0.708 232. \n# ℹ 4 more variables: `leaf area` &lt;dbl&gt;, `leaf mass` &lt;dbl&gt;, SLA &lt;dbl&gt;,\n#   `N:P` &lt;dbl&gt;\n\n\nMúltiplas funções\n\ntabela_mean &lt;- final.pipe %&gt;% select(-Species, -`Phenological group`)%&gt;% group_by(Vegetation) %&gt;% \n  summarise_all(mean, na.rm=T)\n\ntabela1 &lt;- final.pipe %&gt;% select(-Species, -`Phenological group`) %&gt;% group_by(Vegetation) %&gt;% summarise_all(.funs = list(mean, sd))\n\ntabela2 &lt;- final.pipe %&gt;% select(-Species, -`Phenological group`) %&gt;% group_by(Vegetation) %&gt;% summarise_all(.funs = list(media = mean, desvio = sd))\n\ntabela3 &lt;- final.pipe %&gt;% select(-Species, -`Phenological group`) %&gt;% group_by(Vegetation) %&gt;% summarise_all(.funs = list(~mean(., na.rm=T), ~sd(., na.rm=T)))\n\ntabela_all2 &lt;- final.pipe %&gt;% group_by(Vegetation) %&gt;% \n  summarise(across(where(is.numeric), list(media=mean, desvio=sd),na.rm=T)) \n\nWarning: There was 1 warning in `summarise()`.\nℹ In argument: `across(where(is.numeric), list(media = mean, desvio = sd),\n  na.rm = T)`.\nℹ In group 1: `Vegetation = Grassland`.\nCaused by warning:\n! The `...` argument of `across()` is deprecated as of dplyr 1.1.0.\nSupply arguments directly to `.fns` through an anonymous function instead.\n\n  # Previously\n  across(a:b, mean, na.rm = TRUE)\n\n  # Now\n  across(a:b, \\(x) mean(x, na.rm = TRUE))",
+    "crumbs": [
+      "Aula 2 - Manipulação de Dados"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica - Semana 2.html#pivot_longer-antiga-funcão-gather",
+    "href": "aulas/Pratica - Semana 2.html#pivot_longer-antiga-funcão-gather",
+    "title": "Aula 2 - Manipulação de Dados",
+    "section": "Pivot_longer (antiga funcão gather())",
+    "text": "Pivot_longer (antiga funcão gather())\nA funçao pivot_longer() empilha os dados. Ela é útil para arranjar os dados de forma que algum conjunto de variáveis torne-se um fator. Alguns tipos de gráficos (como gráficos de barras e boxplots) utilizam essa estrutura. Também pode ser importante para fazer gráficos separados em facetas, sendo que cada faceta seria relacionada a um fator.\n\nLogicamente, TUDO depende da sua pergunta e do que você quer demostrar!!!\n\nVamos usar pivot_longer() para juntar os nutrientes em uma única coluna.\n\nnutri &lt;- medias2 %&gt;% select(-`leaf area`, -`leaf mass`, -SLA, -Al, -`N:P`) %&gt;% pivot_longer(4:8, names_to = \"Nutriente\", values_to =\"media\") \nhead(nutri)\n\n# A tibble: 6 × 5\n# Groups:   Species, Vegetation [2]\n  Species Vegetation `Phenological group` Nutriente media\n  &lt;fct&gt;   &lt;fct&gt;      &lt;fct&gt;                &lt;chr&gt;     &lt;dbl&gt;\n1 AT      Grassland  Deciduous            N         1.79 \n2 AT      Grassland  Deciduous            P         0.102\n3 AT      Grassland  Deciduous            Mg        0.165\n4 AT      Grassland  Deciduous            K         1.72 \n5 AT      Grassland  Deciduous            Ca        0.623\n6 AT      Forest     Deciduous            N         2.15 \n\nboxplot(media~Nutriente, data=nutri)",
+    "crumbs": [
+      "Aula 2 - Manipulação de Dados"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica - Semana 2.html#pivot_wider-antiga-função-spread",
+    "href": "aulas/Pratica - Semana 2.html#pivot_wider-antiga-função-spread",
+    "title": "Aula 2 - Manipulação de Dados",
+    "section": "Pivot_wider (antiga função spread())",
+    "text": "Pivot_wider (antiga função spread())\nA função pivot_wider faz exatamente o oposto da função pivot_longer. Ela espalha os dados, tornando fatores novas variáveis.\nVamos usar o pivot_wider para criar variáveis com os diferentes grupos fenológicos\n\ngrupos &lt;- nutri %&gt;% \n  pivot_wider(names_from=Vegetation, values_from = media)\n\nhead(grupos)\n\n# A tibble: 6 × 6\n# Groups:   Species [2]\n  Species `Phenological group` Nutriente Grassland Forest Savanna\n  &lt;fct&gt;   &lt;fct&gt;                &lt;chr&gt;         &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;\n1 AT      Deciduous            N             1.79   2.15    2.28 \n2 AT      Deciduous            P             0.102  0.117   0.129\n3 AT      Deciduous            Mg            0.165  0.154   0.213\n4 AT      Deciduous            K             1.72   1.00    1.24 \n5 AT      Deciduous            Ca            0.623  0.368   0.736\n6 BC      Semideciduous        N             1.05   1.30    1.41",
+    "crumbs": [
+      "Aula 2 - Manipulação de Dados"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica - Semana 2.html#unite",
+    "href": "aulas/Pratica - Semana 2.html#unite",
+    "title": "Aula 2 - Manipulação de Dados",
+    "section": "Unite",
+    "text": "Unite\nA função unite junta, como o próprio nome diz, duas ou mais colunas em uma só. Vamos juntar os fatores para criar uma variável de interação com grupo e tratamento, especificando um separador, no caso _ .\n\ninter &lt;- medias2 %&gt;% unite(\"Interaction\", `Phenological group`, Vegetation, sep= \"_\")\nhead(inter)\n\n# A tibble: 6 × 12\n# Groups:   Species [2]\n  Species Interaction               N      P    Mg     K    Ca    Al `leaf area`\n  &lt;fct&gt;   &lt;chr&gt;                 &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;       &lt;dbl&gt;\n1 AT      Deciduous_Grassland    1.79 0.102  0.165 1.72  0.623 239.         238.\n2 AT      Deciduous_Forest       2.15 0.117  0.154 1.00  0.368 194.         245.\n3 AT      Deciduous_Savanna      2.28 0.129  0.213 1.24  0.736 174.         368.\n4 BC      Semideciduous_Grassl…  1.05 0.0476 0.108 0.656 0.404 131.         244.\n5 BC      Semideciduous_Forest   1.30 0.0714 0.130 0.795 0.460  86.0        197.\n6 BC      Semideciduous_Savanna  1.41 0.0690 0.176 0.843 0.708 232.         324.\n# ℹ 3 more variables: `leaf mass` &lt;dbl&gt;, SLA &lt;dbl&gt;, `N:P` &lt;dbl&gt;",
+    "crumbs": [
+      "Aula 2 - Manipulação de Dados"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica - Semana 2.html#separate",
+    "href": "aulas/Pratica - Semana 2.html#separate",
+    "title": "Aula 2 - Manipulação de Dados",
+    "section": "Separate",
+    "text": "Separate\nA função separate faz o oposto da função unite, separando as colunas em 1 ou mais colunas. Vamos demostrar de algumas formas:\n\nSeparando as variáveis que acabamos de juntar no exemplo anterior\nSeparando as iniciais da variável espécie entre a inicial do gênero e a inicial do epípeto específico,\n\n\ninter %&gt;% separate(Interaction, into = c(\"Grupo\", \"Tipo\"), sep = \"_\")\n\n# A tibble: 44 × 13\n# Groups:   Species [15]\n   Species Grupo         Tipo       N      P    Mg     K    Ca    Al `leaf area`\n   &lt;fct&gt;   &lt;chr&gt;         &lt;chr&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;       &lt;dbl&gt;\n 1 AT      Deciduous     Grass…  1.79 0.102  0.165 1.72  0.623 239.        238. \n 2 AT      Deciduous     Forest  2.15 0.117  0.154 1.00  0.368 194.        245. \n 3 AT      Deciduous     Savan…  2.28 0.129  0.213 1.24  0.736 174.        368. \n 4 BC      Semideciduous Grass…  1.05 0.0476 0.108 0.656 0.404 131.        244. \n 5 BC      Semideciduous Forest  1.30 0.0714 0.130 0.795 0.460  86.0       197. \n 6 BC      Semideciduous Savan…  1.41 0.0690 0.176 0.843 0.708 232.        324. \n 7 BS      Semideciduous Grass…  1.25 0.0643 0.161 0.610 0.480 103.        125. \n 8 BS      Semideciduous Forest  1.30 0.0833 0.141 0.464 0.543  96.9       140. \n 9 BS      Semideciduous Savan…  1.28 0.0691 0.143 0.620 0.668 164.         50.1\n10 CB      Semideciduous Grass…  1.46 0.0786 0.157 0.479 0.455 187.        394. \n# ℹ 34 more rows\n# ℹ 3 more variables: `leaf mass` &lt;dbl&gt;, SLA &lt;dbl&gt;, `N:P` &lt;dbl&gt;\n\ninter %&gt;% separate(Species, into = c(\"Genero\", \"Epípeto\"), sep = 1)\n\n# A tibble: 44 × 13\n   Genero Epípeto Interaction       N      P    Mg     K    Ca    Al `leaf area`\n   &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;         &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;       &lt;dbl&gt;\n 1 A      T       Deciduous_Gr…  1.79 0.102  0.165 1.72  0.623 239.        238. \n 2 A      T       Deciduous_Fo…  2.15 0.117  0.154 1.00  0.368 194.        245. \n 3 A      T       Deciduous_Sa…  2.28 0.129  0.213 1.24  0.736 174.        368. \n 4 B      C       Semideciduou…  1.05 0.0476 0.108 0.656 0.404 131.        244. \n 5 B      C       Semideciduou…  1.30 0.0714 0.130 0.795 0.460  86.0       197. \n 6 B      C       Semideciduou…  1.41 0.0690 0.176 0.843 0.708 232.        324. \n 7 B      S       Semideciduou…  1.25 0.0643 0.161 0.610 0.480 103.        125. \n 8 B      S       Semideciduou…  1.30 0.0833 0.141 0.464 0.543  96.9       140. \n 9 B      S       Semideciduou…  1.28 0.0691 0.143 0.620 0.668 164.         50.1\n10 C      B       Semideciduou…  1.46 0.0786 0.157 0.479 0.455 187.        394. \n# ℹ 34 more rows\n# ℹ 3 more variables: `leaf mass` &lt;dbl&gt;, SLA &lt;dbl&gt;, `N:P` &lt;dbl&gt;",
+    "crumbs": [
+      "Aula 2 - Manipulação de Dados"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica- Semana 3 - Parte2.html",
+    "href": "aulas/Pratica- Semana 3 - Parte2.html",
+    "title": "Aula 4 - Customizações",
+    "section": "",
+    "text": "Script utilizado na aula da semana 3 da disciplina Manipulação e Visualização de Dados no R para demostrar as funções de customizações do pacote ggplot2do tidyverse.",
+    "crumbs": [
+      "Aula 4 - Customizações"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica- Semana 3 - Parte2.html#instalando-os-pacotes",
+    "href": "aulas/Pratica- Semana 3 - Parte2.html#instalando-os-pacotes",
+    "title": "Aula 4 - Customizações",
+    "section": "Instalando os pacotes",
+    "text": "Instalando os pacotes\nNessa aula vamos utilizar o conjunto de dados da aula 1 e da aula 2 para demostrar as funcoes do ggplot2 do tidyverse. O primeiro passo então é carregar o pacote.\nPara essa aula também vamos usar alguns outros pacotes que deverão ser instalados, caso você não os tenha em sua biblioteca:\n\nRColorBrewer\nggsci\nhrbrthemes\ngridExtra\negg\n\n\nlibrary(tidyverse)\n# tidyverse_update()",
+    "crumbs": [
+      "Aula 4 - Customizações"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica- Semana 3 - Parte2.html#carregando-o-conjunto-de-dados",
+    "href": "aulas/Pratica- Semana 3 - Parte2.html#carregando-o-conjunto-de-dados",
+    "title": "Aula 4 - Customizações",
+    "section": "Carregando o conjunto de dados",
+    "text": "Carregando o conjunto de dados\nAgora vamos determinar o diretório de trabalho e carregar os dados, conforme aprendemos na aula anterior. Vamos usar o conjunto de dados já manipulados, que fizemos na aula anterior e salvamos em.csv\n\nVocê deve colocar o diretório de acordo com o seu caminho no computador, e de acordo com a localização dos seus dados.\n\n\n# setwd(\"C:/Marina/Pos-doutorado/PNPD_UFPR/Vis Man Dados/2024/Semana3\")\ndados &lt;- read.csv(\"Dados_english.csv\")\n#dados &lt;- readr::read_csv('https://raw.githubusercontent.com/scalonmc/VisMan/master/VisManDados/Aula1/Dados_manipulados.csv')\n#dados &lt;- dados %&gt;% rename(Phenology = `Phenological group`)",
+    "crumbs": [
+      "Aula 4 - Customizações"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica- Semana 3 - Parte2.html#transparência-alpha",
+    "href": "aulas/Pratica- Semana 3 - Parte2.html#transparência-alpha",
+    "title": "Aula 4 - Customizações",
+    "section": "1. Transparência (alpha)",
+    "text": "1. Transparência (alpha)\nPodemos modificar a transparência da cor com o atributo alpha.\n\nggplot(data = dados, aes(x=P, y=N, color= Phenology, shape = Vegetation, size=2)) +\n  geom_point(alpha=0.5)\n\n\n\n\n\n\nggplot(dados, aes(x=SLA, fill=Phenology)) + \n  geom_density(alpha=0.5)+\n  facet_wrap(~Vegetation)\n\n\n\n\n\n\n ggplot(dados, aes(x=Phenology, y=SLA ))+\n  geom_boxplot(aes(fill=Phenology, alpha = 0.7))+\n  facet_wrap(~Vegetation)",
+    "crumbs": [
+      "Aula 4 - Customizações"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica- Semana 3 - Parte2.html#luminescência-e-cromaticidade",
+    "href": "aulas/Pratica- Semana 3 - Parte2.html#luminescência-e-cromaticidade",
+    "title": "Aula 4 - Customizações",
+    "section": "2. Luminescência e cromaticidade",
+    "text": "2. Luminescência e cromaticidade\nscale_color_hue() também modifica as tonalidades da paleta nos aspetos luminescência (l) cromaticidade (c)\n\nggplot(data = dados) +\n  geom_point(aes(x=P, y=N, color= Phenology, shape = Vegetation, size=2))+\n  scale_color_hue(l=20)\n\n\n\n\n\n\nggplot(data = dados) +\n  geom_point(aes(x=P, y=N, color= Phenology, shape = Vegetation, size=2))+\n  scale_color_hue(c=20)",
+    "crumbs": [
+      "Aula 4 - Customizações"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica- Semana 3 - Parte2.html#tons-de-cinza",
+    "href": "aulas/Pratica- Semana 3 - Parte2.html#tons-de-cinza",
+    "title": "Aula 4 - Customizações",
+    "section": "3. Tons de cinza",
+    "text": "3. Tons de cinza\nIncluido no ggplot2, a paleta de tons de cinza pode ser usada com uma função própria: scale_fillou color_ gray(). Nesse caso, pode-se escolher o começo e o final especificando start e end:\n\nggplot(dados, aes(x=Phenology, y = SLA, fill = Phenology)) +   geom_boxplot()+\n  facet_wrap(~Vegetation)+\n  scale_fill_grey()\n\n\n\n\n\n\nggplot(dados, aes(x=Phenology, y = SLA, fill= Phenology)) + \n  geom_boxplot()+\n  facet_wrap(~Vegetation)+\n  scale_fill_grey(start =0.8, end=0.4)",
+    "crumbs": [
+      "Aula 4 - Customizações"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica- Semana 3 - Parte2.html#paletas-pré-prontas",
+    "href": "aulas/Pratica- Semana 3 - Parte2.html#paletas-pré-prontas",
+    "title": "Aula 4 - Customizações",
+    "section": "4. Paletas pré prontas",
+    "text": "4. Paletas pré prontas\nModificando cores com scale_color_brewer() e scale_fill_brewer() do pacote RColorBrewer\n\nDentro de uma paleta, você também pode escolher os valores que você deseja começar. Nesse caso, você deve usar a função scale_color or fill_manual()\n\n\nlibrary(RColorBrewer)\ndisplay.brewer.all()\n\n\n\n\n\n\n\n\nggplot(data = dados) +\n  geom_point(aes(x=P, y=N, color= Phenology, shape = Vegetation, size=2)) + \n  scale_color_brewer(palette = \"PuRd\")\n\n\n\n\n\n\nmy_palette &lt;-  brewer.pal(7, name=\"PuRd\")[c(2,4,6)]\nggplot(data = dados) +\n  geom_point(aes(x=P, y=N, color= Phenology, shape = Vegetation, size=2)) + \n  scale_color_manual(values=my_palette)\n\n\n\n\n\n\nggplot(dados, aes(x=SLA, fill=Phenology)) + \n  geom_density()+\n  facet_wrap(~Vegetation)+\n  scale_fill_brewer(palette=\"Accent\")\n\n\n\n\n\n\nggplot(dados, aes(x=Phenology, y = SLA, fill =Phenology)) + \n  geom_boxplot()+\n  scale_fill_brewer(palette = \"Spectral\")+\n  facet_wrap(~Vegetation)\n\n\n\n\n\n\n\n\nOpção manual\n\nModificar as cores manualmente com a camada scale_color_manual() ou scale_fill_manual() informando os nomes por extenso (em inglês, entre aspas) ou informando os códigos das cores. Olhar na Tabela de referência.\nPara html color codes: https://htmlcolorcodes.com/\n\nggplot(data = dados) +\n  geom_point(aes(x=P, y=N, color= Phenology, shape = Vegetation, size=2)) + \n  scale_color_manual(values = c(\"red\", \"green\", \"orange\"))\n\n\n\n\n\n\nggplot(dados, aes(x=SLA, fill=Phenology)) + \n  geom_density()+\n  facet_wrap(~Vegetation)+\n  scale_fill_manual(values = c(\"red\", \"lightblue\", \"darkgreen\"))\n\n\n\n\n\n\nggplot(dados, aes(x=Phenology, y = SLA, fill =Phenology)) + \n  geom_boxplot()+\n scale_fill_manual(values = c(\"#33CC00\", \"#33CCFF\", \"#FF3399\"))+\n  facet_wrap(~Vegetation)\n\n\n\n\n\n\n\nDicas\n\nFaça sua própria paleta para não ficar repetindo os códigos. Para isso, crie um vetor com os códigos:\n\n\nminha.paleta &lt;- c(\"#33CC00\", \"#33CCFF\", \"#FF3399\")\n\nggplot(dados, aes(x=SLA, fill=Phenology)) + \n  geom_density()+\n  facet_wrap(~Vegetation)+\n  scale_fill_manual(values = minha.paleta)\n\n\n\n\n\n\n\n\nVários pacotes disponíveis com paletas interessantes! GitHub também aqui! Infinitas possibilidades!\n\n\nlibrary(ggsci)\n\nggplot(dados, aes(x=Phenology, y = SLA, fill= Phenology)) + \n  geom_boxplot()+\n  facet_wrap(~Vegetation)+\n  scale_fill_npg()\n\n\n\n\n\n\nggplot(dados, aes(x=SLA, fill=Phenology)) + \n  geom_density()+\n  facet_wrap(~Vegetation)+\n  scale_fill_simpsons()\n\n\n\n\n\n\nggplot(data = dados) +\n  geom_point(aes(x=P, y=N, color= Phenology, shape = Vegetation, size=2)) + \n  scale_color_lancet()\n\n\n\n\n\n\n\n\nPara gradientes - no caso da cor estar se referindo a uma variável contínua - usar scale_fill ou color_gradient(), gradient2() ou gradientn(). Pode definir a cor máxima e mínima e a cor dos valores de NA (o default é “grey50”)\n\n\nggplot(dados, aes(x=N, y=P, color=SLA))+\n  geom_point()+\n  scale_color_gradient(high = \"black\", low=\"white\", na.value=NA)\n\n\n\n\n\n\nggplot(data = dados) +\n  geom_point(aes(x=P, y=N, color= SLA, size=2))+\n  scale_color_gradient2(na.value=NA)\n\n\n\n\n\n\nggplot(data = dados) +\n  geom_point(aes(x=P, y=N, color= SLA, size=2))+\n  scale_color_gradientn(colours = terrain.colors(5), na.value=NA)",
+    "crumbs": [
+      "Aula 4 - Customizações"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica- Semana 3 - Parte2.html#nome-dos-eixos",
+    "href": "aulas/Pratica- Semana 3 - Parte2.html#nome-dos-eixos",
+    "title": "Aula 4 - Customizações",
+    "section": "Nome dos eixos",
+    "text": "Nome dos eixos\nModificar o nome dos eixos adicionando a camada labs()\nUsar a função expression (paste) pra símbolos diferentes (alfabeto grego, subescrito, sobescrito). Veja as possibilidades aqui\n\nggplot(data = dados) +\n  geom_point(aes(x=P, y=N, color= Phenology, shape = Vegetation, size=2, alpha=0.5)) + \n  scale_color_lancet()+\n  labs(x= expression(paste(\"P\"[leaf], \" (mg \", kg^-1, \")\")), y= expression(paste(\"N\"[leaf], \" (mg \", kg^-1, \")\")))\n\n\n\n\n\n\n\n\nggplot(dados, aes(x=Phenology, y = SLA, fill = Phenology)) +   geom_boxplot()+\n  facet_wrap(~Vegetation)+\n  scale_fill_npg()+\n  labs(x= \"Grupos fenológicos\", y= expression(paste(\"SLA (\", cm^2, g^-1, \")\")))\n\n\n\n\n\n\nggplot(dados, aes(x=SLA, fill=Phenology)) + \n  geom_density(aes(alpha=0.5))+\n  facet_wrap(~Vegetation)+\n  scale_fill_simpsons()+\n  labs(x= expression(paste(\"SLA (\", cm^2, g^-1, \")\")), y=\"Density\", title=\"Figura 1\")",
+    "crumbs": [
+      "Aula 4 - Customizações"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica- Semana 3 - Parte2.html#modificar-limites-e-escala",
+    "href": "aulas/Pratica- Semana 3 - Parte2.html#modificar-limites-e-escala",
+    "title": "Aula 4 - Customizações",
+    "section": "Modificar limites e escala",
+    "text": "Modificar limites e escala\nLimites com xlim() e ylim() ou coord_cartesian()\nA diferença entre essas duas funções é que com xlim() ou ylim() os valores que não estão no intervalo definido são excluídos. No coord_cartesian() isso não acontece.\n\nggplot(data = dados) +\n  geom_point(aes(x=P, y=N, color= Phenology, shape = Vegetation, size=2, alpha=0.5)) + \n  scale_color_lancet()+\n  labs(x= expression(paste(\"P\"[leaf], \" (mg \", kg^-1, \")\")), y= expression(paste(\"N\"[leaf], \" (mg \", kg^-1, \")\")))+\n  xlim(0, 0.3) + ylim(0,4) \n\n\n\n\n\n\nggplot(data = dados) +\n  geom_point(aes(x=P, y=N, color= Phenology, shape = Vegetation, size=2, alpha=0.5)) + \n  scale_color_lancet()+\n  labs(x= expression(paste(\"P\"[leaf], \" (mg \", kg^-1, \")\")), y= expression(paste(\"N\"[leaf], \" (mg \", kg^-1, \")\")))+\n  coord_cartesian(xlim = c(0, 0.3), ylim = c(0, 4))",
+    "crumbs": [
+      "Aula 4 - Customizações"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica- Semana 3 - Parte2.html#scale_xou-y_continuous-e-scale_xou-y_discrete",
+    "href": "aulas/Pratica- Semana 3 - Parte2.html#scale_xou-y_continuous-e-scale_xou-y_discrete",
+    "title": "Aula 4 - Customizações",
+    "section": "scale_xou y_continuous() e scale_xou y_discrete()",
+    "text": "scale_xou y_continuous() e scale_xou y_discrete()\nPara contornar esse default irritante do eixo flutuante, e resolver todos nossos problemas de customização dos eixos, recomendo usar scale_x_continuous() e scale_y_continuous(). Dessa forma, com apenas uma camada, modificamos TUDO relacionado aos eixos: nome, limites, forçar a origem e intervalos (breaks).\n\nggplot(data = dados) +\n  geom_point(aes(x=P, y=N, color= Phenology, shape = Vegetation, size=2, alpha=0.5)) + \n  scale_color_lancet()+\n  scale_x_continuous(expand = c(0,0), limits = c(0, 0.3), name = expression(paste(\"P\"[leaf], \" (mg \", kg^-1, \")\")))+\n  scale_y_continuous(expand = c(0,0), limits = c(0,6), name =expression(paste(\"N\"[leaf], \" (mg \", kg^-1, \")\")), breaks = c(0.5,1.5,2,3,4.5,5.5)) \n\n\n\n\n\n\nggplot(data = dados) +\n  geom_point(aes(x=P, y=N, color= Phenology, shape = Vegetation, size=2, alpha=0.5)) + \n  scale_color_lancet()+\n  scale_x_continuous(expand = c(0,0), limits = c(0, 0.3), name = expression(paste(\"P\"[leaf], \" (mg \", kg^-1, \")\")))+\n  scale_y_continuous(expand = c(0,0), limits = c(0,6), name =expression(paste(\"N\"[leaf], \" (mg \", kg^-1, \")\")), breaks = seq(0,6, by=0.5))\n\n\n\n\n\n\nggplot(data = dados) +\n  geom_point(aes(x=P, y=N, color= Phenology, shape = Vegetation, size=2, alpha=0.5)) + \n  scale_color_lancet()+\n  scale_x_continuous(expand = c(0,0), limits = c(0, 0.3), name = expression(paste(\"P\"[leaf], \" (mg \", kg^-1, \")\")))+\n  scale_y_continuous(expand = c(0,0), limits = c(0,6), name =expression(paste(\"N\"[leaf], \" (mg \", kg^-1, \")\")), n.breaks = 10) \n\n\n\n\n\n\n\n\nTransformações diretas com scale_x ou y_ log10()\n\n\nggplot(data = dados) +\n  geom_point(aes(x=P, y=N, color= Phenology, shape = Vegetation, size=2, alpha=0.5)) + \n  scale_color_lancet()+\n  scale_x_log10(name = expression(paste(\"log P\"[leaf], \" (mg \", kg^-1, \")\")))+\n  scale_y_log10(name =expression(paste(\"log N\"[leaf], \" (mg \", kg^-1, \")\")))",
+    "crumbs": [
+      "Aula 4 - Customizações"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica- Semana 3 - Parte2.html#modificando-com-theme",
+    "href": "aulas/Pratica- Semana 3 - Parte2.html#modificando-com-theme",
+    "title": "Aula 4 - Customizações",
+    "section": "Modificando com theme()",
+    "text": "Modificando com theme()\nA camada theme() é usada para mudar aspectos do texto (fonte, tipo, cor, tamanho e ângulo)\nwindowsFonts() para ver os nomes e as fontes disponíveis pra você - caso necessário, carregar extrafont::font_import()\n\nAtenção para a justificação com vjust ou hjust quando modificar o ângulo\n\nTambém é usada para remover eixo e marcas!\n\n# windowsFonts()\n\nggplot(dados, aes(x=Phenology, y = SLA, fill =Phenology)) + \n  geom_boxplot()+\n  facet_wrap(~Vegetation)+\n  scale_fill_npg()+\n  labs(x= \"Grupos fenológicos\", y= expression(paste(\"SLA (\", cm^2, g^-1, \")\"))) + \n  theme (axis.text.x = element_text(family = \"serif\", face = \"italic\", color = \"red\", size = 12, angle = 45, hjust=1))\n\n\n\n\n\n\nggplot(dados, aes(x=Phenology, y = SLA, fill =Phenology)) + \n  geom_boxplot()+\n  facet_wrap(~Vegetation)+\n  scale_fill_npg()+\n  labs(y= expression(paste(\"SLA (\", cm^2, g^-1, \")\"))) + \n  theme(axis.text.x = element_blank(),\n                axis.ticks.x = element_blank(), axis.title.x = element_blank())",
+    "crumbs": [
+      "Aula 4 - Customizações"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica- Semana 3 - Parte2.html#guides",
+    "href": "aulas/Pratica- Semana 3 - Parte2.html#guides",
+    "title": "Aula 4 - Customizações",
+    "section": "Guides",
+    "text": "Guides\nPara tirar legendas específicas usando guides():\n\nggplot(data = dados) +\n  geom_point(aes(x=P, y=N, color= Phenology, shape = Vegetation, size=2, alpha=0.5)) + \n  scale_color_lancet()+\n  scale_x_log10(name = expression(paste(\"log P\"[leaf], \" (mg \", kg^-1, \")\")))+\n  scale_y_log10(name =expression(paste(\"log N\"[leaf], \" (mg \", kg^-1, \")\"))) +\n  theme_classic()+\n  guides(alpha= \"none\", size= \"none\")",
+    "crumbs": [
+      "Aula 4 - Customizações"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica- Semana 3 - Parte2.html#theme",
+    "href": "aulas/Pratica- Semana 3 - Parte2.html#theme",
+    "title": "Aula 4 - Customizações",
+    "section": "Theme",
+    "text": "Theme\nPara tirar todas as legendas usando theme(legend.position = “none”):\n\nggplot(data = dados) +\n  geom_point(aes(x=P, y=N, color= Phenology, shape = Vegetation, size=2, alpha=0.5)) + \n  scale_color_lancet()+\n  scale_x_log10(name = expression(paste(\"log P\"[leaf], \" (mg \", kg^-1, \")\")))+\n  scale_y_log10(name =expression(paste(\"log N\"[leaf], \" (mg \", kg^-1, \")\"))) +\n  theme_classic()+\n  theme(legend.position = \"none\")\n\n\n\n\n\n\n\n\nDa mesma forma que nos eixos, dentro de theme() podemos modificar todos os aspectos do texto e título da legenda (cor, tamanho, fonte).\n\n\nggplot(dados, aes(x=Phenology, y = SLA, fill =Phenology)) + \n  geom_boxplot()+\n  facet_wrap(~Vegetation)+\n  scale_fill_npg()+\n  labs(y= expression(paste(\"SLA (\", cm^2, g^-1, \")\"))) + \n  theme_bw()+\n  theme(legend.title = element_blank(), legend.text = element_text(size=10, color=\"red\"), axis.text.x=element_blank(),                        axis.ticks.x = element_blank(), axis.title.x = element_blank())",
+    "crumbs": [
+      "Aula 4 - Customizações"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica- Semana 3 - Parte2.html#importante",
+    "href": "aulas/Pratica- Semana 3 - Parte2.html#importante",
+    "title": "Aula 4 - Customizações",
+    "section": "Importante!",
+    "text": "Importante!\nPara modificar os nomes (labels) diretamente no gráfico deve-se fazer na camada de scale(): Mas atenção para não fazer confusão com seus fatores!!! Melhor mudar direto no dataset para garantir que está certo!\n\nggplot(dados, aes(x=Phenology, y = SLA, fill =Phenology)) + \n  geom_boxplot()+\n  facet_wrap(~Vegetation)+\n  scale_fill_npg(name= \"Grupos fenológicos\",labels = c(\"Decíduas\", \"Sempre-verdes\",\"Brevidecíduas\"))+\n  labs(y= expression(paste(\"SLA (\", cm^2, g^-1, \")\"))) + \n  theme_bw()+\n  theme(legend.text = element_text(size=10), axis.text.x=element_blank(),\n        axis.ticks.x = element_blank(), axis.title.x = element_blank())",
+    "crumbs": [
+      "Aula 4 - Customizações"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica- Semana 3 - Parte2.html#utilizando-annotate",
+    "href": "aulas/Pratica- Semana 3 - Parte2.html#utilizando-annotate",
+    "title": "Aula 4 - Customizações",
+    "section": "Utilizando annotate",
+    "text": "Utilizando annotate\n\nsummary(lm(N~P, data=dados)) #R2 = 0.41\n\n\nCall:\nlm(formula = N ~ P, data = dados)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-1.3127 -0.3589 -0.1391  0.2210  3.3161 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)   0.3044     0.1595   1.909   0.0585 .  \nP            17.4744     1.8497   9.447 2.29e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.6682 on 127 degrees of freedom\nMultiple R-squared:  0.4127,    Adjusted R-squared:  0.4081 \nF-statistic: 89.25 on 1 and 127 DF,  p-value: 2.285e-16\n\npontos.final &lt;- pontos + annotate(\"text\", label = \"r² = 0.41\", x=0.04, y=5)\npontos.final",
+    "crumbs": [
+      "Aula 4 - Customizações"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica- Semana 3 - Parte2.html#utilizando-stat_summary",
+    "href": "aulas/Pratica- Semana 3 - Parte2.html#utilizando-stat_summary",
+    "title": "Aula 4 - Customizações",
+    "section": "Utilizando stat_summary()",
+    "text": "Utilizando stat_summary()\n\nano.box &lt;- aov(SLA~Phenology*Vegetation, dados)\nsummary(ano.box)\n\n                      Df Sum Sq Mean Sq F value   Pr(&gt;F)    \nPhenology              2  16625    8313  19.613 4.51e-08 ***\nVegetation             2  11705    5853  13.809 4.13e-06 ***\nPhenology:Vegetation   4    749     187   0.442    0.778    \nResiduals            117  49587     424                     \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n3 observations deleted due to missingness\n\nTukeyHSD(ano.box, \"Phenology\")\n\n  Tukey multiple comparisons of means\n    95% family-wise confidence level\n\nFit: aov(formula = SLA ~ Phenology * Vegetation, data = dados)\n\n$Phenology\n                             diff       lwr      upr     p adj\nSemideciduous-Evergreen 26.796086  16.06035 37.53183 0.0000001\nDeciduous-Evergreen     21.732511  10.99677 32.46825 0.0000137\nDeciduous-Semideciduous -5.063575 -15.60351  5.47636 0.4912441\n\nboxplot.final &lt;- boxplot + stat_summary(geom = \"text\", label = c(\"a\", \"b\", \"b\", \"a\", \"b\", \"b\", \"a\", \"b\", \"b\"), fun=max, vjust=-1)+ ylim(20,160)\nboxplot.final",
+    "crumbs": [
+      "Aula 4 - Customizações"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica- Semana 3 - Parte2.html#utilizando-geom_label",
+    "href": "aulas/Pratica- Semana 3 - Parte2.html#utilizando-geom_label",
+    "title": "Aula 4 - Customizações",
+    "section": "Utilizando geom_label()",
+    "text": "Utilizando geom_label()\n\ndensidade &lt;- ggplot(dados, aes(x=SLA, fill=Phenology)) + \n  geom_density(aes(alpha=0.5))+\n  scale_fill_npg(labels = c(\"Sempre-verdes\",\"Brevidecíduas\",\"Decíduas\"))+\n  labs(x= expression(paste(\"SLA (\", cm^2, g^-1, \")\")), y=\"Density\")+\n  guides(alpha=\"none\")+\n  theme_minimal()+ \n  theme(legend.title= element_blank(), legend.position = \"none\")\ndensidade\n\n\n\n\n\n\n#pal_npg(\"nrc\")(3) #para ver o número exato das 3 primeiras cores da paleta\n\ndensidade.final &lt;- densidade +  \n  geom_label(aes(x=40, y=0.015, label=\"Evergreen\"), fill=\"#E64B35FF\") +\n  geom_label(aes(x=130, y=0.01, label=\"Semideciduous\"), fill=\"#4DBBD5FF\") +\n  geom_label(aes(x=80, y=0.016, label=\"Deciduous\"), fill=\"#00A087FF\")\n\ndensidade.final",
+    "crumbs": [
+      "Aula 4 - Customizações"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica- Semana 3 - Parte2.html#usando-ggsave-para-figuras-únicas",
+    "href": "aulas/Pratica- Semana 3 - Parte2.html#usando-ggsave-para-figuras-únicas",
+    "title": "Aula 4 - Customizações",
+    "section": "Usando ggsave() para figuras únicas",
+    "text": "Usando ggsave() para figuras únicas\n\nEm pdf: ggsave(“Figura1.pdf”, boxplot.final)\n\n\nEm jpg deve ser especificado a resolução - o dpi: ggsave(“Figura1.jpg”, boxplot.final, dpi=100)\n\n\nEspecificando o tamanho em pdf: ggsave(“Figura2.pdf”, boxplot.final, width = 10, height= 10)",
+    "crumbs": [
+      "Aula 4 - Customizações"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica- Semana 3 - Parte2.html#juntar-figuras-em-um-painel-com-o-pacote-gridextra",
+    "href": "aulas/Pratica- Semana 3 - Parte2.html#juntar-figuras-em-um-painel-com-o-pacote-gridextra",
+    "title": "Aula 4 - Customizações",
+    "section": "Juntar figuras em um painel com o pacote gridExtra:",
+    "text": "Juntar figuras em um painel com o pacote gridExtra:\n\nlibrary(gridExtra)\npainel &lt;- grid.arrange(boxplot.final, fig1, densidade.final, ncol=1)\n\n\n\n\n\n\n\n\nPara salvar em jpg: ggsave(“Painel.jpg”, painel, dpi=300, height= 15, width=7) Para salvar em pdf: ggsave(“Painel.pdf”, painel, height= 15, width=7)\n\n\npainel2 &lt;- grid.arrange(fig1, arrangeGrob(boxplot, densidade), ncol = 2)",
+    "crumbs": [
+      "Aula 4 - Customizações"
+    ]
+  },
+  {
+    "objectID": "aulas/Pratica- Semana 3 - Parte2.html#figuras-com-design-profissional",
+    "href": "aulas/Pratica- Semana 3 - Parte2.html#figuras-com-design-profissional",
+    "title": "Aula 4 - Customizações",
+    "section": "Figuras com design profissional",
+    "text": "Figuras com design profissional\nVários pacotes estão disponíveis para fazer combinações de figuras montando painéis com ênfase no design. Aqui vou demostrar algumas funcionalidades do pacote patchwork() para combinar gráficos e ggtext(), que permite inserir elementos de markdown no gráfico. Veja as fontes disponíveis com o comando windowsFonts()\n\nlibrary(patchwork)\nlibrary(ggtext)\n\nboxplot.markdown &lt;- ggplot(dados, aes(x=Phenology, y = SLA, fill = Phenology)) + \n  geom_boxplot(alpha =0.8)+\n  facet_wrap(~Vegetation)+\n  scale_fill_manual(values=c(\"#007E6E\", \"#FF937E\", \"#B87C4C\"),\n    name= \"Grupos fenológicos\",labels = c(\"Sempre-verdes\",\"Brevidecíduas\",\"Decíduas\"))+\n  labs(y= expression(paste(\"SLA (\", cm^2, g^-1, \")\"))) + \n  theme(legend.position = c(0.85,0.85),legend.text = element_text(size=8), legend.title = element_text(size=8), legend.background = element_rect(fill=\"#F1F3E0\", linetype = \"blank\"), axis.text.x=element_blank(),\n        axis.ticks.x = element_blank(), axis.title.x = element_blank(), plot.background = element_rect(fill=\"#D2DCB6\", color=NA), strip.background=element_rect(fill=\"#D2DCB6\"), panel.background = element_rect(fill=\"#F1F3E0\"), panel.grid.major = element_blank(), panel.grid.minor = element_blank())\nboxplot.markdown\n\n\n\n\n\n\nwindowsFonts()\n\n$serif\n[1] \"TT Times New Roman\"\n\n$sans\n[1] \"TT Arial\"\n\n$mono\n[1] \"TT Courier New\"\n\n#library(extrafont)\n#font_import()\n#showtext_auto()\n\nfinal &lt;- boxplot.markdown + plot_annotation(\n  title = 'Diferences between phenological groups',\n  subtitle = 'Specific leaf area for **Cerrado** species',\n  caption = '*SLA calculated as the ratio between fresh leaf area and dry leaf mass ',\n  theme = theme(plot.title = element_markdown(size=20,family=\"Arial\",face=\"italic\",margin=margin(0,0,0,0.5,\"cm\"), colour = \"#043915\"),\n    plot.subtitle = element_markdown(size=15,hjust=0,family=\"Palatino\",margin=margin(0,0,0.5,0.5,\"cm\"), color = \"#043915\"),\n    plot.caption = element_markdown(size=10,hjust=0,family=\"Courier\"),\n  plot.background = element_rect(fill=\"#D2DCB6\", color=NA)))\nfinal\n\n\n\n\n\n\n\nPara salvar:\n\nggsave(“Figura_rosa.pdf”, final, width = 10, height = 8, unit = “cm”)",
+    "crumbs": [
+      "Aula 4 - Customizações"
+    ]
+  },
+  {
+    "objectID": "publications.html",
+    "href": "publications.html",
+    "title": "Publications",
+    "section": "",
+    "text": "da Cruz, W.J.A., Marimon, B.S., Junior, B.H.M., Morandi, P.S., Longhi, S.G., Prestes, N.C.C.D.S., Júnior, N.G.R., Reis, S.M., Scalon, M.C., de Oliveira, E.A. and Levesley, A., 2025. Functional Biogeography and Ecological Strategies of Trees Across the Amazon–Cerrado Transition. Journal of Vegetation Science, 36(5), p.e70076. DOI | PDF\n\n\nAjala-Batista, L., Yamamoto, F.Y., Padovan, M., Scalon, M.C., Grassi, M.T., Abessa, D.M.D.S. and Fávaro, L.F., 2025. A pretty kettle of fish: Contamination of fish from the Doce River basin after the world’s largest mining disaster and associated human health risks. Total Environment Advances, p.200137. DOI\n\n\nHuang, X.Y., Zhang, Y.B., Scalon, M.C., Ke, Y., Li, W.H., Yang, D., Aritsara, A.N., Zhang, Y.J., Wan, Z.L., Cheng, X.L. and Zhang, J.L., 2025. Survival secrets of mistletoes: high drought tolerance in canopy habitats. Tree Physiology, 45(7), p.tpaf071. DOI\n\n\nScalon, M.C. and Rossatto, D.R., 2025. Challenging the’Immunity Hypothesis’: Primary or secondary parasitism as different survival strategies for the harlequin mistletoe Lysiana exocarpi (Behr) Tiegh. Flora, 323, p.152662. DOI\n\n\nZhang, Y.B., Huang, X.Y., Corrêa Scalon, M., Ke, Y., Liu, J.X., Wang, Q., Li, W.H., Yang, D., Ellsworth, D.S., Zhang, Y.J. and Zhang, J.L., 2025. Mistletoes have higher hydraulic safety but lower efficiency in xylem traits than their hosts. New Phytologist, 245(2), pp.607-624. DOI"
+  },
+  {
+    "objectID": "publications.html#section",
+    "href": "publications.html#section",
+    "title": "Publications",
+    "section": "",
+    "text": "da Cruz, W.J.A., Marimon, B.S., Junior, B.H.M., Morandi, P.S., Longhi, S.G., Prestes, N.C.C.D.S., Júnior, N.G.R., Reis, S.M., Scalon, M.C., de Oliveira, E.A. and Levesley, A., 2025. Functional Biogeography and Ecological Strategies of Trees Across the Amazon–Cerrado Transition. Journal of Vegetation Science, 36(5), p.e70076. DOI | PDF\n\n\nAjala-Batista, L., Yamamoto, F.Y., Padovan, M., Scalon, M.C., Grassi, M.T., Abessa, D.M.D.S. and Fávaro, L.F., 2025. A pretty kettle of fish: Contamination of fish from the Doce River basin after the world’s largest mining disaster and associated human health risks. Total Environment Advances, p.200137. DOI\n\n\nHuang, X.Y., Zhang, Y.B., Scalon, M.C., Ke, Y., Li, W.H., Yang, D., Aritsara, A.N., Zhang, Y.J., Wan, Z.L., Cheng, X.L. and Zhang, J.L., 2025. Survival secrets of mistletoes: high drought tolerance in canopy habitats. Tree Physiology, 45(7), p.tpaf071. DOI\n\n\nScalon, M.C. and Rossatto, D.R., 2025. Challenging the’Immunity Hypothesis’: Primary or secondary parasitism as different survival strategies for the harlequin mistletoe Lysiana exocarpi (Behr) Tiegh. Flora, 323, p.152662. DOI\n\n\nZhang, Y.B., Huang, X.Y., Corrêa Scalon, M., Ke, Y., Liu, J.X., Wang, Q., Li, W.H., Yang, D., Ellsworth, D.S., Zhang, Y.J. and Zhang, J.L., 2025. Mistletoes have higher hydraulic safety but lower efficiency in xylem traits than their hosts. New Phytologist, 245(2), pp.607-624. DOI"
+  },
+  {
+    "objectID": "publications.html#section-1",
+    "href": "publications.html#section-1",
+    "title": "Publications",
+    "section": "2024",
+    "text": "2024\n\nSilva, M.C., Teodoro, G.S., Junior, J.M.D.C., Bastos, S.S., Barbosa, J.P.R.A.D., de Castro, E.M., Scalon, M.C. and van den Berg, E., 2024. From leaves to the whole tree: Mistletoe effects on the productivity, water relations, and demography of a Neotropical savanna tree. Austral Ecology, 49(2), p.e13461. DOI\n\n\nScalon, M.C., Heilmeier, H. and Rossatto, D.R., 2024. Plant-plant parasitism: Trends in the last 50 years and a call for papers for a special issue in Flora. Flora, 310, p.152438. DOI"
+  },
+  {
+    "objectID": "publications.html#section-2",
+    "href": "publications.html#section-2",
+    "title": "Publications",
     "section": "2023",
-    "text": "2023"
+    "text": "2023\n\nAraújo, I., Scalon, M.C., Amorim, I., Menor, I.O., Cruz, W.J., Reis, S.M., Simioni, P.F. and Marimon, B.S., 2023. Morpho-anatomical traits and leaf nutrient concentrations vary between plant communities in the Cerrado–Amazonia transition?. Flora, 306, p.152366. DOI\n\n\nTavares, J.V., Oliveira, R.S., Mencuccini, M., Signori-Müller, C., Pereira, L., Diniz, F.C., Gilpin, M., Marca Zevallos, M.J., Salas Yupayccana, C.A., Acosta, M. and Pérez Mullisaca, F.M., 2023. Basin-wide variation in tree hydraulic safety margins predicts the carbon balance of Amazon forests. Nature, 617(7959), pp.111-117. DOI\n\n\nZhang, Y.B., Corrêa Scalon, M., Liu, J.X., Song, X.Y., Yang, D., Zhang, Y.J., Ellsworth, D.S. and Zhang, J.L., 2023. You are what you eat: nutrient and water relations between mistletoes and hosts. New Phytologist, 238(2), pp.567-583. DOI\n\n\nde Antonio, A.C., Scalon, M.C. and Rossatto, D.R., 2023. Leaf size and thickness are related to frost damage in ground layer species of Neotropical savannas. Flora, 299, p.152208. DOI"
+  },
+  {
+    "objectID": "publications.html#section-3",
+    "href": "publications.html#section-3",
+    "title": "Publications",
+    "section": "2022",
+    "text": "2022\n\nScalon, M.C., Oliveras Menor, I., Freitag, R., Peixoto, K.S., Rifai, S.W., Marimon, B.S., Marimon Junior, B.H. and Malhi, Y., 2022. Contrasting strategies of nutrient demand and use between savanna and forest ecosystems in a neotropical transition zone. Biogeosciences, 19(15), pp.3649-3661. DOI\n\n\nBauters, M., Grau, O., Doetterl, S., Heineman, K.D., Dalling, J.W., Prada, C.M., Griepentrog, M., Malhi, Y., Riutta, T., Scalon, M. and Oliveras, I., 2022. Tropical wood stores substantial amounts of nutrients, but we have limited understanding why. Biotropica, 54(3), pp.596-606. DOI\n\n\nSoares Jancoski, H., Schwantes Marimon, B., C. Scalon, M., de V. Barros, F., Marimon‐Junior, B.H., Carvalho, E., S. Oliveira, R. and Oliveras Menor, I., 2022. Distinct leaf water potential regulation of tree species and vegetation types across the Cerrado–Amazonia transition. Biotropica, 54(2), pp.431-443. DOI\n\n\nScalon, M.C., Bohn, A., Coelho, G.C., Meister, L., Alves, R.D.F., Secco, R.T., Zwiener, V.P., Marcilio-Silva, V., Trindade, W.C. and Marques, M.C., 2022. Relationship between growth trajectories and functional traits for woody trees in a secondary tropical forest. Frontiers in Forests and Global Change, 5, p.754656. DOI"
+  },
+  {
+    "objectID": "publications.html#section-4",
+    "href": "publications.html#section-4",
+    "title": "Publications",
+    "section": "2021",
+    "text": "2021\n\nScalon, M.C. and Rossatto, D.R., 2021. Ground layer Cerrado plants sustain higher maximum photosynthetic rates after medium-term fire events. Flora, 285, p.151962. DOI\n\n\nCarrijo, J.N., Maracahipes, L., Scalon, M.C., Silvério, D.V., Abadia, A.C., Fagundes, M.V., Verissimo, A.A., Goncalves, L.A., Carrijo, D., Martins, J. and Lenza, E., 2021. Functional traits as indicators of ecological strategies of savanna woody species under contrasting substrate conditions. Flora, 284, p.151925. DOI\n\n\nScalon, M.C., Rossatto, D.R., Oliveras, I., Miatto, R.C., Gray, E.F., Domingos, F.M.C.B., Brum, F.T., Carlucci, M.B., Hoffmann, W.A., Marimon-Júnior, B.H. and Marimon, B.S., 2021. Fire and drought: shifts in bark investment across a broad geographical scale for Neotropical savanna trees. Basic and Applied Ecology, 56, pp.110-121. DOI\n\n\nZanin, A., Scalon, M.C., Ferreira, P.C., da Silva, A.K., Martin, F.A., Rosa, G., da Silva, I.G., Kropiwiec, I.S., da Costa, L.L., de Moraes, L.S.C. and Klein, N.S., 2021. Que direção seguir? Melhor nenhuma!. Genética na Escola, 16(2), pp.474-487. DOI\n\n\nPreuss, G., Mauad, A.V.S.R., Kitamura, R.S.A., de Assis, T.S., Scalon, M.C. and Domingos, F.M.C.B., 2021. Lurking in the depth: Pond depth predicts microhabitat selection by Rhinella icterica (Anura: Bufonidae) tadpoles at two different sampling scales. Herpetozoa, 34, pp.149-158. DOI\n\n\nScalon, M.C., Rossatto, D.R. and Franco, A.C., 2021. How does mistletoe infection affect seasonal physiological responses of hosts with different leaf phenology?. Flora, 281, p.151871. DOI\n\n\nAraújo, I., Marimon, B.S., Scalon, M.C., Cruz, W.J., Fauset, S., Vieira, T.C., Galbraith, D.R. and Gloor, M.U., 2021. Intraspecific variation in leaf traits facilitates the occurrence of trees at the Amazonia–Cerrado transition. Flora, 279, p.151829. DOI\n\n\nAraújo, I., Marimon, B.S., Scalon, M.C., Fauset, S., Junior, B.H.M., Tiwari, R., Galbraith, D.R. and Gloor, M.U., 2021. Trees at the Amazonia-Cerrado transition are approaching high temperature thresholds. Environmental Research Letters, 16(3), p.034047. DOI"
+  },
+  {
+    "objectID": "publications.html#section-5",
+    "href": "publications.html#section-5",
+    "title": "Publications",
+    "section": "2020",
+    "text": "2020\n\nKattge, J., Bönisch, G., Díaz, S., Lavorel, S., Prentice, I.C., Leadley, P., Tautenhahn, S., Werner, G.D., Aakala, T., Abedi, M. and Acosta, A.T., 2020. TRY plant trait database–enhanced coverage and open access. Global change biology, 26(1), pp.119-188. DOI\n\n\nCorrêa Scalon, M., Maia Chaves Bicalho Domingos, F., Jonatar Alves da Cruz, W., Marimon Júnior, B.H., Schwantes Marimon, B. and Oliveras, I., 2020. Diversity of functional trade‐offs enhances survival after fire in Neotropical savanna species. Journal of Vegetation Science, 31(1), pp.139-150. DOI\n\n\nDe Antonio, A.C., Scalon, M.C. and Rossatto, D.R., 2020. The role of bud protection and bark density in frost resistance of savanna trees. Plant Biology, 22(1), pp.55-61. DOI"
+  },
+  {
+    "objectID": "publications.html#before-2020",
+    "href": "publications.html#before-2020",
+    "title": "Publications",
+    "section": "Before 2020",
+    "text": "Before 2020\n\nJancoski, H.S., Pinto, J.R.R., Nogueira, D.S., Mews, H.A., Abad, J.C.S., Scalon, M.C. and Marimon, B.S., 2019. Fine-scale effects of fire on non-woody species in a southern Amazonian seasonal wetland. Wetlands Ecology and Management, 27(2), pp.267-281. DOI\n\n\nWright, I.J., Cooke, J., Cernusak, L.A., Hutley, L.B., Scalon, M.C., Tozer, W.C. and Lehmann, C.E., 2019. Stem diameter growth rates in a fire‐prone savanna correlate with photosynthetic rate and branch‐scale biomass allocation, but not specific leaf area. Austral Ecology, 44(2), pp.339-350. DOI\n\n\nde Souza, M.C., Scalon, M.C., Poschenrieder, C., Tolrà, R., Venâncio, T., Teixeira, S.P. and Da Costa, F.B., 2018. Aluminium detoxification in facultative (Passovia ovata (Pohl ex DC.) Kuijt and Struthanthus polyanthus Mart.-Loranthaceae) and dependent (Psittacanthus robustus (Mart.) Marloth-Loranthaceae) Al-accumulating mistletoe species from the Brazilian savanna. Phytochemistry, 153, pp.58-63. DOI\n\n\nSouza, M.C., Scalon, M.C., Poschenrieder, C., Tolrà, R., Venâncio, T., Teixeira, S.P. and Da Costa, F.B., 2018. Mechanisms of storage and detoxification of Al in two tropical mistletoes. Environmental and Experimental Botany, 150, pp.37-45. DOI\n\n\nScalon, M.C., Haridasan, M. and Franco, A.C., 2017. Influence of long-term nutrient manipulation on specific leaf area and leaf nutrient concentrations in savanna woody species of contrasting leaf phenologies. Plant and Soil, 421(1), pp.233-244 .DOI\n\n\nScalon, M.C. and Wright, I.J., 2017. Leaf trait adaptations of xylem-tapping mistletoes and their hosts in sites of contrasting aridity. Plant and Soil, 415(1), pp.117-130. DOI\n\n\nScalon, M.C., Alves dos Reis, S. and Rossatto, D.R., 2017. Shifting from acquisitive to conservative: the effects of Phoradendron affine (Santalaceae) infection in leaf morpho-physiological traits of a Neotropical tree species. Australian Journal of Botany, 65(1), pp.31-37. DOI\n\n\nScalon, M.C., Wright, I.J. and Franco, A.C., 2017. To recycle or steal? Nutrient resorption in Australian and Brazilian mistletoes from three low‐phosphorus sites. Oikos, 126(1), pp.32-39. DOI\n\n\nScalon, M.C., Rossatto, D.R., Domingos, F.M.C.B. and Franco, A.C., 2016. Leaf morphophysiology of a Neotropical mistletoe is shaped by seasonal patterns of host leaf phenology. Oecologia, 180(4), pp.1103-1112. DOI\n\n\nScalon, M.C. and Wright, I.J., 2015. A global analysis of water and nitrogen relationships between mistletoes and their hosts: broad‐scale tests of old and enduring hypotheses. Functional Ecology, 29(9), pp.1114-1124. DOI\n\n\nScalon, M.C., Rossatto, D.R. and Franco, A.C., 2014. Do litter manipulations affect leaf functional traits of savanna woody plants?. Plant ecology, 215(1), pp.111-120. DOI\n\n\nScalon, M.C., Haridasan, M. and Franco, A.C., 2013. A comparative study of aluminium and nutrient concentrations in mistletoes on aluminium‐accumulating and non‐accumulating hosts. Plant Biology, 15(5), pp.851-857. DOI"
   }
 ]
