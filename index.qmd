@@ -21,9 +21,11 @@ website:
 ---
 
 *I study how plants adapt to environmental change from a functional and ecophysiological perspective, with a focus on Neotropical ecosystems. I also teach R and enjoy coding and working with data. Outside of science, I’m a mother of two girls, learning to see the world through their eyes every day.*
-
+\
+\
 
 ### Education
+\
 
 Bachelor of Forest Engineering, Universidade de Brasília \| **2008**
 
@@ -40,22 +42,31 @@ Post Doctoral Fellow at University of Oxford \| **2018-2019**
 Post Doctoral Fellow at Universidade Federal do Paraná \| **2019 - 2025**
 
 Research Associate at Universidade Federal do Paraná \| **2025 - now**
-
+\
+\
 
 ### Teaching
 
-*Graduation*
+\
 
-**2025** - Methods in Plant Ecophysiology 
+#### Graduation
+
+\
+
+**2025** - Methods in Plant Ecophysiology
 
 **2019/ 2020/ 2023/ 2024** - Data Manipulation and Visualization
 
 **2019/2020** - Experimental design in Ecology and Conservation
 
 **2019/2024** - Field Ecology 2015 - Plant Ecophysiology
+\
+\
 
-*Undergraduation*
+#### Undergraduation
 
-**2012** - Plant Structure and Function 
+\
+
+**2012** - Plant Structure and Function
 
 **2010** - Plant Ecology
