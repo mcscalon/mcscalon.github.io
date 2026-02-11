@@ -17,10 +17,7 @@ execute:
 I also often use these datasets in my classes, giving students the chance to explore and learn from in real-world data.
 
 
-
 ## 2025
-
-
 
 ### Week 32
 
@@ -122,12 +119,9 @@ p1 <- ggplot(filter(billboard, year != "2025"), aes(x = factor(year), fill = fac
   annotate(geom = "label", x="1980", y = 0.5, label = "Homens", fill= "white", color="#03A6A1")+
   annotate(geom = "label", x="1975", y = 0.1, label = "Mix", fill= "white", color="#F4631E")+
   annotate(geom = "label", x="2015", y = 0, label = "Não binário", fill= "white", color="#CB0404")
-```
-
-
-```{r}
 p1
 ```
+
 
 ```{r}
 #| code-fold: true
@@ -185,12 +179,9 @@ p2 <- ggplot(sankey.data.flow, aes(x = decade, node = cdr_genre, fill = cdr_genr
     plot.caption = element_text(margin = margin(10, 0, 0, 0), hjust = 0),
     plot.margin = margin(10, 40, 10, 20),
     legend.key.size = unit(0.3, "cm"))
+p2
 ```
 
-
-```{r}
-p2  
-```
 
 ### Week 36
 
@@ -283,12 +274,9 @@ plot <- ggplot(filter(toplow, year>=2010), aes(year, visa_free_count, fill = cou
            fontface="bold", 
            color=c("black","#124170", "#26667F","#78B9B5", "#67C090", "#5E936C", 
                    "#8A0000", "#C83F12","#FFE100","#FF9B00", "#EA2F14"))
-```
-
-
-```{r}
 plot
 ```
+
 
 ### Week 39
 
@@ -331,12 +319,9 @@ final <- ggplot(cranes_clean, aes(x=observations/1000,
         legend.title = element_blank(),
         axis.title.y = element_blank())+
   annotation_custom(crane_grob, xmin=17, xmax=30, ymin="2010", ymax="1990")
-```
-
-
-```{r}
 final
 ```
+
 
 ### Week 43
 
@@ -385,12 +370,9 @@ week43 <- ggplot(decades2, aes(fill =interaction(race, gender))) +
         legend.title = element_blank(),
         strip.placement = "outside",
         strip.text = element_text(size=15))
-```
-
-
-```{r}
 week43
 ```
+
 
 ### Week 46
 
@@ -442,12 +424,9 @@ p <- ggplot(sentiment, aes(x = book, y = prop, fill = sentiment)) +
         legend.text = element_text(size=10),
         legend.title = element_text(size=10),
         plot.margin = margin(t = 5, r = 20, b = 5, l = 5))
-```
-
-
-```{r}
 p
 ```
+
 
 ### Week 48
 
@@ -492,10 +471,6 @@ plot <- ggplot(sech, aes(duration,tre200mx))+
   theme_classic(base_size = 14) +
   theme(plot.title = element_text(face = "bold"),
     legend.position = "right")
-```
-
-
-```{r}
 plot
 ```
 
