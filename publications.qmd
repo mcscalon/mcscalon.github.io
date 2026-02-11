@@ -2,92 +2,151 @@
 title: "Publications"
 ---
 
+## 2026
+
+> Tavares, J. et al. 2026. Family imprint reveals basin-wide patterns of Amazon forest embolism resistance. Nature Communications.
+
+> Lenza, E., Klink, C., Maracahipes, L., Gomes, L., Scalon, M.C., Bustamante, M. and Silvério, D., 2026. Soil water availability and climate drive leaf demography of woody plants in the Brazilian savanna. Annals of Botany.
+[DOI](https://doi.org/10.1093/aob/mcaf334) |
+[PDF](/PDF/Lenza_et_al_2026.pdf)
+
+
 ## 2025
 
-> da Cruz, W.J.A., Marimon, B.S., Junior, B.H.M., Morandi, P.S., Longhi, S.G., Prestes, N.C.C.D.S., Júnior, N.G.R., Reis, S.M., Scalon, M.C., de Oliveira, E.A. and Levesley, A., 2025. Functional Biogeography and Ecological Strategies of Trees Across the Amazon–Cerrado Transition. Journal of Vegetation Science, 36(5), p.e70076. [DOI](https://doi.org/10.1111/jvs.70076) |  [PDF](/PDF/Cruz_et_al_2025.pdf)
+> da Cruz, W.J.A., Marimon, B.S., Junior, B.H.M., Morandi, P.S., Longhi, S.G., Prestes, N.C.C.D.S., Júnior, N.G.R., Reis, S.M., Scalon, M.C., de Oliveira, E.A. and Levesley, A., 2025. Functional Biogeography and Ecological Strategies of Trees Across the Amazon–Cerrado Transition. Journal of Vegetation Science, 36(5), p.e70076.
+[DOI](https://doi.org/10.1111/jvs.70076) |  [PDF](/PDF/Cruz_et_al_2025.pdf)
 
-> Ajala-Batista, L., Yamamoto, F.Y., Padovan, M., Scalon, M.C., Grassi, M.T., Abessa, D.M.D.S. and Fávaro, L.F., 2025. A pretty kettle of fish: Contamination of fish from the Doce River basin after the world’s largest mining disaster and associated human health risks. Total Environment Advances, p.200137. [DOI](https://doi.org/10.1016/j.teadva.2025.200137)
+> Ajala-Batista, L., Yamamoto, F.Y., Padovan, M., Scalon, M.C., Grassi, M.T., Abessa, D.M.D.S. and Fávaro, L.F., 2025. A pretty kettle of fish: Contamination of fish from the Doce River basin after the world’s largest mining disaster and associated human health risks. Total Environment Advances, p.200137.
+[DOI](https://doi.org/10.1016/j.teadva.2025.200137)
 
-> Huang, X.Y., Zhang, Y.B., Scalon, M.C., Ke, Y., Li, W.H., Yang, D., Aritsara, A.N., Zhang, Y.J., Wan, Z.L., Cheng, X.L. and Zhang, J.L., 2025. Survival secrets of mistletoes: high drought tolerance in canopy habitats. Tree Physiology, 45(7), p.tpaf071. [DOI](https://doi.org/10.1093/treephys/tpaf071)
+> Huang, X.Y., Zhang, Y.B., Scalon, M.C., Ke, Y., Li, W.H., Yang, D., Aritsara, A.N., Zhang, Y.J., Wan, Z.L., Cheng, X.L. and Zhang, J.L., 2025. Survival secrets of mistletoes: high drought tolerance in canopy habitats. Tree Physiology, 45(7), p.tpaf071.
+[DOI](https://doi.org/10.1093/treephys/tpaf071) | [PDF](/PDF/Huang_et_al_2025.pdf)
 
-> Scalon, M.C. and Rossatto, D.R., 2025. Challenging the'Immunity Hypothesis': Primary or secondary parasitism as different survival strategies for the harlequin mistletoe Lysiana exocarpi (Behr) Tiegh. Flora, 323, p.152662. [DOI](https://doi.org/10.1016/j.flora.2024.152662)
+> Scalon, M.C. and Rossatto, D.R., 2025. Challenging the'Immunity Hypothesis': Primary or secondary parasitism as different survival strategies for the harlequin mistletoe Lysiana exocarpi (Behr) Tiegh. Flora, 323, p.152662.
+[DOI](https://doi.org/10.1016/j.flora.2024.152662) | [PDF](/PDF/Scalon_Rossatto_2025.pdf)
 
-> Zhang, Y.B., Huang, X.Y., Corrêa Scalon, M., Ke, Y., Liu, J.X., Wang, Q., Li, W.H., Yang, D., Ellsworth, D.S., Zhang, Y.J. and Zhang, J.L., 2025. Mistletoes have higher hydraulic safety but lower efficiency in xylem traits than their hosts. New Phytologist, 245(2), pp.607-624. [DOI](https://doi.org/10.1111/nph.20257)
+> Zhang, Y.B., Huang, X.Y., Corrêa Scalon, M., Ke, Y., Liu, J.X., Wang, Q., Li, W.H., Yang, D., Ellsworth, D.S., Zhang, Y.J. and Zhang, J.L., 2025. Mistletoes have higher hydraulic safety but lower efficiency in xylem traits than their hosts. New Phytologist, 245(2), pp.607-624.
+[DOI](https://doi.org/10.1111/nph.20257) | [PDF](/PDF/Zhang_et_al_2025.pdf)
 
 ## 2024
 
-> Silva, M.C., Teodoro, G.S., Junior, J.M.D.C., Bastos, S.S., Barbosa, J.P.R.A.D., de Castro, E.M., Scalon, M.C. and van den Berg, E., 2024. From leaves to the whole tree: Mistletoe effects on the productivity, water relations, and demography of a Neotropical savanna tree. Austral Ecology, 49(2), p.e13461. [DOI](https://doi.org/10.1111/aec.13461)
+> Silva, M.C., Teodoro, G.S., Junior, J.M.D.C., Bastos, S.S., Barbosa, J.P.R.A.D., de Castro, E.M., Scalon, M.C. and van den Berg, E., 2024. From leaves to the whole tree: Mistletoe effects on the productivity, water relations, and demography of a Neotropical savanna tree. Austral Ecology, 49(2), p.e13461.
+[DOI](https://doi.org/10.1111/aec.13461) |  [PDF](/PDF/Silva_et_al_2023.pdf)
 
-> Scalon, M.C., Heilmeier, H. and Rossatto, D.R., 2024. Plant-plant parasitism: Trends in the last 50 years and a call for papers for a special issue in Flora. Flora, 310, p.152438. [DOI](https://doi.org/10.1016/j.flora.2023.152438)
+> Scalon, M.C., Heilmeier, H. and Rossatto, D.R., 2024. Plant-plant parasitism: Trends in the last 50 years and a call for papers for a special issue in Flora. Flora, 310, p.152438.
+[DOI](https://doi.org/10.1016/j.flora.2023.152438) | [PDF](/PDF/Scalon_et_al_2023.pdf)
 
 ## 2023
 
-> Araújo, I., Scalon, M.C., Amorim, I., Menor, I.O., Cruz, W.J., Reis, S.M., Simioni, P.F. and Marimon, B.S., 2023. Morpho-anatomical traits and leaf nutrient concentrations vary between plant communities in the Cerrado–Amazonia transition?. Flora, 306, p.152366. [DOI](https://doi.org/10.1016/j.flora.2023.152366)
+> Araújo, I., Scalon, M.C., Amorim, I., Menor, I.O., Cruz, W.J., Reis, S.M., Simioni, P.F. and Marimon, B.S., 2023. Morpho-anatomical traits and leaf nutrient concentrations vary between plant communities in the Cerrado–Amazonia transition?. Flora, 306, p.152366.
+[DOI](https://doi.org/10.1016/j.flora.2023.152366)  | [PDF](/PDF/Araujo_et_al_2023.pdf)
 
-> Tavares, J.V., Oliveira, R.S., Mencuccini, M., Signori-Müller, C., Pereira, L., Diniz, F.C., Gilpin, M., Marca Zevallos, M.J., Salas Yupayccana, C.A., Acosta, M. and Pérez Mullisaca, F.M., 2023. Basin-wide variation in tree hydraulic safety margins predicts the carbon balance of Amazon forests. Nature, 617(7959), pp.111-117. [DOI](https://doi.org/10.1038/s41586-023-05971-3)
+> Tavares, J.V., Oliveira, R.S., Mencuccini, M., Signori-Müller, C., Pereira, L., Diniz, F.C., Gilpin, M., Marca Zevallos, M.J., Salas Yupayccana, C.A., Acosta, M. and Pérez Mullisaca, F.M., 2023. Basin-wide variation in tree hydraulic safety margins predicts the carbon balance of Amazon forests. Nature, 617(7959), pp.111-117.
+[DOI](https://doi.org/10.1038/s41586-023-05971-3) | [PDF](/PDF/Tavares_et_al_2023.pdf)
 
-> Zhang, Y.B., Corrêa Scalon, M., Liu, J.X., Song, X.Y., Yang, D., Zhang, Y.J., Ellsworth, D.S. and Zhang, J.L., 2023. You are what you eat: nutrient and water relations between mistletoes and hosts. New Phytologist, 238(2), pp.567-583. [DOI](https://doi.org/10.1111/nph.18747)
+> Zhang, Y.B., Corrêa Scalon, M., Liu, J.X., Song, X.Y., Yang, D., Zhang, Y.J., Ellsworth, D.S. and Zhang, J.L., 2023. You are what you eat: nutrient and water relations between mistletoes and hosts. New Phytologist, 238(2), pp.567-583.
+[DOI](https://doi.org/10.1111/nph.18747) | [PDF](/PDF/Zhang_et_al_2023.pdf)
 
-> de Antonio, A.C., Scalon, M.C. and Rossatto, D.R., 2023. Leaf size and thickness are related to frost damage in ground layer species of Neotropical savannas. Flora, 299, p.152208. [DOI](https://doi.org/10.1016/j.flora.2022.152208)
+> de Antonio, A.C., Scalon, M.C. and Rossatto, D.R., 2023. Leaf size and thickness are related to frost damage in ground layer species of Neotropical savannas. Flora, 299, p.152208.
+[DOI](https://doi.org/10.1016/j.flora.2022.152208) | [PDF](/PDF/DeAntonio_et_al_2023.pdf)
 
 ## 2022
 
-> Scalon, M.C., Oliveras Menor, I., Freitag, R., Peixoto, K.S., Rifai, S.W., Marimon, B.S., Marimon Junior, B.H. and Malhi, Y., 2022. Contrasting strategies of nutrient demand and use between savanna and forest ecosystems in a neotropical transition zone. Biogeosciences, 19(15), pp.3649-3661. [DOI](https://doi.org/10.5194/bg-19-3649-2022)
+> Scalon, M.C., Oliveras Menor, I., Freitag, R., Peixoto, K.S., Rifai, S.W., Marimon, B.S., Marimon Junior, B.H. and Malhi, Y., 2022. Contrasting strategies of nutrient demand and use between savanna and forest ecosystems in a neotropical transition zone. Biogeosciences, 19(15), pp.3649-3661.
+[DOI](https://doi.org/10.5194/bg-19-3649-2022) | [PDF](/PDF/Scalon_et_al_2022.pdf)
 
-> Bauters, M., Grau, O., Doetterl, S., Heineman, K.D., Dalling, J.W., Prada, C.M., Griepentrog, M., Malhi, Y., Riutta, T., Scalon, M. and Oliveras, I., 2022. Tropical wood stores substantial amounts of nutrients, but we have limited understanding why. Biotropica, 54(3), pp.596-606. [DOI](https://doi.org/10.1111/btp.13069)
+> Bauters, M., Grau, O., Doetterl, S., Heineman, K.D., Dalling, J.W., Prada, C.M., Griepentrog, M., Malhi, Y., Riutta, T., Scalon, M. and Oliveras, I., 2022. Tropical wood stores substantial amounts of nutrients, but we have limited understanding why. Biotropica, 54(3), pp.596-606.
+[DOI](https://doi.org/10.1111/btp.13069) | [PDF](/PDF/Bauters_et_al_2022.pdf)
 
-> Soares Jancoski, H., Schwantes Marimon, B., C. Scalon, M., de V. Barros, F., Marimon‐Junior, B.H., Carvalho, E., S. Oliveira, R. and Oliveras Menor, I., 2022. Distinct leaf water potential regulation of tree species and vegetation types across the Cerrado–Amazonia transition. Biotropica, 54(2), pp.431-443. [DOI](https://doi.org/10.1111/btp.13064)
+> Jancoski, H. S., Schwantes Marimon, B., C. Scalon, M., de V. Barros, F., Marimon‐Junior, B.H., Carvalho, E., S. Oliveira, R. and Oliveras Menor, I., 2022. Distinct leaf water potential regulation of tree species and vegetation types across the Cerrado–Amazonia transition. Biotropica, 54(2), pp.431-443.
+[DOI](https://doi.org/10.1111/btp.13064) | [PDF](/PDF/Jancoski_et_al_2022.pdf)
 
-> Scalon, M.C., Bohn, A., Coelho, G.C., Meister, L., Alves, R.D.F., Secco, R.T., Zwiener, V.P., Marcilio-Silva, V., Trindade, W.C. and Marques, M.C., 2022. Relationship between growth trajectories and functional traits for woody trees in a secondary tropical forest. Frontiers in Forests and Global Change, 5, p.754656. [DOI](https://doi.org/10.3389/ffgc.2022.754656)
+> Scalon, M.C., Bohn, A., Coelho, G.C., Meister, L., Alves, R.D.F., Secco, R.T., Zwiener, V.P., Marcilio-Silva, V., Trindade, W.C. and Marques, M.C., 2022. Relationship between growth trajectories and functional traits for woody trees in a secondary tropical forest. Frontiers in Forests and Global Change, 5, p.754656.
+[DOI](https://doi.org/10.3389/ffgc.2022.754656) | [PDF](/PDF/Scalon_et_al_2022_Frontiers.pdf)
 
 ## 2021
 
-> Scalon, M.C. and Rossatto, D.R., 2021. Ground layer Cerrado plants sustain higher maximum photosynthetic rates after medium-term fire events. Flora, 285, p.151962. [DOI](https://doi.org/10.1016/j.flora.2021.151962)
+> Scalon, M.C. and Rossatto, D.R., 2021. Ground layer Cerrado plants sustain higher maximum photosynthetic rates after medium-term fire events. Flora, 285, p.151962.
+[DOI](https://doi.org/10.1016/j.flora.2021.151962) | [PDF](/PDF/Scalon_Rossatto_2021.pdf)
 
-> Carrijo, J.N., Maracahipes, L., Scalon, M.C., Silvério, D.V., Abadia, A.C., Fagundes, M.V., Verissimo, A.A., Goncalves, L.A., Carrijo, D., Martins, J. and Lenza, E., 2021. Functional traits as indicators of ecological strategies of savanna woody species under contrasting substrate conditions. Flora, 284, p.151925. [DOI](https://doi.org/10.1016/j.flora.2021.151925)
+> Carrijo, J.N., Maracahipes, L., Scalon, M.C., Silvério, D.V., Abadia, A.C., Fagundes, M.V., Verissimo, A.A., Goncalves, L.A., Carrijo, D., Martins, J. and Lenza, E., 2021. Functional traits as indicators of ecological strategies of savanna woody species under contrasting substrate conditions. Flora, 284, p.151925.
+[DOI](https://doi.org/10.1016/j.flora.2021.151925) | [PDF](/PDF/Carrijo_et_al_2021.pdf)
 
-> Scalon, M.C., Rossatto, D.R., Oliveras, I., Miatto, R.C., Gray, E.F., Domingos, F.M.C.B., Brum, F.T., Carlucci, M.B., Hoffmann, W.A., Marimon-Júnior, B.H. and Marimon, B.S., 2021. Fire and drought: shifts in bark investment across a broad geographical scale for Neotropical savanna trees. Basic and Applied Ecology, 56, pp.110-121. [DOI](https://doi.org/10.1016/j.baae.2021.06.011)
+> Scalon, M.C., Rossatto, D.R., Oliveras, I., Miatto, R.C., Gray, E.F., Domingos, F.M.C.B., Brum, F.T., Carlucci, M.B., Hoffmann, W.A., Marimon-Júnior, B.H. and Marimon, B.S., 2021. Fire and drought: shifts in bark investment across a broad geographical scale for Neotropical savanna trees. Basic and Applied Ecology, 56, pp.110-121.
+[DOI](https://doi.org/10.1016/j.baae.2021.06.011) | [PDF](/PDF/Scalon_et_al_2021_coreperiphery.pdf)
 
-> Zanin, A., Scalon, M.C., Ferreira, P.C., da Silva, A.K., Martin, F.A., Rosa, G., da Silva, I.G., Kropiwiec, I.S., da Costa, L.L., de Moraes, L.S.C. and Klein, N.S., 2021. Que direção seguir? Melhor nenhuma!. Genética na Escola, 16(2), pp.474-487. [DOI](https://doi.org/10.55838/1980-3540.ge.2021.405)
+> Zanin, A., Scalon, M.C., Ferreira, P.C., da Silva, A.K., Martin, F.A., Rosa, G., da Silva, I.G., Kropiwiec, I.S., da Costa, L.L., de Moraes, L.S.C. and Klein, N.S., 2021. Que direção seguir? Melhor nenhuma!. Genética na Escola, 16(2), pp.474-487.
+[DOI](https://doi.org/10.55838/1980-3540.ge.2021.405) | [PDF](/PDF/Zanin_2021.pdf)
 
-> Preuss, G., Mauad, A.V.S.R., Kitamura, R.S.A., de Assis, T.S., Scalon, M.C. and Domingos, F.M.C.B., 2021. Lurking in the depth: Pond depth predicts microhabitat selection by Rhinella icterica (Anura: Bufonidae) tadpoles at two different sampling scales. Herpetozoa, 34, pp.149-158. [DOI](https://doi.org/10.3897/herpetozoa.34.e56326)
+> Preuss, G., Mauad, A.V.S.R., Kitamura, R.S.A., de Assis, T.S., Scalon, M.C. and Domingos, F.M.C.B., 2021. Lurking in the depth: Pond depth predicts microhabitat selection by Rhinella icterica (Anura: Bufonidae) tadpoles at two different sampling scales. Herpetozoa, 34, pp.149-158.
+[DOI](https://doi.org/10.3897/herpetozoa.34.e56326)
 
-> Scalon, M.C., Rossatto, D.R. and Franco, A.C., 2021. How does mistletoe infection affect seasonal physiological responses of hosts with different leaf phenology?. Flora, 281, p.151871. [DOI](https://doi.org/10.1016/j.flora.2021.151871)
+> Scalon, M.C., Rossatto, D.R. and Franco, A.C., 2021. How does mistletoe infection affect seasonal physiological responses of hosts with different leaf phenology?. Flora, 281, p.151871.
+[DOI](https://doi.org/10.1016/j.flora.2021.151871) | [PDF](/PDF/Zanin_2021.pdf)
 
-> Araújo, I., Marimon, B.S., Scalon, M.C., Cruz, W.J., Fauset, S., Vieira, T.C., Galbraith, D.R. and Gloor, M.U., 2021. Intraspecific variation in leaf traits facilitates the occurrence of trees at the Amazonia–Cerrado transition. Flora, 279, p.151829. [DOI](https://doi.org/10.1016/j.flora.2021.151829)
+> Araújo, I., Marimon, B.S., Scalon, M.C., Cruz, W.J., Fauset, S., Vieira, T.C., Galbraith, D.R. and Gloor, M.U., 2021. Intraspecific variation in leaf traits facilitates the occurrence of trees at the Amazonia–Cerrado transition. Flora, 279, p.151829.
+[DOI](https://doi.org/10.1016/j.flora.2021.151829) |
+[PDF](/PDF/Araujo_flora.pdf)
 
-> Araújo, I., Marimon, B.S., Scalon, M.C., Fauset, S., Junior, B.H.M., Tiwari, R., Galbraith, D.R. and Gloor, M.U., 2021. Trees at the Amazonia-Cerrado transition are approaching high temperature thresholds. Environmental Research Letters, 16(3), p.034047. [DOI](https//doi.ogr/10.1088/1748-9326/abe3b9)
+> Araújo, I., Marimon, B.S., Scalon, M.C., Fauset, S., Junior, B.H.M., Tiwari, R., Galbraith, D.R. and Gloor, M.U., 2021. Trees at the Amazonia-Cerrado transition are approaching high temperature thresholds. Environmental Research Letters, 16(3), p.034047.
+[DOI](https//doi.ogr/10.1088/1748-9326/abe3b9) |
+[PDF](/PDF/Araujo_et_al_2021.pdf)
 
 ## 2020
 
-> Kattge, J., Bönisch, G., Díaz, S., Lavorel, S., Prentice, I.C., Leadley, P., Tautenhahn, S., Werner, G.D., Aakala, T., Abedi, M. and Acosta, A.T., 2020. TRY plant trait database–enhanced coverage and open access. Global change biology, 26(1), pp.119-188. [DOI](https://doi.org/10.1111/gcb.14904)
+> Kattge, J., Bönisch, G., Díaz, S., Lavorel, S., Prentice, I.C., Leadley, P., Tautenhahn, S., Werner, G.D., Aakala, T., Abedi, M. and Acosta, A.T., 2020. TRY plant trait database–enhanced coverage and open access. Global change biology, 26(1), pp.119-188.
+[DOI](https://doi.org/10.1111/gcb.14904)  |
+[PDF](/PDF/Kattge_2020.pdf)
 
-> Corrêa Scalon, M., Maia Chaves Bicalho Domingos, F., Jonatar Alves da Cruz, W., Marimon Júnior, B.H., Schwantes Marimon, B. and Oliveras, I., 2020. Diversity of functional trade‐offs enhances survival after fire in Neotropical savanna species. Journal of Vegetation Science, 31(1), pp.139-150. [DOI](https://doi.org/10.1111/jvs.12823)
+> Scalon, M. C., Maia Chaves Bicalho Domingos, F., Jonatar Alves da Cruz, W., Marimon Júnior, B.H., Schwantes Marimon, B. and Oliveras, I., 2020. Diversity of functional trade‐offs enhances survival after fire in Neotropical savanna species. Journal of Vegetation Science, 31(1), pp.139-150.
+[DOI](https://doi.org/10.1111/jvs.12823) |
+[PDF](/PDF/Scalon_2020.pdf)
 
-> De Antonio, A.C., Scalon, M.C. and Rossatto, D.R., 2020. The role of bud protection and bark density in frost resistance of savanna trees. Plant Biology, 22(1), pp.55-61. [DOI](https://doi.org/10.1111/plb.13050)
+> De Antonio, A.C., Scalon, M.C. and Rossatto, D.R., 2020. The role of bud protection and bark density in frost resistance of savanna trees. Plant Biology, 22(1), pp.55-61. [DOI](https://doi.org/10.1111/plb.13050) |
+[PDF](/PDF/DeAntonio_2020.pdf)
 
 ## Before 2020
 
-> Jancoski, H.S., Pinto, J.R.R., Nogueira, D.S., Mews, H.A., Abad, J.C.S., Scalon, M.C. and Marimon, B.S., 2019. Fine-scale effects of fire on non-woody species in a southern Amazonian seasonal wetland. Wetlands Ecology and Management, 27(2), pp.267-281. [DOI](https://doi.org/10.1007/s11273-019-09658-3)
+> Jancoski, H.S., Pinto, J.R.R., Nogueira, D.S., Mews, H.A., Abad, J.C.S., Scalon, M.C. and Marimon, B.S., 2019. Fine-scale effects of fire on non-woody species in a southern Amazonian seasonal wetland. Wetlands Ecology and Management, 27(2), pp.267-281.
+[DOI](https://doi.org/10.1007/s11273-019-09658-3) |
+[PDF](/PDF/Jancoskio_2019.pdf)
 
-> Wright, I.J., Cooke, J., Cernusak, L.A., Hutley, L.B., Scalon, M.C., Tozer, W.C. and Lehmann, C.E., 2019. Stem diameter growth rates in a fire‐prone savanna correlate with photosynthetic rate and branch‐scale biomass allocation, but not specific leaf area. Austral Ecology, 44(2), pp.339-350. [DOI](https://doi.org/10.1111/aec.12678)
+> Wright, I.J., Cooke, J., Cernusak, L.A., Hutley, L.B., Scalon, M.C., Tozer, W.C. and Lehmann, C.E., 2019. Stem diameter growth rates in a fire‐prone savanna correlate with photosynthetic rate and branch‐scale biomass allocation, but not specific leaf area. Austral Ecology, 44(2), pp.339-350. 
+[DOI](https://doi.org/10.1111/aec.12678) |
+[PDF](/PDF/Wright_2019.pdf)
 
-> de Souza, M.C., Scalon, M.C., Poschenrieder, C., Tolrà, R., Venâncio, T., Teixeira, S.P. and Da Costa, F.B., 2018. Aluminium detoxification in facultative (Passovia ovata (Pohl ex DC.) Kuijt and Struthanthus polyanthus Mart.-Loranthaceae) and dependent (Psittacanthus robustus (Mart.) Marloth-Loranthaceae) Al-accumulating mistletoe species from the Brazilian savanna. Phytochemistry, 153, pp.58-63. [DOI](https://doi.org/10.1016/j.phytochem.2018.05.020)
+> Souza, M.C., Scalon, M.C., Poschenrieder, C., Tolrà, R., Venâncio, T., Teixeira, S.P. and Da Costa, F.B., 2018. Aluminium detoxification in facultative (Passovia ovata (Pohl ex DC.) Kuijt and Struthanthus polyanthus Mart.-Loranthaceae) and dependent (Psittacanthus robustus (Mart.) Marloth-Loranthaceae) Al-accumulating mistletoe species from the Brazilian savanna. Phytochemistry, 153, pp.58-63. [DOI](https://doi.org/10.1016/j.phytochem.2018.05.020) |
+[PDF](/PDF/Souza_2018.pdf)
 
-> Souza, M.C., Scalon, M.C., Poschenrieder, C., Tolrà, R., Venâncio, T., Teixeira, S.P. and Da Costa, F.B., 2018. Mechanisms of storage and detoxification of Al in two tropical mistletoes. Environmental and Experimental Botany, 150, pp.37-45. [DOI](https://doi.org/10.1016/j.envexpbot.2018.03.004)
+> Souza, M.C., Scalon, M.C., Poschenrieder, C., Tolrà, R., Venâncio, T., Teixeira, S.P. and Da Costa, F.B., 2018. Mechanisms of storage and detoxification of Al in two tropical mistletoes. Environmental and Experimental Botany, 150, pp.37-45. [DOI](https://doi.org/10.1016/j.envexpbot.2018.03.004) |
+[PDF](/PDF/Souza_2018_EEB.pdf)
 
-> Scalon, M.C., Haridasan, M. and Franco, A.C., 2017. Influence of long-term nutrient manipulation on specific leaf area and leaf nutrient concentrations in savanna woody species of contrasting leaf phenologies. Plant and Soil, 421(1), pp.233-244 .[DOI](https://doi.org/10.1007/s11104-017-3437-0)
+> Scalon, M.C., Haridasan, M. and Franco, A.C., 2017. Influence of long-term nutrient manipulation on specific leaf area and leaf nutrient concentrations in savanna woody species of contrasting leaf phenologies. Plant and Soil, 421(1), pp.233-244.
+[DOI](https://doi.org/10.1007/s11104-017-3437-0) |
+[PDF](/PDF/Scalon_environmental.pdf)
 
-> Scalon, M.C. and Wright, I.J., 2017. Leaf trait adaptations of xylem-tapping mistletoes and their hosts in sites of contrasting aridity. Plant and Soil, 415(1), pp.117-130. [DOI](https://doi.org/10.1007/s11104-016-3151-3)
+> Scalon, M.C. and Wright, I.J., 2017. Leaf trait adaptations of xylem-tapping mistletoes and their hosts in sites of contrasting aridity. Plant and Soil, 415(1), pp.117-130. [DOI](https://doi.org/10.1007/s11104-016-3151-3) |
+[PDF](/PDF/Scalon_Wright_2017.pdf)
 
-> Scalon, M.C., Alves dos Reis, S. and Rossatto, D.R., 2017. Shifting from acquisitive to conservative: the effects of Phoradendron affine (Santalaceae) infection in leaf morpho-physiological traits of a Neotropical tree species. Australian Journal of Botany, 65(1), pp.31-37. [DOI](https://doi.org/10.1071/BT16177)
+> Scalon, M.C., Alves dos Reis, S. and Rossatto, D.R., 2017. Shifting from acquisitive to conservative: the effects of Phoradendron affine (Santalaceae) infection in leaf morpho-physiological traits of a Neotropical tree species. Australian Journal of Botany, 65(1), pp.31-37. 
+[DOI](https://doi.org/10.1071/BT16177) |
+[PDF](/PDF/Scalon_2017.pdf)
 
-> Scalon, M.C., Wright, I.J. and Franco, A.C., 2017. To recycle or steal? Nutrient resorption in Australian and Brazilian mistletoes from three low‐phosphorus sites. Oikos, 126(1), pp.32-39. [DOI](https://doi.org/10.1111/oik.03455)
+> Scalon, M.C., Wright, I.J. and Franco, A.C., 2017. To recycle or steal? Nutrient resorption in Australian and Brazilian mistletoes from three low‐phosphorus sites. Oikos, 126(1), pp.32-39.
+[DOI](https://doi.org/10.1111/oik.03455)  |
+[PDF](/PDF/Scalon_oikos.pdf)
 
-> Scalon, M.C., Rossatto, D.R., Domingos, F.M.C.B. and Franco, A.C., 2016. Leaf morphophysiology of a Neotropical mistletoe is shaped by seasonal patterns of host leaf phenology. Oecologia, 180(4), pp.1103-1112. [DOI](https://doi.org/10.1007/s00442-015-3519-8)
+> Scalon, M.C., Rossatto, D.R., Domingos, F.M.C.B. and Franco, A.C., 2016. Leaf morphophysiology of a Neotropical mistletoe is shaped by seasonal patterns of host leaf phenology. Oecologia, 180(4), pp.1103-1112. 
+[DOI](https://doi.org/10.1007/s00442-015-3519-8)  |
+[PDF](/PDF/Scalon_oecologia.pdf)
 
-> Scalon, M.C. and Wright, I.J., 2015. A global analysis of water and nitrogen relationships between mistletoes and their hosts: broad‐scale tests of old and enduring hypotheses. Functional Ecology, 29(9), pp.1114-1124. [DOI](https://doi.org/10.1111/1365-2435.12418)
+> Scalon, M.C. and Wright, I.J., 2015. A global analysis of water and nitrogen relationships between mistletoes and their hosts: broad‐scale tests of old and enduring hypotheses. Functional Ecology, 29(9), pp.1114-1124. 
+[DOI](https://doi.org/10.1111/1365-2435.12418) |
+[PDF](/PDF/Scalon_fe.pdf)
 
-> Scalon, M.C., Rossatto, D.R. and Franco, A.C., 2014. Do litter manipulations affect leaf functional traits of savanna woody plants?. Plant ecology, 215(1), pp.111-120. [DOI](https://doi.org/10.1007/s11258-013-0282-y)
+> Scalon, M.C., Rossatto, D.R. and Franco, A.C., 2014. Do litter manipulations affect leaf functional traits of savanna woody plants?. Plant ecology, 215(1), pp.111-120.
+[DOI](https://doi.org/10.1007/s11258-013-0282-y) |
+[PDF](/PDF/Scalon_litter.pdf)
 
-> Scalon, M.C., Haridasan, M. and Franco, A.C., 2013. A comparative study of aluminium and nutrient concentrations in mistletoes on aluminium‐accumulating and non‐accumulating hosts. Plant Biology, 15(5), pp.851-857. [DOI](https://doi.org/10.1111/j.1438-8677.2012.00713.x)
+> Scalon, M.C., Haridasan, M. and Franco, A.C., 2013. A comparative study of aluminium and nutrient concentrations in mistletoes on aluminium‐accumulating and non‐accumulating hosts. Plant Biology, 15(5), pp.851-857. [DOI](https://doi.org/10.1111/j.1438-8677.2012.00713.x) |
+[PDF](/PDF/Scalon_aluminio.pdf)

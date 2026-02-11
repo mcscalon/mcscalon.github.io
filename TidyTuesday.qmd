@@ -25,9 +25,6 @@ I also often use these datasets in my classes, giving students the chance to exp
 ### Week 32
 
 ```{r}
-#| code-fold: true
-#| code-summary: "Show code"
-
 tuesdata <- tidytuesdayR::tt_load('2025-08-12')
 attribution_studies <- tuesdata$attribution_studies
 library(tidyverse)
@@ -60,19 +57,12 @@ plot2 <- ggplot((filter(atr_event, cb_region !="Northern hemisphere")), aes(x=cb
         legend.key.size = unit(0.3, "cm"),
         plot.subtitle = element_text(size=10, face="italic"),
         axis.ticks.x = element_blank())
-```
-
-
-```{r}
 plot2
 ```
 
-
+#### Option 2
 
 ```{r}
-#| code-fold: true
-#| code-summary: "Show code"
-
 plot <- ggplot(filter(atr_event, cb_region !="Northern hemisphere")) +
   geom_bar(aes(x = forcats::fct_infreq(cb_region), fill = event_type), alpha=0.8) +
   labs(x = " ", y = "Number of events", fill = "Event Type", 
@@ -88,12 +78,9 @@ plot <- ggplot(filter(atr_event, cb_region !="Northern hemisphere")) +
         legend.key.size = unit(0.3, "cm"),
         plot.title = element_text(margin = margin(l = -120,b=5, unit = "pt")),
         plot.subtitle = element_text(size=10, face="italic",margin = margin(l = -120,b=10, unit = "pt")))
-
-```
-
-```{r}
 plot
 ```
+
 
 ### Week 34
 
